@@ -1,18 +1,18 @@
-
-Confidence Interval Estimation
+\section{Confidence Interval Estimation}
 In statistics one often would like to estimate unknown parameters for a known distribution. For example, you may think that your parent population is normal, but the mean is unknown, or both the mean and standard deviation are unknown. From a data set you can't hope to know the exact values of the parameters, but the data should give you a good idea what they are. For the mean, we expect that the sample mean or average of our data will be a good choice for the population mean, and intuitively, we understand that the more data we have the better this should be. How do we quantify this?
 
 Statistical theory is based on knowing the sampling distribution of some statistic such as the mean. This allows us to make probability statements about the value of the parameters, such as we are 95 per cent certain the parameter is in some range of values.
 
 
 %===============================================================================%
-\section*{C- Confidence Intervals}
- 
-In a statistical report on the daily sales of a certain pharmaceutical product the following confidence interval was reported [6.3, 8.1] in hundreds of units per day.
- 
-In the report it was stated that the used confidence level was 99\% and the sample size was n = 25. 
-The industry standard for that type of analysis recommends the 95\% confidence level.
+\section*{Confidence Intervals : Worked Example}
 
+\begin{itemize} 
+\item In a statistical report on the daily sales of a certain pharmaceutical product the following confidence interval was reported [6.3, 8.1] in hundreds of units per day.
+ 
+\item In the report it was stated that the used confidence level was 99\% and the sample size was n = 25. 
+\item The industry standard for that type of analysis recommends the 95\% confidence level.
+\end{itemize}
 Question: Calculate a 95\% confidence interval
  %========================================================%
 \textbf{Solution:}
@@ -23,18 +23,20 @@ The sample mean is 7.2
  
 The sample size is n= 25. This is a small sample (i.e. less than 30)
  %========================================================%
-We are able to deduce the quantile of the t distribution used to construct the 99% confidence interval
+We are able to deduce the quantile of the $t-$distribution used to construct the 99\% confidence interval
  
 Confidence intervals are always 2 tailed , therefore k=2
 \begin{itemize}
-\item The significance level used is 1%
+\item The significance level used is 1\%
 \item The degrees of freedom  is 24 (n-1)
-\item The significance level for the new interval is 5%
+\item The significance level for the new interval is 5\%
 \end{itemzie}
 %========================================================%
 Using Murdoch Barnes Table 7
-The quantile used to make the 99\% interval was 2.797.
-The quantile used to make the 95\% interval is 2.064.
- 
+\begin{itemize}
+\item The quantile used to make the 99\% interval was 2.797.
+\item The quantile used to make the 95\% interval is 2.064.
+\end{itemize}
 We are now able to work out the standard error.
  %========================================================%
+\end{document}
