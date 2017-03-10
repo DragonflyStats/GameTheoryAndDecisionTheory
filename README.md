@@ -1,4 +1,3 @@
-NLP
+Game Theory
 ===
-
-Natural Language Processing
+Lecture Notes
