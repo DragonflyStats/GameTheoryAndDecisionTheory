@@ -1,0 +1,49 @@
+%- http://global.oup.com/us/companion.websites/9780199397129/student/chapt11/multiplechoice/
+
+Which one of the following is a part of every game theory model?
+  a. Players 
+  b. Payoffs 
+  c. Probabilities 
+  d. Strategies 
+
+In game theory, a choice that is optimal for a firm no matter what its competitors do is referred to as
+  a. the dominant strategy. 
+  b. the game-winning choice. 
+  c. super optimal. 
+  d. a gonzo selection. 
+
+Which of the following circumstances in an industry will result in a Nash equilibrium?
+  a. All firms have a dominant strategy and each firm chooses its dominant strategy. 
+  b. All firms have a dominant strategy, but only some choose to follow it. 
+  c. All firms have a dominant strategy, and none choose it. 
+  d. None of the above is correct. 
+
+Which of the following describes a Nash equilibrium?
+  a. A firm chooses its dominant strategy, if one exists. 
+  b. Every competing firm in an industry chooses a strategy that is optimal given the choices of every other firm. 
+  c. Market price results in neither a surplus nor a shortage. 
+  d. All firms in an industry are earning zero economic profits. 
+
+A prisoners' dilemma is a game with all of the following characteristics except one. Which one is present in a prisoners' dilemma?
+  a. Players cooperate in arriving at their strategies. 
+  b. Both players have a dominant strategy. 
+  c. Both players would be better off if neither chose their dominant strategy. 
+  d. The payoff from a strategy depends on the choice made by the other player. 
+
+In game theory, a situation in which one firm can gain only what another firm loses is called a
+  a. nonzero-sum game. 
+  b. prisoners’ dilemma. 
+  c. zero-sum game. 
+  d. cartel temptation.
+ 
+Which of the following is a nonzero-sum game?
+  a. Prisoners’ dilemma 
+  b. Chess 
+  c. Competition among duopolists when market share is the payoff 
+  d. All of the above. 
+
+Which of the following is a zero-sum game?
+  a. Prisoners’ dilemma 
+  b. Chess 
+  c. A cartel member’s decision regarding whether or not to cheat 
+  d. All of the above. 
