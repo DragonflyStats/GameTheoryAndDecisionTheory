@@ -1,0 +1,105 @@
+%- http://www.mikeshor.com/courses/gametheory/quizzes/quiz1.html
+
+Finding Nash Equilibria
+
+
+Question 1.
+
+ 	 	Player 2
+ 	 	X	Y
+Player 1	A	10 , 10	15 ,  5
+B	 5 , 15	12 , 12
+What is the equilibrium of the above game?
+
+[CORRECT] A,X
+B,X
+A,Y
+B,Y
+
+Question 2.
+
+ 	 	Player 2
+ 	 	X	Y
+Player 1	A	0 , 0	0 , 1
+B	2 , 0	0 , 0
+What are the equilibria of the above game?
+ 	B,X only
+A,Y and B,X
+[CORRECT] A,Y; B,X; and B,Y
+none
+
+Question 3.
+
+ 	 	Barney
+ 	 	Left	Right
+Fred	Up	10 , 10	 0 , 10
+Down	10 ,  0	10 , 10
+What are the equilibria of the above game?
+ 	Up,Left only
+Down,Right only
+[CORRECT] Up,Left and Down,Right
+10,10
+
+Question 4.
+
+ 	 	Player 2
+ 	 	X	Y	Z
+Player 1	A	 6 ,  6	 8 , 20	 0 ,  8
+B	10 ,  0	 5 ,  5	 2 ,  8
+C	 8 ,  0	20 ,  0	 4 ,  4
+What is the equilibrium of the above game?
+ 	B,Y
+[CORRECT] C,Z
+A,X
+A,Y
+
+Question 5.
+
+ 	 	Player 2
+ 	 	Rock	Paper	Scissors
+Player 1	Rock	 0 ,  0	-1 ,  1	 1 , -1
+Paper	 1 , -1	 0 ,  0	-1 ,  1
+Scissors	-1 ,  1	 1 , -1	 0 ,  0
+How many equilibria (in pure strategies) does the above game have?
+ 	9
+3
+1
+[CORRECT] 0
+
+ 	 	Gilmour
+ 	 	Lapse	Echoes	Bell
+Waters	Wall	40 , 8	30 , 6	50 , 1
+Moon	30 , 6	20 , 9	50 , 1
+Wish	20 , 5	40 , 2	50 , 0
+
+Question 6
+
+Does either player have a strictly dominant strategy?
+ 	Waters only
+Gilmour only
+Both Waters and Gilmour
+[CORRECT] Neither Waters nor Gilmour
+
+Question 7
+
+Does either player have a weakly dominant strategy?
+ 	Waters only
+Gilmour only
+Both Waters and Gilmour
+[CORRECT] Neither Waters nor Gilmour
+
+Question 8
+
+Does either player have a strictly dominated strategy?
+
+Waters only
+[CORRECT] Gilmour only
+Both Waters and Gilmour
+Neither Waters nor Gilmour
+Question 9
+
+Does either player have a weakly dominated strategy?
+ 	Waters only
+Gilmour only
+[CORRECT] Both Waters and Gilmour
+Neither Waters nor Gilmour
