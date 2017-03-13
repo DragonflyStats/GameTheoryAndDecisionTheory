@@ -1,0 +1,297 @@
+%- http://wps.pearsoned.co.uk/ema_ge_render_qam_11/202/51956/13300736.cw/-/13300739/index.html
+
+Multiple Choice
+
+
+This activity contains 10 questions.
+ 		
+	
+Question 1.
+Game models are classified by the
+
+Open Hint for Question 1 in a new window.
+ 	
+	size of the payoff.
+	sum of all payoffs.
+	nature of strategies employed.
+	all of the above
+	none of the above
+
+		End of Question 1
+
+
+		
+	
+Question 2.
+Each player should follow the same strategy regardless of the other player's strategy in which of the following games?
+
+Open Hint for Question 2 in a new window.
+ 	
+	Constant strategy
+	Mixed strategy
+	Pure strategy
+	Dominance strategy
+	not enough information given
+
+		End of Question 2
+
+
+		
+	
+Question 3.
+Consider the following two-person game, and determine the saddle point if it exists.
+chs1_mc_3.jpg
+
+
+Open Hint for Question 3 in a new window.
+ 	
+	X2Y2
+	X1Y2
+	X1Y1
+	X1Y2
+	There is no saddle point.
+
+		End of Question 3
+
+
+		
+	
+Question 4.
+The saddle point in a payoff matrix is always the __________.
+
+Open Hint for Question 4 in a new window.
+ 	
+	largest number in the matrix
+	smallest number in its column and the smallest number in its row
+	smallest number in the matrix
+	largest number in its column and the smallest number in its row
+	none of the above
+
+		End of Question 4
+
+
+		
+	
+Question 5.
+In a mixed strategy, each player should optimize the
+
+Open Hint for Question 5 in a new window.
+ 	
+	maximum payoffs.
+	lower value of the game.
+	minimum loss.
+	maximum loss.
+	expected gain.
+
+		End of Question 5
+
+
+		
+	
+Question 6.
+Consider the following two-person game. What strategy will Y play?
+chs1_mc_6.jpg
+
+
+Open Hint for Question 6 in a new window.
+ 	
+	X1
+	X2
+	Y1
+	Y2
+	none of the above
+
+		End of Question 6
+
+
+		
+	
+Question 7.
+Considering the following two-person game, what percentage of the time should Y play strategy Y1?
+chs1_mc_7.jpg
+
+
+Open Hint for Question 7 in a new window.
+ 	
+	1/3
+	2/3
+	4/9
+	5/9
+	none of the above
+
+		End of Question 7
+
+
+		
+	
+Question 8.
+Considering the following two-person game, the value of the game (if played many times) is
+chs1_mc_8a.jpg
+
+
+Open Hint for Question 8 in a new window.
+ 	
+	19.00.
+	4.75.
+	11.00.
+	unable to be computed as the chs1_mc_8b.gif was not given.
+	none of the above
+
+		End of Question 8
+
+
+		
+	
+Question 9.
+Considering the following two-person game, what is Y’s best strategy?
+chs1_mc_9.jpg
+
+
+Open Hint for Question 9 in a new window.
+ 	
+	X1
+	X2
+	Y1
+	Y2
+	none of the above
+
+		End of Question 9
+
+
+		
+	
+Question 10.
+Given the following two-person game, which strategy can be eliminated by use of dominance?
+chs1_mc_10.jpg
+
+
+Open Hint for Question 10 in a new window.
+ 	
+	X1
+	X2
+	X3
+	Y1
+	none of the above
+
+
+-----------------------------------------------------------------------
+1.
+
+Incorrect	Game models are classified by the
+
+Your Answer:
+
+size of the payoff.	
+Correct Answer:
+
+sum of all payoffs.
+ 	Incorrect. See section M4.1.
+2.
+
+Incorrect	Each player should follow the same strategy regardless of the other player's strategy in which of the following games?
+
+Your Answer:
+
+Dominance strategy	
+Correct Answer:
+
+Pure strategy
+ 	Incorrect. See section M4.4.
+3.
+
+Incorrect	Consider the following two-person game, and determine the saddle point if it exists.
+chs1_mc_3.jpg
+
+Your Answer:
+
+X1Y2	
+Correct Answer:
+
+There is no saddle point.
+
+ 	Incorrect. See section M4.3.
+4.
+
+Incorrect	The saddle point in a payoff matrix is always the __________.
+
+Your Answer:
+
+largest number in the matrix	
+Correct Answer:
+
+largest number in its column and the smallest number in its row
+ 	Incorrect. See section M4.3.
+5.
+
+Incorrect	In a mixed strategy, each player should optimize the
+
+Your Answer:
+
+(blank)
+
+6.
+
+Incorrect	Consider the following two-person game. What strategy will Y play?
+chs1_mc_6.jpg
+
+Your Answer:
+
+X1	
+Correct Answer:
+
+Y1
+
+ 	Incorrect. See section M4.4.
+7.
+
+Incorrect	Considering the following two-person game, what percentage of the time should Y play strategy Y1?
+chs1_mc_7.jpg
+
+Your Answer:
+
+2/3	
+Correct Answer:
+
+5/9
+
+ 	Incorrect. See section M4.5.
+8.
+
+Incorrect	Considering the following two-person game, the value of the game (if played many times) is
+chs1_mc_8a.jpg
+
+Your Answer:
+
+4.75.	
+Correct Answer:
+
+11.00.
+
+ 	Incorrect. See section M4.3.
+
+
+9.
+
+Incorrect	Considering the following two-person game, what is Y’s best strategy?
+chs1_mc_9.jpg
+
+Your Answer:
+
+X1	
+Correct Answer:
+
+Y1
+
+ 	Incorrect. See section M4.3.
+
+
+10.
+
+Correct	Given the following two-person game, which strategy can be eliminated by use of dominance?
+chs1_mc_10.jpg
+
+Your Answer:
+
+none of the above
+
+ 	CORRECT.
