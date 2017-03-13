@@ -1,0 +1,51 @@
+For each of the following games, determine if the game is a prisoner's dilemma.
+Question 6.
+
+ 	 	Player 2
+ 	 	A	B
+Player 1	
+X	5 , 5	8 , 4
+Y	4 , 8	7 , 7
+
+Game is a prisoner's dilemma
+Game is not a prisoner's dilemma
+
+
+
+Question 5.
+
+ 	 	Player 2
+ 	 	A	B
+Player 1	
+X	10 , 10	8 , 4
+Y	4 , 8	7 , 7
+ 	Game is a prisoner's dilemma
+Game is not a prisoner's dilemma
+
+
+
+
+Question 7.
+
+ 	 	Player 2
+ 	 	A	B
+Player 1	X	5 , 5	4 , 4
+Y	4 , 8	7 , 7
+ 	Game is a prisoner's dilemma
+Game is not a prisoner's dilemma
+
+
+Question 8.
+
+ 	 	Player 2
+ 	 	A	B
+Player 1	X	6 , 6	4 , 8
+Y	8 , 4	5 , 5
+ 	Game is a prisoner's dilemma
+Game is not a prisoner's dilemma
+
+
+YES  
+NO 
+NO
+YES
