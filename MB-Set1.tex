@@ -1,10 +1,12 @@
-Game Theory
+\section{Game Theory}
 Game Theory (GT) is the study of strategic interdependence. The typical “game” consists
 of players, actions, strategies and payoffs. The standard modes of analysis are once-played
 games in either
-(i) matrix or strategic form where players’ choice of actions are made simultaneously,
+\begin{itemize}
+\item[(i)] matrix or strategic form where players’ choice of actions are made simultaneously,
 or
-(ii) extensive form where choice of actions are made sequentially.
+\item[(ii)] extensive form where choice of actions are made sequentially.
+\end{itemize}
 1 Analysis of (finite) Matrix Games
 One of the best known games is
 Prisoner’s Dilemma (PD)
@@ -20,11 +22,16 @@ Player 2
 Keep Quiet Confess
 Player 1 Keep Quiet (p2,p2) (p4,p1)
 Confess (p1,p4) (p3,p3)
+
 Other examples of PD-like games are
-• War with strategies Defend, Attack respectively.
-• Arms Race with strategies Pass, Build respectively.
-• Free Trade/ Protection with strategies No Tax, Tax respectively.
-• Advertising with strategies No Ads, Ads respectively.
+
+\begin{itemize}
+\item War with strategies Defend, Attack respectively.
+\item Arms Race with strategies Pass, Build respectively.
+\item Free Trade/ Protection with strategies No Tax, Tax respectively.
+\item Advertising with strategies No Ads, Ads respectively.
+\end{itemize}
+
 Deadlock is another game ( success is to fail!):
 Player 2
 Try Fail
@@ -37,7 +44,8 @@ Player 1 Up (p2,p2) (p1,p4)
 Down (p4,p1) (p3,p3)
 The solution is h Up, Left i. (See IESDS). Neither player gets hir first choice unless the
 other makes a mistake.
-1.1 Strict Dominance
+
+\subsection{1.1 Strict Dominance}
 Strategy X strictly dominates strategy Y for a player if X gives a bigger (more preferred)
 payoff than Y no matter what the other players do. Players never rationally choose strictly
 dominated strategies.
@@ -48,6 +56,7 @@ Boon docks
 Salsa Hip Hop
 Downtown Salsa (80,0) (60,40)
 Hip Hop (40,60) (40,0)
+
 The solution is h Salsa, Hip Hop i. Salsa dominates Hip Hop for Club Downtown, then
 Boonies choses Hip Hop.
 Some more examples
@@ -59,6 +68,7 @@ Middle (4,1) (3,3) (6,2)
 Down (-1,9) (2,8) (8,-1)
 Denoting strict dominance by >, then in the order given C > R, M > D, C > L, M > U.
 Thus the solution is h Middle, Centre i.
+
 Cournot Duopoly game. Firm 1 can produce i units at a cost of e1 each. Similarly firm
 2 can produce j units at a cost of e1 each. The units sell on the market at a price of
 e[8−2(i+j)]+ each, where [.]
@@ -81,8 +91,8 @@ Up (1,-1) (4,2)
 Middle (0,2) (3,3)
 Down (-2,-2) (2,-1)
 The solution is h Up, Right i.
-
-1.2 Weak Dominance
+%=====================================================%
+\subsection{1.2 Weak Dominance}
 Strategy X weakly dominates strategy Y for a player if X gives at least as big a payoff as Y
 no matter what the other players do and there is one at least one X payoff than is strictly
 greater than the corresponding Y payoff.
@@ -170,17 +180,21 @@ Middle (2,4) (5,5) (7,3)
 Down (3,4) (3,7) (6,6)
 Using IEWDS C ≥ L, then M > U, M > D and C> R. Hence the solution is
 h Middle, Centre i. This is the only NE.
-1.5 MSNE
+%----------------------------------------------------------%
+\subsection{1.5 MSNE}
 Matching Pennies(MP) is an example of a game with no PSNE.
 Player 2
 Heads Tails
 Player 1 Heads (1,-1) (-1,1)
 Tails (-1,1) (1,-1)
+
 Other names for this game are
-• Goalkeeeper v. Penalty Taker
-• Offense v. Defense (American Football)
-• Fastball v. Curveball (Baseball)
-• Attack A or B v. Defend A or B
+\begin{itemize}
+\item Goalkeeeper v. Penalty Taker
+\item Offense v. Defense (American Football)
+\item Fastball v. Curveball (Baseball)
+\item Attack A or B v. Defend A or B
+\end{itemize}
 Nash proved that every finite 1 game has a NE.
 This game has the MSNE h 1/2 Heads + 1/2 Tails, 1/2 Heads + 1/2 Tails i.
 More generally, MSNEs can be found using the Bishop-Cannings theorem. Consider the
@@ -198,13 +212,11 @@ against Player 1’s mixed strategy is
 R2hpUp + (1 − p)Down, Lefti = −3p + 1(1 − p)
 Again the payoff to player 2 by playing Right against Player 1’s mixed strategy is
 R2hpUp + (1 − p)Down, Righti = 2p + 0(1 − p)
-If the two payoff values are different then Player 2 has a definite preference between the
-two and so would not want to randomise. If for instance Player 2 were to choose Left, then
-Player 1 would abandon his mixed strategy and choose Up instead. Similarly if Player 2
+
+If the two payoff values are different then Player 2 has a definite preference between the two and so would not want to randomise. If for instance Player 2 were to choose Left, then Player 1 would abandon his mixed strategy and choose Up instead. Similarly if Player 2
 were to choose Right instead, Player 1 would change from randomising to playing Down.
-In either case, the mixed strategies go out the window and no NE exists. To get a MSNE
-requires that Player 2 be indifferent between the two payoffs i.e. requires that the two
-payoffs be the same and since the the payoff at any mixed strategy is a linear combination
+
+In either case, the mixed strategies go out the window and no NE exists. To get a MSNE requires that Player 2 be indifferent between the two payoffs i.e. requires that the two payoffs be the same and since the the payoff at any mixed strategy is a linear combination
 of the pure strategy payoffs, this must also have the same value. Equating the two payoffs
 gives
 −3p + 1(1 − p) = 2p + 0(1 − p)
