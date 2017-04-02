@@ -85,6 +85,23 @@ In game theory terms, the players of this game are a leader and a follower and t
 
 Firms may engage in Stackelberg competition if one has some sort of advantage enabling it to move first. More generally, the leader must have commitment power. Moving observably first is the most obvious means of commitment: once the leader has made its move, it cannot undo it - it is committed to that action. Moving first may be possible if the leader was the incumbent monopoly of the industry and the follower is a new entrant. Holding excess capacity is another means of commitment.
 
+
+The profit of firm 2 (the follower) is revenue minus cost. Revenue is the product of price and quantity and cost is given by the firm's cost structure, so profit is: \[{\displaystyle \Pi _{2}=P(q_{1}+q_{2})\cdot q_{2}-C_{2}(q_{2})} \Pi _{2}=P(q_{1}+q_{2})\cdot q_{2}-C_{2}(q_{2}).\] The best response is to find the value of {\displaystyle q_{2}} q_{2} that maximises {\displaystyle \Pi _{2}} \Pi _{2} given {\displaystyle q_{1}} q_{1}, i.e. given the output of the leader (firm 1), the output that maximises the follower's profit is found. Hence, the maximum of {\displaystyle \Pi _{2}} \Pi _{2} with respect to {\displaystyle q_{2}} q_{2} is to be found. First differentiate {\displaystyle \Pi _{2}} \Pi _{2} with respect to {\displaystyle q_{2}} q_{2}:
+
+\[{\displaystyle {\frac {\partial \Pi _{2}}{\partial q_{2}}}={\frac {\partial P(q_{1}+q_{2})}{\partial q_{2}}}\cdot q_{2}+P(q_{1}+q_{2})-{\frac {\partial C_{2}(q_{2})}{\partial q_{2}}}.} {\frac  {\partial \Pi _{2}}{\partial q_{2}}}={\frac  {\partial P(q_{1}+q_{2})}{\partial q_{2}}}\cdot q_{2}+P(q_{1}+q_{2})-{\frac  {\partial C_{2}(q_{2})}{\partial q_{2}}}\].
+Setting this to zero for maximisation:
+
+\[{\displaystyle {\frac {\partial \Pi _{2}}{\partial q_{2}}}={\frac {\partial P(q_{1}+q_{2})}{\partial q_{2}}}\cdot q_{2}+P(q_{1}+q_{2})-{\frac {\partial C_{2}(q_{2})}{\partial q_{2}}}=0.} {\frac  {\partial \Pi _{2}}{\partial q_{2}}}={\frac  {\partial P(q_{1}+q_{2})}{\partial q_{2}}}\cdot q_{2}+P(q_{1}+q_{2})-{\frac  {\partial C_{2}(q_{2})}{\partial q_{2}}}=0.\]
+The values of {\displaystyle q_{2}} q_{2} that satisfy this equation are the best responses. Now the best response function of the leader is considered. This function is calculated by considering the follower's output as a function of the leader's output, as just computed.
+
+The profit of firm 1 (the leader) is {\displaystyle \Pi _{1}=P(q_{1}+q_{2}(q_{1})).q_{1}-C_{1}(q_{1})} \Pi _{1}=P(q_{1}+q_{2}(q_{1})).q_{1}-C_{1}(q_{1}), where {\displaystyle q_{2}(q_{1})} q_{2}(q_{1}) is the follower's quantity as a function of the leader's quantity, namely the function calculated above. The best response is to find the value of {\displaystyle q_{1}} q_{1} that maximises {\displaystyle \Pi _{1}} \Pi _{1} given {\displaystyle q_{2}(q_{1})} q_{2}(q_{1}), i.e. given the best response function of the follower (firm 2), the output that maximises the leader's profit is found. Hence, the maximum of {\displaystyle \Pi _{1}} \Pi _{1} with respect to {\displaystyle q_{1}} q_{1} is to be found. First, differentiate {\displaystyle \Pi _{1}} \Pi _{1} with respect to {\displaystyle q_{1}} q_{1}:
+
+{\displaystyle {\frac {\partial \Pi _{1}}{\partial q_{1}}}={\frac {\partial P(q_{1}+q_{2})}{\partial q_{2}}}\cdot {\frac {\partial q_{2}(q_{1})}{\partial q_{1}}}\cdot q_{1}+{\frac {\partial P(q_{1}+q_{2})}{\partial q_{1}}}\cdot q_{1}+P(q_{1}+q_{2}(q_{1}))-{\frac {\partial C_{1}(q_{1})}{\partial q_{1}}}.} {\frac  {\partial \Pi _{1}}{\partial q_{1}}}={\frac  {\partial P(q_{1}+q_{2})}{\partial q_{2}}}\cdot {\frac  {\partial q_{2}(q_{1})}{\partial q_{1}}}\cdot q_{1}+{\frac  {\partial P(q_{1}+q_{2})}{\partial q_{1}}}\cdot q_{1}+P(q_{1}+q_{2}(q_{1}))-{\frac  {\partial C_{1}(q_{1})}{\partial q_{1}}}.
+Setting this to zero for maximisation:
+
+{\displaystyle {\frac {\partial \Pi _{1}}{\partial q_{1}}}={\frac {\partial P(q_{1}+q_{2})}{\partial q_{2}}}\cdot {\frac {\partial q_{2}(q_{1})}{\partial q_{1}}}\cdot q_{1}+{\frac {\partial P(q_{1}+q_{2})}{\partial q_{1}}}\cdot q_{1}+P(q_{1}+q_{2}(q_{1}))-{\frac {\partial C_{1}(q_{1})}{\partial q_{1}}}=0.} {\frac  {\partial \Pi _{1}}{\partial q_{1}}}={\frac  {\partial P(q_{1}+q_{2})}{\partial q_{2}}}\cdot {\frac  {\partial q_{2}(q_{1})}{\partial q_{1}}}\cdot q_{1}+{\frac  {\partial P(q_{1}+q_{2})}{\partial q_{1}}}\cdot q_{1}+P(q_{1}+q_{2}(q_{1}))-{\frac  {\partial C_{1}(q_{1})}{\partial q_{1}}}=0.
+
+
 \subsection{Stackelberg Duopoly}
 Stackelberg duopoly is an example of a 2-player extensive form game in which Firm 1
 moves first (the “Leader”) and Firm 2 responds (the “Follower”). Irrespective of what
