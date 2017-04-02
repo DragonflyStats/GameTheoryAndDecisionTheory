@@ -1,4 +1,4 @@
-Minimax Game Solution
+\subsection{Minimax Game Solution}
 An alternative to “solving ” matrix games using the concept of Nash Equilibrium is the
 Minimax approach. It was originally devised for 2-player “Zero Sum” or “Constant Sum”
 games where what one player gains the other player loses. Each player attempts to maximise
@@ -8,6 +8,7 @@ Player 2
 Left Right
 Player 1 Up (5,3) (2,6)
 Down (3,5) (4,4)
+
 As usual we’ll use the notation R1hs1, s2i and R2hs1, s2i to stand for the payoffs to Player
 1 and 2 respectively when Player 1 plays strategy s1 and Player 2 strategy s2. Again let p
 be the probability that Player 1 plays Up, and q the probability that Player 2 plays Left.
@@ -16,7 +17,8 @@ R1hpUp+(1−p)Down, qLeft+(1−q)Righti = 5pq+2p(1−q)+3(1−p)q+4(1−p)(1−q
 while the payoff to player 2 is
 R2hpUp+(1−p)Down, qLeft+(1−q)Righti = 3pq+6p(1−q)+5(1−p)q+4(1−p)(1−q) = −4pq+2p+q+4
 (Note the constant sum R1h·, ·i + R2h·, ·i = 8)
-Analysis
+
+\subsection{Analysis}
 If R1 is an increasing function of q (i.e. ∂R1
 ∂q > 0) then Player 2 minimises Player 1’s
 payoff by choosing q = 0. If R1 is an decreasing function of q (i.e. ∂R1
@@ -24,6 +26,7 @@ payoff by choosing q = 0. If R1 is an decreasing function of q (i.e. ∂R1
 2 minimises Player 1’s payoff by choosing q = 1. If however ∂R1
 ∂q = 0 then Player 2 can’t
 influence Player 1’s payoff.
+
 In this case ∂R1
 ∂q = 4p − 1. Thus
 (i) 4p − 1 > 0 ⇒ q = 0 and
@@ -32,6 +35,9 @@ R1 = 4 − 2p < 4 − 2(1/4) = 3.5
 R1 = 3 + 2p < 3 + 2(1/4) = 3.5
 (iii) 4p − 1 = 0 then irrespective of q
 R1 = 3.5
+
+%--------------------------------------%
+
 Hence Player 1 should choose p = 1/4 as hir optimal strategy, and v1 = 3.5 .
 A similar analysis can be done with R2 as a function of p. Here ∂R2
 ∂p = −4q + 2. Thus
