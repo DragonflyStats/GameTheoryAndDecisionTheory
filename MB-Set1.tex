@@ -93,9 +93,11 @@ Down (-2,-2) (2,-1)
 The solution is h Up, Right i.
 %=====================================================%
 \subsection{1.2 Weak Dominance}
-Strategy X weakly dominates strategy Y for a player if X gives at least as big a payoff as Y
+\begin{itemize}
+\item Strategy X weakly dominates strategy Y for a player if X gives at least as big a payoff as Y
 no matter what the other players do and there is one at least one X payoff than is strictly
 greater than the corresponding Y payoff.
+\end{itemize}
 Iterated Elimination of Weakly Dominated Strategies (IEWDS) is in general not
 a valid technique. Consider the game:
 Player 2
@@ -120,16 +122,23 @@ Hare (2,0) (1∗
 ∗
 )
 For this game there is no SDS nor WDS.
-A Nash equilibrium (NE) is a set of strategies, one for each player, from which there
+
+\begin{itemize}
+\item A Nash equilibrium (NE) is a set of strategies, one for each player, from which there
 is no incentive for any one player to deviate if all the other players play these strategies,
-i.e. no player can gain by changing, also called a “No regrets” choice. The Best Response
+i.e. no player can gain by changing, also called a “No regrets” choice. 
+\item The Best Response
 of a player to another player’s choice of strategy is the strategy that gives the largest or
-best payoff. We’ll denote this by placing an ∗ beside the payoff, e.g. in the stag game
+best payoff. 
+\item We’ll denote this by placing an ∗ beside the payoff, e.g. in the stag game
 above , “stag” with associated payoff 3 is the best response of player 1 to player 2 playing
-“stag”. Hence if both parts of a payoff pair have asterisks beside them, this must be a pure
+“stag”. 
+\item Hence if both parts of a payoff pair have asterisks beside them, this must be a pure
 strategy Nash equilibrium (PSNE) - a pair of strategies where both players are playing
 deterministic strategies as opposed to a mixed strategy Nash equilibrium (MSNE), where
 players are randomly mixing between the strategies available to them.
+\end{itemize}
+
 Thus in the stag game, the PSNE solutions are h stag, stag i and h hare, hare i. Notice
 that without efficient coordination, either solution is possible.
 Consider the “Good buddies prisoner’s dilemma” game:
@@ -157,29 +166,31 @@ i = 1 (0,0) (0,0) (-1,1) (-1,1)
 i = 2 (0,0) (1,-1) (0,0) (-1,1)
 i = 3 (0,0) (1,-1) (1,-1) (0,0)
 What are the PSNE(s) ?
-1.4 Dominance & NE
+\subsection{1.4 Dominance \& NE}
 If IESDS results in a unique solution then it is a (unique) NE. [proof by appeal to “no
 regrets”]. IESDS does not remove any NE.
 IEWDS may lose NE. It is necessary to check using e.g. Best Responses. If you have a
 choice eliminate SDS before WDS. Examples:
-• The example of Section 1.2 has two NE, each obtained by a different sequence of
+\begin{itemize}
+\item The example of Section 1.2 has two NE, each obtained by a different sequence of
 IEWDS.
-• Consider the game
+\item  Consider the game
 Player 2
 Left Right
 Player 1 Up (2,3) (4,3)
 Down (3,3) (1,1)
 Using IEWDS, L ≥ R, then D > U. Hence the solution is h Down, Left i. But using
 Best Responses, another NE is h Up, Right i.
-• The game
+\item  The game
 Player 2
 Left Centre Right
 Player 1
 Up (2,2) (4,2) (4, 3)
 Middle (2,4) (5,5) (7,3)
 Down (3,4) (3,7) (6,6)
-Using IEWDS C ≥ L, then M > U, M > D and C> R. Hence the solution is
+\item  Using IEWDS C ≥ L, then M > U, M > D and C> R. Hence the solution is
 h Middle, Centre i. This is the only NE.
+\end{itemize}
 %----------------------------------------------------------%
 \subsection{1.5 MSNE}
 Matching Pennies(MP) is an example of a game with no PSNE.
@@ -213,12 +224,14 @@ R2hpUp + (1 − p)Down, Lefti = −3p + 1(1 − p)
 Again the payoff to player 2 by playing Right against Player 1’s mixed strategy is
 R2hpUp + (1 − p)Down, Righti = 2p + 0(1 − p)
 
-If the two payoff values are different then Player 2 has a definite preference between the two and so would not want to randomise. If for instance Player 2 were to choose Left, then Player 1 would abandon his mixed strategy and choose Up instead. Similarly if Player 2
+\begin{itemize}
+\item If the two payoff values are different then Player 2 has a definite preference between the two and so would not want to randomise. 
+\item If for instance Player 2 were to choose Left, then Player 1 would abandon his mixed strategy and choose Up instead. Similarly if Player 2
 were to choose Right instead, Player 1 would change from randomising to playing Down.
-
-In either case, the mixed strategies go out the window and no NE exists. To get a MSNE requires that Player 2 be indifferent between the two payoffs i.e. requires that the two payoffs be the same and since the the payoff at any mixed strategy is a linear combination
+\item In either case, the mixed strategies go out the window and no NE exists. To get a MSNE requires that Player 2 be indifferent between the two payoffs i.e. requires that the two payoffs be the same and since the the payoff at any mixed strategy is a linear combination
 of the pure strategy payoffs, this must also have the same value. Equating the two payoffs
-gives
+gives:
+\end{itemize}
 −3p + 1(1 − p) = 2p + 0(1 − p)
 ⇒ p = 1/6
 and the value of the payoff is
@@ -257,7 +270,7 @@ Exercise: Show that the stag hunt game has a MSNE at h 1/2 stag + 1/2 hare, 1/2 
 We can have partial MSNE where (at least) one player has a pure strategy and (at least)
 one player has a mixed strategy.
 Examples of games with MSNE:
-• Chicken (aka Snowdrift) :
+\subsection{Chicken (aka Snowdrift) :}
 Player 2
 Continue / Stay in car Swerve / Shovel
 Player 1 Continue / Stay in car (-10,-10) (2,-2)
@@ -265,7 +278,7 @@ Swerve / Shovel (-2,2) (0,0)
 PSNEs occur at h Continue, Swerve i and at h Swerve, Continue i. There is also
 a MSNE at h 1/5 continue + 4/5 swerve, 1/5 continue + 4/5 swerve i. Show that
 v1 = v2 = −2/5.
-• Battle of the Sexes:
+\subsection{Battle of the Sexes:}
 Her
 Ballet Fight
 Him Ballet (1,2) (-1,1)
@@ -273,10 +286,10 @@ Fight (-1,1) (1,-1)
 PSNEs occur at h Ballet, Ballet i and at h Fight, Fight i. Show that there is a
 MSNE at h 1/3 ballet + 2/3 fight, 2/3 ballet + 1/3 fight i with v1 = 2/3 = v2.
 Compare and contast this with the payoffs of the PSNEs.
-1.6 MSNE and Dominance
+\subsection{1.6 MSNE and Dominance}
 A SDS cannot be played with positive probability in a MSNE (otherwise a higher payoff
 can be obtained by not playing the SDS when the strategy say to play it).
-1.7 Strict Dominance in Mixed Strategies
+\subsection{1.7 Strict Dominance in Mixed Strategies}
 Consider the game:
 Player 2
 Left Right
