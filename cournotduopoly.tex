@@ -1,0 +1,89 @@
+\section{Cournot-Nash Equilibrium in Duopoly}
+
+%% - https://math.stackexchange.com/questions/327617/cournot-nash-equilibrium-in-duopoly
+This is a homework question, but resources online are exceedingly complicated, so I was hoping there was a fast, efficient way of solving the following question:
+
+There are 2 firms in an industry, which have the following total cost functions and inverse demand functions.
+Firm 1:Firm 2:C1=50Q1P1=100–0.5(Q1+Q2)C2=24Q2P2=100–0.5(Q1+Q2)
+Firm 1:C1=50Q1P1=100–0.5(Q1+Q2)Firm 2:C2=24Q2P2=100–0.5(Q1+Q2)
+What is the Cournot-Nash equilibrium for this industry?
+
+I've tried to solve this dozens of times. My idea was to find the profit equation for both, take the derivative, set equal to zero, and then solve for Q1Q1 and Q2Q2.
+
+Doing this, I get:
+Q1=−5Q2+500Q2=−5Q1+760
+Q1=−5Q2+500Q2=−5Q1+760
+
+
+
+There is a standard way of solving for Q1Q1 and Q2Q2.
+
+Determine the profit functions.
+Determine the best response function for the firms.
+Substitute Q1Q1 or Q2Q2 in the other profit function and solve.
+All these steps are already mentioned, so you know what to do. Below you can search for your mistake.
+
+The profit function for firm 1 equals Π1=P1Q1−C1=Q1⋅(100−0.5(Q1+Q2))−50Q1Π1=P1Q1−C1=Q1⋅(100−0.5(Q1+Q2))−50Q1
+The profit function for firm 2 equals Π2=P2Q2−C2=Q2⋅(100−0.5(Q1+Q2))−24Q2Π2=P2Q2−C2=Q2⋅(100−0.5(Q1+Q2))−24Q2
+The best response function can be determined by deriving the profit function of firm 1 w.r.t. Q1Q1 and for firm 2 w.r.t. Q2Q2 and set them equal to zero
+
+∂Π1∂Q1=100−Q1−0.5Q2−50=50−Q1−0.5Q2=0
+∂Π1∂Q1=100−Q1−0.5Q2−50=50−Q1−0.5Q2=0
+⟹Q1=50−0.5Q2
+⟹Q1=50−0.5Q2
+∂Π2∂Q2=100−Q2−0.5Q1−24=76−Q2−0.5Q1=0
+∂Π2∂Q2=100−Q2−0.5Q1−24=76−Q2−0.5Q1=0
+Now we can make the substitution
+
+76−Q2−0.5⋅(50−0.5Q2)=0
+76−Q2−0.5⋅(50−0.5Q2)=0
+⟹51−Q2+0.25Q2=0⟹0.75Q2=51
+⟹51−Q2+0.25Q2=0⟹0.75Q2=51
+And thus we find Q2=68Q2=68 and can solve easily for Q1Q1
+Q2=68 and Q1=50−0.5⋅68=16
+
+%===============================================================%
+
+\section{Cournot Nash Equilibrium Between Two Firms}
+%%- https://math.stackexchange.com/questions/139564/cournot-nash-equilibrium-between-two-firms?rq=1
+%----------------------------------------------%
+
+Suppose we have two firms with specialized, but similar products. Suppose market demand for the two products is:
+p1(q1,q2)=a−bq1−dq2
+p1(q1,q2)=a−bq1−dq2
+p2(q1,q2)=a−bq2−dq1
+p2(q1,q2)=a−bq2−dq1
+where d∈(−b,b)d∈(−b,b). Suppose that both firms have cost c(q)=qc(q)=q
+What does dd mean intuitively? Is the Cournot Nash Equilibrium for this
+
+q1=2ba−ad+dc′(q2)−c′(q1)2b1−d2
+q1=2ba−ad+dc′(q2)−c′(q1)2b1−d2
+q2=2ba−ad+dc′(q1)−c′(q2)2b1−d2
+
+%----------------------------------------------%
+What does d mean intuitively?
+To answer this question, think about the "vanilla" Cournot competition case, where products p1p1 and p2p2 are identical; they're perfect substitutes. In this case, increases in production from your competitor (i.e. q2q2) displaces your own production, so d=bd=b and
+
+p1(q1,q2)=a−b(q1+q2)p1(q1,q2)=a−b(q1+q2).
+
+On the other hand, if an increase in production of q2q2 increases demand for your own product q1q1, then these products are compliments. Be careful about stating they are perfect compliments, because without looking at consumer indifference curves, we can't determine this.
+
+In this case, dd is negative, and is bounded by −b−b.
+
+In short, dd is a measure of the degree to which these two goods are complements or substitutes. Another approach would be to take the derivative of demand with respect to production of the other good, like this:
+
+∂p1∂q2=−d∂p1∂q2=−d.
+
+If d>0d>0, ∂p1∂q2<0∂p1∂q2<0 and q2q2 is a complement to q1q1. Likewise, if d<0d<0, ∂p1∂q2>0∂p1∂q2>0 and q2q2 is a substitute for q1q1. Because of the symmetry of the problem, both will either be complements or substitutes. However, in the real world this is not always the case.
+
+%----------------------------------------------%
+What is the Cournot-Nash equilibrium?
+The Cournot-Nash equilibrium is the output {q1,q2q1,q2} from which neither firm can profitably deviate. To answer this, you need to find the best response function for each firm by solving for the optimal output, given the production of the other firm. This is accomplished by equating Marginal Revenue = Marginal Cost. Note that the marginal cost of production is zero; i.e. c′(q1)=c′(q2)=0c′(q1)=c′(q2)=0.
+
+BR1(q2)=a−dq22bBR1(q2)=a−dq22b and BR2(q1)=a−dq12bBR2(q1)=a−dq12b.
+
+The Cournot-Nash equilibrium is located where these two Best Response functions intersect. Solving the system of two equations and two unknowns, I get:
+
+q∗1=q∗2=a(12−d4b)b−d24bq1∗=q2∗=a(12−d4b)b−d24b.
+
+%----------------------------------------------%
