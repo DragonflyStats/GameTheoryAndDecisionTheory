@@ -1,16 +1,53 @@
-Minimax (sometimes MinMax or MM) is a decision rule used in  game theory for minimizing the possible loss for a worst case (maximum loss) scenario. Originally formulated for two-player zero-sum game theory, covering both the cases where players take alternate moves and those where they make simultaneous moves, it has also been extended to more complex games and to general decision-making in the presence of uncertainty.
+\documentclass{article}
+\usepackage{multirow,array}
+\begin{document}
+
+
+  \begin{table}
+    \setlength{\extrarowheight}{2pt}
+    \begin{tabular}{cc|c|c|}
+      & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Player $Y$}\\
+      & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$A$}  & \multicolumn{1}{c}{$B$} \\\cline{3-4}
+      \multirow{2}*{Player $X$}  & $A$ & $(x,y)$ & $(x,y)$ \\\cline{3-4}
+      & $B$ & $(x,y)$ & $(x,y)$ \\\cline{3-4}
+    \end{tabular}
+  \end{table}
+
+
+\begin{itemize}
+\item Minimax (sometimes MinMax or MM) is a decision rule used in  game theory for minimizing the possible loss for a worst case (maximum loss) scenario. 
+\item Originally formulated for two-player zero-sum game theory, covering both the cases where players take alternate moves and those where they make simultaneous moves, it has also been extended to more complex games and to general decision-making in the presence of uncertainty.
+\end{itemize}
 
 %=================================================%
 \subsection{Minimax Game Solution}
-An alternative to “solving ” matrix games using the concept of Nash Equilibrium is the
-Minimax approach. It was originally devised for 2-player “Zero Sum” or “Constant Sum”
-games where what one player gains the other player loses. Each player attempts to maximise
+\begin{itemize}
+\item An alternative to “solving ” matrix games using the concept of Nash Equilibrium is the
+Minimax approach. 
+\item It was originally devised for 2-player “Zero Sum” or “Constant Sum”
+games where what one player gains the other player loses. 
+\item Each player attempts to maximise
 hir payoff assuming that hir opponent is attempting to minimise it.
+\end{itemize}
+
 Consider the constant sum game
 Player 2
 Left Right
 Player 1 Up (5,3) (2,6)
 Down (3,5) (4,4)
+
+
+  \begin{table}
+    \setlength{\extrarowheight}{2pt}
+    \begin{tabular}{cc|c|c|}
+      & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Player $Y$}\\
+      & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$A$}  & \multicolumn{1}{c}{$B$} \\\cline{3-4}
+      \multirow{2}*{Player $X$}  & $A$ & $(x,y)$ & $(x,y)$ \\\cline{3-4}
+      & $B$ & $(x,y)$ & $(x,y)$ \\\cline{3-4}
+    \end{tabular}
+  \end{table}
+
+
 
 As usual we’ll use the notation R1hs1, s2i and R2hs1, s2i to stand for the payoffs to Player
 1 and 2 respectively when Player 1 plays strategy s1 and Player 2 strategy s2. Again let p
@@ -52,3 +89,6 @@ R2 = 6 − 3q < 6 − 3(1/2) = 4.5
 R2 = 4.5
 Hence Player 2 should choose q = 1/2 as hir optimal strategy, and v2 = 4.5
 The minimax strategies are thus h(1/4)Up + (3/4)Down,(1/2)Left + (1/2)Righti.
+
+
+\end{document}
