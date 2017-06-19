@@ -14,6 +14,22 @@ Setting this to zero for maximization:
 The values of {\displaystyle q_{i}} q_{i} that satisfy this equation are the best responses. The Nash equilibria are where both {\displaystyle q_{1}} q_{1} and {\displaystyle q_{2}} q_{2} are best responses given those values of {\displaystyle q_{1}} q_{1} and {\displaystyle q_{2}} q_{2}.
 %=======================================%
 
+\subsection{Cournot Duopoly}
+Cournot duopoly, also called Cournot competition, is a model of imperfect competition in which two firms with identical cost functions compete with homogeneous products in a static setting. It was developed by Antoine A. Cournot in his “Researches Into the Mathematical principles of the Theory of Wealth”, 1838.
+
+\subsection{Calculating the equilibrium}
+In very general terms, let the price function for the (duopoly) industry be {\displaystyle P(q_{1}+q_{2})} P(q_{1}+q_{2}) and firm {\displaystyle i} i have the cost structure {\displaystyle C_{i}(q_{i})} C_{i}(q_{i}). To calculate the Nash equilibrium, the best response functions of the firms must first be calculated.
+
+The profit of firm i is revenue minus cost. Revenue is the product of price and quantity and cost is given by the firm's cost function, so profit is (as described above): {\displaystyle \Pi _{i}=P(q_{1}+q_{2})\cdot q_{i}-C_{i}(q_{i})} \Pi _{i}=P(q_{1}+q_{2})\cdot q_{i}-C_{i}(q_{i}). The best response is to find the value of {\displaystyle q_{i}} q_{i} that maximises {\displaystyle \Pi _{i}} \Pi _{i} given {\displaystyle q_{j}} q_{j}, with {\displaystyle i\neq j} i\neq j, i.e. given some output of the opponent firm, the output that maximises profit is found. Hence, the maximum of {\displaystyle \Pi _{i}} \Pi _{i} with respect to {\displaystyle q_{i}} q_{i} is to be found. First take the derivative of {\displaystyle \Pi _{i}} \Pi _{i} with respect to {\displaystyle q_{i}} q_{i}:
+
+\[{\displaystyle {\frac {\partial \Pi _{i}}{\partial q_{i}}}={\frac {\partial P(q_{1}+q_{2})}{\partial q_{i}}}\cdot q_{i}+P(q_{1}+q_{2})-{\frac {\partial C_{i}(q_{i})}{\partial q_{i}}}} {\frac  {\partial \Pi _{i}}{\partial q_{i}}}={\frac  {\partial P(q_{1}+q_{2})}{\partial q_{i}}}\cdot q_{i}+P(q_{1}+q_{2})-{\frac  {\partial C_{i}(q_{i})}{\partial q_{i}}}\]
+Setting this to zero for maximization:
+
+\[{\displaystyle {\frac {\partial \Pi _{i}}{\partial q_{i}}}={\frac {\partial P(q_{1}+q_{2})}{\partial q_{i}}}\cdot q_{i}+P(q_{1}+q_{2})-{\frac {\partial C_{i}(q_{i})}{\partial q_{i}}}=0} {\frac  {\partial \Pi _{i}}{\partial q_{i}}}={\frac  {\partial P(q_{1}+q_{2})}{\partial q_{i}}}\cdot q_{i}+P(q_{1}+q_{2})-{\frac  {\partial C_{i}(q_{i})}{\partial q_{i}}}=0\]
+
+The values of {\displaystyle q_{i}} q_{i} that satisfy this equation are the best responses. The Nash equilibria are where both {\displaystyle q_{1}} q_{1} and {\displaystyle q_{2}} q_{2} are best responses given those values of {\displaystyle q_{1}} q_{1} and {\displaystyle q_{2}} q_{2}.
+%=======================================%
+
 \subsection{Cournot Duopoly with Linear Demand and Linear Costs}
 Let q1 and q2 be the quantities of homogeneous items produced by two firms with associated
 marginal costs c1 and c2 per item respectively.
@@ -94,6 +110,192 @@ and π
 ∗
 2
 respectively.
+
+
+
+
+\newpage
+
+
+%=================================================================================================%
+
+\subsection{Cournot Duopoly with Linear Demand and Linear Costs}
+Let q_1 and q_2 be the quantities of homogeneous items produced by two firms with associated
+marginal costs c1 and c2 per item respectively.
+Items sell at P = a − b(q_1 + q_2) each and it is assumed that all items produced are sold.
+The profits made by the firms are then
+\begin{itemize}
+\item \pi_1 = P q_1 − c1q_1 = (a − c1 − b(q_1 + q_2)) q_1
+\item \pi_2 = P q_2 − c2q_2 = (a − c2 − b(q_1 + q_2)) q_2
+\end{itemize}
+respectively.
+
+
+Maximising \pi_1 with respect to q_1 \partial\pi_1
+∂q_1
+= a − c1 − b(q_1 + q_2) − bq_1
+set = 0
+⇒ q_1 =
+a − c1
+2b
+−
+1
+2
+q_2 (1)
+Similarly maximising \pi_2 with respect to q_2 yields
+q_2 =
+a − c2
+2b
+−
+1
+2
+q_1 (2)
+Equations 1 and 2 are referred to as Reaction Functions - provided their solutions are
+nonnegative, which I’ll assume in the following.
+
+%====================================%
+Solving equations 1 and 2 simultaneously gives the equilibrium values
+q
+∗
+1 =
+a − 2c1 + c2
+3b
+, q∗
+2 =
+a − 2c2 + c1
+3b
+
+At these equilibrium values
+P
+∗ =
+a + c1 + c2
+3
+and
+\pi_
+∗
+1 =
+(a − 2c1 + c2)
+2
+9b
+, \pi_∗
+2 =
+(a − 2c2 + c1)
+2
+9b
+(3)
+Cournot duopoly is an example of a 2-player matrix form game with an infinite number
+of strategies available to both players (firms), i.e. the choice of q_1 and q_2 respectively.
+hq
+∗
+1
+, q∗
+2
+i is then a Nash equilibrium with payoffs \pi_
+∗
+1
+and \pi_
+∗
+2
+respectively.
+%=======================================================================%
+\section{Stackelberg Duopoly}
+Stackelberg duopoly is an example of a 2-player extensive form game in which Firm 1
+moves first (the “Leader”) and Firm 2 responds (the “Follower”). Irrespective of what
+the leader does, the follower will use the reaction function (Eq. 2) as it is its best response.
+Knowing this, the leader seeks to maximise
+\pi_1 =
+
+a − c1 − b
+
+q_1 +
+a − c2
+2b
+−
+1
+2
+q_1
+ q_1 =
+
+a − c1 − b
+
+q_1
+2
++
+a − c2
+2b
+ q_1
+as a function of q_1.
+∂\pi_1
+∂q_1
+= a − c1 − b
+
+q_1
+2
++
+a − c2
+2b
+
+− b
+q_1
+2
+set = 0
+⇒ q_1 =
+a − 2c1 + c2
+2b
+(4)
+Denoting this optimal value by Q∗
+1
+and the corresponding value of q_2 by Q∗
+2
+(substitute
+Eq. 4 into Eq. 2) gives
+Q
+∗
+1 =
+a − 2c1 + c2
+2b
+, Q∗
+2 =
+a + 2c1 − 3c2
+4b
+At these equilibrium values
+P
+∗ =
+a + 2c1 + c2
+4
+and
+\pi_
+∗
+1 =
+(a − 2c1 + c2)
+2
+8b
+, \pi_
+∗
+2 =
+(a + 2c1 − 3c2)
+2
+16b
+(5)
+Comparing Cournot & Stackelberg Duopoly Games
+From Eqs 3 and 5,
+\pi_
+∗
+1 < \pi_
+∗
+1
+for all parameter values, but it can be shown that
+\pi_
+∗
+2 > \pi_
+∗
+2
+whenever a − 2c1 + c2 > 0. This corresponds to Q∗
+1 > 0.
+Exercise: prove the second assertion.
+
+\newpage
+
 %=======================================================================%
 \section{Stackelberg Duopoly}
 Stackelberg duopoly is an example of a 2-player extensive form game in which Firm 1
