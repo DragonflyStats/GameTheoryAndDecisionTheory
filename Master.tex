@@ -12,3 +12,298 @@ Class Notes
 
 % - https://ocw.mit.edu/courses/economics/14-12-economic-applications-of-game-theory-fall-2012/lecture-notes/
 % -  
+
+
+
+Game theory is "the study of mathematical models of conflict and cooperation between intelligent rational decision-makers." Game theory is mainly used in economics, political science, and psychology, as well as logic, computer science and biology.
+
+
+%===============================================%
+%- http://www.investopedia.com/articles/financial-theory/08/game-theory-basics.asp
+
+Game theory is the process of modeling the strategic interaction between two or more players in a situation containing set rules and outcomes. While used in a number of disciplines, game theory is most notably used as a tool within the study of economics. The economic application of game theory can be a valuable tool to aide in the fundamental analysis of industries, sectors and any strategic interaction between two or more firms. Here, we'll take an introductory look at game theory and the terms involved, and introduce you to a simple method of solving games, called backwards induction.
+
+\subsection{Definitions} 
+Any time we have a situation with two or more players that involves known payouts or quantifiable consequences, we can use game theory to help determine the most likely outcomes. 
+Let's start out by defining a few terms commonly used in the study of game theory:
+
+\begin{description}
+\item[Game:] Any set of circumstances that has a result dependent on the actions of two of more decision makers ("players")
+\item[Players:] A strategic decision maker within the context of the game
+\item[Strategy:] A complete plan of action a player will take given the set of circumstances that might arise within the game
+\item[Payoff:] The payout a player receives from arriving at a particular outcome. The payout can be in any quantifiable form, from dollars to utility.
+\item[Information Set:] The information available at a given point in the game. The term information set is most usually applied when the game has a sequential component.
+\item[Equilibrium:] The point in a game where both players have made their decisions and an outcome is reached.
+\end{description}
+
+\subsection{Assumptions}
+As with any concept in economics, there is the assumption of rationality. There is also an assumption of maximization. It is assumed that players within the game are rational and will strive to maximize their payoffs in the game. (The question of rationality has been applied to investor behavior as well. Read Understanding Investor Behavior to learn more.)
+
+When examining games that are already set up, it is assumed on your behalf that the payouts listed include the sum of all payoffs that are associated with that outcome. This will exclude any "what if" questions that may arise.
+
+The number of players in a game can theoretically be infinite, but most games will be put into the context of two players. One of the simplest games is a sequential game involving two players.
+
+\subsection{Solving Sequential Games Using Backwards Induction}
+Below is a simple sequential game between two players. The labels with Player 1 and two within them are the information sets for players one or two, respectively. The numbers in the parentheses at the bottom of the tree are the payoffs at each respective point, in the format (Player 1, Player 2). The game is also sequential, so Player 1 makes the first decision (left or right) and Player 2 makes its decision after Player 1 (up or down).
+
+
+Figure 1
+Backwards induction, like all game theory, uses the assumptions of rationality and maximization, meaning that Player 2 will maximize his payoff in any given situation. At either information set we have two choices, four in all. By eliminating the choices that Player 2 will not choose, we can narrow down our tree. In this way, we will bold the lines that maximize the player's payoff at the given information set.
+
+
+Figure 2
+After this reduction, Player 1 can maximize its payoffs now that Player 2's choices are made known. The result is an equilibrium found by backwards induction of Player 1 choosing "right" and Player 2 choosing "up". Below is the solution to the game with the equilibrium path bolded.
+
+
+Figure 3
+For example, one could easily set up a game similar to the one above using companies as the players. This game could include product release scenarios. If Company 1 wanted to release a product, what might Company 2 do in response? Will Company 2 release a similar competing product? By forecasting sales of this new product in different scenarios, we can set up a game to predict how events might unfold. Below is an alter-example of how one might model such a game.
+
+
+
+Figure 4
+
+%----------------------------------------%
+\subsection{Conclusion}
+By using simple methods of game theory, we can solve for what would be a confusing array 
+of outcomes in a real-world situation. Using game theory as a tool for financial analysis can be very helpful in sorting out potentially messy real-world situations, from mergers to product releases.
+
+
+Using game theory, real-world scenarios for such situations as pricing competition and 
+product releases (and many more) can be laid out and their outcomes predicted. 
+Companies that use (and stick to) this device to determine the Nash Equilibrium see a 
+huge benefit in their budgeting strategies.
+
+%----------------------------------------%
+\section{Whose Turn Is It?}
+While sequential games are played by turn, simultaneous games are played with each player making their decision at the same time. With simultaneous games, we no longer use the common introductory method of backward induction. Proponents of game theory often tabulate the different outcomes in what is called a matrix (shown below).
+
+Player one / Player two	Left	Right
+Up	(1, 3)	(4, 2)
+Down	(3, 2)	(3, 1)
+This matrix is referred to as normal form. Player one's choices are shown on the left vertical axis and player two's choices are shown on the top horizontal axis. The payoffs for each player are in their corresponding intersections and are displayed as follows (player one, player two).
+
+%----------------------------------------%
+\section{The Nash Equilibrium}
+Nash Equilibrium is an outcome reached that, once achieved, means no player can increase payoff by changing decisions unilaterally. It can also be thought of as "no regrets," in the sense that once a decision is made, the player will have no regrets concerning decisions considering the consequences.
+
+The Nash Equilibrium is reached over time, in most cases. However, once the Nash Equilibrium is reached, it will not be deviated from. After we learn how to find the Nash Equilibrium, take a look at how a unilateral move would affect the situation. Does it make any sense? It shouldn't, and that's why the Nash Equilibrium is described as "no regrets."
+
+%----------------------------------------%
+\subsection{Finding a Nash Equilibria}
+Step One: Determine player one's best response to player two's actions.
+When examining the choices that may maximize a player's payout, we must look at how player one should respond to each of the options player two has. An easy way to do this visually is to cover up the choices of player two. Consider the matrix portrayed at the beginning of this article as we apply this method.
+
+Player one / Player two	Left	Right
+Up	(1, -)	(4, -)
+Down	(3, -)	(3, -)
+Player one has two possible choices to play: "up" or "down." Player two also has two choices to play: "left" or "right." In this step of determining Nash Equilibrium, we look at responses to player two's actions. If player two chooses to play "left," we can play "up" with the payoff of one, or play "down" with the payoff of three. Since three is greater than one, we will bold the 3 indicating the option to play "down" here.
+
+If player two chooses to play "right," we can either choose to play 'up' for a payoff of four or play "down" for a playoff of three. Since four is greater than three, we bold the four to indicate the option to play "up" here. The bold outcomes are shown below on the full matrix.
+
+Player one / Player two	Left	Right
+Up	(1, 3)	(4, 2)
+Down	(3, 2)	(3, 1)
+
+%----------------------------------------%
+Step Two: Determine player two's best response to player one's actions.
+As we did before with the player two payoffs for player one, we will hide the payoffs of player one when determining the best responses for player two. (To learn more about behavioral finance, check out Leading Indicators Of Behavioral Finance.)
+
+Player one / Player two	Left	Right
+Up	(-, 3)	(-, 2)
+Down	(-, 2)	(-, 1)
+Just as when looking at player one, each player has two choices to play. If player one chooses to play "up," we can play "left," with a payoff of three, or "right," with a payoff of two. Since three is greater than two, we bold the three to show the option to play "left" here. If player one chooses to play "down," we can play "left," for a payoff of two, or "right," for a payoff of one. Since two is greater than one, we bold the two indicating the option to play "left" here. The bold outcomes are shown below on the full matrix.
+
+Player one / Player two	Left	Right
+Up	(1, 3)	(4, 2)
+Down	(3, 2)	(3, 1)
+Step Three: Determine which outcomes have both payoffs bold. That particular outcome is the Nash Equilibrium.
+Now, we combine the bold options for both players onto the full matrix.
+
+Player one / Player two	Left	Right
+Up	(1, 3)	(4, 2)
+Down	(3, 2)	(3, 1)
+
+Look for intersections where both payoffs are bold. In this case, we find the intersection of (Down , Left) with the payoff of (3, 2) fits our criteria. This indicates our Nash Equilibrium.
+
+This method of finding Nash Equilibrium is well-suited to finding equilibria in games that are simultaneous since we are looking at how a player would respond independently of how the other acts. This scenario of a simultaneous game is often played out in businesses such as airlines. Below is an example, similar to the game above, of how airline pricing may play out. The payouts are in thousands of dollars. Remember, these are the payouts, not the prices. The method we applied previously is already applied to show where the Nash Equilibrium appears.
+
+Airline one / Airline two	Low Price	High Price
+Low Price	(3,000, 3,000)	(4,000, 2,000)
+High Price	(2,000, 4,000)	(3,500, 3,500)
+Looking at just A1's choices we can see that if A2 chooses to play low price, we choose between Low Price for 3,000 or high price for 2,000. We choose "low," since 3,000>2,000. We do the same thing for A2 playing High Price and see that we play "low" because 4,000>3,500. Conversely, looking just at A2's choices, we can see that if A1 chooses to play low price, we choose between "low price" for 3,000 and "high price" for 2,000. Since 3,000>2,000, we choose the "low price" option here. If A1 plays high price, we can charge a low price for 4,000 or high price for 3,500. Since 4,000>3,500, we choose to play "low price" here.
+
+The Nash Equilibrium is that both airlines will charge a low price (shown when choices for each party are highlighted). If both airlines charged a high price, they would each be better off than they are at the Nash Equilibrium.
+
+So why don't they agree to do this? First off, it's illegal to collude. Second, if this were to occur, a unilateral action on behalf of one airline to charge a low price would be beneficial, resulting in that airline making more money in turn. This logic also shows how the Nash Equilibrium is reached, and why it is not beneficial to deviate from it once it is reached. (For further reading, see our tutorial on Behavioral Finance.)
+
+%----------------------------------------%
+\subsection{Multiple Nash Equilibria & How The Nash Equilibrium Plays Out}
+Generally, there can be more than one equilibrium in a game. However, this usually occurs in games with more complex elements than two choices by two players. In simultaneous games that are repeated over time, one of these multiple equilibria is reached after some trial and error. This scenario of differing choices over time before reaching equilibrium is the most often played out in the business world when two firms are determining prices for very interchangeable products, such as airfare or soda pop.
+
+The Bottom Line
+With these advanced methods, more real-world situations can be modeled and solved. The different kinds of Nash Equilibrium we discussed are the most commonly found solutions to real-world modeled games. A working knowledge of Game Theory can help you form a strategy, whether playing a friend playing tic-tac-toe or vying for the largest profits.
+
+%- http://www.gametheory.net/dictionary/DominantStrategy.html
+%=============================================================%
+
+%%- http://policonomics.com/lp-game-theory2-dominant-strategy/
+
+Game theory II: Dominant strategies
+
+Summary
+
+In this LP we learn everything there is about simultaneous games. 
+
+These games, used when considering a game where players move or play their strategies simultaneously, are commonly used in many fields. From military strategies to collusion agreements, the analysis of these situations as simultaneous games can help us discover the best way to act.
+
+Simultaneous games
+Nash equilibria and dominant strategies:
+
+Prisoner’s dilemma
+Nash equilibrium
+Dominant strategies
+Mixed strategies:
+
+Battle of the sexes
+Mixed strategies
+Continuous strategies:
+
+Cournot duopoly
+Dominant strategies are considered as better than other strategies, no matter what other players might do. In game theory, there are two kinds of strategic dominance:
+
+-a strictly dominant strategy is that strategy that always provides greater utility to a the player, no matter what the other player’s strategy is;
+
+-a weakly dominant strategy is that strategy that provides at least the same utility for all the other player’s strategies, and strictly greater for some strategy.
+
+ 
+
+Prisoner's dilemma - Nash and Pareto equilibriaA dominant strategy equilibrium is reached when each player chooses their own dominant strategy. In the prisoner’s dilemma, the dominant strategy for both players is to confess, which means that confess-confess is the dominant strategy equilibrium (underlined in red), even if this equilibrium is not a Pareto optimal equilibrium (underlined in green).
+
+It must be noted that any dominant strategy equilibrium is always a Nash equilibrium. However, not all Nash equilibria are dominant strategy equilibria.
+
+ 
+
+The elimination of dominated strategies is commonly used to simplify the analysis of any game. The way to proceed is to eliminate for each player every strategy that seems ‘unreasonable’, which will greatly reduce the number of equilibria. This method is quite easy to use when only strictly dominated strategies are in place, but the elimination of weakly dominated strategies can turn problematic, ending up with a game that does not resembles the original one from a strategic point of view.
+
+Battle of the Bismarck Sea - Game matrix
+
+A good example of elimination of dominated strategy is the analysis of the Battle of the Bismarck Sea. In this game, as depicted in the adjacent game matrix, Kenney has no dominant strategy (the sum of the payoffs of the first strategy equals the sum of the second strategy), but the Japanese do have a weakly dominating strategy, which is to go North (the payoffs are equal for one strategy but strictly better for the other). Since only one of them has a dominant strategy, there is no dominant strategy equilibrium. We must then proceed by eliminating dominated strategies. As we’ve already mentioned, for the Japanese strategy ‘go North’ weakly dominates strategy ‘go South’. Therefore, we eliminate the strategy ‘go South’ for the Japanese, who will go North. Now that we only consider the Japanese going North, Kenney’s strategy ‘go North’ is strictly dominant over strategy ‘go South’, which will be eliminated. Therefore, North-North is the weak-dominance equilibrium.
+
+However, as it was mentioned before, it can be easily seen that the game has lost its strategic nature.
+
+Now, what if there isn’t a clear equilibrium? The Battle of the Sexes, as we’ll see next, is a good example of this particular case.
+	Game theory II: Nash equilibria Game theory II: Battle of the sexes 
+Game theory
+Nash equilibrium
+John Nash
+Prisoner’s dilemma
+Battle of the sexes
+ 
+Game theory III
+ 
+D.3 Prisoner’s dilemma
+D.6 Battle of the sexes
+D.5 Dominant strategies and Nash equilibrium
+
+
+%==========================================================%
+
+Nash Equilibrium and Dominant Strategies
+
+Nash Equilibrium is a term used in game theory to describe an equilibrium where each player's strategy is optimal given the strategies of all other players. A Nash Equilibrium exists when there is no unilateral profitable deviation from any of the players involved. In other words, no player in the game would take a different action as long as every other player remains the same. Nash Equilibria are self-enforcing; when players are at a Nash Equilibrium they have no desire to move because they will be worse off.
+
+Necessary Conditions
+
+The following game doesn't have payoffs defined:
+
+L	R
+T	a,b	c,d
+B	e,f	g,h
+In order for (T,L) to be an equilibrium in dominant strategies (which is also a Nash Equilibrium), the following must be true:
+
+a > e
+c > g
+b > d
+f > h
+In order for (T,L) to be a Nash Equilibrium, only the following must be true:
+a > or = e
+b > or = d
+Prisoners' Dilemma (Again)
+
+If every player in a game plays his dominant pure strategy (assuming every player has a dominant pure strategy), then the outcome will be a Nash equilibrium. The Prisoners' Dilemma is an excellent example of this. It was reviewed in the introduction, but is worth reviewing again. Here's the game (remember that in the Prisoners' Dilemma, the numbers represent years in prison):
+
+Jack
+C	NC
+Tom	C	-10,-10	0,-20
+NC	-20,0	-5,-5
+In this game, both players know that 10 years is better than 20 and 0 years is better than 5; therefore, C is their dominant strategy and they will both choose C (cheat). Since both players chose C, (10,10) is the outcome and also the Nash Equilibrium. To check whether this is a Nash Equilibrium, check whether either player would like to deviate from this position. Jack wouldn't want to deviate, because if he chose NC and Tom stayed at C, Jack would increase his prison time by 10 years.
+
+Iterated Deletion of Dominated Strategies
+
+Here's another game that doesn't have dominant pure strategies, but that we can solve by iterated deletion of dominated strategies. In other words, we can eliminate strategies that are dominated until we come to a conclusion:
+
+2
+Left	Middle	Right
+1	Up	1,0	1,2	0,1
+Down	0,3	0,1	2,0
+Let's find the dominant strategies. The first strategy that is dominated, is Right. Player 2 will always be better off by playing Middle, so Right is dominated by Middle. At this point the column under Right can be eliminated since Right is no longer an option. This will be shown by crossing out the column:
+
+2
+Left	Middle	Right
+1	Up	1,0	1,2	0,1
+Down	0,3	0,1	2,0
+Remember that both players understand that player 2 has no reason to play Right--player 1 understands that player 2 is trying to find an optimum, so he also no longer considers the payoffs in the Right column. With the Right column gone, Up now dominates Down for player 1. Whether player 2 plays Left or Middle, player 1 will get a payoff of 1 as long as he chooses Up. So now we no longer consider Down:
+
+2
+Left	Middle	Right
+1	Up	1,0	1,2	0,1
+Down	0,3	0,1	2,0
+Now we know that player 1 will choose Up, and player 2 will choose Left or Middle. Since Middle is better than Left (a payoff of 2 vs. 0), player 2 will choose Middle and we have solved the game for the Nash Equilibrium:
+
+2
+Left	Middle	Right
+1	Up	1,0	1,2	0,1
+Down	0,3	0,1	2,0
+To ensure that this answer (Up, Middle) is a Nash Equilibrium, check to see whether either player would like to deviate. As long as player 1 has chosen Up, player 2 will choose Middle. On the other hand, as long as player 2 has chosen Middle, player 1 will choose up.
+
+Multiple Nash Equilibria
+
+Here's a game that demonstrates multiple Nash Equilibria: Two drivers are traveling towards each other on a road. Should they drive on the left or the right side? They don't want to wreck...
+
+Driver 2
+Left	Right
+Driver 1	Left	1,1	-1,-1
+Right	-1,-1	1,1
+Both (Left,Left) and (Right,Right) are Nash Equilibria. As long as they're on opposite sides of the road, the drivers are happy and don't want to deviate. Games like this are often solved by social convention--beforehand all the players agree on a strategy so that everyone is better off. Of course, everyone knows that the right side is the best side to drive on, so the game should look more like this:
+
+Driver 2
+Left	Right
+Driver 1	Left	1,1	-1,-1
+Right	-1,-1	2,2
+In this case, the game itself gives the players a clue as to where the other player will be, even though there are two Nash Equilibria.
+
+Here's a game with three Nash Equilibria and no dominated strategies:
+
+2
+a	b	c
+1	A	1,1	2,0	3,0
+B	0,2	3,3	0,0
+C	0,3	0,0	10,10
+The Nash Equilibria are (A,a), (B,b), and (C,c).
+
+%=============================================%
+
+Example of an iterated deletion of dominated strategy equilibrium
+
+Consider the following game to better understand the concept of iterated elimination of strictly dominated strategies.
+
+
+Player 1 has two strategies and player 2 has three. S1={up,down} and S2={left,middle,right}. For player 1, neither up nor down is strictly dominated. Up is better than down if 2 plays left (since 1>0), but down is better than up if 2 plays right (since 2>0). For player 2, however, right is strictly dominated by middle (since 2>1 and 1>0), so player 2 being rational will not play right.
+
+Thus if player 1 knows that player 2 is rational then player 1 can eliminate right from player 2's strategy space. So, if player 1 knows that player 2 is rational then player 1 can play the game as if it was the game depicted below.
+
+
+In the figure above, down is strictly dominated by up for player 1 , and so if player 1 is rational (and player 1 knows that player 2 is rational, so that the second game applies) then player 1 will not play down. Consequently, if player 2 knows that player 1 is rational, and player 2 knows that player 1 knows that player 2 is rational ( so that player 2 knows that the second game applies) then player 2 can eliminate down from player 1's strategy space, leaving the game looking like below.
+
+
+And now left is strictly dominated by middle for player 2 , leaving (up,middle) as the outcome of the game. This is process is called the iterated elimination of strictly dominated strategies.
