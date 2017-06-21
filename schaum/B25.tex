@@ -1,0 +1,140 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%B25 - Page 321
+Every matrix A defines a game as follows
+\begin{itemize}
+\item[(1)] There are two players , one called R, and the other called C.
+\item[(2)] A play of the game  consists of R choosing a row of A and, simultaneously, C's choosing of a column of A.
+\item[(3)] After each play of the game, R receives from C an amoun equal to the entry in the chosen cell . A negative entry denotes a payment from R to C.
+
+\end{itemize}
+
+
+\subsection{Example 1.2}
+
+\begin{itemize}
+\item[(i)]
+\item[(ii)]
+\item[(iii)]
+\item[(iv)] 
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%B25 - Page 322
+
+We remark that matrix games and the above competition games which can be represented
+by matrix games are termed two-person zero sum games.
+The zero sum corresponds to the fact that the sum of the winnings and losses of all of the players
+is zero after each play.
+There also exists a theory for n-person games and non-zero sum games but that lies beyond the scope of this course.
+\subsection{Strategies}
+
+By a strategy for R in a matrix game, we mean a decision by R to play the various rows with a given probability distribution, for example
+ to play row 1 with a probability of $p_1$, to play row 2 with a probability of $p_2$ and so on.
+The strategy for R is formally denoted by the probability vector $\boldsymbol{p} = {p_1,p_2,\ldots,p_n\}$.
+
+\subsection{Optimum Strategies and the Value of the game}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%B25 - Page 323
+
+\subsection{Definition}
+In a matrix game A, a strategy $P^0$ for player R is an optimum strategy, a strategy $q^0$ for player C is an optimum strategy.
+
+We point out that  the solution of a matrix means find optimum strategies for the players and the value of the game.
+Before we give the solution to an arbitrary matrix game by means of the simplex method
+
+We shall discuss two special cases which occur frequently and which offer simple solutions: striclty determined games and 2 \times 2 games.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%B25 - Page 324
+
+\subsection{$2 \times 2$ Matrix Games}
+
+Lemma
+
+Lemma
+Suppos that the above matrix A is strictly etermined. Then $P^0 = (x_1,x_2)$ is an optimum strategy for player $R$, $Q^0 = (y_1,y_2)$ is an optimum strategy for player C, and y is the value of the game.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%B25 - Page 325
+
+\subsection*{Example 3.1}
+Consider the following matrix game (see Example 1.2).
+
+Thus the game is not fair and is in favour of the column player $C$.
+
+\subsection{Recessive Rows and Columns}
+
+Let A be a matrix game. Suppose A contains a row $r_i$ such that $r_i \leq rj$ for some other
+row $r_j$.
+Recall that $r_i\leq r_j$ means that every entry of $r_i$ is less than or equal to the corresponding entry of $r_j$.
+The $r_i$ is called a recessive row, and $r_j$ is said to domninate it.
+Cleary player $R$ would always play row $j$ than row $i$ since they are guaranteed to win the same or a greater amount in each possible play of the game.
+Accordingly a recessive row can be omitted from the game.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%B25 - Page 326
+
+Solution of a matrix game by the simplex method.
+
+\begin{itemize}
+\item[(1)]
+\item[(2)]
+\item[(3)]
+\end{itemize}
+
+\subsection*{Example 5.1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%B25 - Page 327
+
+\subsection*{Example 5.2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%B25 - Page 328
+
+
+The value of the game is therefore $-4/13$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%B25 - Page 329
+
+\section{Summary}
+
+In finding a soultion to the matrix game, you should follow the following steps.
+\begin{itemize}
+\item[(1)] Test to see if the game is strictly determined.
+\item[(2)] Eliminate all recessive rows and columns.
+\item[(3)] In the case of $2 \times 2$, use the following formula in Theorem 25.3
+\item[(4)] In the case of a $2 \times m$ or an $m \times 2$, reduce the game to a $2 \times 2$ game.
+\item[(5)] Use the simplex method in all other cases.
+\end{itemize}
+
+
+
+\section*{Solved Problems}
+
+
+\subsection{Exercise 25.1}
+
+\begin{itemize}
+\item[(1)]
+\item[(2)]
+\item[(3)]
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Exercise 25.2}
+Find the solution to the following $2 \times 2$ matrix game.
+
+\begin{itemize}
+\item[(1)]
+\item[(2)]
+\item[(3)]
+\item[(4)] 
+\end{itemize}
+
+\subsection{Exercise 25.3}
+Find the solution to the following matrix game.
+
+First circle each row minimum and box each column maxmimum.
+
+Observe there is no saddle point and so the game is not strictly determined.
+We now test for recessive rows and columns.
+Not that the third column is recessive since each entry is larger than the corresponding entry in the
+second column. Hence the third column can be omitted to obtain the game.
