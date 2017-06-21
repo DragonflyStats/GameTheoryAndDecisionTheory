@@ -1,0 +1,279 @@
+
+
+%%- C8
+
+Decision Theory
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{8.1}
+
+There are many situations in which we have to make decisions based on observations or data
+that are random variables.
+The theory behind the solutions for these situations is known as \textit{decision theory}
+or \textit{hypothesis testing}.
+In communications technology or radar technology, this area is also known as signal detection theory.
+
+In this section we will provide a brief overview of decision theory and various decision tests.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{8.2 Hypothesis Testing and Types of Error}
+
+
+%---------------------------------------------------------%
+\begin{enumerate}[(i)]
+\item $H_0$ true; accept $H_0$. 
+\item $H_0$ true; 
+\item $H_1$ true; accept $H_1$. 
+\item $H_1$ true; 
+\end{enumerate}
+
+%---------------------------------------------------------%
+
+The first and third actions correspond to correct decisions, and the second and fourth correspond to errors.
+These errors are classified as follows
+
+%---------------------------------------------------------%
+\begin{enumerate}[(i)]
+\item Type I Error:
+\item Type II Error: 
+\end{enumerate}
+
+Let $P_{1}$ and $P_{II}$ denote the probabilities of Type I and Type II errors
+
+\[ P_{I} = P(D|H) = P(x \in \mathbb{R}) \]
+\[ P_{II} = P(D|H) = P(x \in \mathbb{R}) \]
+
+%Page 265 Middle
+
+The probabilities of correct decisions (actions 1 and 3) may be expressed as
+
+\[ P_{I} = P(D|H) = P(x \in \mathbb{R}) \]
+\[ P_{II} = P(D|H) = P(x \in \mathbb{R}) \]
+
+In radar signal detection, the two hypotheses are
+
+\[ H_0 = \]
+\[ H_1 = \]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{8.3 Decision Tests}
+
+\subsubsection*{A. Maximum-Likelihood Test}
+
+Note that the likelihood ratio $\Lambda(X)$ is often expressed as
+\[ \Lambda(X) =  \frac{f(x|H_1)}{f(x|H_0)} \]
+\subsubsection*{B. MAP Test}
+
+\subsubsection*{C. Neyman-Pearson Test}
+
+It is not possible to simultaneously minimize both $\alpha$ and $\beta$.
+
+The Neyman-Pearson Test provides a workable solution to this problem in that the tests minimized $beta$ for a given level of $\alpha$.
+
+This is a classical problem in optimization: maxmizing a function subject to a constraint, which can be solved by using the Lagrange multiplier Method.
+
+
+Then the critical region $R_1$ is chosen to maximize $J$. It can be shown that the Neyman-Pearson test can be expressed in terms of the likelihood test as follow:
+
+\[  Equation \]
+
+\subsubsection*{D. Bayes Test}
+
+
+\subsubsection*{E. Minimum Probability of Error Test}
+
+
+\subsubsection*{F. Minimax Test}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Solved Problems}
+
+\begin{enumerate}
+\item
+% - Example 8.1
+
+Suppose a manufacturer of memory chips observes that the probability of chip failure is $p=0.05$. A new procedure is introduced to improve the design of chips.
+To test this new procedure, 200 chips could be produced using this new procedures and tests.
+
+Let the random variable $X$ denote the number of chips that fail.
+
+%------------------------------------------------------%
+\item
+% - Example 8.2
+
+
+We would reject the new procedure if $X>5$. Find the probability of a Type II error.
+%------------------------------------------------------%
+\item 
+
+Let $(X_1,X_2,\ldots,X_n)$ be a random sample of a normal random variable X with mean $mu$ and variance $\sigma^2=100)
+
+
+% - Example 8.3
+
+\begin{itemize}
+\item[(a)]
+\item[(b)]
+\item[(c)]
+\end{itemize}
+
+\noindent \textbf{Solutions}
+\begin{itemize}
+\item[(a)]
+\item[(b)]
+\item[(c)]
+\end{itemize}
+
+%------------------------------------------------------%
+\item
+% - Example 8.4
+Consider the binary decision theory problem of example 3. We modify the decision rule such that we reject $H_0$ if $x \geq c$
+
+%------------------------------------------------------%
+\item
+% - Example 8.5
+
+\item
+% - Example 8.6
+
+In a simple binary communications system, during every T seconds, one of two possible signals $s_0(t)$ and
+$s_0(t)$ is transmitted.
+
+\begin{itemize}
+\item[(a)] Using the maximum likelihood test, determine which signal has been transmitted.
+\item[(b)] Find $P_{I}$ and $P_{II}$.
+\end{itemize}
+
+\noindent \textbf{Solutions}
+\begin{itemize}
+\item[(a)]
+\item[(b)]
+\end{itemize}
+
+%------------------------------------------------%
+
+\item 
+% - Example 8.7
+
+
+\begin{itemize}
+\item[(a)] Using the MAP Test, determinethe signal that is transmitted when x = 0.6.
+\item[(b)]
+\end{itemize}
+
+\noindent \textbf{Solutions}
+\begin{itemize}
+\item[(a)]
+\item[(b)]
+\end{itemize}
+%------------------------------------------------%
+
+\item
+% - Example 8.8
+
+%------------------------------------------------%
+\item
+% - Example 8.9
+
+
+%------------------------------------------------%
+\item
+% - Example 8.10
+
+
+%------------------------------------------------%
+
+\item 
+% - Example 8.11
+
+\begin{itemize}
+\item[(a)]
+\item[(b)]
+\end{itemize}
+
+\noindent \textbf{Solutions}
+\begin{itemize}
+\item[(a)]
+\item[(b)]
+\end{itemize}
+
+%------------------------------------------------%
+\item
+% - Example 8.12
+
+
+%------------------------------------------------%
+\item
+% - Example 8.13
+
+
+%------------------------------------------------%
+\item
+% - Example 8.14
+
+
+%------------------------------------------------%
+\item 
+% - Example 8.15
+
+\begin{itemize}
+\item[(a)] Determine the Maximum Likelihood Test.
+\item[(b)] Find P_1 and P_{II} for n=5 and n= 10.
+\end{itemize}
+
+\noindent \textbf{Solutions}
+\begin{itemize}
+\item[(a)] Setting $\mu_0 = 0$ and $\mu_1 = 1$, the maximum likelihood test is
+\[  \frac{1}{n}  \]
+
+\item[(b)]
+\end{itemize}
+
+
+%------------------------------------------------%
+
+\item
+% - Example 8.16
+
+\end{enumerate}
+
+%====================%
+\section{Supplementary Problems}
+
+\begin{enumerate}
+%------------------------------------------------%
+\item
+% - Example 8.17
+
+
+%------------------------------------------------%
+\item
+% - Example 8.18
+
+
+%------------------------------------------------%
+\item 
+% - Example 8.19
+
+%------------------------------------------------%
+\item
+% - Example 8.20
+
+
+%------------------------------------------------%
+\item
+% - Example 8.21
+
+
+%------------------------------------------------%
+\item 
+% - Example 8.22
+
+
+%------------------------------------------------%
+\item 
+% - Example 8.23
+
+\end{itemize}
+\end{document}
