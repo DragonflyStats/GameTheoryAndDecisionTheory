@@ -1,0 +1,100 @@
+%This is a latex file
+
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\setlength{\oddsidemargin}{0.0mm} \setlength{\textwidth}{160.0mm}
+\setlength{\topmargin}{-10.0mm} \setlength{\textheight}{250mm}
+\setlength{\parindent}{0mm} \setlength{\parskip}{2mm}
+\pagestyle{empty}
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+
+\begin{document}
+\begin{center}
+\textbf{Cournot Duopoly with Heterogeneous items: Linear Demand and Linear Costs %(  au Spaniel)
+}
+\end{center}
+Let $x_1$ and $x_2$ be the quantities of heterogeneous or non-identical items produced by two firms with associated costs $C_1(x_1) = c_1x_1$ and $C_2(x_2)= c_2x_2$ respectively.\\
+Firm 1's items sell at $P_1 = a_1 - b_{11}x_1-b_{12}x_2$ each, firm 2's at $P_2 = a_2 - b_{21}x_1-b_{22}x_2$ each and it is assumed that all items produced are sold. \\ The profits made by the firms are then
+$$ \pi_1 = P_1 x_1 - c_1 x_1 = \left(a_1-c_1 - b_{11}x_1 - b_{12}x_2\right)x_1$$
+$$ \pi_2 = P_2 x_2 - c_2 x_2 =\left(a_2-c_2 - b_{21}x_1 - b_{22}x_2\right)x_2$$
+respectively.\\
+We'll proceed with a specific example:
+$P_1 = 10 - \frac{x_1 + x_2}{1000}, \; P_2 = 9 - \frac{x_1 + x_2}{1250}, \; C_1(x_1) = 2.5x_1, \; C_2(x_2) = 2x_2$.
+The profits made by the firms are then
+$$ \pi_1 = P_1 x_1 - c_1 x_1 =  \left(7.5 - \frac{x_1 + x_2}{1000}\right)x_1 $$
+$$ \pi_2 = P_2 x_2 - c_2 x_2 = \left(7 - \frac{x_1 + x_2}{1250}\right)x_2 $$
+respectively.\\
+Maximising $\pi_1$ with respect to $x_1$
+\begin{eqnarray}
+ \frac{\partial \pi_1} {\partial x_1} &=& 7.5 - \frac{2}{1000}x_1 - \frac{1}{1000}x_2 \nonumber \\
+ & \stackrel{set}{=} & 0 \nonumber \\
+ \Rightarrow x_1 &=& 3750 - \frac{1}{2} x_2 \label{r1}
+ \end{eqnarray}
+ Similarly maximising $\pi_2$ with respect to $x_2$ yields
+ \begin{equation} x_2 =  4375
+ - \frac{1}{2} x_1 \label{r2} \end{equation}
+ We'll assume that Equations \ref{r1} and \ref{r2} give nonnegative values for $x_1$ and $x_2$ and so represent Reaction Functions.
+ Solving equations \ref{r1} and \ref{r2} simultaneously gives the \textit{equilibrium} values
+  \begin{eqnarray*}
+ % \nonumber to remove numbering (before each equation)
+   x^*_1 &=& 2083.33 \\
+   x^*_2 &=& 3333.33
+ \end{eqnarray*}
+ At these equilibrium values
+ $$ P_1^* = 4.5833, \hspace{10mm} P_2^* = 4.67$$
+ $$ \pi^*_1 = 4340.28, \hspace{10mm} \pi^*_2 = 8888.89$$
+
+ \begin{center}
+\textbf{Stackelberg Duopoly %(  au Spaniel)
+}
+\end{center}
+We'll consider a \textit{Stackelberg} duopoly in which Firm 1 is the Leader and Firm 2 is the Follower. Irrespective of what the leader does, the follower will use the reaction function (Eq. \ref{r2}) as its best response.
+
+\newpage
+
+Knowing this, the leader seeks to maximise $$ \Pi_1 = \left(7.5 - \frac{x_1 + 4375
+ - \frac{1}{2} x_1 }{1000}\right)x_1  = \left( 3.125 - \frac{x_1}{2000}\right) x_1$$
+as a function of $x_1$.
+
+\begin{eqnarray}
+ \frac{d \Pi_1} {d x_1} &=&3.125-\frac{x_1}{1000} \nonumber \\
+ & \stackrel{set}{=} & 0 \nonumber \\
+ \Rightarrow x_1 &=& 3125 \label{r3}
+ \end{eqnarray}
+
+ Denoting this optimal value by $X_1^*$ and the corresponding value of $x_2$ by $X_2^*$ (substitute Eq. \ref{r3} into Eq. \ref{r2}) gives
+
+ $$ X_1^* = 3125, \hspace{10mm} X_2^* = 2812.5 $$
+
+ At these equilibrium values
+$$ P_1^* = 4.0625 , \hspace{10mm} P_2^*= 4.25$$
+ and
+ \begin{equation} \Pi_1^* = 4882.8125, \hspace{10mm} \Pi_2^* = 6328.125\label{sp} \end{equation}
+\end{document}
+
+
+
+\begin{figure}[h]
+\centering
+%\begin{minipage}[l]{80mm}
+{\includegraphics[height=80mm,width=90mm]{Log-OGY.jpg}}
+%\end{minipage}
+%\qquad
+%\begin{minipage}[l]{80mm}
+%{\includegraphics[height=85mm,width=90mm]{rec-fb3.pdf}}
+%\end{minipage}
+\caption{The trajectory of the Logistic Map with OGY control starting from $x_0 = 0.43$} \label{fig:trajOGY}
+\vspace{5mm}
+\end{figure}

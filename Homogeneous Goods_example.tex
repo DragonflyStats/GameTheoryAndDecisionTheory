@@ -1,0 +1,89 @@
+%This is a latex file
+
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\setlength{\oddsidemargin}{0.0mm} \setlength{\textwidth}{160.0mm}
+\setlength{\topmargin}{-10.0mm} \setlength{\textheight}{250mm}
+\setlength{\parindent}{0mm} \setlength{\parskip}{2mm}
+\pagestyle{empty}
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+
+\begin{document}
+\begin{center}
+\textbf{Cournot Duopoly with Homogeneous items: Linear Demand and Linear Costs %(  au Spaniel)
+}
+\end{center}
+Let $x_1$ and $x_2$ be the quantities of homogeneous items produced by two firms with associated costs $C_1(x_1) = c_1x_1$ and $C_2(x_2)= c_2x_2$ respectively.\\
+Items sell at $P = a - b(x_1+x_2)$ each and it is assumed that all items produced are sold. \\ The profits made by the firms are then
+$$ \pi_1 = P x_1 - c_1 x_1 = \left(a-c_1 - b(x_1+x_2)\right)x_1$$
+$$ \pi_2 = P x_2 - c_2 x_2 = \left(a-c_2 - b(x_1+x_2)\right)x_2$$
+respectively.\\
+Let's consider the specific example: $ P = 5 -\frac{x_1 + x_2}{2000}$ where the firms have costs $ C_1(x_1) = 2x_1$ and $C(x_2) = 2.5x_2$ respectively.\\
+The profits made by the firms are then
+$$ \pi_1 = \left(3 - \frac{x_1+x_2}{2000}\right)x_1$$
+$$ \pi_2 = \left(2.5 - \frac{x_1+x_2}{2000}\right)x_2$$
+respectively.\\
+Maximising $\pi_1$ with respect to $x_1$
+\begin{eqnarray}
+ \frac{\partial \pi_1} {\partial x_1} &=& 3 - \frac{x_1+x_2}{2000} - \frac{1}{2000}x_1 \nonumber \\
+ & \stackrel{set}{=} & 0 \nonumber \\
+ \Rightarrow x_1 &=& 3000 - \frac{1}{2} x_2 \label{r1}
+ \end{eqnarray}
+ Similarly maximising $\pi_2$ with respect to $x_2$ yields
+ \begin{equation} x_2 = 2500 - \frac{1}{2} x_1 \label{r2} \end{equation}
+ Equations \ref{r1} and \ref{r2} are referred to as \textit{Reaction Functions} or Best Response Functions -  provided their solutions are nonnegative, which I'll assume in the following.\\
+ Solving equations \ref{r1} and \ref{r2} simultaneously gives the \textit{equilibrium} values
+ $$ x_1^* = 2333.33, \hspace{10mm} x_2^* = 1333.33 $$
+ At these equilibrium values
+ $$ P^* = 3.17 $$
+ and
+ \begin{equation} \pi_1^* = 2722.22, \hspace{10mm} \pi_2^* = 888.89\label{cp} \end{equation}
+ \textit{Cournot} duopoly is an example of a 2-player matrix form game with an infinite number of strategies available to both players (firms), i.e. the choice of $x_1$ and $x_2$ respectively. $\langle x_1^*, x_2^* \rangle $ is then a \textit{Nash} equilibrium with payoffs $ \pi_1^*$ and $\pi_2^*$ respectively.\\
+
+ \begin{center}
+\textbf{Stackelberg Duopoly %(  au Spaniel)
+}
+\end{center}
+\textit{Stackelberg} duopoly is an example of a 2-player extensive form game in which Firm 1 moves first (the ``Leader'') and Firm 2 responds (the ``Follower''). Irrespective of what the leader does, the follower will use the reaction function (Eq. \ref{r2}) as it is its best response.
+\newpage
+Knowing this, the leader seeks to maximise $$ \Pi_1 = \left(3 - \frac{\left(x_1 + 2500 - \frac{1}{2} x_1\right)}{2000}\right) x_1 = \left(1.75 - \frac{x_1}{4000}\right) x_1$$
+as a function of $x_1$.
+\begin{eqnarray}
+ \frac{d \Pi_1} {d x_1} &=& 1.75 - \frac{x_1}{2000} \nonumber \\
+ & \stackrel{set}{=} & 0 \nonumber \\
+ \Rightarrow x_1 &=& 3500 \label{r3}
+ \end{eqnarray}
+ Denoting this optimal value by $X_1^*$ and the corresponding value of $x_2$ by $X_2^*$ (substitute Eq. \ref{r3} into Eq. \ref{r2}) gives
+$$ X_1^* = 3500, \hspace{10mm} X_2^* = 750 $$
+At these equilibrium values
+$$ P^* = 2.875 $$
+ and
+ \begin{equation} \Pi_1^* = 3062.5, \hspace{10mm} \Pi_2^* = 281.25 \label{sp} \end{equation}
+
+Exercise: Redo the analysis if Firm 2 is the leader?
+\end{document}
+
+\begin{figure}[h]
+\centering
+%\begin{minipage}[l]{80mm}
+{\includegraphics[height=80mm,width=90mm]{Log-OGY.jpg}}
+%\end{minipage}
+%\qquad
+%\begin{minipage}[l]{80mm}
+%{\includegraphics[height=85mm,width=90mm]{rec-fb3.pdf}}
+%\end{minipage}
+\caption{The trajectory of the Logistic Map with OGY control starting from $x_0 = 0.43$} \label{fig:trajOGY}
+\vspace{5mm}
+\end{figure}
