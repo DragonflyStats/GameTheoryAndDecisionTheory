@@ -1,4 +1,23 @@
-Game Theory
+
+\documentclass[]{report}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\begin{document}
+\chapter{Game Theory}	
+	Game Theory
 
 Dutch Auctions
 
@@ -43,25 +62,30 @@ Topics covered are:
 \section{What is Game Theory}
 
 Game theory is a branch of applied mathematics that uses models to study interactions with formalised incentive structures ("games"). 
-Unlike decision theory, which also studies formalised incentive structures, game theory encompasses decisions that are made in an environment where various players interact strategically.
-In other words, game theory studies choice of optimal behavior when costs and benefits of each option are not fixed, but depend upon the choices of other individuals.
 
-Game theory has applications in a variety of fields, including economics,  international relations, evolutionary biology, political science, and  military strategy. Game theorists study the predicted and actual  behaviour of individuals in games, as well as optimal strategies.  Seemingly different situations can have similar incentive  structures, thus all exemplifying one particular game. 
+Unlike decision theory, which also studies formalised incentive structures, game theory encompasses decisions that are made in an environment where various players interact strategically. In other words, game theory studies choice of optimal behavior when costs and benefits of each option are not fixed, but depend upon the choices of other individuals.
 
-Game theory
+
 
 Game theory is the science of strategic reasoning, in such a way that it studies the behaviour of rational game players who are trying to maximise their utility, profits, gains, etc., in interaction with other players, and therefore in a context of strategic interdependence.
 
- 
+Game theory has applications in a variety of fields, including economics,  international relations, evolutionary biology, political science, and  military strategy. Game theorists study the predicted and actual  behaviour of individuals in games, as well as optimal strategies.  Seemingly different situations can have similar incentive  structures, thus all exemplifying one particular game. 
+
+
+\subsection{Types of Games}
+
+In game theory, the unscrupulous diner's dilemma (or just diner's dilemma) is an n-player prisoner's dilemma. The situation imagined is that several individuals go out to eat, and prior to ordering, they agree to split the check equally between all of them. Each individual must now choose whether to order the expensive or inexpensive dish. It is presupposed that the expensive dish is better than the cheaper, but not by enough to warrant paying the difference when eating alone. Each individual reasons that the expense s/he adds to their bill by ordering the more expensive item is very small, and thus the improved dining experience is worth the money. However, having all reasoned thus, they all end up paying for the cost of the more expensive meal, which by assumption, is worse for everyone than having ordered and paid for the cheaper meal.
 
 \subsection{Historical Framework}
 
 The initial game theory discussions and analysis can be traced back a long time before the 20th century, with works from authors such as James Waldegrave and his minimax mixed strategy solution for a two-person game in 1713, James Madison and his theoretical analysis of what would the effect of different tax systems be, or Antoine Cournot’s solution to a duopoly that resembles to what would later be known as Nash equilibria. However, it is not until the 20th century, that game theory is broadly developed. We can differentiate several periods in the game theory evolution through the 20th century. However, many concepts were continuously developed through the years.
 
-During the earliest years of the century, from 1910 to 1930, the main focus of game theory was on  strictly competitive games commonly referred to as two-person zero-sum games. In this kind of games, the preferences (and payoffs) of a player will always be opposite to the other player’s and therefore cooperation between both players will be pointless. This kind of games has been extremely productive, as they have set the bases for future development of game theory, becoming its first main milestones. During these years, John von Neumann’s contribution was especially important, and thus, he is considered as one of the fathers of game theory.  In his “On the Theory of Parlor Games”, 1928, he introduced concepts such as the extensive (or tree) form for the description of sequential games and the minimax theorem, providing empirical support to everything he wrote. Another important contribution during these years is the introduction of the strategic form (game matrix) of a game that represents each player’s profile in a matrix form.
+During the earliest years of the century, from 1910 to 1930, the main focus of game theory was on  strictly competitive games commonly referred to as two-person zero-sum games. In this kind of games, the preferences (and payoffs) of a player will always be opposite to the other player’s and therefore cooperation between both players will be pointless. This kind of games has been extremely productive, as they have set the bases for future development of game theory, becoming its first main milestones. During these years, John von Neumann’s contribution was especially important, and thus, he is considered as one of the fathers of game theory.  In his “\textit{On the Theory of Parlor Games}”, 1928, he introduced concepts such as the extensive (or tree) form for the description of sequential games and the minimax theorem, providing empirical support to everything he wrote. Another important contribution during these years is the introduction of the strategic form (game matrix) of a game that represents each player’s profile in a matrix form.
 
 
-The following 20 years were heavily influenced by von Neumann and Oskar Morgenstern’s work, which would culminate in the joint publication of their book “Theory of Games and Economic Behaviour”, 1944.  With this book, game theory gained the status of an independent scientific discipline. One of the major contributions of this book is the application of strategy game concepts instead of random ones, the introduction of a notion of a cooperative game, its coalitional form, and the ‘Neumann-Morgenstern stable sets’. They were the first to extensively apply game theory for practical reasons, especially for analysing economic behaviour. It is also important to stress that the impact of this book has gone beyond its own time.  Many future developments emerged from it, such as the notion of core and transferable utility, and the further development of expected utility theory. Other developments from this period include games with continuum of pure strategies, the computation of minimax strategies and advances in mathematical methods that would be instrumental to later work.
+The following 20 years were heavily influenced by von Neumann and Oskar Morgenstern’s work, which would culminate in the joint publication of their book “\textit{Theory of Games and Economic Behaviour}”, 1944.  With this book, game theory gained the status of an independent scientific discipline. One of the major contributions of this book is the application of strategy game concepts instead of random ones, the introduction of a notion of a cooperative game, its coalitional form, and the ‘Neumann-Morgenstern stable sets’. They were the first to extensively apply game theory for practical reasons, especially for analysing economic behaviour. It is also important to stress that the impact of this book has gone beyond its own time.  
+
+Many future developments emerged from it, such as the notion of core and transferable utility, and the further development of expected utility theory. Other developments from this period include games with continuum of pure strategies, the computation of minimax strategies and advances in mathematical methods that would be instrumental to later work.
 
 The 1950s were a key period for game theory. The initial phase of incubation had reached its end and the economic perspective and application took the lead, overtaking other perspectives such as the military one. It was during this period when John Nash laid the essential groundwork that would result in the general non-cooperative theory and for cooperative bargaining theory; Lloyd Shapley was another key figure as he defined the value for coalitional games (cooperative games), he initiated the theory of stochastic games, co-invented the core with D.B. Gillies, and, along with John Milnor, developed the first game models with a continuum of players; Harold Kuhn worked on behaviour strategies and perfect recall. The prisoner’s dilemma, which is probably the best known game, was formalized by Al Tucker also during this period. It was also during these years, when the Folk theorem appeared as a result of the interest and study of repeated games, used to analyse punishment strategies in collusion agreements.
 
@@ -73,15 +97,20 @@ It is worth to note, that game theory should be regarded as a tool to find where
 %=========================================================================%
 \newpage
 \subsection{Cooperative game}
-A cooperative game is a game wherein two or more players do not compete, but rather strive toward a unique objective and therefore win or lose as a group.
-
-Cooperative games are rare, but still many exist. One example is "Stand Up", where a number of individuals sit down, link arms (all facing away from each other) and attempt to stand up. This objective becomes more difficult as the number of players increases.
-
-Another is the counting game, where the players, as a group, attempt to count to 20 with no two participants saying the same number twice. In a cooperative version of volleyball, the emphasis is on keeping the ball in the air for as long as possible.
-
-Cooperative games are rare in recreational gaming, where conflict between players is a powerful force. However, such scenarios can occur in real life (when the sense of the word "game" is extended beyond recreational games). For example, operation of a successful business is, at least in theory, a cooperative game, since all participants benefit if the business succeeds and suffer if it fails.
-
-Role-playing games are the most common form of cooperative game, though these games are not always purely cooperative. In such games, the players (who act through personae called "characters") usually strive toward intertwined and similar goals. However, each character has his or her own ambitions, and ultimately, individual goals. Hence conflict between characters often occurs in these games.
+\begin{itemize}
+	\item A cooperative game is a game wherein two or more players do not compete, but rather strive toward a unique objective and therefore win or lose as a group.
+	
+	\item 	Cooperative games are rare, but still many exist. One example is "Stand Up", where a number of individuals sit down, link arms (all facing away from each other) and attempt to stand up. This objective becomes more difficult as the number of players increases.
+	
+	\item 	Another is the counting game, where the players, as a group, attempt to count to 20 with no two participants saying the same number twice. In a cooperative version of volleyball, the emphasis is on keeping the ball in the air for as long as possible.
+	
+	\item 	Cooperative games are rare in recreational gaming, where conflict between players is a powerful force. However, such scenarios can occur in real life (when the sense of the word "game" is extended beyond recreational games). For example, operation of a successful business is, at least in theory, a cooperative game, since all participants benefit if the business succeeds and suffer if it fails.
+	
+	\item 	Role-playing games are the most common form of cooperative game, though these games are not always purely cooperative. In such games, the players (who act through personae called "characters") usually strive toward intertwined and similar goals. However, each character has his or her own ambitions, and ultimately, individual goals. Hence conflict between characters often occurs in these games.
+\end{itemize}
+%=========================================================================%
+\subsection{Winner's Curse}
+The winner's curse is a phenomenon that may occur in common value auctions with incomplete information. In short, the winner's curse says that in such an auction, the winner will tend to overpay. The winner may overpay or be "cursed" in one of two ways: 1) the winning bid exceeds the value of the auctioned asset such that the winner is worse off in absolute terms; or 2) the value of the asset is less than the bidder anticipated, so the bidder may still have a net gain but will be worse off than anticipated.[1] However, an actual overpayment will generally occur only if the winner fails to account for the winner's curse when bidding (an outcome that, according to the revenue equivalence theorem, need never occur).
 
 %=========================================================================%
 \subsection{Axiomatic bargaining}
@@ -92,14 +121,165 @@ However, you may not be concerned with fairness and may demand more. How does Na
 
 %=========================================================================%
 % Game Theory
-
-\subsection{Nash Equilibrium}
+\newpage
+\section{Nash Equilibrium}
 
 Nash Equilibrium recommnds a strategy to each player that the player cannot improve upon unilaterally, as long as the other players follow the recommendation.
 
 Since the other olayers are assumed to be rational, it is reasonable to expectt the opponents to follow the recommendation as well.
 Game Theory
 
-%=========================================================================%
-\subsection{Winner's Curse}
-The winner's curse is a phenomenon that may occur in common value auctions with incomplete information. In short, the winner's curse says that in such an auction, the winner will tend to overpay. The winner may overpay or be "cursed" in one of two ways: 1) the winning bid exceeds the value of the auctioned asset such that the winner is worse off in absolute terms; or 2) the value of the asset is less than the bidder anticipated, so the bidder may still have a net gain but will be worse off than anticipated.[1] However, an actual overpayment will generally occur only if the winner fails to account for the winner's curse when bidding (an outcome that, according to the revenue equivalence theorem, need never occur).
+
+the Nash equilibrium is a solution concept of a non-cooperative game involving two or more players in which each player is assumed to know the equilibrium strategies of the other players, and no player has anything to gain by changing only his or her own strategy.[1] If each player has chosen a strategy and no player can benefit by changing strategies while the other players keep theirs unchanged, then the current set of strategy choices and the corresponding payoffs constitutes a Nash equilibrium. 
+
+The Nash equilibrium is one of the foundational concepts in game theory.
+
+
+%===========================================================%
+
+\subsection{Informal definition}
+Informally, a strategy profile is a Nash equilibrium if no player can do better by unilaterally changing his or her strategy. To see what this means, imagine that each player is told the strategies of the others. Suppose then that each player asks themselves: "Knowing the strategies of the other players, and treating the strategies of the other players as set in stone, can I benefit by changing my strategy?"
+
+If any player could answer "Yes", then that set of strategies is not a Nash equilibrium. But if every player prefers not to switch (or is indifferent between switching and not) then the strategy profile is a Nash equilibrium. Thus, each strategy in a Nash equilibrium is a best response to all other strategies in that equilibrium.
+
+The Nash equilibrium may sometimes appear non-rational in a third-person perspective. This is because it may happen that a Nash equilibrium is not Pareto optimal.
+
+The Nash equilibrium may also have non-rational consequences in sequential games because players may "threaten" each other with non-rational moves. For such games the subgame perfect Nash equilibrium may be more meaningful as a tool of analysis.
+
+
+
+
+\newpage
+
+%%- http://policonomics.com/prisoners-dilemma/
+
+
+\section{Prisoner’s dilemma}
+
+The prisoner’s dilemma is probably the most widely used game in game theory. Its use has transcended Economics, being used in fields such as business management, psychology or biology, to name a few. Nicknamed in 1950 by Albert W. Tucker, who developed it from earlier works, it describes a situation where two prisoners, suspected of burglary, are taken into custody. However, policemen do not have enough evidence to convict them of that crime, only to convict them on the charge of possession of stolen goods.
+
+\begin{verbatim}
+Example PD payoff matrix
+Prisoner 2
+Prisoner 1
+Cooperate (with other)	Defect (betray other)
+Cooperate (with other)	2, 2	0, 3
+Defect (betray other)	3, 0	1, 1
+\end{verbatim}
+
+Imagine two prisoners held in separate cells, interrogated simultaneously, and offered deals (lighter jail sentences) for betraying their fellow criminal. They can "cooperate" (with the other prisoner) by not snitching, or "defect" by betraying the other. However, there is a catch; if both players defect, then they both serve a longer sentence than if neither said anything. Lower jail sentences are interpreted as higher payoffs (shown in the table).
+
+The prisoner's dilemma has a similar matrix as depicted for the coordination game, but the maximum reward for each player (in this case, 3) is obtained only when the players' decisions are different. Each player improves their own situation by switching from "cooperating" to "defecting", given knowledge that the other player's best decision is to "defect". The prisoner's dilemma thus has a single Nash equilibrium: both players choosing to defect.
+
+What has long made this an interesting case to study is the fact that this scenario is globally inferior to "both cooperating". That is, both players would be better off if they both chose to "cooperate" instead of both choosing to defect. However, each player could improve their own situation by breaking the mutual cooperation, no matter how the other player possibly (or certainly) changes their decision.
+
+
+
+
+Prisoner's dilemmaIf none of them confesses (they cooperate with each other), they will both be charged the lesser sentence, a year of prison each. The police will question them on separate interrogation rooms, which means that the two prisoners cannot communicate (hence imperfect information). The police will try to convince each prisoner to confess the crime by offering them a “get out of jail free card”, while the other prisoner will be sentenced to a ten years term. If both prisoners confess (and therefore they defect), each prisoner will be sentenced to eight years. Both prisoners are offered the same deal and know the consequences of each action (complete information) and are completely aware that the other prisoner has been offered the exact same deal (therefore, it’s common knowledge).
+
+
+
+\subsection{Description:}
+
+Since prisoners cannot communicate and will (supposedly) make their decision at the same time, this is considered to be a simultaneous game, and can be analysed using the strategic form, as in the adjacent game matrix. 
+
+As described before, if both prisoners confess the crime they will be charged an eight years sentence each. If neither confesses, they will be charged one year each. If only one confesses, that prisoner will go free, while the other will be charged a ten years sentence. These can be seen as the respective payoffs for each set of strategies.
+
+Prisoner's dilemma - Nash and Pareto equilibria
+\begin{itemize}
+\item Eliminating all dominated strategies, in order to get the dominant strategy, can solve this game. This is, each prisoner will analyse their best strategy given the other prisoner’s possible strategies. Prisoner 1 (P1) has to build a belief about what choice P2 is going to make, in order to choose the best strategy. If P2 confesses (P2C), he will get either -8 or 0, and if he lies (P2L) he will get either -10 or -1. 
+	
+\item It can be easily seen that P2 will choose to confess, since he will be better off. Therefore, P1 must choose the best strategy given that P2 will choose to confess: P1 can either confess (P1C, which pays -8) or lie (P1L, which pays -10). The rational thing to do for P1 is to confess. 
+	
+\item	Proceeding inversely, we analyse the beliefs of P2 about P1’s strategies, which gets us to the same point: the rational thing to do for P2 is to confess. Therefore, “to confess” is the dominant strategy. P1C, P2C is the Nash equilibrium in this game (underlined in red), since it is the set of strategies that maximise each prisoner’s utility given the other prisoner’s strategy.
+	
+\item Nash equilibriums can be used to predict the outcome of finite games, whenever such equilibrium exists. On the downside, we find the issue that arises when dealing with a Nash equilibrium that is neither social nor ethical, and where efficiency may be subjective, which is the case in the prisoner’s dilemma, where the Nash equilibrium does not meet the criteria for being Pareto optimal (underlined in green).
+	
+\end{itemize}
+
+
+
+\subsection{Generalisation of the game:}
+
+The prisoner’s dilemma is not always presented as we have seen in this case. Payoffs for each set of strategies will vary, depending on each person. However, there are a few rules that can be used to build a “proper” prisoner’s dilemma game.
+
+Prisoner's dilemma - StructureIn the adjacent game matrix, we’ve renamed each player’s payoffs, in order to determine the conditions needed to design a prisoner’s dilemma game. In a traditional prisoner’s dilemma, we have: A > B > C > D (in absolute terms). In our previous example, this condition is met (A=10, B=8, C=1 and D=0). In every case, A>B and C>D imply that confess-confess is a Nash equilibrium.
+
+It must be noted that the asymmetry of the game is not the important part of the prisoner’s dilemma. The interesting thing about this game is the fact that its Nash equilibrium is not socially optimum.
+
+
+
+\subsection{Repeated prisoner’s dilemma games:}
+
+In order to see what equilibrium will be reached in a repeated game of the prisoner’s dilemma kind, we must analyse two cases: the game is repeated a finite number of times, and the game is repeated an infinite number of times.
+
+When the prisoners know the number of repetitions, it’s interesting to operate a backwards induction to solve the game. Consider the strategies of each player when they realise the next round is going to be the last. They behave as if it was a one-shot game, thus the Nash equilibrium applies, and the equilibrium would be confess-confess, just like in the one-time game. Now consider the game before the last. Since each player knows in the next, final round they are going to confess, there’s no advantage to lie (cooperate with each other) on this round either. The same logic applies for prior moves. Therefore, confess-confess is the Nash equilibrium for all rounds.
+
+The situation with an infinite number of repetitions is different, since there will be no last round, a backwards induction reasoning does not work here. At each round, both prisoners reckon there will be another round and therefore there are always benefits arising form the cooperate (lie) strategy. However, prisoners must take into account punishment strategies, in case the other player confesses in any round.
+
+
+\section{Glossary}
+
+\begin{itemize}
+\item \textbf{Normal form game}
+A game in normal form is a function:
+
+${\displaystyle \pi \ :\prod _{i\in \mathrm {N} }\Sigma \ ^{i}\to \mathbb {R} ^{\mathrm {N} }} \pi \ :\prod _{i\in \mathrm {N} }\Sigma \ ^{i}\to \mathbb {R} ^{\mathrm {N} }$
+Given the tuple of strategies chosen by the players, one is given an allocation of payments (given as real numbers).
+
+A further generalization can be achieved by splitting the game into a composition of two functions:
+
+${\displaystyle \pi \ :\prod _{i\in \mathrm {N} }\Sigma \ ^{i}\to \Gamma \ } \pi \ :\prod _{i\in \mathrm {N} }\Sigma \ ^{i}\to \Gamma \ $
+the outcome function of the game (some authors call this function "the game form"), and:
+
+${\displaystyle \nu \ :\Gamma \ \to \mathbb {R} ^{\mathrm {N} }} \nu \ :\Gamma \ \to \mathbb {R} ^{\mathrm {N} }$
+the allocation of payoffs (or preferences) to players, for each outcome of the game.
+
+\item \textbf{Extensive form game}
+This is given by a tree, where at each vertex of the tree a different player has the choice of choosing an edge. The outcome set of an extensive form game is usually the set of tree leaves.
+
+\item \textbf{Cooperative game}
+A game in which players are allowed to form coalitions (and to enforce coalitionary discipline). A cooperative game is given by stating a value for every coalition:
+
+${\displaystyle \nu \ :2^{\mathbb {P} (N)}\to \mathbb {R} } \nu \ :2^{\mathbb {P} (N)}\to \mathbb {R} $
+It is always assumed that the empty coalition gains nil. Solution concepts for cooperative games usually assume that the players are forming the grand coalition ${\displaystyle N} N$, whose value ${\displaystyle \nu (N)} \nu (N) $ is then divided among the players to give an allocation.
+
+\item \textbf{Simple game}
+A Simple game is a simplified form of a cooperative game, where the possible gain is assumed to be either '0' or '1'. A simple game is couple (N, W), where W is the list of "winning" coalitions, capable of gaining the loot ('1'), and N is the set of players.
+
+\item Finite game 
+is a game with finitely many players, each of which has a finite set of strategies.
+Grand coalition 
+refers to the coalition containing all players. In cooperative games it is often assumed that the grand coalition forms and the purpose of the game is to find stable imputations.
+Mixed strategy 
+for player i is a probability distribution P on ${\displaystyle \Sigma \ ^{i}} \Sigma \ ^{i}$. It is understood that player i chooses a strategy randomly according to P.
+Mixed Nash Equilibrium 
+Same as Pure Nash Equilibrium, defined on the space of mixed strategies. Every finite game has Mixed Nash Equilibria.
+\item Pareto efficiency 
+An outcome a of game form π is (strongly) pareto efficient if it is undominated under all preference profiles.
+\item Preference profile 
+is a function ${\displaystyle \nu \ :\Gamma \ \to \mathbb {R} ^{\mathrm {N} }} \nu \ :\Gamma \ \to \mathbb {R} ^{\mathrm {N} }$. This is the ordinal approach at describing the outcome of the game. The preference describes how 'pleased' the players are with the possible outcomes of the game. See allocation of goods.
+\item Pure Nash Equilibrium 
+An element ${\displaystyle \sigma \ =(\sigma \ _{i})_{i\in \mathrm {N} }} \sigma \ =(\sigma \ _{i})_{i\in \mathrm {N} }$ of the strategy space of a game is a pure nash equilibrium point if no player i can benefit by deviating from his strategy ${\displaystyle \sigma \ _{i}} \sigma \ _{i}$, given that the other players are playing in ${\displaystyle \sigma \ } \sigma \$ . Formally:
+{\displaystyle \forall i\in \mathrm {N} \quad \forall \tau \ _{i}\in \ \Sigma \ ^{i}\quad \pi \ (\tau \ ,\sigma \ _{-i})\leq \pi \ (\sigma \ )} \forall i\in \mathrm {N} \quad \forall \tau \ _{i}\in \ \Sigma \ ^{i}\quad \pi \ (\tau \ ,\sigma \ _{-i})\leq \pi \ (\sigma \ )$.
+No equilibrium point is dominated.
+Say 
+%A player i has a Say if he is not a Dummy, i.e. if there is some tuple of complement strategies s.t. π (σ_i) is not a constant function.
+%Antonym: Dummy.
+
+\item Value 
+A value of a game is a rationally expected outcome. There are more than a few definitions of value, describing different methods of obtaining a solution to the game.
+\item Veto 
+A veto denotes the ability (or right) of some player to prevent a specific alternative from being the outcome of the game. A player who has that ability is called a veto player.
+Antonym: Dummy.
+
+\item Weakly acceptable game 
+is a game that has pure nash equilibria some of which are pareto efficient.
+\item Zero sum game 
+is a game in which the allocation is constant over different outcomes. Formally:
+${\displaystyle \forall \gamma \ \in \Gamma \ \sum _{i\in \mathrm {N} }\nu \ _{i}(\gamma \ )=const.} \forall \gamma \ \in \Gamma \ \sum _{i\in \mathrm {N} }\nu \ _{i}(\gamma \ )=const.$
+w.l.g. we can assume that constant to be zero. In a zero sum game, one player's gain is another player's loss. Most classical board games (e.g. chess, checkers) are zero sum.
+
+\end{itemize}
+\end{document}
