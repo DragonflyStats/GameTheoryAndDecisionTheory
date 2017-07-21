@@ -26,6 +26,8 @@ A B
 A (5,3) (2,6)
 B (3,2) (4,5)
 3 / 61
+
+%==============================================================================%
 Minimax Solutions - Example 3.4.1
 Suppose Player 1 takes action A with probability p and Player 2
 takes action A with probability q. The expected reward of Player 1
@@ -111,27 +113,35 @@ It follows that Player 1 always minimises Player 2’s expected
 reward by playing p = 0, i.e. always taking action B.
 8 / 61
 Minimax Solutions - Example 3.4.1
-If Player 1 takes action B, then Player 2 should take action B.
+\begin{itemize}
+\item If Player 1 takes action B, then Player 2 should take action B.
 This ensures him a payoff of 5.
 Note: It can be seen from the payoff matrix that if Player 1’s aim
 is to minimise Player 2’s payoff, then her action B dominates
 action A.
-This is due to the fact that Player 2’s reward is always smaller
+\item This is due to the fact that Player 2’s reward is always smaller
 when Player 1 plays B, whatever action Player 2 takes.
+\end{itemize}
 9 / 61
+
+%==============================================================================%
 Minimax Solutions - Example 3.4.1
-Suppose both players use their minimax strategies, i.e. Player 1
+\begin{itemize}
+\item Suppose both players use their minimax strategies, i.e. Player 1
 chooses action A with probability 0.25 and Player 2 always chooses
 action B.
-The payoff of Player 1 is
+\item The payoff of Player 1 is
 R1(0.25A + 0.75B, B) = 0.25 × 2 + 0.75 × 4 = 3.5.
 The payoff of Player 2 is
 R2(0.25A + 0.75B, B) = 0.25 × 6 + 0.75 × 5 = 5.25, i.e. the
 reward obtained by Player 2 is greater than his minimax payoff.
-In general, if a player’s minimax strategy is a pure strategy, when
+\item In general, if a player’s minimax strategy is a pure strategy, when
 both players play their minimax strategies, he/she may obtain a
 greater expected payoff than his/her minimax payoff.
+\end{itemize}
 10 / 61
+
+%==============================================================================%
 Concepts of Solutions to 2-Player Matrix Games - Pure
 Nash equilibria
 A pair of actions (A
@@ -205,7 +215,9 @@ the best pure action against M2, i.e. if Player 1 cannot gain by
 switching to a pure strategy, then she cannot gain by switching to
 any mixed strategy.
 13 / 61
-The Bishop-Cannings Theorem
+
+%==============================================================================%
+\subsection{The Bishop-Cannings Theorem}
 The support of a mixed strategy M1 is the set of actions that are
 played with a positive probability under M1.
 Suppose (M1, M2) is a Nash equilibrium pair of mixed strategies
@@ -220,6 +232,8 @@ M1 must give the same expected reward, which thus has to be
 equal to the expected reward of using M1 (which is calculated as a
 weighted average). Thus all mixed Nash equilibria are weak.
 14 / 61
+
+%==============================================================================%
 Nash Equilibria - Results
 Every matrix game has at least one Nash equilibrium.
 If there is a unique pure Nash equilibrium of a 2 × 2 game (i.e. a
@@ -249,6 +263,8 @@ H D
 H (-2,-3) (4,0)
 D (0,4) (3,1)
 18 / 61
+
+%==============================================================================%
 Nash Equilibria - Example 3.4.2
 The pure Nash equilibria can be found by checking every possible
 pair of actions.
@@ -263,6 +279,8 @@ The value corresponding to this equilibrium is (4, 0).
 Similarly, (D, H) is a Nash equilibrium. The value corresponding to
 this equilibrium is (0, 4).
 19 / 61
+
+%==============================================================================%
 Nash Equilibria - Example 3.4.2
 To find the mixed Nash equilibrium, we use Bishop-Cannings
 theorem. Suppose the strategy of Player 1 at equilibrium is
@@ -273,6 +291,8 @@ where v2 is the value of the game to Player 2 .
 We thus have −3p + 4(1 − p) = 0p + 1(1 − p) = v2. Solving these
 equations gives p = 0.5, v2 = 0.5.
 20 / 61
+
+%==============================================================================%
 Nash Equilibria - Example 3.4.2
 Similarly, suppose the strategy of Player 2 at equilibrium is
 qH + (1 − q)D. Player 1 must be indifferent between his two
@@ -295,6 +315,8 @@ strategy.
 3. In the case of fixed-sum games, it seems eminently
 reasonable to follow a minimax strategy.
 22 / 61
+
+%==============================================================================%
 Disadvantages of the Concept of Minimax Strategies
 1. Although the minimax value of a game is well
 defined, when both players play their minimax
@@ -310,6 +332,8 @@ such cases, the assumption that the aim of an
 opponent is to minimise a player’s expected reward
 may well be unreasonable.
 23 / 61
+
+%==============================================================================%
 Advantages of the Concept of Nash Equilibria
 1. In fixed sum games, the unique Nash Equilibrium pair
 of strategies is equal to the pair of minimax
@@ -324,6 +348,8 @@ find a pure Nash equilibrium, it is only necessary to
 be able to order the preferences of opponents, not
 their actual payoffs.
 24 / 61
+
+%==============================================================================%
 Disadvantages of the Concept of Nash Equilibria
 1. There may be multiple equilibria of a game, so the
 concept of Nash equilibrium should be strengthened
@@ -337,6 +363,8 @@ player maximises his/her reward given the behaviour
 of opponents. However, this behaviour is not known
 a priori.
 25 / 61
+
+%==============================================================================%
 3.5 Actions Dominated by Pure Strategies
 Suppose that by taking action Ai Player 1 always gets at least the
 same reward as by playing Aj
@@ -364,6 +392,8 @@ R2(Ak0
 , Bi) > R2(Ak0
 , Bj).
 27 / 61
+
+%==============================================================================%
 Actions Dominated by Randomised Strategies
 When removing dominated strategies, it is easiest to first remove
 those that are dominated by pure strategies.
@@ -372,6 +402,8 @@ randomised strategies.
 The following statements are important in determining which
 strategies may be dominated by a randomised strategy.
 28 / 61
+
+%==============================================================================%
 Actions Dominated by Randomised Strategies
 If Ai
 is Player 1’s unique best response to Bj
@@ -386,6 +418,8 @@ is Player 2’s unique best response to Aj
 , then Bi
 cannot be dominated.
 29 / 61
+
+%==============================================================================%
 Actions Dominated by Randomised Strategies
 Player 1’s mixed strategy p1Ai1 + p2Ai2 + . . . + plAil
 dominates Aj
@@ -402,6 +436,8 @@ R2(Ak , q1Bi1 + q2Bi2 + . . . + qlBil
 ) ≥ R2(Ak , Bj)
 and this inequality is strict for at least one value of k.
 30 / 61
+
+%==============================================================================%
 Successive removal of dominated actions
 It is clear that an individual should not use a dominated action.
 Hence, we may remove such actions from the payoff matrix without
@@ -413,26 +449,36 @@ Hence, we continue removing dominated strategies until there are
 no dominated strategies left in the reduced game (see tutorial and
 following example).
 31 / 61
+
+%==============================================================================%
 3.6 Refinements of the concept of Nash equilibrium
 We consider 3 refinements of the concept of Nash equilibrium,
 which are useful when there are multiple equilibria.
-1. Subgame perfect Nash equilibria.
-2. Payoff dominant Nash equilibria.
-3. Risk domninant Nash equilibria.
-32 / 61
+\begin{enumerate}
+\item Subgame perfect Nash equilibria.
+\item Payoff dominant Nash equilibria.
+\item Risk domninant Nash equilibria.
+\end{enumerate}
+%% 32 / 61
+
+%==============================================================================%
 Subgame Perfect Equilibria in the Context of Matrix Games
-We have considered the concept of subgame perfection in extended
+\begin{itemize}
+\item We have considered the concept of subgame perfection in extended
 games.
-In the asymmetric Hawk-Dove game, Player 1 will take action H
+\item In the asymmetric Hawk-Dove game, Player 1 will take action H
 and Player 2 will take action D under the following strategy pairs
 (H, [D|H, H|D]) and (H, [D|H, D|D]).
-However, when Player 2 plays [D|H, D|D] he does not use his best
+\item However, when Player 2 plays [D|H, D|D] he does not use his best
 response when Player 1 makes a ”mistake” and plays D. Hence,
 the second pair of actions does not define a subgame perfect Nash
 equilibrium.
-We will now consider the matrix form of this game (this was
+\item We will now consider the matrix form of this game (this was
 derived earlier).
+\end{itemize}
 33 / 61
+
+%==============================================================================%
 Subgame Perfect Equilibria in the Context of Matrix Games
 (H|H, H|D) (H|H, D|D) (D|H, D|D) (D|H, H|D)
 H (-2,-2) (-2,-2) (4,0) (4,0)
@@ -441,6 +487,8 @@ It can be seen that (H, [D|H, D|D]) is a (weak) Nash equilibrium
 in this game, since neither player can increase their payoff by
 unilaterally switching strategy.
 34 / 61
+
+%==============================================================================%
 Subgame Perfect Equilibria in the Context of Matrix Games
 However, the strategy [D|H, H|D] dominates the action
 [D|H, D|D], since Player 2 always does as well by playing
@@ -449,6 +497,8 @@ plays D.
 It can be shown that (H, [D|H, H|D]) is the only Nash equilibrium
 left after the removal of dominated strategies.
 35 / 61
+
+%==============================================================================%
 Payoff Dominant Nash Equilibria
 A payoff vector (v1, v2) is said to Pareto dominate payoff vector
 (x1, x2) if v1 ≥ x1, v2 ≥ x2 and inequality is strict in at least one of
@@ -460,6 +510,8 @@ A Nash equilibrium is payoff dominant if the value of the game
 corresponding to this equilibrium Pareto dominates all the values
 of the game corresponding to other equilibria.
 36 / 61
+
+%==============================================================================%
 Example
 Consider the following game
 A B
@@ -482,6 +534,8 @@ The first equilibrium Pareto dominates the other two equilibria,
 whilst the second equilibrium Pareto dominates the third.
 (A, A) is the payoff dominant equilibrium.
 38 / 61
+
+%==============================================================================%
 Risk Dominance
 Suppose there are pure Nash equilibria (A, C) and (B, D).
 The risk factor associated with strategy A, FA, is the probability
@@ -494,6 +548,8 @@ Similarly, the risk factor associated with strategy B is the
 probability with which Player 2 should play D, in order to make
 Player 1 indifferent between playing A or B.
 39 / 61
+
+%==============================================================================%
 Risk Dominance
 The risk factors associated with C and D can be calculated in a
 similar way.
@@ -509,6 +565,8 @@ It is clear that the equilibrium (A, A) payoff dominates the
 equilibrium (B, B). However, there is a large risk associated with
 playing action A (the possibility of obtaining a payoff of -1000).
 41 / 61
+
+%==============================================================================%
 Example
 From the symmetry of the game, the risk factors of the two
 strategies are the same for both players.
@@ -524,6 +582,8 @@ The risk factor associated with B is given by the solution to
 .
 It follows that B risk dominates A.
 42 / 61
+
+%==============================================================================%
 Conclusion
 If an equilibrium both payoff and risk dominates another, it seems
 clear that this should be the one chosen.
@@ -531,6 +591,8 @@ In other cases, it is not clear what equilibrium should be played.
 The concept of risk domination is important in evolutionary game
 theory (see later).
 43 / 61
+
+%==============================================================================%
 3.7 2-Player Games with a Continuum of Strategies and
 Simultaneous Moves
 Assume that Player i chooses an action from a finite interval Si
@@ -539,6 +601,8 @@ The payoff to Player i when Player 1 takes action x1 and Player 2
 takes action x2 is given by Ri(x1, x2).
 It is assumed that the payoff functions are differentiable.
 44 / 61
+
+%==============================================================================%
 The Symmetric Cournot Game
 Assume that two firms produce an identical good. Firm i produces
 xi units per time interval.
@@ -550,6 +614,8 @@ C + Dx for both firms.
 The payoff of a firm is taken to be the profit obtained (revenue
 minus costs). Revenue is simply production times price.
 45 / 61
+
+%=======================================================================%
 The Symmetric Cournot Game
 The payoff obtained by Firm 1 is given by
 R1(x1, x2) = px1 − C − Dx1 = (A − D)x1 − Bx2
@@ -563,6 +629,7 @@ to the unit (marginal) cost of production. Since xmax is finite, we
 may assume that firms choose their strategy (production level)
 from a finite interval.
 46 / 61
+%=======================================================================%
 Best Response Functions
 Given the output of the opponent, we can calculate the optimal
 response of a player using calculus.
@@ -633,6 +700,8 @@ x2
 2
 .
 50 / 61
+
+%=======================================================================%
 The Cournot Game
 It should be noted that this solution is valid as long as x2 ≤ 2000
 (production cannot be negative).
@@ -642,7 +711,9 @@ is negative for all non-negative values
 of x1.
 In this case the best response is not to produce anything.
 51 / 61
-The Cournot Game
+
+%=======================================================================%
+% The Cournot Game
 By symmetry the best response of Player 2 is given by
 B2(x1) = max{0, 1000 −
 x1
@@ -671,7 +742,9 @@ units.
 Intuitively, from the form of the game both firms should produce
 the same amount.
 52 / 61
-The Cournot Game
+
+%==============================================================================%
+\section{The Cournot Game}
 The value of the game can be found by substituting these values
 into the payoff functions.
 R1(x
@@ -737,6 +810,8 @@ In order to find the optimal action of Player 1, we differentiate this
 function with respect to x1.
 Having calculated the optimal value of x1, we can derive x2.
 57 / 61
+
+%==============================================================================%
 Example
 Derive the equilibrium of the Stackelberg version of the previous
 example.
@@ -811,6 +886,8 @@ produces less.
 Total production is greater than at the Cournot equilibrium, i.e.
 the equilibrium price is lower.
 60 / 61
+
+%==============================================================================%
 Example
 The profit of Firm 1 at this equilibrium is
 R1(1000, 500) = 2 × 1000 − 1000 − 500 − 100 = 400.
@@ -821,3 +898,5 @@ sum of profits is lower than at the Cournot equilibrium.
 This seems somewhat counter-intuitive, as the market would seem
 to be more competitive under the Cournot model.
 61 / 61
+
+%==============================================================================%
