@@ -1,3 +1,38 @@
+
+\documentclass[]{report}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
+
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+
+\begin{document}
+	
 %%- http://www3.ul.ie/ramsey/Lectures/Operations_Research_2/gametheory1.pdf
 
 CHAPTER 3 - GAME THEORY
@@ -68,8 +103,8 @@ As we continue through this chapter, we will differentiate between
 the concept of action and the concept of strategy.
 
 %-----------------------------------------------------------%
-6 / 45
-Zero-sum and Constant-sum Games
+% 6 / 45
+\section{Zero-sum and Constant-sum Games}
 A game is said to be a constant sum game, if the sum of the
 payoffs obtained by the players is fixed, regardless of the
 combination of strategies used.
@@ -123,30 +158,37 @@ For example, if Player 1 chooses H and Player 2 chooses D, Player
 
 \subsection{The Asymmetric Hawk-Dove Game}
 %-----------------------------------------------------------%
-10 / 45
+%% 10 / 45
 
-It might appear that this game is equivalent to the matrix form of
-the Hawk-Dove given above.
-In order to see the difference between these games, we should
-differentiate between strategies and actions.
-In a game represented in extensive form, a strategy is a rule that
-defines which action a player should play at all the nodes where
-he/she makes a move.
-An action is the observed behaviour resulting from such a strategy.
+\begin{itemize}
+\item It might appear that this game is equivalent to the matrix form of
+	the Hawk-Dove given above.
+\item In order to see the difference between these games, we should
+	differentiate between strategies and actions.
+\item In a game represented in extensive form, a strategy is a rule that
+	defines which action a player should play at all the nodes where
+	he/she makes a move.
+\item An action is the observed behaviour resulting from such a strategy.
+\end{itemize}
 
-%-----------------------------------------------------------%
-11 / 45
-Here Player 1 first chooses between H and D. This is her only
-choice. Thus Player 1’s strategies correspond exactly to her
-possible actions (H and D).
-However, since Player 2 observes the move made by Player 1, he
-can condition his move on the move made by Player 1.
-For each of the moves made by Player 1, Player 2 has 2 possible
-moves. Hence, he has 2 × 2 = 4 possible strategies. These are
-listed on the following slide.
 
 %-----------------------------------------------------------%
-12 / 45
+%% 11 / 45
+\begin{itemize}
+	\item Here Player 1 first chooses between H and D. This is her only
+	choice. 
+	\item Thus Player 1’s strategies correspond exactly to her
+	possible actions (H and D).
+	However, since Player 2 observes the move made by Player 1, he
+	can condition his move on the move made by Player 1.
+	\item For each of the moves made by Player 1, Player 2 has 2 possible
+	moves. Hence, he has $2 \times 2 = 4$ possible strategies. These are
+	listed on the following slide.
+\end{itemize}
+
+
+%-----------------------------------------------------------%
+% 12 / 45
 In the extended game described above, Player 2’s strategies are
 1. H|H, H|D, i.e. play H when Player 1 plays H and
 play H when Player 1 plays D, in other words always
@@ -200,33 +242,38 @@ Player 2
 In this case both players have 2 possible strategies: H and D.
 
 %-----------------------------------------------------------%
-15 / 45
-Translating from Extensive Form into Matrix Form
+%% 15 / 45
+\subsection{Translating from Extensive Form into Matrix Form}
 In order to translate the description of a game from extensive form
 to matrix form, we
-1. List the possible strategies of both players.
-2. In the matrix describing the game, the rows
+\begin{enumerate}
+\item  List the possible strategies of both players.
+\item In the matrix describing the game, the rows
 correspond to the strategies of Player 1 and the
 columns correspond to the strategies of Player 2.
-3. We then derive the payoff vector corresponding to
+\item We then derive the payoff vector corresponding to
 each possible strategy pair.
-
+\end{enumerate}
 %-----------------------------------------------------------%
 %% 16 / 45
-It should be noted that each game in extensive form has a unique
-definition as a matrix game (apart from possible differences in the
-labelling of the strategies).
-However, there may be various games in extensive form
-corresponding to a game given in matrix form. Thus it is generally
-not possible to translate a game in matrix form into a game in
-extensive form.
-This is unsurprising, since the extensive form of a game gives more
-detailed description of how the game is actually played.
+\begin{itemize}
+	\item It should be noted that each game in extensive form has a unique
+	definition as a matrix game (apart from possible differences in the
+	labelling of the strategies).
+\item However, there may be various games in extensive form
+	corresponding to a game given in matrix form. 
+\item Thus it is generally
+	not possible to translate a game in matrix form into a game in
+	extensive form.
+\item This is unsurprising, since the extensive form of a game gives more
+	detailed description of how the game is actually played.
+\end{itemize}
+
 
 %-----------------------------------------------------------%
 17 / 45
-Translating the Asymmetric Hawk-Dove Game into Matrix
-Form
+\subsection{Translating the Asymmetric Hawk-Dove Game into Matrix
+Form}
 Since Player 1 has 2 strategies and Player 2 has 4 strategies, the
 payoff matrix will be of dimension 2 × 4.
 Player 1 can play H or D.
@@ -237,24 +284,31 @@ Translating the Asymmetric Hawk-Dove Game into Matrix
 Form
 We now consider the payoff vectors associated with each strategy
 pair.
+\begin{framed}
 Suppose Player 1 plays H.
-a) If Player 2 plays (H|H, H|D) or (H|H, D|D), then both players
+\begin{itemize}
+	\item [(a)] If Player 2 plays (H|H, H|D) or (H|H, D|D), then both players
 take the action H and the resulting payoff vector is (−2, −2).
-b) If Player 2 plays (D|H, D|D) or (D|H, H|D), then Player 1
+	\item [(b)] If Player 2 plays (D|H, D|D) or (D|H, H|D), then Player 1
 takes the action H and Player 2 takes the action D and the
 resulting payoff vector is (4, 0).
+\end{itemize}
+\end{framed}
 
 %-----------------------------------------------------------%
-19 / 45
-Translating the Asymmetric Hawk-Dove Game into Matrix
-Form
+%19 / 45
+%Translating the Asymmetric Hawk-Dove Game into Matrix Form
 Now suppose Player 1 plays D.
-a) If Player 2 plays (D|H, D|D) or (H|H, D|D), then both players
-take the actions D and the resulting payoff vector is (2, 2).
-b) If Player 2 plays (H|H, H|D) or (D|H, H|D), then Player 1 takes
-the action D and Player 2 takes the action H and the resulting
-payoff vector is (0, 4).
-20 / 45
+\begin{itemize}
+	\item [(a)] If Player 2 plays (D|H, D|D) or (H|H, D|D), then both players
+	take the actions D and the resulting payoff vector is (2, 2).
+	\item [(b)] If Player 2 plays (H|H, H|D) or (D|H, H|D), then Player 1 takes
+	the action D and Player 2 takes the action H and the resulting
+	payoff vector is (0, 4).
+\end{itemize}
+
+%-----------------------------------------------------------%
+% 20 / 45
 Translating the Asymmetric Hawk-Dove Game into Matrix
 Form
 It follows that the matrix form of the asymmetric game is given by
@@ -276,6 +330,7 @@ expected payoffs given the combination of strategies used, we
 take expectations with respect to the moves of nature (i.e. nature
 is assumed to be ”random” or ”non-rational”).
 
+
 %-----------------------------------------------------------%
 22 / 45
 Example
@@ -291,7 +346,7 @@ from Player 2, otherwise he gives Player 2 $2 (note this is a
 zero-sum game).
 
 %-----------------------------------------------------------%23 / 45
-Example
+\subsection{Example}
 When writing the game in extensive form, we can often shift a
 move to an different position in the tree than its natural position,
 in order to make a more legible tree.
@@ -374,7 +429,7 @@ strategies can be calculated in a similar way.
 %-----------------------------------------------------------%
 
 27 / 45
-Example
+\subsection{Example}
 The matrix form of this game is given by
 (A|H, A|T) (A|H, B|T) (B|H, B|T) (B|H, A|T)
 A (-0.5,0.5) (1.5,-1.5) (0.5,-0.5) (-1.5,1.5)
@@ -498,7 +553,7 @@ Player 2
 
 %-----------------------------------------------------------%
 36 / 45
-Solution of Games with Perfect Information
+\subsection{Solution of Games with Perfect Information}
 Suppose Player 1 has played H. Player 2 obtains -2 by playing H
 and 0 by playing D. Hence, his best response to H is to play D.
 Suppose Player 1 has played D. Player 2 obtains 4 by playing H
@@ -507,7 +562,7 @@ Now we consider the action of Player 1.
 
 %-----------------------------------------------------------%
 37 / 45
-Solution of Games with Perfect Information
+\subsection{Solution of Games with Perfect Information}
 If she plays H, then Player 2 will respond by playing D. Player 1
 obtains a reward of 4.
 If she plays D, then Player 2 will respond by playing H. Player 1
@@ -517,37 +572,43 @@ D.
 The value of the game is (4, 0).
 
 %-----------------------------------------------------------%
-38 / 45
-Equilibrium Path and Subgame Perfect Equilibria
-The set of actions observed at a solution of an extensive form
-game with perfect information is called an equilibrium path.
-In the Hawk-Dove game considered above, the equilibrium path is
-(H, D).
-However, such a path does not describe how players should react to
-”mistakes”, i.e. how should individuals act off the equilibrium path.
-An equilibrium is said to be subgame perfect, if starting from any
-node on the game tree, players play an equilibrium pair of
-strategies, i.e. an equilibrium is played in any subgame of the game
-in question.
+%% 38 / 45
+\subsection{Equilibrium Path and Subgame Perfect Equilibria}
+\begin{itemize}
+\item The set of actions observed at a solution of an extensive form
+	game with perfect information is called an equilibrium path.
+\item In the Hawk-Dove game considered above, the equilibrium path is
+	(H, D).
+\item However, such a path does not describe how players should react to
+	”mistakes”, i.e. how should individuals act off the equilibrium path.
+\item An equilibrium is said to be subgame perfect, if starting from any
+	node on the game tree, players play an equilibrium pair of
+	strategies, i.e. an equilibrium is played in any subgame of the game
+	in question.
+\end{itemize}
+
 
 %-----------------------------------------------------------%
-39 / 45
-Equilibrium Path and Subgame Perfect Equilibria
-In this case, the subgame perfect equilibrium is defined by giving
+% 39 / 45
+% \subsection{Equilibrium Path and Subgame Perfect Equilibria}
+\begin{itemize}
+\item In this case, the subgame perfect equilibrium is defined by giving
 the optimal response of Player 2 to each action of Player 1 and the
 optimal action of Player 1.
-These were derived during the recursive solution of the game.
+\item These were derived during the recursive solution of the game.
 Player 2 should respond to H by playing D and respond to D by
 playing H. Hence, Player 2’s subgame perfect equilibrium strategy
 is (D|H, H|D).
-The subgame perfect equilibrium strategy of Player 2 is H.
+\item The subgame perfect equilibrium strategy of Player 2 is H.
 If nature has moves in a game of perfect information, then each
 player is assumed to maximise his/her expected reward at each
 stage of the recursion procedure.
 
+\end{itemize}
+
 %-----------------------------------------------------------%
 %%% 40 / 45
-Concepts of Pure and Mixed Strategies
+\subsection{Concepts of Pure and Mixed Strategies}
 In games of perfect information, it is clear that unless a player is
 indifferent between two actions, then he/she should never
 randomise.
@@ -570,8 +631,8 @@ Intuitively, at equilibrium both players choose each action with a
 probability of 1/3 (see tutorial sheet for details).
 
 %-----------------------------------------------------------%
-42 / 45
-Concepts of Pure and Mixed Strategies
+%%42 / 45
+\subsection{Concepts of Pure and Mixed Strategies}
 If a player always chooses the same action in a matrix game, then
 he/she is using a so called pure strategy.
 It is normally assumed that players choose their actions
@@ -580,8 +641,8 @@ Later we will consider games in which players can communicate,
 i.e. the actions they take may be correlated.
 
 %-----------------------------------------------------------%
-43 / 45
-Concepts of Pure and Mixed Strategies
+%% 43 / 45
+%% Concepts of Pure and Mixed Strategies
 Suppose that in the rock-scissors-paper game, Player 1 plays rock,
 scissors and paper with probability pR, pS and pP, respectively.
 Player 2 plays rock, scissors and paper with probability qR, qS and
@@ -601,3 +662,6 @@ R1(M1, M2)=pRqRR1(R, R) + pRqSR1(R, S) + pRqPR1(R, P) +
 +pS qRR1(S, R) + pS qSR1(S, S) + pS qPR1(S, P) +
 +pPqRR1(P, R) + pPqSR1(P, S) + pPqPR1(P, P)
 =pRqS + pS qP + pPqR − pS qR − pPqS − pRqP.
+
+
+\end{document}

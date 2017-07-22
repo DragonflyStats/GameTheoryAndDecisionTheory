@@ -1,902 +1,687 @@
-3.4 Concepts of Solutions to 2-Player Matrix Games -
-Minimax Solutions
-The minimax strategy of a player is the strategy that maximises
-his/her expected payoff under the assumption that the other player
-aims to minimise this payoff.
-The minimax payoff of a player is the maximum expected payoff
-that he/she can guarantee him/hirself.
-In zero-sum games such a concept seems very reasonable, since by
-minimising the expected reward of the opponent, an individual
-maximises his/her expected reward.
-1 / 61
-Minimax Solutions
-One way of finding a player’s minimax strategy is to use linear
-programming.
-Suppose players choose one of two actions. In this case you can
-think of the strategy of a player as the probability of playing the
-first action, i.e. choice from the interval [0, 1]. The simplest
-method of solution is to use calculus.
-Denote the reward of Player i when Player 1 uses strategy p and
-Player 2 uses strategy q by Ri(p, q).
-2 / 61
-Minimax Solutions - Example 3.4.1
-Find the minimax strategies and payoffs in the following matrix
-game
-A B
-A (5,3) (2,6)
-B (3,2) (4,5)
-3 / 61
 
-%==============================================================================%
-Minimax Solutions - Example 3.4.1
-Suppose Player 1 takes action A with probability p and Player 2
-takes action A with probability q. The expected reward of Player 1
-is given by
-R1(p, q) = 5pq+2p(1−q)+3(1−p)q+4(1−p)(1−q) = 4pq−2p−q+4.
-Player 1 assumes that Player 2 will minimise her payoff. In order to
-derive which strategy of Player 2 minimises Player 1’s payoff, we
-calculate ∂R1(p,q)
-∂q
-(i.e. the rate of change of Player 1’s expected
-payoff with respect to the strategy of Player 2).
-∂R1(p, q)
-∂q
-= 4p − 1.
-In general, this derivative will be a linear function of p.
-4 / 61
-Minimax Solutions - Example 3.4.1
-There are three possibilities
-1. ∂R1(p,q)
-∂q > 0 for all p ∈ [0, 1]. In this case to minimise
-Player 1’s payoff, Player 2 should play q = 0 (i.e.
-always take his second action). The minimax strategy
-of Player 1 is to take the action that maximises her
-reward when Player 2 takes his second action.
-2. ∂R1(p,q)
-∂q < 0 for all p ∈ [0, 1]. In this case to minimise
-Player 1’s payoff, Player 2 should play q = 1 (i.e.
-always take his first action). The minimax strategy of
-Player 1 is to take the action that maximises her
-reward when Player 2 takes his first action.
-3. There exists some p ∈ [0, 1] such that ∂R1(p,q)
-∂q = 0.
-When Player 1 uses this strategy, her expected payoff
-does not depend on the strategy used by Player 2.
-This is her minimax strategy.
-5 / 61
-Minimax Solutions - Example 3.4.1
-∂R1(p, q)
-∂q
-= 0 ⇒ p =
-1
-4
-.
-We have
-R1(
-1
-4
-, q) = 4 − 2p = 3.5.
-It follows that the minimax strategy of Player 1 is to choose action
-A with probability 0.25. In this way she guarantees herself a payoff
-of 3.5
-6 / 61
-Minimax Solutions - Example 3.4.1
-It should be noted that if Player 1 chose p >
-1
-4
-, then ∂R1(p,q)
-∂q > 0
-and Player 2 minimises Player 1’s reward by choosing q = 0, i.e.
-Playing B.
-In this case the payoff of Player 1 would be
-R1(p, 0) = 4 − 2p < 3.5.
-Similarly, if Player 1 chose p <
-1
-4
-, then ∂R1(p,q)
-∂q < 0 and Player 2
-minimises Player 1’s reward by choosing q = 1, i.e. Playing A.
-In this case the payoff of Player 1 would be
-R1(p, 1) = 2p + 3 < 3.5. It is thus clear that 3.5 is the maximum
-expected payoff that Player 1 can guarantee herself.
-7 / 61
-Minimax Solutions - Example 3.4.1
-We can calculate the minimax strategy of Player 2 in an analogous
-way, by deriving his expected payoff as a function of p and q and
-differentiating with respect to p, the strategy of Player 1. We have
-R2(p, q) = 3pq+6p(1−q)+2(1−p)q+5(1−p)(1−q) = p−3q+5.
-Hence,
-∂R2(p, q)
-∂p
-= 1 > 0.
-It follows that Player 1 always minimises Player 2’s expected
-reward by playing p = 0, i.e. always taking action B.
-8 / 61
-Minimax Solutions - Example 3.4.1
-\begin{itemize}
-\item If Player 1 takes action B, then Player 2 should take action B.
-This ensures him a payoff of 5.
-Note: It can be seen from the payoff matrix that if Player 1’s aim
-is to minimise Player 2’s payoff, then her action B dominates
-action A.
-\item This is due to the fact that Player 2’s reward is always smaller
-when Player 1 plays B, whatever action Player 2 takes.
-\end{itemize}
-9 / 61
+\documentclass[]{report}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
 
-%==============================================================================%
-Minimax Solutions - Example 3.4.1
-\begin{itemize}
-\item Suppose both players use their minimax strategies, i.e. Player 1
-chooses action A with probability 0.25 and Player 2 always chooses
-action B.
-\item The payoff of Player 1 is
-R1(0.25A + 0.75B, B) = 0.25 × 2 + 0.75 × 4 = 3.5.
-The payoff of Player 2 is
-R2(0.25A + 0.75B, B) = 0.25 × 6 + 0.75 × 5 = 5.25, i.e. the
-reward obtained by Player 2 is greater than his minimax payoff.
-\item In general, if a player’s minimax strategy is a pure strategy, when
-both players play their minimax strategies, he/she may obtain a
-greater expected payoff than his/her minimax payoff.
-\end{itemize}
-10 / 61
 
-%==============================================================================%
-Concepts of Solutions to 2-Player Matrix Games - Pure
-Nash equilibria
-A pair of actions (A
-∗
-, B
-∗
-) is a pure Nash equilibrium if
-R1(A
-∗
-, B
-∗
-) ≥ R1(A, B
-∗
-); R2(A
-∗
-, B
-∗
-) ≥ R2(A
-∗
-, B).
-for any action A available to Player 1 and any action B available
-to Player 2.
-That is to say that a pair of actions is a Nash equilibrium if neither
-player can gain by unilaterally changing their action (i.e. changing
-their action whilst the other player does not change their action).
-The value of the game corresponding to an equilibrium is the
-vector of expected payoffs obtained by the players.
-11 / 61
-Concepts of Solutions to 2-Player Matrix Games - Strong
-Nash equilibria
-A pair of actions (A
-∗
-, B
-∗
-) is a strong Nash equilibrium if
-R1(A
-∗
-, B
-∗
-) > R1(A, B
-∗
-); R2(A
-∗
-, B
-∗
-) > R2(A
-∗
-, B).
-for any action A 6= A
-∗
-available to Player 1 and any action B 6= B
-∗
-available to Player 2.
-i.e. a pair of actions is a strong Nash equilibrium if both players
-would lose by unilaterally changing their action.
-Any Nash equilibrium that is not strong is called weak.
-12 / 61
-Concepts of Solutions to 2-Player Matrix Games - Mixed
-Nash equilibria
-A pair of mixed strategies, denoted (M1, M2) is a mixed Nash
-equilibrium if
-R1(M1, M2) ≥ R1(A, M2); R2(M1, M2) ≥ R2(M1, B)
-for any action (pure strategy) A available to Player 1 and any
-action B available to Player 2.
-It should be noted that the expected reward Player 1 obtains when
-he plays a mixed strategy M against M2 is a weighted average of
-the expected rewards of playing his pure actions against M2, where
-the weights correspond to the probability of playing each action.
-It follows that player 1 cannot do better against M2 than by using
-the best pure action against M2, i.e. if Player 1 cannot gain by
-switching to a pure strategy, then she cannot gain by switching to
-any mixed strategy.
-13 / 61
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
 
-%==============================================================================%
-\subsection{The Bishop-Cannings Theorem}
-The support of a mixed strategy M1 is the set of actions that are
-played with a positive probability under M1.
-Suppose (M1, M2) is a Nash equilibrium pair of mixed strategies
-and the support of M1 is S. We have
-R1(A, M2) = R1(M1, M2), ∀A ∈ S; R1(B, M2) < R1(M1, M2), ∀B ∈/ S.
-This is intuitively clear, since if a player uses actions A and B
-under a mixed strategy, then at equilibrium these actions must give
-the same expected reward, otherwise one action would be preferred
-over the other.
-It follows that at such an equilibrium all actions in the support of
-M1 must give the same expected reward, which thus has to be
-equal to the expected reward of using M1 (which is calculated as a
-weighted average). Thus all mixed Nash equilibria are weak.
-14 / 61
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
 
-%==============================================================================%
-Nash Equilibria - Results
-Every matrix game has at least one Nash equilibrium.
-If there is a unique pure Nash equilibrium of a 2 × 2 game (i.e. a
-game in which both players have just 2 possible actions), then that
-is the only Nash equilibrium.
-If there are no or two strong Nash equilibria in such a game, then
-there is always a mixed Nash equilibrium.
-Mixed Nash equilibria can be found using the Bishop-Cannings
-theorem.
-15 / 61
-Symmetric Games
-A game is symmetric if
-1. Players all choose from the same set of actions.
-2. R1(A, B) = R2(B, A).
-Note that the symmetric Hawk-Dove game satisfies these
-conditions.
-16 / 61
-Symmetric Games
-If (A, B) is a pure Nash equilibrium in a symmetric game, then
-(B, A) is also a pure Nash equilibrium.
-At a mixed Nash equilibrium or minimax solution of a symmetric
-2 × 2 game, the players use the same strategy as each other.
-17 / 61
-Nash Equilibria - Example 3.4.2
-Derive all the Nash equilibrium of the following game
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+
+\begin{document}
+	
+\section{3.7 Evolutionary Game Theory}
+The Hawk-Dove game is used in biology to explain why aggression
+is present within populations, but is not always observed.
+Consider the symmetric Hawk-Dove game. The intuition is that
+two indistinguishable individuals must decide whether to share a
+resource or demand the resource for themselves.
+If only one individual demands the resource, then he/she obtains
+that resource (of value v).
+If both demand the resource, they fight. Each wins with probability
+0.5 (thus obtaining the resource). The loser pays a cost of c (due
+to injuries incurred). It is assumed that c > v.
+1 / 46
+General Form of the Symmetric Hawk-Dove Game
+The general form of the symmetric Hawk-Dove game is
 H D
-H (-2,-3) (4,0)
-D (0,4) (3,1)
-18 / 61
-
-%==============================================================================%
-Nash Equilibria - Example 3.4.2
-The pure Nash equilibria can be found by checking every possible
-pair of actions.
-(H, H) is not a Nash equilibrium as either player would prefer to
-unilaterally change their action to D (and hence obtain 0 rather
-than -2 or -3).
-(D, D) is not a Nash equilibrium as either player would prefer to
-unilaterally change their action to H (and hence obtain 4).
-(H, D) is a Nash equilibrium, since if Player 1 switches to D, she
-obtains 3 not 4. If Player 2 switches to H, he obtains -3 not 0.
-The value corresponding to this equilibrium is (4, 0).
-Similarly, (D, H) is a Nash equilibrium. The value corresponding to
-this equilibrium is (0, 4).
-19 / 61
-
-%==============================================================================%
-Nash Equilibria - Example 3.4.2
-To find the mixed Nash equilibrium, we use Bishop-Cannings
-theorem. Suppose the strategy of Player 1 at equilibrium is
-pH + (1 − p)D . Player 2 must be indifferent between his two
-actions. Hence,
-R2(pH + (1 − p)D, H) = R2(pH + (1 − p)D, D) = v2,
-where v2 is the value of the game to Player 2 .
-We thus have −3p + 4(1 − p) = 0p + 1(1 − p) = v2. Solving these
-equations gives p = 0.5, v2 = 0.5.
-20 / 61
-
-%==============================================================================%
-Nash Equilibria - Example 3.4.2
-Similarly, suppose the strategy of Player 2 at equilibrium is
-qH + (1 − q)D. Player 1 must be indifferent between his two
-actions. Hence,
-R1(H, qH + (1 − q)D) = R1(D, qH + (1 − q)D) = v1.
-We thus obtain −2q + 4(1 − q) = 0q + 3(1 − q) = v1. Solving
-these equations gives q =
-1
-3
-, v1 = 2.
-Hence, the mixed equilibrium is (0.5H + 0.5D, 1/3H + 2/3D). The
-corresponding value is (2, 0.5).
-21 / 61
-Advantages of the Concept of Minimax Strategies
-1. A player only has to know his own payoffs in order to
-determine his/her minimax strategy and payoff.
-2. Apart from degenerate cases (e.g. two actions always
-give the same payoff), there is a unique minimax
-strategy.
-3. In the case of fixed-sum games, it seems eminently
-reasonable to follow a minimax strategy.
-22 / 61
-
-%==============================================================================%
-Disadvantages of the Concept of Minimax Strategies
-1. Although the minimax value of a game is well
-defined, when both players play their minimax
-strategy their vector of expected payoffs is not
-necessarily the minimax value of the game (i.e. when
-both players play the strategy that maximises their
-guaranteed expected reward, one or more of the
-players may obtain more than this guaranteed
-minimum).
-2. Many situations cannot be described in terms of pure
-competition (i.e. in terms of a fixed-sum game). In
-such cases, the assumption that the aim of an
-opponent is to minimise a player’s expected reward
-may well be unreasonable.
-23 / 61
-
-%==============================================================================%
-Advantages of the Concept of Nash Equilibria
-1. In fixed sum games, the unique Nash Equilibrium pair
-of strategies is equal to the pair of minimax
-strategies.
-2. In non-fixed sum games, the Nash equilibrium
-concept makes the more reasonable assumption that
-both players wish to maximise their own reward.
-3. When using the concept of Nash equilibrium it is
-normally assumed that players know the payoff
-functions of their opponents. However, in order to
-find a pure Nash equilibrium, it is only necessary to
-be able to order the preferences of opponents, not
-their actual payoffs.
-24 / 61
-
-%==============================================================================%
-Disadvantages of the Concept of Nash Equilibria
-1. There may be multiple equilibria of a game, so the
-concept of Nash equilibrium should be strengthened
-in order to make predictions in such situations.
-2. Unlike in the derivation of minimax strategies, it is
-assumed that the payoff functions of opponents are
-known. This information is necessary to derive a
-mixed Nash equilibrium.
-3. The concept of a Nash equilibrium requires that a
-player maximises his/her reward given the behaviour
-of opponents. However, this behaviour is not known
-a priori.
-25 / 61
-
-%==============================================================================%
-3.5 Actions Dominated by Pure Strategies
-Suppose that by taking action Ai Player 1 always gets at least the
-same reward as by playing Aj
-, regardless of the action taken by
-Player 2, and for at least one action of Player 2 he obtains a
-greater reward. Action Ai of Player 1 is said to dominate action Aj
-.
-i.e. action Ai of Player 1 dominates Aj
-if
-R1(Ai
-, Bk ) ≥ R1(Aj
-, Bk ), k = 1, 2, . . . , n
-and for some k0, R1(Ai
-, Bk0
-) > R1(Aj
-, Bk0
-).
-26 / 61
-Actions Dominated by Pure Strategies
-Similarly, action Bi of Player 2 dominates action Bj
-if
-R2(Ak , Bi) ≥ R2(Ak , Bj), k = 1, 2, . . . , m
-and for some k0
-R2(Ak0
-, Bi) > R2(Ak0
-, Bj).
-27 / 61
-
-%==============================================================================%
-Actions Dominated by Randomised Strategies
-When removing dominated strategies, it is easiest to first remove
-those that are dominated by pure strategies.
-Once that is done we then remove those that are dominated by
-randomised strategies.
-The following statements are important in determining which
-strategies may be dominated by a randomised strategy.
-28 / 61
-
-%==============================================================================%
-Actions Dominated by Randomised Strategies
-If Ai
-is Player 1’s unique best response to Bj
-, then Ai cannot be
-dominated by any strategy, pure or randomised.
-Thus, if ∃Bk such that R1(Ai
-, Bk ) > R1(Aj
-, Bk ), ∀j 6= i, then Ai
-cannot be dominated.
-Similarly, if Bi
-is Player 2’s unique best response to Aj
-, then Bi
-cannot be dominated.
-29 / 61
-
-%==============================================================================%
-Actions Dominated by Randomised Strategies
-Player 1’s mixed strategy p1Ai1 + p2Ai2 + . . . + plAil
-dominates Aj
-,
-j 6= is for any s = 1, 2, ...l, if for all Bk
-R1(p1Ai1 + p2Ai2 + . . . + plAil
-, Bk ) ≥ R1(Aj
-, Bk )
-and this inequality is strict for at least one value of k.
-Similarly, Player 2’s mixed strategy q1Bi1 + q2Bi2 + . . . + qlBil
-dominates Bj
-, j 6= is for any s = 1, 2, ...l, if for all Ak
-R2(Ak , q1Bi1 + q2Bi2 + . . . + qlBil
-) ≥ R2(Ak , Bj)
-and this inequality is strict for at least one value of k.
-30 / 61
-
-%==============================================================================%
-Successive removal of dominated actions
-It is clear that an individual should not use a dominated action.
-Hence, we may remove such actions from the payoff matrix without
-changing either the minimax strategies or the Nash equilibria.
-It should be noted that an action that was not previously
-dominated may become dominated after the removal of dominated
-strategies.
-Hence, we continue removing dominated strategies until there are
-no dominated strategies left in the reduced game (see tutorial and
-following example).
-31 / 61
-
-%==============================================================================%
-3.6 Refinements of the concept of Nash equilibrium
-We consider 3 refinements of the concept of Nash equilibrium,
-which are useful when there are multiple equilibria.
-\begin{enumerate}
-\item Subgame perfect Nash equilibria.
-\item Payoff dominant Nash equilibria.
-\item Risk domninant Nash equilibria.
-\end{enumerate}
-%% 32 / 61
-
-%==============================================================================%
-Subgame Perfect Equilibria in the Context of Matrix Games
-\begin{itemize}
-\item We have considered the concept of subgame perfection in extended
-games.
-\item In the asymmetric Hawk-Dove game, Player 1 will take action H
-and Player 2 will take action D under the following strategy pairs
-(H, [D|H, H|D]) and (H, [D|H, D|D]).
-\item However, when Player 2 plays [D|H, D|D] he does not use his best
-response when Player 1 makes a ”mistake” and plays D. Hence,
-the second pair of actions does not define a subgame perfect Nash
-equilibrium.
-\item We will now consider the matrix form of this game (this was
-derived earlier).
-\end{itemize}
-33 / 61
-
-%==============================================================================%
-Subgame Perfect Equilibria in the Context of Matrix Games
-(H|H, H|D) (H|H, D|D) (D|H, D|D) (D|H, H|D)
-H (-2,-2) (-2,-2) (4,0) (4,0)
-D (0,4) (2,2) (2,2) (0,4)
-It can be seen that (H, [D|H, D|D]) is a (weak) Nash equilibrium
-in this game, since neither player can increase their payoff by
-unilaterally switching strategy.
-34 / 61
-
-%==============================================================================%
-Subgame Perfect Equilibria in the Context of Matrix Games
-However, the strategy [D|H, H|D] dominates the action
-[D|H, D|D], since Player 2 always does as well by playing
-[D|H, H|D] rather than [D|H, D|D] and does better when Player 1
-plays D.
-It can be shown that (H, [D|H, H|D]) is the only Nash equilibrium
-left after the removal of dominated strategies.
-35 / 61
-
-%==============================================================================%
-Payoff Dominant Nash Equilibria
-A payoff vector (v1, v2) is said to Pareto dominate payoff vector
-(x1, x2) if v1 ≥ x1, v2 ≥ x2 and inequality is strict in at least one of
-the cases.
-That is to say, Nash Equilibrium 1 of a game Pareto dominates
-Nash Equilibrium 2 if no player prefers Equilibrium 1 to Equilibrium
-2 and at least one player prefers Equilibrium 1.
-A Nash equilibrium is payoff dominant if the value of the game
-corresponding to this equilibrium Pareto dominates all the values
-of the game corresponding to other equilibria.
-36 / 61
-
-%==============================================================================%
-Example
-Consider the following game
+H (0.5[v − c], 0.5[v − c]) (v, 0)
+D (0, v) 0.5(v, v)
+2 / 46
+Evolutionarily Stable Strategies in Symmetric 2-Player
+Matrix Games (ESSs)
+In a symmetric 2-player game, we may define the payoff to a player
+using strategy π1 against a player using strategy π2 to be
+R(π1, π2).
+It is assumed that each player plays a sequence of games, with each
+opponent being chosen at random from the population as a whole.
+Each individual reproduces at a rate proportional to the average
+reward gained in these games (or proportional to some increasing
+function of this average reward).
+It is assumed that the population size is very large (essentially
+infinite).
+3 / 46
+Evolutionarily Stable Strategies in Symmetric 2-Player
+Matrix Games (ESSs)
+An ESS, π
+∗ of a symmetric game is a strategy that will be selected
+for when adopted by virtually the whole population. In
+mathematical terms, π
+∗
+is an ESS if
+Either 1) R(π
+∗
+, π∗
+) > R(π, π∗
+), ∀π 6= π
+∗
+or 2) R(π
+∗
+, π∗
+) ≥ R(π, π∗
+), ∀π and if R(π, π∗
+) = R(π
+∗
+, π∗
+) for
+some π 6= π
+∗
+, then R(π, π) < R(π
+∗
+, π).
+4 / 46
+\subsection{Weak and Strong ESSs}
+Any ESS which satisfies Condition 1 is called a strong ESS.
+A strong, symmetric Nash equilibrium of a symmetric game ⇔
+Strong ESS of symmetric game.
+Any ESS which does not satisfy Condition 1, but satisfies
+Condition 2 is called a weak ESS.
+5 / 46
+Evolutionarily Stable Strategies in Symmetric 2-Player
+Matrix Games (ESSs)
+The first condition states that if a player knows that an opponent
+will play π
+∗
+, then he/she does strictly better by playing π
+∗
+than by
+playing any other strategy.
+i.e. Any individual playing a different strategy from π
+∗ would be
+selected against.
+The second condition states that if there exists an individual
+mutant (individual not using π
+∗
+) who is not selected against, then
+when the frequency of such mutants is close to zero (but positive),
+then such mutants are selected against.
+6 / 46
+Evolutionarily Stable Strategies in Symmetric 2-Player
+Matrix Games (ESSs)
+To see this is the case, suppose that Condition 2 is satisfied and a
+proportion 1 −  play π
+∗
+and a proportion  play π, where  is small.
+Since each opponent is chosen from the population as a whole, the
+average reward obtained by π
+∗ players is
+R(π
+∗
+,(1 − )π
+∗ + π) = (1 − )R(π
+∗
+, π∗
+) + R(π
+∗
+, π).
+The average reward obtained by π
+∗ players is
+R(π,(1−)π
+∗+π) = (1−)R(π, π∗
+)+R(π, π) < R(π
+∗
+,(1−)π
+∗+π).
+If Condition 1 is satisfied, then there is a value 0 > 0 such that
+this inequality is satisfied for all  < 0.
+7 / 46
+Evolutionarily Stable Strategies in Symmetric 2-Player
+Matrix Games (ESSs)
+Due to the linearity of the payoff function when a player faces an
+opponent using a mixed strategy, when checking the stability
+conditions we may assume that any mutant uses a pure strategy.
+It should be noted that at an ESS of a symmetric game, each
+individual should use the same strategy.
+i.e. an ESS of a symmetric game is given by a single strategy,
+while a Nash equilibrium is given by a pair of strategies.
+Hence, the non-symmetric Nash equilibria [(H, D) and (D, H)] of
+the Hawk-Dove game do not correspond to an evolutionarily stable
+strategy of the Hawk-Dove game.
+8 / 46
+Relation Between ESSs and Nash Equilibria in Symmetric
+Games
+An ESS of a symmetric game must correspond to a symmetric
+Nash equilibrium of that game (an ESS of a symmetric game is a
+Nash equilibrium in which both players play the same strategy).
+Hence, the concept of an ESS is a refinement of the concept of a
+Nash equilibrium.
+Any non-trivial 2×2 symmetric matrix game has an ESS.
+Non-trivial - the payoff is essentially dependent on the pair of
+actions taken.
+9 / 46
+ESSs of Symmetric Matrix Games
+To derive the ESSs of a symmetric matrix game, we
+1. Find all the symmetric pure Nash equilibria (i.e. Nash
+equilibria where both players always use the same
+action). These are always ESSs (called pure ESSs).
+2. Find the mixed equilibria and check whether they
+satisfy the equilibrium condition (such ESSs are
+called mixed ESSs).
+10 / 46
+ESSs of the Hawk-Dove Game
+First we look for a pure ESS of the game.
+(H, H) is not a pure ESS, since both players obtain a negative
+expected payoff and by changing unilaterally to D, either one can
+increase their payoff to 0.
+(D, D) is not a pure ESS, since both players obtain v/2. By
+changing unilaterally to H, a player can gain an expected reward of
+v.
+There is no pure ESS. We thus look for a mixed ESS.
+11 / 46
+ESSs of the Hawk-Dove Game
+We first look for a mixed Nash equilibrium using the
+Bishop-Cannings theorem.
+Note any mixed equilibrium of a symmetric 2×2 game is
+symmetric.
+Suppose the mixed Nash equilibrium is
+[pH + (1 − p)D, pH + (1 − p)D]. When an opponent plays this
+strategy a player is indifferent between H and D. Hence,
+R(H, pH + (1 − p)D)=R(D, pH + (1 − p)D)
+0.5p(v − c) + (1 − p)v=0.5(1 − p)v ⇒ p =
+v
+c
+12 / 46
+ESSs of the Hawk-Dove Game
+Hence, the probability of playing H (level of aggression) is
+increasing in the value of the resource and decreasing in the costs
+incurred in losing a fight.
+Note that any mixed ESS is by definition a weak ESS.
+This is due to the fact that when all the population use a strategy
+corresponding to a mixed Nash equilibrium, an individual using an
+action in the support of this equilibrium (or mixture thereof) will
+obtain the same expected payoff as a member of the general
+population.
+13 / 46
+ESSs of the Hawk-Dove Game
+We now check that Condition 2 for an ESS is satisfied.
+This condition states that the ESS strategy must do better against
+any pure strategy than the pure strategy does against itself.
+Firstly, we check whether an individual using the ESS does better
+against a hawk than a hawk does against another hawk, i.e.
+R(pH + (1 − p)D, H) > R(H, H). We have
+R(pH + (1 − p)D, H) = 0.5p(v − c) > R(H, H) = 0.5(v − c),
+since p < 1 and v − c < 0.
+14 / 46
+ESSs of the Hawk-Dove Game
+Secondly, we check whether an individual using the ESS does
+better against a dove than a dove does against another dove, i.e.
+R(pH + (1 − p)D, D) > R(D, D). We have
+R(pH + (1 − p)D, D) = pv + (1 − p)v/2 > R(D, D) = v/2.
+Hence, pH + (1 − p)D is an ESS.
+15 / 46
+Interpretation of Mixed ESSs
+One may ask the following question: does the existence of a mixed
+ESS in which all individuals play H with probability p and play D
+with probability 1 − p mean that there is an equilibrium in which a
+proportion p of individuals always play H and a proportion 1 − p
+always play D?
+Such an equilibrium is called a stable polymorphism (different
+individuals use different strategies).
+In the types of game we consider, the answer to the above
+question is ”Yes”. Hence, we can think of a population following a
+mixed strategy as being equivalent to a population in which the
+proportion of individuals using each pure action is equal to the
+probability of using that action under the mixed strategy.
+16 / 46
+Coordination and Anti-Coordination Games
+The Hawk-Dove game is an example of an anti-coordination game.
+An anti-coordination game is a symmetric 2×2 game in which
+there are 2 pure equilibria where the players take differing actions.
+In such games the mixed equilibrium is the unique ESS.
+In co-ordination games there are 2 pure, symmetric Nash equilibria
+(i.e. players take the same action at a Nash equilibrium).
+17 / 46
+ESSs in a Co-ordination Game
+Suppose two individuals play the following game.
 A B
-A (4,4) (0,0)
-B (0,0) (2,2)
-Such a game is called a coordination game, as both players would
-like to take the same action.
-37 / 61
-Example
-There are 3 Nash equilibria
-1. (A, A) - Value (4,4).
-2. (B, B) - Value (2,2).
-3. (1/3A + 2/3B, 1/3A + 2/3B) - Value ( 4
-3
-,
-4
-3
-).
-The first equilibrium Pareto dominates the other two equilibria,
-whilst the second equilibrium Pareto dominates the third.
-(A, A) is the payoff dominant equilibrium.
-38 / 61
-
-%==============================================================================%
-Risk Dominance
-Suppose there are pure Nash equilibria (A, C) and (B, D).
-The risk factor associated with strategy A, FA, is the probability
-with which Player 2 should play C (which is used at the Nash
-equilibrium where Player 1 plays A), in order to make Player 1
-indifferent between playing A or B.
-A high risk factor indicates that Player 1 must be relatively sure
-that Player 2 will play C for Player 1 to prefer A to B.
-Similarly, the risk factor associated with strategy B is the
-probability with which Player 2 should play D, in order to make
-Player 1 indifferent between playing A or B.
-39 / 61
-
-%==============================================================================%
-Risk Dominance
-The risk factors associated with C and D can be calculated in a
-similar way.
-The Nash equilibrium (A, C) risk dominates (B, D) if FA ≤ FB ,
-FC ≤ FD and there is strictly inequality in at least one case.
-40 / 61
-Example
-Consider the following symmetric game
-A B
-A (4,4) (-1000,0)
-B (0,-1000) (2,2)
-It is clear that the equilibrium (A, A) payoff dominates the
-equilibrium (B, B). However, there is a large risk associated with
-playing action A (the possibility of obtaining a payoff of -1000).
-41 / 61
-
-%==============================================================================%
-Example
-From the symmetry of the game, the risk factors of the two
-strategies are the same for both players.
-The risk factor associated with A is given by the solution of
-4p − 1000(1 − p) = 0p + 2(1 − p) ⇒ p =
-1002
-1006
-.
-The risk factor associated with B is given by the solution to
-2p + 0(1 − p) = −1000p + 4(1 − p) ⇒ p =
-4
-1006
-.
-It follows that B risk dominates A.
-42 / 61
-
-%==============================================================================%
-Conclusion
-If an equilibrium both payoff and risk dominates another, it seems
-clear that this should be the one chosen.
-In other cases, it is not clear what equilibrium should be played.
-The concept of risk domination is important in evolutionary game
-theory (see later).
-43 / 61
-
-%==============================================================================%
-3.7 2-Player Games with a Continuum of Strategies and
-Simultaneous Moves
-Assume that Player i chooses an action from a finite interval Si
-.
-The payoff to Player i when Player 1 takes action x1 and Player 2
-takes action x2 is given by Ri(x1, x2).
-It is assumed that the payoff functions are differentiable.
-44 / 61
-
-%==============================================================================%
-The Symmetric Cournot Game
-Assume that two firms produce an identical good. Firm i produces
-xi units per time interval.
-The price of the good is determined by total supply and all
-production is sold at this ”clearing price”. It is assumed that
-p = A − B[x1 + x2], (A, B > 0).
-The costs of producing x units of the good are assumed to be
-C + Dx for both firms.
-The payoff of a firm is taken to be the profit obtained (revenue
-minus costs). Revenue is simply production times price.
-45 / 61
-
-%=======================================================================%
-The Symmetric Cournot Game
-The payoff obtained by Firm 1 is given by
-R1(x1, x2) = px1 − C − Dx1 = (A − D)x1 − Bx2
-1 − Bx1x2 − C.
-By symmetry, the payoff obtained by Player 2 is
-R2(x1, x2) = px2 − C − Dx2 = (A − D)x2 − Bx2
-2 − Bx1x2 − C.
-It should be noted that it clearly does not pay firms to produce
-more than the amount xmax that guarantees that the price is equal
-to the unit (marginal) cost of production. Since xmax is finite, we
-may assume that firms choose their strategy (production level)
-from a finite interval.
-46 / 61
-%=======================================================================%
-Best Response Functions
-Given the output of the opponent, we can calculate the optimal
-response of a player using calculus.
-Let B1(x2) denote the best response of Player 1 to x2.
-Let B2(x1) denote the best response of Player 2 to x1.
-47 / 61
-Nash Equilibria in Games with a Continuum of Strategies
-and Simultaneous Actions
-At a Nash equilibrium (x
-∗
+A (5, 5) (0, 0)
+B (0, 0) (1, 1)
+18 / 46
+ESSs in a Co-ordination Game
+It is simple to check that (A, A) and (B, B) are strong Nash
+equilibria.
+Hence, both A and B are ESSs.
+There is a mixed Nash equilibrium [pA + (1 − p)B, pA + (1 − p)B],
+where
+R(A, pA + (1 − p)B)=R(B, pA + (1 − p)B)
+5p = (1 − p) ⇒ p =
 1
-, x
-∗
-2
-), we have
-x
-∗
-1 = B1(x
-∗
-2
-); x
-∗
-2 = B2(x
-∗
-1
-).
-Thus, at a Nash equilibrium Player 1 plays her best response to
-Player 2’s strategy and vice versa.
-48 / 61
-The Cournot Game
-Suppose A = 3, B =
-1
-1000 , C = 100 and D = 1.
-We have
-R1(x1, x2) = 2x1 −
-x
-2
-1
-1000
-−
-x1x2
-1000
-− 100.
-In order order to derive the best response of Player 1 to Player 2’s
-action, we differentiate Player 1’s payoff function with respect to
-x1, his action.
-49 / 61
-The Cournot Game
-We have
-∂R1(x1, x2)
-∂x1
-= 2 −
-2x1 + x2
-1000
+6
 .
-It should be noted that this derivative is decreasing in x1, hence
-any stationary point must be a maximum.
-The optimal response is given by
-2 −
-2x1 + x2
-1000
-= 0 ⇒ x1 = 1000 −
-x2
-2
-.
-Thus B1(x2) = 1000 −
-x2
-2
-.
-50 / 61
-
-%=======================================================================%
-The Cournot Game
-It should be noted that this solution is valid as long as x2 ≤ 2000
-(production cannot be negative).
-If x2 > 2000, then ∂R1(x1,x2)
-∂x1
-is negative for all non-negative values
-of x1.
-In this case the best response is not to produce anything.
-51 / 61
-
-%=======================================================================%
-% The Cournot Game
-By symmetry the best response of Player 2 is given by
-B2(x1) = max{0, 1000 −
-x1
-2
-}.
-We look for an equilibrium at which both firms are producing. In
-this case
-x
-∗
-1 = 1000 −
-x
-∗
-2
-2
-; x
-∗
-2 = 1000 −
-x
-∗
-1
-2
-.
-It follows that at Nash equilibrium both firms must produce 2000
-3
-units.
-Intuitively, from the form of the game both firms should produce
-the same amount.
-52 / 61
-
-%==============================================================================%
-\section{The Cournot Game}
-The value of the game can be found by substituting these values
-into the payoff functions.
-R1(x
-∗
-1
-, x
-∗
-2
-) = R2(x
-∗
-1
-, x
-∗
-2
-) = 2 ×
-2000
-3
-− 2 ×
-1000
-9
-− 100 ≈ 344.
-The equilibrium price is 3 − 2 ×
-2
-3 =
+19 / 46
+ESSs in a Co-ordination Game
+We now check whether 1
+6
+A +
 5
-3
+6
+B satisfies Condition 2 for an ESS.
+We first check whether this mixed strategy does better against A
+than A does against itself. We have
+R(
+1
+6
+A + (1 − p)B, A) = 5
+6
+< R(A, A) = 5.
+Hence, 1
+6
+A +
+5
+6
+B is not an ESS. A group of mutants playing A
+would obtain a higher expected payoff (i.e. invade such a
+population).
+20 / 46
+Replicator Dynamics
+When there are multiple ESSs, it is natural to ask which one would
+be favoured by natural selection.
+It is clear that this depends on the initial population. If in the
+co-ordination game most of the population are playing A, then the
+population would evolve so that eventually all the population plays
+A.
+Similarly, if nearly all of the population are playing B, then the
+population would evolve so that eventually all the population plays
+B.
+Replicator dynamics are used to simulate the evolution of such a
+population.
+21 / 46
+3.8 Replicator Dynamics in Symmetric Games
+Suppose players choose one of m actions. The payoff of a player
+when he/she plays Ai and the opponent plays Aj
+is R(Ai
+, Aj),
+where R(Ai
+, Aj) ≥ 0.
+It is assumed that individuals use pure strategies, i.e. they always
+use the same action.
+Let pi,n be the proportion of individuals using action i in
+generation n.
+22 / 46
+Replicator Dynamics in Symmetric Games
+Denote the average reward of an individual using action i in
+generation n by Ri,n. We have
+Ri,n = R(Ai
+, p1,nA1 + p2,nA2 + . . . + pm,nAm).
+Denote the average reward in the population as a whole in
+generation n as Rn. We have
+Rn =
+Xm
+i=1
+pi,nRi,n.
+23 / 46
+Replicator Dynamics in Symmetric Games
+Individuals using action i are assumed to reproduce in proportion
+to the average reward of these individuals. It follows that the
+proportion of individuals using action i in generation i + 1 is given
+by
+pi,n+1 =
+pi,nRi,n
+Rn
+Varying i from 1 to m − 1, we obtain the replicator dynamic
+equations.
+Note that pm,n = 1 −
+Pm−1
+i=1 pi,n.
+24 / 46
+Fixed Points of the Replicator Dynamic Equations
+A fixed point (p1, p2, . . . , pm) of the replicator dynamic equations
+satisfies
+pi =
+piRi
+R
+, ∀i = 1, 2, . . . , m.
+where Ri and R denote the average reward of individuals taking
+action i and of the population, respectively.
+25 / 46
+Fixed Points of the Replicator Dynamic Equations
+It should be noted that all actions that occur with positive
+probability have to obtain the same reward at a fixed point.
+pi = 1, for some i such that 1 ≤ i ≤ m and pj = 0, ∀j 6= i always
+defines a fixed point of the replicator dynamic equations.
+A fixed point of the replicator dynamics corresponds to an ESS if
+the fixed point is an attractor.
+A fixed point of a dynamic process is an attractor if in some
+neighbourhood of the fixed point, evolution of the system leads to
+the process getting ever closer to that fixed point.
+26 / 46
+Example 3.8.1
+Consider the co-ordination game given above.
+Since there are only 2 possible actions, we need only to consider
+the evolution of the proportion of individuals using A.
+Let pn be the proportion of individuals using A in generation n (the
+remaining individuals use B). The proportion of individuals using A
+at the start of the process is p0.
+27 / 46
+Example 3.8.1
+The average reward of A players in generation n is given by
+RA,n = R(A, pnA + (1 − pn)B) = 5pn.
+The average reward of B players in generation n is given by
+RB,n = R(B, pnA + (1 − pn)B) = 1 − pn.
+28 / 46
+Example 3.8.1
+The average reward of the population as a whole is given by
+Rn = pnRA,n + (1 − pn)RB,n = 5p
+2
+n + (1 − pn)
+2 = 1 − 2pn + 6p
+2
+n
 .
-53 / 61
-The Cournot Game
-There cannot be an equilibrium at which one of the firms does not
-produce. The argument is as follows.
-If one firm does not produce, then the optimal response to this is
-to produce 1000 units.
-(0,1000) cannot be a Nash equilibrium, since the best response of
-Firm 1 to x2 = 1000 is to choose x1 = 500.
-54 / 61
-The Stackelberg Model
-This is identical to the Cournot model, except that it is assumed
-that one of the firms is a market leader and chooses its production
-level before the second firm chooses.
-The second firm observes the production level of the first.
-55 / 61
-Games with a Continuum of Strategies and Sequential
-Moves
-Suppose Player 2 moves after Player 1 and observes the action
-taken by Player 1. The equilibrium is derived by recursion.
-Player 2 should choose the optimum action given the action of
-Player 1.
-Hence, we first need to solve
-∂R2(x1, x2)
-∂x2
-= 0.
-This gives the optimal response of Player 2 as a function of the
-strategy of Player 1, x2 = B2(x1).
-56 / 61
-Games with a Continuum of Strategies and Sequential
-Moves
-We now calculate the optimal strategy of the first player to move.
-If Player 1 plays x1, Player 1 responds by playing B2(x1). Hence,
-we can express the payoff of Player 1 as a function simply of x1,
-i.e. R1(x1, B2(x1)).
-In order to find the optimal action of Player 1, we differentiate this
-function with respect to x1.
-Having calculated the optimal value of x1, we can derive x2.
-57 / 61
-
-%==============================================================================%
-Example
-Derive the equilibrium of the Stackelberg version of the previous
-example.
+Hence, the equation governing the replicator dynamics is
+pn+1 =
+pnRA,n
+Rn
+=
+5p
+2
+n
+1 − 2pn + 6p
+2
+n
+.
+29 / 46
+Example 3.8.1
+A fixed point of these dynamics satisfies pn+1 = pn = p. We have
+p =
+5p
+2
+1 − 2p + 6p
+2 ⇒ p(1 − 2p + 6p
+2
+) = 5p
+2
+.
+p = 0 is clearly a root of this equation. Otherwise, dividing by p,
+we obtain
+(1 − 2p + 6p
+2
+) = 5p ⇒ 1 − 7p + 6p
+2 = 0 ⇒ p = 1 or p =
+1
+6
+.
+Hence, there are 3 fixed points of the replicator dynamics 0, 1
+6
+and
+1.
+30 / 46
+Example 3.8.1
+Note that 0 and 1 will always be fixed points of the replicator
+dynamics in 2×2 games.
+This is due to the fact that the replicator dynamics assume that
+there is no mutation. Hence, if one of the actions is not played,
+then there is no way of introducing it into the population.
+We now check which of these fixed points are attractors.
+31 / 46
+Example 3.8.1
+To check whether p = 0 is an attractor (this corresponds to the
+strategy B), we assume that pn is close to 0 and see whether pn+1
+is closer to 0, i.e. let pn = δ where δ is small (δ > 0).
 We have
-R2(x1, x2)=2x2 −
-x
+pn+1 − 0 = pn+1 =
+5δ
 2
+1 − 2δ + 6δ
 2
-1000
-−
-x1x2
-1000
-− 100.
-∂R2(x1, x2)
-∂x2
-=2 −
-x2
-500
-−
-x1
-1000
-.
-58 / 61
-Example
-It follows that the best response of Player 2 is given by
-2 −
-x2
-500
-−
-x1
-1000
-= 0 ⇒ x2 = 1000 −
-x1
+= δ
+5δ
+1 − 2δ + 6δ
 2
 .
+For small δ, pn+1 will be of the order 5δ times pn, i.e. less than pn.
+Hence, p = 0 is an attractor.
+32 / 46
+Example 3.8.1
+To check whether p = 1 is an attractor (this corresponds to the
+strategy B), we assume that pn is close to 1, i.e. pn = 1 − δ,
+where δ is small and positive.
+We then look at the distance between 1 and pn+1 (normally as a
+multiple of δ). Setting pn = 1 − δ.
+pn+1 =
+5(1 − δ)
+2
+1 − 2(1 − δ) + 6(1 − δ)
+2
+33 / 46
+Example 3.8.1
 Hence,
-R1(x1, B2(x1))=R1(x1, 1000 −
-x1
+1 − pn+1 = 1 −
+5(1 − δ)
 2
-)
-=2x1 −
-x
+1 − 2(1 − δ) + 6(1 − δ)
 2
-1
-1000
-−
-x1(1000 − x1/2)
-1000
-− 100
-=x1 −
-x
+= δ
+% 
+δ
+5 − 10δ + 6δ
 2
-1
-2000
-− 100.
-59 / 61
-Example
-Differentiating
-∂R1(x1, B2(x1))
-∂x1
-= 1 −
-x1
-1000
+% 
 .
-It follows that Firm 1 maximises its profit by producing 1000 units.
-The best response of Firm 2 is B2(x1) = 1000 −
-x1
-2 = 500 units.
-The Stackelberg equilibrium is (1000, 500). Hence, the leader
-produces more than at the Cournot equilibrium and the follower
-produces less.
-Total production is greater than at the Cournot equilibrium, i.e.
-the equilibrium price is lower.
-60 / 61
-
-%==============================================================================%
-Example
-The profit of Firm 1 at this equilibrium is
-R1(1000, 500) = 2 × 1000 − 1000 − 500 − 100 = 400.
-The profit of Firm 2 at this equilibrium
-R2(1000, 500) = 2 × 500 − 250 − 500 − 100 = 150.
-It is clear that Firm 1 gains by being the leader. Firm 2 loses. The
-sum of profits is lower than at the Cournot equilibrium.
-This seems somewhat counter-intuitive, as the market would seem
-to be more competitive under the Cournot model.
-61 / 61
-
-%==============================================================================%
+It follows that when pn is δ away from 1, then pn+1 will be of order
+δ
+5
+times further away, i.e. closer to 1.
+Hence, p = 1 is an attractor.
+34 / 46
+Example 3.8.1
+Finally, we check whether p =
+1
+6
+is an attractor. Let pn+1 =
+1
+6 + δ
+and look at the distance between pn+1 and 1
+6
+as a multiple of δ.
+We have
+pn+1 −
+1
+6
+=
+5(1/6 + δ)
+2
+1 − 2(1/6 + δ) + 6(1/6 + δ)
+2
+−
+1
+6
+This gives
+pn+1 −
+1
+6
+= δ
+5/3 + 4δ
+5/6 + 6δ
+2
+35 / 46
+Example 3.8.1
+It follows that the difference between pn+1 and 1
+6
+is of order 2δ,
+i.e. twice as far away from 1
+6
+.
+It follows that p =
+1
+6
+is not an attractor.
+Hence, the only ESSs in this game are p = 0 (corresponding to B)
+and p = 1 (corresponding to A).
+36 / 46
+Relation Between the Evolution of the Population and the
+Risk Factor
+It should be noted that if p0 >
+1
+6
+, then the population will evolve
+to everyone using A.
+If p0 <
+1
+6
+, then the population will evolve to everyone using B.
+It should be noted that 1
+6
+is the risk factor associated with the ESS
+strategy A. When the probability of an opponent playing A is
+greater than 1
+6
+, then a player should play A.
+37 / 46
+3.9 Asymmetric Evolutionary Games
+In general, a Hawk-Dove game will not be symmetric, e.g.
+1. One individual may be bigger (stronger) than the
+other and hence more likely to win a fight. For
+simplicity assume that one player is always bigger and
+wins a fight with probability p, where p >
+1
+2
+.
+2. Two individuals will not find a resource at the same
+time, hence one can be treated as ”an owner” and
+the other as ”an intruder”.
+In such cases the strategy of an individual should take into account
+the role of a player.
+38 / 46
+Asymmetric Evolutionary Games
+Suppose that in the Hawk-Dove game one player is ”an owner”
+and the other player is ”an intruder”.
+Strictly speaking, in such a game since each player can play either
+role, the strategy of an individual should be given by a rule
+defining how an individual behaves when she is an intruder and a
+rule defining how she behaves when she is an owner.
+However, assuming that it is clear which role is being played by
+each individual, in order to define ESSs for such a game, we only
+need to consider the game in which Player 1 is the owner and
+Player 2 is the intruder.
+39 / 46
+Asymmetric Evolutionary Games
+The payoff matrix is given by
+H D
+H (0.5[v − c], 0.5[v − c]) (v, 0)
+D (0, v) 0.5(v, v)
+40 / 46
+Asymmetric Evolutionary Games
+In this case an ESS profile (π
+∗
+1
+, π∗
+2
+) satisfies the condition that if
+the vast majority of the population play π
+∗
+1 when in Role 1 and π
+∗
+2
+when in Role 2, then an individual who plays a different strategy in
+either role will be selected against.
+It follows that (π
+∗
+1
+, π∗
+2
+) is an ESS profile if
+R1(π
+∗
+1
+, π∗
+2
+)>R1(π1, π∗
+2
+), ∀π1 6= π
+∗
+1
+R2(π
+∗
+1
+, π∗
+2
+)>R2(π
+∗
+1
+, π2) ∀π2 6= π
+∗
+2
+41 / 46
+Asymmetric Evolutionary Games
+It follows from this definition that any strong Nash equilibrium of
+an asymmetric game is an ESS profile.
+Note that it is not clear at this stage that an ESS profile has to
+satisfy this condition, e.g. no profile with a mixed strategy can
+satisfy this condition. It will be argued that no such profile can be
+an ESS in an asymmetric game.
+42 / 46
+Example 3.9.1
+Consider the asymmetric Hawk-Dove game in which Player 1 is the
+owner and Player 2 is an intruder.
+Since (H, D) and (D, H) are strong Nash equilibria of this game,
+they are ESS profiles.
+The first ESS profile is the intuitively appealing ”be aggressive
+when you are the owner, but avoid fights when you are an
+intruder”.
+The second ESS profile is the less intuitive ”avoid fights when you
+are the owner, but be aggressive when you are an intruder”.
+43 / 46
+Example 3.9.1
+The only other possible ESS profile corresponds to the mixed Nash
+equilibrium in which both players play H with probability p
+∗ =
+v
+c
+.
+Suppose that occupiers play Hawk with probability p and intruders
+play H with probability q.
+The expected payoff of an occupier who plays H is
+R1(H, qH + (1 − q)D) = 0.5q(v − c) + (1 − q)v.
+44 / 46
+\subsection{Example 3.9.1}
+The expected payoff of an occupier who plays D is
+R1(D, qH + (1 − q)D) = 0.5(1 − q)v.
+Comparing these two expected payoffs, occupiers playing Hawk
+obtain a higher payoff than occupiers playing Dove if q <
+v
+c
+.
+i.e. if the level of aggression in intruders is low, then owners should
+be aggressive.
+It follows from the symmetry of the payoffs that intruders playing
+Hawk obtain a higher payoff than intruders playing Dove if p <
+v
+c
+(i.e. the level of aggression in owners is low).
+%% 45 / 46
+%% Example 3.9.1
+Suppose occupiers play H with probability v
+c + δ and intruders play
+H with probability v
+% c − , where δ,  > 0.
+It follows that selection will favour occupiers playing H and
+intruders playing D.
+It can be seen that evolution will take the population away from
+the mixed Nash equilibrium. Hence, the mixed Nash equilibrium is
+not an ESS.
+46 / 46
+\end{document}

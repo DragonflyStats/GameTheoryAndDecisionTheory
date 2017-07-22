@@ -1,38 +1,3 @@
-
-\documentclass[]{report}
-\voffset=-1.5cm
-\oddsidemargin=0.0cm
-\textwidth = 480pt
-
-
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{amssymb}
-\usepackage{framed}
-\usepackage{multicol}
-%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
-%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
-%\usepackage{multirow}
-\usepackage{enumerate}
-
-\usepackage{amsmath,amsfonts,amssymb}
-\usepackage{color}
-\usepackage{multirow}
-\usepackage{eurosym}
-\usepackage{framed}
-
-%\input def.tex
-%\input dsdef.tex
-%\input rgb.tex
-
-%\newcommand \la{\lambda}
-%\newcommand \al{a}
-%\newcommand \be{b}
-\newcommand \x{\overline{x}}
-\newcommand \y{\overline{y}}
-
-\begin{document}
-	
 3.10 Correlated Equilibria
 Consider the following battle of the sexes game
 C F
@@ -55,30 +20,27 @@ play F.
 \item This would be an ”equitable” solution to the game. Both players
 would receive an expected reward of 3.5.
 \end{itemize}
-%%- 2 / 39
+2 / 39
 
 %=======================================================================%
 %%- Correlated Equilibria
-\begin{itemize}
-\item One important feature of the solution presented above is that given
+One important feature of the solution presented above is that given
 the result of the coin toss, neither player wishes to depart from the
 agreed action given that the other player keeps to the agreement.
-\item For example, given the result is heads, the proposed action pair is
+For example, given the result is heads, the proposed action pair is
 (C, C). If player 1 changes unilaterally from this action, then she
 obtains 0 rather than 2.
-\item This is the essence of a correlated equilibrium: given the signal
+This is the essence of a correlated equilibrium: given the signal
 available to each player (here, they jointly observe the result of a
 coin toss), none of them can gain by ignoring the signal given the
 others take the appropriate action.
-\item In general, we assume that each player receives his/her own private
+In general, we assume that each player receives his/her own private
 signal. In certain cases (discussed later), we may assume that the
 signal is public (observed by all the players).
-\end{itemize}
-
-%%- 3 / 39
+3 / 39
 
 %=======================================================================%
-\subsection{Definition of a Correlated Strategy Pair in a 2-Player Game}
+Definition of a Correlated Strategy Pair in a 2-Player Game
 A correlated strategy pair is given by a joint distribution over the
 set of pure strategy pairs. For example, the correlated strategy
 described for the battle of the sexes game is
@@ -95,7 +57,7 @@ both play F.
 4 / 39
 
 %=======================================================================%
-\subsection{Definition of a Correlated Strategy Pair in a 2-Player Game}
+Definition of a Correlated Strategy Pair in a 2-Player Game
 It should be noted that given the action to be taken by one player
 under such a correlated strategy pair, the action to be taken be the
 other is known. In such cases, the strategy pair can be achieved by
@@ -107,8 +69,8 @@ taken.
 5 / 39
 
 %=======================================================================%
-\subsection{Relations Between Correlated Strategy Pairs, Pure and
-Mixed Strategies}
+Relations Between Correlated Strategy Pairs, Pure and
+Mixed Strategies
 Suppose both players have two possible actions. The general form
 of a correlated strategy pair is
 C D
@@ -119,7 +81,7 @@ presented as a 4-dimensional vector π = (p1, p2, p3, p4).
 6 / 39
 
 %=======================================================================%
-\subsection{Expected Rewards Under a Correlated Strategy Pair}
+Expected Rewards Under a Correlated Strategy Pair
 This correlated strategy pair means that (A, C) is played with
 probability p1, (A, D) is played with probability p2, etc.
 The expected reward of Player i under correlated strategy π is
@@ -131,8 +93,8 @@ This is a linear combination of the pi
 7 / 39
 
 %=======================================================================%
-\subsection{Relations Between Correlated Strategy Pairs, Pure and
-Mixed Strategies}
+Relations Between Correlated Strategy Pairs, Pure and
+Mixed Strategies
 If pi = 1 for some i, then the correlated strategy pair is a pair of
 pure strategies.
 For example, π = (0, 1, 0, 0) corresponds to the pair of pure
@@ -160,8 +122,8 @@ action recommended to them.
 9 / 39
 
 %=======================================================================%
-\subsection{Conditions for a Correlated Equilibrium in a 2×2 Matrix
-Game}
+Conditions for a Correlated Equilibrium in a 2×2 Matrix
+Game
 According to the correlated strategy pair
 C D
 A p1 p2
@@ -174,8 +136,9 @@ p1+p2
 10 / 39
 
 %=======================================================================%
-\subsection{Conditions for a Correlated Equilibrium in a 2×2 Matrix
-Game}
+
+Conditions for a Correlated Equilibrium in a 2×2 Matrix
+Game
 Each player should maximise their expected reward given the signal
 (recommendation) he/she receives.
 Hence, if Player 1 obtains the recommendation to play A, her
@@ -198,8 +161,9 @@ p1 + p2
 11 / 39
 
 %=======================================================================%
-\subsection{Conditions for a Correlated Equilibrium in a 2×2 Matrix
-Game}
+
+Conditions for a Correlated Equilibrium in a 2×2 Matrix
+Game
 For stability, we require that
 p1R1(A, C)
 p1 + p2
@@ -218,8 +182,9 @@ p1R1(A, C) + p2R1(A, D) ≥ p1R1(B, C) + p2R1(B, D).
 12 / 39
 
 %=======================================================================%
-\subsection{Conditions for a Correlated Equilibrium in a 2×2 Matrix
-Game}
+
+Conditions for a Correlated Equilibrium in a 2×2 Matrix
+Game
 It should be noted that if p1 = p2 = 0, then the above derivation
 does not make sense (since we divide by 0).
 However, in this case Player 1 is never recommended to play A and
@@ -243,8 +208,7 @@ Player 2 to play C and 4) Player 2 to play D.
 14 / 39
 
 %=======================================================================%
-%=======================================================================%
-\subsection{Relation Between Nash Equilibria and Correlated Equilibria}
+Relation Between Nash Equilibria and Correlated Equilibria
 Any Nash equilibrium pair of strategies is also a Correlated
 Equilibrium. A pair of mixed strategies that is not a Nash
 equilibrium is not a correlated equilibrium.
@@ -309,8 +273,10 @@ communication is possible and hence players may choose an
 appropriate equilibrium based on some criterion. First we consider
 the set of attainable payoffs.
 %%- 17 / 39
-\subsection{The Set of Attainable Payoffs Under a Correlated Strategy
-Pair}
+%=======================================================================%
+
+The Set of Attainable Payoffs Under a Correlated Strategy
+Pair
 Consider the following game (an example of the chicken game).
 F C
 F (0,0) (8,2)
@@ -319,23 +285,22 @@ C (2,8) (6,6)
 
 %=======================================================================%
 %%- The Set of Attainable Payoffs Under a Correlated Strategy Pair
-\begin{itemize}
-\item For example, by randomising between the Nash equilibria (C, F)
+For example, by randomising between the Nash equilibria (C, F)
 and (F, C), any vector of expected payoffs on the line between
 (8, 2) and (2, 8) can be attained.
-\item  Similarly, we can attain a vector of expected payoffs anywhere on
+Similarly, we can attain a vector of expected payoffs anywhere on
 any of the lines between the payoff vectors given by any two pairs
 of strategies.
-\item  By randomising between 3 or more strategy pairs, we can obtain
+By randomising between 3 or more strategy pairs, we can obtain
 any payoff vector within the interior of the lines obtained above.
-\item  It follows that the set of attainable payoffs is the convex hull of the
+It follows that the set of attainable payoffs is the convex hull of the
 payoff vectors given in the payoff matrix (the smallest convex set
 that contains all these vectors).
-\end{itemize}
-%%- 19 / 39
+19 / 39
 
-\subsection{The Set of Attainable Payoffs Under a Correlated Strategy
-Pair}
+%=======================================================================%
+The Set of Attainable Payoffs Under a Correlated Strategy
+Pair
 This set can be obtained by joining the points given by each payoff
 vector in the payoff matrix.
 The external set of lines thus drawn is the boundary of the convex
@@ -385,9 +350,8 @@ S
 21 / 39
 %=======================================================================%
 
-%=======================================================================%
-\subsection{The Set of Attainable Payoffs Under a Correlated Strategy
-Pair}
+The Set of Attainable Payoffs Under a Correlated Strategy
+Pair
 Note that the maximum payoff attainable by a player must occur
 at one of the vertices of the convex hull (i.e. be attained when a
 pair of pure strategies is played).
@@ -395,7 +359,7 @@ Similarly, the sum of the payoffs must be maximised for some pair
 of pure strategies.
 22 / 39
 %=======================================================================%
-\subsection{The Set of Pareto Optimal Payoff Vectors}
+The Set of Pareto Optimal Payoff Vectors
 A payoff vector is Pareto optimal if it is a) attainable and b) there
 is no attainable payoff vector for which one player attains a greater
 payoff and the other player obtains at least the same payoff.
@@ -627,7 +591,7 @@ otherwise choose (C, C).
 38 / 39
 
 %=======================================================================%
-\subsection{Graphical Presentation/Interpretation of the Solution}
+Graphical Presentation/Interpretation of the Solution
 Hence, the derivation of appropriate correlated equilibria is
 relatively straightforward when any Pareto optimal payoff vector
 can be attained at a correlated equilibrium.
@@ -640,6 +604,3 @@ by a correlated equilibrium and the choice of an appropriate
 correlated equilibrium may be more difficult.
 This problem will be considered in the tutorials.
 39 / 39
-
-
-\end{document}

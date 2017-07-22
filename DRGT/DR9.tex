@@ -1,3 +1,37 @@
+
+\documentclass[]{report}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
+
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+
+\begin{document}
 3.11 Repeated Games
 In many situations players will interact on many occasions.
 Suppose two players play a matrix game n times.
@@ -137,7 +171,7 @@ Matrix form of the 2-Repeated Prisoner’s Dilemma
 7 (40,0) (30,10) (40,10) (30,10) (28,28) (10,30) (28,28) (10,30)
 8 (40,0) (30,10) (40,0) (30,10) (30,10) (20,20) (30,10) (20,20)
 12 / 50
-The 2-Repeated Prisoner’s Dilemma
+\subsection{The 2-Repeated Prisoner’s Dilemma}
 In each round a player can ensure a reward of 10 by defecting.
 Hence, at a Nash equilibrium of the 2-repeated game, both players
 must obtain a reward of at least 20.
@@ -252,8 +286,8 @@ R1(A,T) = 20 + 20ω
 20
 1 − ω2
 20 / 50
-Equilibria in the repeated prisoner’s dilemma with a
-random number of rounds
+\subsection{Equilibria in the repeated prisoner’s dilemma with a
+random number of rounds}
 Why does it suffice to just consider these two strategies?
 It should be noted that if a T player plays with three opponents,
 one playing T, one playing D and one playing A, then all the 4
@@ -389,8 +423,8 @@ The costs incurred by firm i in a period are given by
 ci(x) = 100 + xi
 .
 30 / 50
-Implicit Collusion in the Repeated Version of the
-Symmetric Cournot Game
+\subsection{Implicit Collusion in the Repeated Version of the
+Symmetric Cournot Game}
 Note that this is the problem considered in Section 3.6.
 Player 1’s best response to x2 is 1000 −
 x2
@@ -403,8 +437,8 @@ units per period.
 The profits obtained by both players at the Cournot equilibrium are
 approximately 344.
 31 / 50
-Implicit Collusion in the Repeated Version of the
-Symmetric Cournot Game
+\subsection{Implicit Collusion in the Repeated Version of the
+Symmetric Cournot Game}
 We need to derive the total production xtot = x1 + x2 which
 maximises the total reward of the two firms.
 The total costs incurred by the firms are
@@ -659,3 +693,4 @@ the set of mean payoffs possible at an equilibrium of a repeated
 game contains the set of expected payoffs using a correlated
 equilibrium in a one-shot game.
 50 / 50
+\end{document}
