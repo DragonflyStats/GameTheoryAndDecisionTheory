@@ -1,0 +1,381 @@
+
+\documentclass[]{report}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
+
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+
+\begin{document}
+%======================================================================%
+\subsection{Example 3.8.1}
+Consider the co-ordination game given above.
+Since there are only 2 possible actions, we need only to consider
+the evolution of the proportion of individuals using A.
+Let pn be the proportion of individuals using A in generation n (the
+remaining individuals use B). The proportion of individuals using A
+at the start of the process is p0.
+27 / 46
+
+%======================================================================%
+\subsection{Example 3.8.1}
+The average reward of A players in generation n is given by
+RA,n = R(A, pnA + (1 − pn)B) = 5pn.
+The average reward of B players in generation n is given by
+RB,n = R(B, pnA + (1 − pn)B) = 1 − pn.
+28 / 46
+%======================================================================%
+\subsection{Example 3.8.1}
+The average reward of the population as a whole is given by
+Rn = pnRA,n + (1 − pn)RB,n = 5p
+2
+n + (1 − pn)
+2 = 1 − 2pn + 6p
+2
+n
+.
+Hence, the equation governing the replicator dynamics is
+pn+1 =
+pnRA,n
+Rn
+=
+5p
+2
+n
+1 − 2pn + 6p
+2
+n
+.
+29 / 46
+
+%======================================================================%
+\subsection{Example 3.8.1}
+A fixed point of these dynamics satisfies pn+1 = pn = p. We have
+p =
+5p
+2
+1 − 2p + 6p
+2 ⇒ p(1 − 2p + 6p
+2
+) = 5p
+2
+.
+p = 0 is clearly a root of this equation. Otherwise, dividing by p,
+we obtain
+(1 − 2p + 6p
+2
+) = 5p ⇒ 1 − 7p + 6p
+2 = 0 ⇒ p = 1 or p =
+1
+6
+.
+Hence, there are 3 fixed points of the replicator dynamics 0, 1
+6
+and
+1.
+30 / 46
+
+%======================================================================%
+\subsection{Example 3.8.1}
+Note that 0 and 1 will always be fixed points of the replicator
+dynamics in 2×2 games.
+This is due to the fact that the replicator dynamics assume that
+there is no mutation. Hence, if one of the actions is not played,
+then there is no way of introducing it into the population.
+We now check which of these fixed points are attractors.
+31 / 46
+
+%======================================================================%
+\subsection{Example 3.8.1}
+To check whether p = 0 is an attractor (this corresponds to the
+strategy B), we assume that pn is close to 0 and see whether pn+1
+is closer to 0, i.e. let pn = δ where δ is small (δ > 0).
+We have
+pn+1 − 0 = pn+1 =
+5δ
+2
+1 − 2δ + 6δ
+2
+= δ
+5δ
+1 − 2δ + 6δ
+2
+.
+For small δ, pn+1 will be of the order 5δ times pn, i.e. less than pn.
+Hence, p = 0 is an attractor.
+32 / 46
+Example 3.8.1
+To check whether p = 1 is an attractor (this corresponds to the
+strategy B), we assume that pn is close to 1, i.e. pn = 1 − δ,
+where δ is small and positive.
+We then look at the distance between 1 and pn+1 (normally as a
+multiple of δ). Setting pn = 1 − δ.
+pn+1 =
+5(1 − δ)
+2
+1 − 2(1 − δ) + 6(1 − δ)
+2
+33 / 46
+
+%======================================================================%
+\subsection{Example 3.8.1}
+Hence,
+1 − pn+1 = 1 −
+5(1 − δ)
+2
+1 − 2(1 − δ) + 6(1 − δ)
+2
+= δ
+% 
+δ
+5 − 10δ + 6δ
+2
+% 
+.
+It follows that when pn is δ away from 1, then pn+1 will be of order
+δ
+5
+times further away, i.e. closer to 1.
+Hence, p = 1 is an attractor.
+34 / 46
+%======================================================================%
+\subsection{Example 3.8.1}
+Finally, we check whether p =
+1
+6
+is an attractor. Let pn+1 =
+1
+6 + δ
+and look at the distance between pn+1 and 1
+6
+as a multiple of δ.
+We have
+pn+1 −
+1
+6
+=
+5(1/6 + δ)
+2
+1 − 2(1/6 + δ) + 6(1/6 + δ)
+2
+−
+1
+6
+This gives
+pn+1 −
+1
+6
+= δ
+5/3 + 4δ
+5/6 + 6δ
+2
+35 / 46
+%======================================================================%
+\subsection{Example 3.8.1}
+It follows that the difference between pn+1 and 1
+6
+is of order 2δ,
+i.e. twice as far away from 1
+6
+.
+It follows that p =
+1
+6
+is not an attractor.
+Hence, the only ESSs in this game are p = 0 (corresponding to B)
+and p = 1 (corresponding to A).
+36 / 46
+
+%======================================================================%
+\subsection{Relation Between the Evolution of the Population and the
+Risk Factor}
+It should be noted that if p0 >
+1
+6
+, then the population will evolve
+to everyone using A.
+If p0 <
+1
+6
+, then the population will evolve to everyone using B.
+It should be noted that 1
+6
+is the risk factor associated with the ESS
+strategy A. When the probability of an opponent playing A is
+greater than 1
+6
+, then a player should play A.
+37 / 46
+
+%======================================================================%
+\subsection{3.9 Asymmetric Evolutionary Games}
+In general, a Hawk-Dove game will not be symmetric, e.g.
+1. One individual may be bigger (stronger) than the
+other and hence more likely to win a fight. For
+simplicity assume that one player is always bigger and
+wins a fight with probability p, where p >
+1
+2
+.
+2. Two individuals will not find a resource at the same
+time, hence one can be treated as ”an owner” and
+the other as ”an intruder”.
+In such cases the strategy of an individual should take into account
+the role of a player.
+38 / 46
+
+%======================================================================%
+\subsection{Asymmetric Evolutionary Games}
+Suppose that in the Hawk-Dove game one player is ”an owner”
+and the other player is ”an intruder”.
+Strictly speaking, in such a game since each player can play either
+role, the strategy of an individual should be given by a rule
+defining how an individual behaves when she is an intruder and a
+rule defining how she behaves when she is an owner.
+However, assuming that it is clear which role is being played by
+each individual, in order to define ESSs for such a game, we only
+need to consider the game in which Player 1 is the owner and
+Player 2 is the intruder.
+
+39 / 46
+
+%======================================================================%
+Asymmetric Evolutionary Games
+The payoff matrix is given by
+H D
+H (0.5[v − c], 0.5[v − c]) (v, 0)
+D (0, v) 0.5(v, v)
+40 / 46
+%======================================================================%
+Asymmetric Evolutionary Games
+In this case an ESS profile (π
+∗
+1
+, π∗
+2
+) satisfies the condition that if
+the vast majority of the population play π
+∗
+1 when in Role 1 and π
+∗
+2
+when in Role 2, then an individual who plays a different strategy in
+either role will be selected against.
+It follows that (π
+∗
+1
+, π∗
+2
+) is an ESS profile if
+R1(π
+∗
+1
+, π∗
+2
+)>R1(π1, π∗
+2
+), ∀π1 6= π
+∗
+1
+R2(π
+∗
+1
+, π∗
+2
+)>R2(π
+∗
+1
+, π2) ∀π2 6= π
+∗
+2
+41 / 46
+
+%======================================================================%
+Asymmetric Evolutionary Games
+It follows from this definition that any strong Nash equilibrium of
+an asymmetric game is an ESS profile.
+Note that it is not clear at this stage that an ESS profile has to
+satisfy this condition, e.g. no profile with a mixed strategy can
+satisfy this condition. It will be argued that no such profile can be
+an ESS in an asymmetric game.
+42 / 46
+
+%======================================================================%
+Example 3.9.1
+Consider the asymmetric Hawk-Dove game in which Player 1 is the
+owner and Player 2 is an intruder.
+Since (H, D) and (D, H) are strong Nash equilibria of this game,
+they are ESS profiles.
+The first ESS profile is the intuitively appealing ”be aggressive
+when you are the owner, but avoid fights when you are an
+intruder”.
+The second ESS profile is the less intuitive ”avoid fights when you
+are the owner, but be aggressive when you are an intruder”.
+43 / 46
+%======================================================================%
+
+Example 3.9.1
+The only other possible ESS profile corresponds to the mixed Nash
+equilibrium in which both players play H with probability p
+∗ =
+v
+c
+.
+Suppose that occupiers play Hawk with probability p and intruders
+play H with probability q.
+The expected payoff of an occupier who plays H is
+R1(H, qH + (1 − q)D) = 0.5q(v − c) + (1 − q)v.
+44 / 46
+\subsection{Example 3.9.1}
+The expected payoff of an occupier who plays D is
+R1(D, qH + (1 − q)D) = 0.5(1 − q)v.
+Comparing these two expected payoffs, occupiers playing Hawk
+obtain a higher payoff than occupiers playing Dove if q <
+v
+c
+.
+i.e. if the level of aggression in intruders is low, then owners should
+be aggressive.
+It follows from the symmetry of the payoffs that intruders playing
+Hawk obtain a higher payoff than intruders playing Dove if p <
+v
+c
+(i.e. the level of aggression in owners is low).
+%% 45 / 46
+%% Example 3.9.1
+Suppose occupiers play H with probability v
+c + δ and intruders play
+H with probability v
+% c − , where δ,  > 0.
+It follows that selection will favour occupiers playing H and
+intruders playing D.
+It can be seen that evolution will take the population away from
+the mixed Nash equilibrium. Hence, the mixed Nash equilibrium is
+not an ESS.
+46 / 46
+\end{document}
