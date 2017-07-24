@@ -37,18 +37,15 @@
 
 \chapter{CHAPTER - GAME THEORY}
 \section{3.1 The Concept of a Game}
-
-\begin{framed}
 A game is defined by
 \begin{itemize}
-	\item[(a)] The set of players (at least two ”rational” players).
-	\item[(b) The set of actions available to each player (each has at least
+	\item a) The set of players (at least two ”rational” players).
+	\item b) The set of actions available to each player (each has at least
 	two possible actions).
-	\item[(c) A payoff function, which gives the (expected) payoff of each
+	\item c) A payoff function, which gives the (expected) payoff of each
 	player given the actions used by the players. The (expected) payoff
 	of a player does depend on the actions used by the other players.
 \end{itemize}
-\end{framed}
 
 
 %%- 1 / 45
@@ -57,13 +54,13 @@ A game is defined by
 \begin{itemize}
 	\item According to such a definition, roulette is not a mathematical
 	game, since the expected winnings of a player only depend on how
-	they play.
+	he/she plays.
 	\item The lottery is a mathematical game. Although the probability of
 	winning the jackpot is independent of the choices of other players,
 	a player can maximise his/her expected reward by choosing
 	combinations of numbers that other individuals do not choose
 	(such an individual is not more likely to win the jackpot, but when
-	they win, they win more on average).
+	he/she wins, he/she wins more on average).
 \end{itemize}
 
 
@@ -85,7 +82,7 @@ A game is defined by
 
 %===========================================================%
 %% 3.2 The Matrix Form of a 2-Player Game
-For example, the following describes a so called \textbf{\textit{Hawk-Dove}} game
+For example, the following describes a so called Hawk-Dove game
 H D
 H (-2,-2) (4,0)
 D (0,4) (2,2)
@@ -98,13 +95,12 @@ obtains a payoff of 4 and Player 2 obtains a payoff of 0.
 In general, a 2-player matrix game can be described by
 \begin{enumerate}
 	\item The set of actions available to Player 1,
-	\[A = {a1, a2, . . . , am}\].
+	A = {a1, a2, . . . , am}.
 \item The set of actions available to Player 2,
-	\[B = {b1, b2, . . . , bn}\].
+	B = {b1, b2, . . . , bn}.
 \item The m × n matrix of 2-dimensional vectors giving the
 	payoffs of both players for each of the m × n possible
-	combinations of actions. 
-\item The payoff of Player k when
+	combinations of actions. The payoff of Player k when
 	Player 1 plays ai and Player 2 plays bj will be
 	denoted Rk (ai
 	, bj).
@@ -147,17 +143,13 @@ In general, a 2-player matrix game can be described by
 %% 7 / 45
 %==========================================================%
 \section{3.3 The Extensive Form of a Game}
-\begin{itemize}
-	\item In many games, e.g. chess, each player makes a sequence of moves.
-	Such a game can be represented by a tree. 
-		\item  Each node represents a
-	position (state) in which a player must make a move.
-	\item 	Each edge coming out of a node represents a move that the player
-	can make in that particular state.
-	\item 	Each terminal point of the tree is associated with a payoff vector.
-\end{itemize}
-
-%% 8 / 45
+In many games, e.g. chess, each player makes a sequence of moves.
+Such a game can be represented by a tree. Each node represents a
+position (state) in which a player must make a move.
+Each edge coming out of a node represents a move that the player
+can make in that particular state.
+Each terminal point of the tree is associated with a payoff vector.
+8 / 45
 %==========================================================%
 
 \subsection{The Asymmetric Hawk-Dove Game}
@@ -543,7 +535,6 @@ action after D.
 \end{itemize}
 
 %% 35 / 45
-\newpage
 \subsection{The Asymmetric Hawk-Dove Game}
 
 

@@ -1,0 +1,192 @@
+
+\documentclass[]{report}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
+
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+
+\begin{document}
+%%%- http://www.investopedia.com/articles/financial-theory/09/game-theory-beyond-basics.asp?lgl=rira-baseline-vertical
+%----------------------------------------%
+\section{The Nash Equilibrium}
+Nash Equilibrium is an outcome reached that, once achieved, means no player can increase payoff by changing decisions unilaterally. It can also be thought of as "no regrets," in the sense that once a decision is made, the player will have no regrets concerning decisions considering the consequences.
+
+The Nash Equilibrium is reached over time, in most cases. However, once the Nash Equilibrium is reached, it will not be deviated from. After we learn how to find the Nash Equilibrium, take a look at how a unilateral move would affect the situation. Does it make any sense? It shouldn't, and that's why the Nash Equilibrium is described as "no regrets."
+
+%----------------------------------------%
+\subsection{Finding a Nash Equilibria}
+Step One: Determine player one's best response to player two's actions.
+When examining the choices that may maximize a player's payout, we must look at how player one should respond to each of the options player two has. An easy way to do this visually is to cover up the choices of player two. Consider the matrix portrayed at the beginning of this article as we apply this method.
+
+Player one / Player two	Left	Right
+Up	(1, -)	(4, -)
+Down	(3, -)	(3, -)
+
+
+	\begin{center}
+		{\color{blue}
+			\begin{tabular}{c|c|c|c|}
+				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
+				\cline{3-4}
+				\multicolumn{2}{c|}{} &   Left       &  Right       \\
+				\cline{2-4}
+				\multirow{2} {*} {{\color{red}Player 1}}& Left & (80,0) & (60,40) \\
+				\cline{2-4}
+				& Right &(40,60)& (40,0) \\
+				\cline{2-4}
+				%C & (2,6) & (4,7)& (0,8) \\
+				%\hline
+			\end{tabular}
+		}
+	\end{center}
+\begin{itemize}
+	\item Player one has two possible choices to play: "up" or "down." Player two also has two choices to play: "left" or "right." In this step of determining Nash Equilibrium, we look at responses to player two's actions.
+	\item  If player two chooses to play "left," we can play "up" with the payoff of one, or play "down" with the payoff of three. Since three is greater than one, we will bold the 3 indicating the option to play "down" here.
+	
+	\item If player two chooses to play "right," we can either choose to play 'up' for a payoff of four or play "down" for a playoff of three. Since four is greater than three, we bold the four to indicate the option to play "up" here. The bold outcomes are shown below on the full matrix.
+	
+\end{itemize}
+
+Player one / Player two	Left	Right
+Up	(1, 3)	(4, 2)
+Down	(3, 2)	(3, 1)
+
+	\begin{center}
+		{\color{blue}
+			\begin{tabular}{c|c|c|c|}
+				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
+				\cline{3-4}
+				\multicolumn{2}{c|}{} &   Left       &  Right       \\
+				\cline{2-4}
+				\multirow{2} {*} {{\color{red}Player 1}}& Left & (80,0) & (60,40) \\
+				\cline{2-4}
+				& Right &(40,60)& (40,0) \\
+				\cline{2-4}
+				%C & (2,6) & (4,7)& (0,8) \\
+				%\hline
+			\end{tabular}
+		}
+	\end{center}
+	
+%----------------------------------------%
+Step Two: Determine player two's best response to player one's actions.
+As we did before with the player two payoffs for player one, we will hide the payoffs of player one when determining the best responses for player two. (To learn more about behavioral finance, check out Leading Indicators Of Behavioral Finance.)
+
+Player one / Player two	Left	Right
+Up	(-, 3)	(-, 2)
+Down	(-, 2)	(-, 1)
+
+	\begin{center}
+		{\color{blue}
+			\begin{tabular}{c|c|c|c|}
+				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
+				\cline{3-4}
+				\multicolumn{2}{c|}{} &   Left       &  Right       \\
+				\cline{2-4}
+				\multirow{2} {*} {{\color{red}Player 1}}& Left & (80,0) & (60,40) \\
+				\cline{2-4}
+				& Right &(40,60)& (40,0) \\
+				\cline{2-4}
+				%C & (2,6) & (4,7)& (0,8) \\
+				%\hline
+			\end{tabular}
+		}
+	\end{center}
+	
+	
+Just as when looking at player one, each player has two choices to play. If player one chooses to play "up," we can play "left," with a payoff of three, or "right," with a payoff of two. Since three is greater than two, we bold the three to show the option to play "left" here. If player one chooses to play "down," we can play "left," for a payoff of two, or "right," for a payoff of one. Since two is greater than one, we bold the two indicating the option to play "left" here. The bold outcomes are shown below on the full matrix.
+
+Player one / Player two	Left	Right
+Up	(1, 3)	(4, 2)
+Down	(3, 2)	(3, 1)
+Step Three: Determine which outcomes have both payoffs bold. That particular outcome is the Nash Equilibrium.
+Now, we combine the bold options for both players onto the full matrix.
+
+	\begin{center}
+		{\color{blue}
+			\begin{tabular}{c|c|c|c|}
+				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
+				\cline{3-4}
+				\multicolumn{2}{c|}{} &   Left       &  Right       \\
+				\cline{2-4}
+				\multirow{2} {*} {{\color{red}Player 1}}& Left & (80,0) & (60,40) \\
+				\cline{2-4}
+				& Right &(40,60)& (40,0) \\
+				\cline{2-4}
+				%C & (2,6) & (4,7)& (0,8) \\
+				%\hline
+			\end{tabular}
+		}
+	\end{center}
+	
+
+
+Look for intersections where both payoffs are bold. In this case, we find the intersection of (Down , Left) with the payoff of (3, 2) fits our criteria. This indicates our Nash Equilibrium.
+
+This method of finding Nash Equilibrium is well-suited to finding equilibria in games that are simultaneous since we are looking at how a player would respond independently of how the other acts. This scenario of a simultaneous game is often played out in businesses such as airlines. Below is an example, similar to the game above, of how airline pricing may play out. The payouts are in thousands of dollars. Remember, these are the payouts, not the prices. The method we applied previously is already applied to show where the Nash Equilibrium appears.
+
+%%Airline one / Airline two	Low Price	High Price
+%%Low Price	(3,000, 3,000) &	(4,000, 2,000) \\
+%%High Price	(2,000, 4,000) &	(3,500, 3,500) \\
+
+	\begin{center}
+		{\color{blue}
+			\begin{tabular}{c|c|c|c|}
+				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Airline 2}} \\
+				\cline{3-4}
+				\multicolumn{2}{c|}{} &   Low Price       &  High Price      \\
+				\cline{2-4}
+				\multirow{2} {*} {{\color{red}Player 1}}& Low Price & (3,000, 3,000) &	(4,000, 2,000) \\
+				\cline{2-4}
+				& High Price & (2,000, 4,000) &	(3,500, 3,500) \\
+				\cline{2-4}
+				%C & (2,6) & (4,7)& (0,8) \\
+				%\hline
+			\end{tabular}
+		}
+	\end{center}
+	
+Looking at just A1's choices we can see that if A2 chooses to play low price, we choose between Low Price for 3,000 or high price for 2,000. We choose "low," since 3,000>2,000. We do the same thing for A2 playing High Price and see that we play "low" because 4,000>3,500. Conversely, looking just at A2's choices, we can see that if A1 chooses to play low price, we choose between "low price" for 3,000 and "high price" for 2,000. Since 3,000>2,000, we choose the "low price" option here. If A1 plays high price, we can charge a low price for 4,000 or high price for 3,500. Since 4,000>3,500, we choose to play "low price" here.
+
+\begin{itemize}
+	\item The Nash Equilibrium is that both airlines will charge a low price (shown when choices for each party are highlighted). If both airlines charged a high price, they would each be better off than they are at the Nash Equilibrium.
+	
+\item So why don't they agree to do this? First off, it's illegal to collude. Second, if this were to occur, a unilateral action on behalf of one airline to charge a low price would be beneficial, resulting in that airline making more money in turn. This logic also shows how the Nash Equilibrium is reached, and why it is not beneficial to deviate from it once it is reached. (For further reading, see our tutorial on Behavioral Finance.)
+\end{itemize}
+
+
+%----------------------------------------%
+\subsection{Multiple Nash Equilibria \& How The Nash Equilibrium Plays Out}
+Generally, there can be more than one equilibrium in a game. However, this usually occurs in games with more complex elements than two choices by two players. In simultaneous games that are repeated over time, one of these multiple equilibria is reached after some trial and error. This scenario of differing choices over time before reaching equilibrium is the most often played out in the business world when two firms are determining prices for very interchangeable products, such as airfare or soda pop.
+
+The Bottom Line
+With these advanced methods, more real-world situations can be modeled and solved. The different kinds of Nash Equilibrium we discussed are the most commonly found solutions to real-world modeled games. A working knowledge of Game Theory can help you form a strategy, whether playing a friend playing tic-tac-toe or vying for the largest profits.
+
+\end{document}
+%=============================================================%
