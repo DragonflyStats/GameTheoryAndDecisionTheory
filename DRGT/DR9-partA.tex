@@ -1,0 +1,341 @@
+
+\documentclass[]{report}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
+
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+
+\begin{document}
+3.11 Repeated Games
+In many situations players will interact on many occasions.
+Suppose two players play a matrix game n times.
+In such a case a player can condition the action he takes in the i-th
+realisation of the game on the history of the game up to that
+point, denoted Hi−1.
+Hi−1 can be described by the pairs of actions used by the players in
+the first i − 1 rounds.
+1 / 50
+The Prisoner’s Dilemma
+Intuition: The police have arrested two gangsters, but only have
+enough evidence to convict them of tax evasion. The gangsters
+cannot communicate. It can thus be assumed that their decisions
+are made simultaneously.
+During interrogation, the police say that if a gangster gives
+evidence against the other (D - defect), then he will receive a
+reduced sentence.
+In only one gives evidence against the other, then he goes free and
+the other receives 20 years in jail for extortion.
+If both give evidence, then they both receive 10 years for extortion.
+If neither give evidence (both play C - cooperate with each other),
+then they both receive 2 years for tax evasion.
+2 / 50
+%=================================================================%
+\subsection{The Prisoner’s Dilemma}
+If we assume that the payoff of each gangster is the number of
+years he spends free in the next 20 years, then the payoff matrix
+for this game is
+C D
+C (18,18) (0,20)
+D (20,0) (10,10)
+3 / 50
+%=================================================================%
+\subsection{The Prisoner’s Dilemma}
+Suppose the second gangster cooperates. The first gangster goes
+free if he defects, otherwise he gets two years in jail.
+Suppose the second gangster defects. The first gangster gets 10
+years if he defects, otherwise he gets 20 years in jail.
+Hence, defection dominates cooperation. The unique Nash
+equilibrium is for both players (gangsters) to defect.
+However, both players would obtain a greater payoff if they both
+cooperated.
+In the general form of the prisoner’s dilemma game, it is assumed
+that players obtain a greater payoff by always playing (C, C) than
+by alternating between (C, D) and (D, C).
+4 / 50
+%=================================================================%
+\subsection{The Prisoner’s Dilemma}
+We have seen that the concept of correlated equilibria (using
+communication) can enable players to find a suitable solution to a
+co-ordination or anti-coordination game.
+However, if there is only one pure Nash equilibrium of a game,
+then it is the only correlated equilibrium.
+It follows that the concept of a correlated equilibrium cannot be
+used to ensure that the gangsters cooperate.
+What systems can be used in games of the form of the prisoner’s
+dilemma to ensure ”cooperation”?
+5 / 50
+%=================================================================%
+\subsection{The Prisoner’s Dilemma}
+One way of obtaining cooperation is by means of a contract.
+Such a contract defines penalties to be paid when a player uses an
+inappropriate action. These penalties define an induced game,
+whose payoff matrix takes into account these penalties.
+The penalties should be chosen to ensure that at a Nash
+equilibrium of the induced game both players cooperate.
+In terms of the example given, cooperation can be achieved via
+threats from the godfather to punish those who ”sing”.
+%% 6 / 50
+%=================================================================%
+\subsection{The Prisoner’s Dilemma}
+Another possibility is that individuals play a game many times.
+In such a case, players can use strategies such as tit-for-tat, i.e.
+start by cooperating and then use the action that the other player
+used in the previous round.
+Two players using such a strategy will always cooperate. However,
+such players will react against defections by the other player and
+thus avoid paying the cost of being ”a sucker” (cooperating when
+the other player defects).
+Hence, the best response to an individual playing tit-for-tat may
+well be to also play tit-for-tat. In this case, tit-for-tat would be an
+equilibrium in the repeated prisoner’s dilemma.
+7 / 50
+%=================================================================%
+\subsection{Definition of an n-Repeated Game}
+Suppose in the standard game G1, player i can take an action from
+Si and the payoff of player i when player 1 plays A ∈ S1 and player
+2 plays B ∈ S2 is given by Ri(A, B).
+In the n-repeated version of G1, denoted Gn, in each round j,
+1 ≤ j ≤ n, the set of actions available to the players and the
+payoffs received are given as above.
+The total payoff of a player in the repeated game is simply the sum
+of the payoffs he/she receives in each round.
+The action taken by a player in round i can depend on the history
+Hi−1. We normally only consider pure strategies, i.e. given Hi−1
+each player picks a particular action with probability 1.
+8 / 50
+%=================================================================%
+\subsection{The 2-Repeated Prisoner’s Dilemma}
+In such a game, the action of a player in round 2 can depend on
+the pair of actions played in round 1.
+Since a player’s strategy defines what action he/she takes in round
+1, it suffices to condition the action taken in round 2 on the action
+taken by the other player in round 1.
+The (partial) strategy of the players in round 1 is defined by the
+action taken (2 possibilities). In round 2 for each of the 2 actions
+possibly taken by the other player in round 1, a player can take one
+of two actions (4 possibilities in total).
+It follows that each player has 8 possible strategies. These are
+listed on the next page.
+9 / 50
+%=================================================================%
+\subsection{The 2-Repeated Prisoner’s Dilemma}
+1. (C, [C/C, C/D]) - always cooperate.
+2. (C, [C/C, D/D]) - tit-for-tat.
+3. (C, [D/C, C/D])
+4. (C, [D/C, D/D]) - cooperate and then defect.
+5. (D, [C/C, C/D]) - defect and then cooperate.
+6. (D, [C/C, D/D]) - pessimistic tit-for-tat.
+7. (D, [D/C, C/D])
+8. (D, [D/C, D/D]) - always defect.
+10 / 50
+\subsection{The 2-Repeated Prisoner’s Dilemma}
+We can define the payoff matrix for such a game, by considering
+the action pair used in each round of the game given the strategies
+used by the players.
+Suppose the prisoner’s dilemma game defined above is repeated
+twice and Player 1 plays tit-for-tat (Strategy 2) and Player 2 plays
+always defect (Strategy 8).
+The action pairs played are (C, D) and (D, D) in round 1 and
+round 2, respectively.
+Player 1 obtains 0 in round 1 and 10 in round 2. Her total payoff is
+10.
+Player 2 obtains 20 in round 1 and 10 in round 2. His total payoff
+is 30.
+11 / 50
+Matrix form of the 2-Repeated Prisoner’s Dilemma
+1 2 3 4 5 6 7 8
+1 (36,36) (36,36) (18,38) (18,38) (18,38) (18,38) (0,40) (0,40)
+2 (36,36) (36,36) (18,38) (18,38) (20,20) (20,20) (10,30) (10,30)
+3 (38,18) (38,18) (28,28) (28,28) (10,30) (10,30) (0,40) (0,40)
+4 (38,18) (38,18) (28,28) (28,28) (20,20) (20,20) (10,30) (10,30)
+5 (38,18) (20,20) (30,10) (20,20) (28,28) (10,30) (28,28) (10,30)
+6 (38,18) (20,20) (30,10) (20,20) (30,10) (20,20) (30,10) (20,20)
+7 (40,0) (30,10) (40,10) (30,10) (28,28) (10,30) (28,28) (10,30)
+8 (40,0) (30,10) (40,0) (30,10) (30,10) (20,20) (30,10) (20,20)
+12 / 50
+\subsection{The 2-Repeated Prisoner’s Dilemma}
+In each round a player can ensure a reward of 10 by defecting.
+Hence, at a Nash equilibrium of the 2-repeated game, both players
+must obtain a reward of at least 20.
+Using this fact to aid an exhaustive search for a pure equilibrium,
+the only pure Nash equilibria of the game given above are (6, 6),
+(6, 8), (8, 8) and (8, 8). At any of these equilibria both players
+defect in both periods.
+Comparing the payoffs Player 1 obtains when he plays 6 and when
+he plays 8, it can be seen that strategy 8 (always defect) dominates
+strategy 6. It follows that (8, 8), i.e. both players always defect is
+the only subgame perfect Nash equilibrium strategy in this game.
+Note that strategy 6 is a pessimistic version of tit-for-tat. It starts
+out by defecting and then takes the same action as the opponent
+played in the previous round.
+13 / 50
+\subsection{Equilibria in Repeated Games}
+Theorem: Any sequence of action pairs which are all Nash
+equilibria in the one-shot game G1 is a Nash equilibrium in the
+repeated game Gn.
+Proof: Suppose one of the players wishes to unilaterally change
+his/her action in one or more rounds.
+If the original action pairs were all Nash equilibria, the payoff
+he/she obtains in those rounds is not greater than under the
+sequence of Nash equilibrium action pairs.
+Since the payoff of a player in the repeated game is the sum of the
+payoffs in the individual rounds, it follows that such an individual
+cannot obtain a greater payoff in the repeated game by unilateral
+defection. Hence, a sequence of Nash equilibrium action pairs is a
+Nash equilibrium in the repeated game.
+14 / 50
+\subsection{Equilibria in the n-repeated prisoner’s dilemma}
+Theorem: At any Nash equilibrium of the n-repeated prisoner’s
+dilemma (n finite), both players always defect.
+Sketch Proof: This is by recursion. In the final round a player
+maximises his/her total payoff (given the payoff he/she has already
+obtained) simply by maximising the reward from the final round.
+Whatever the opponent plays, a player maximises his/her reward
+by defecting. Hence, both players should defect in the final round.
+Given this, the game reduces to an n − 1-repeated game in which
+(as above) both players should defect in round n − 1. Arguing by
+recursion, both players should defect in each round of the game.
+15 / 50
+\subsection{Equilibria in the repeated prisoner’s dilemma with a random number of rounds}
+If the number of rounds is known, then at any Nash equilibrium
+both players will always defect. Is there any form of repeated game
+in which tit-for-tat is a Nash equilibrium?
+Normally individuals do not know how many times they will
+interact, although they may well be able to assess the likelihood of
+further interaction.
+Consider the repeated prisoner’s dilemma in which the probability
+that players meet again after any round is ω. Such a game is
+denoted G
+ω
+The number of rounds thus has a geometric distribution and the
+expected number of rounds is 1
+1−ω
+. We expect tit-for-tat to be a
+”successful” strategy when the probability of meeting again, ω, is
+large
+16 / 50
+\subsection{Equilibria in the repeated prisoner’s dilemma with a random number of rounds}
+If one player plays ”always defect”, denoted D, then the best an
+opponent can do is also to always defect.
+Hence, D is a Nash equilibrium in such a game.
+At such an equilibrium both players obtain a payoff of 10 per round
+and the expected number of rounds is 1
+1−ω
+.
+The expected payoff of the players at such an equilibrium is thus
+R1(D, D) = 10
+1−ω
+.
+17 / 50
+\subsection{Equilibria in the repeated prisoner’s dilemma with a random number of rounds}
+
+When both players play tit-for-tat, denoted T they always
+cooperate.
+Arguing as above, their expected reward is thus R1(T,T) = 18
+1−ω
+.
+In order to check whether ”tit-for-tat” is a Nash equilibrium, we
+first see how the following two strategies do against it:
+1. Always defect.
+2. Alternate between C and D.
+18 / 50
+\subsection{Equilibria in the repeated prisoner’s dilemma with a random number of rounds}
+
+Against tit-for-tat, a defector will obtain 20 in round 1. The game
+continues with probability ω.
+Given the game continues, both players will always defect from
+round 1 onwards and the future expected reward of both is 10
+1−ω
+(starting at round 2 the game looks just like the repeated game in
+which both players always defect).
+Hence, R1(D,T) = 20 + 10ω
+1−ω
+.
+19 / 50
+\subsection{Equilibria in the repeated prisoner’s dilemma with a random number of rounds}
+
+Against tit-for-tat, a individual who alternates between D and C,
+denoted A, will obtain 20 in odd numbered rounds and 0 in even
+numbered rounds. The probability that round i is played is ω
+i−1
+.
+It follows that
+R1(A,T) = 20 + 20ω
+2 + 20ω
+4 + . . . =
+20
+1 − ω2
+20 / 50
+\subsection{Equilibria in the repeated prisoner’s dilemma with a random number of rounds}
+
+Why does it suffice to just consider these two strategies?
+It should be noted that if a T player plays with three opponents,
+one playing T, one playing D and one playing A, then all the 4
+possible action pairs (C, C), (C, D), (D, C) and (D, D) are
+observed.
+When any other player plays some strategy B against a T player,
+then R1(B,T) can be expressed as some linear combination of
+R1(T,T), R1(A,T) and R1(D,T), where the sum of the weights
+is 1.
+It follows that if R1(D,T) ≤ R1(T,T) and R1(A,T) ≤ R1(T,T),
+then R1(B,T) ≤ R1(T,T) for any B, i.e. T is a Nash equilibrium.
+21 / 50
+\subsection{Equilibria in the repeated prisoner’s dilemma with a random number of rounds}
+
+It follows that T is a Nash equilibrium when
+R1(D,T) ≤ R1(T,T)⇒20 + 10ω
+1 − ω
+≤
+18
+1 − ω
+R1(A,T) ≤ R1(T,T)⇒
+20
+1 − ω2
+≤
+18
+1 − ω
+Both these inequalities are satisfied if ω ≥ 0.2. It follows that
+tit-for-tat is a Nash equilibrium whenever players expect to meet at
+least 1
+1−0.2 = 1.25 times in total.
+22 / 50
+Equilibria in Infinitely Repeated Games with a Discount
+One may interpret the problem above as one in which the players
+meet an infinite number of times, but the reward obtained in round
+i is discounted by a factor ω
+i−1
+in relation to the reward gained in
+round 1.
+Using such an interpretation, the tit-for-tat strategy is a Nash
+equilibrium whenever future gains are valued high enough, i.e. ω is
+large.
+In such cases, long term cooperation is beneficial compared to the
+short-term gains that might be obtained from defection.
+23 / 50
+\end{document}
