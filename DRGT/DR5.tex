@@ -36,19 +36,26 @@
 %%- http://www3.ul.ie/ramsey/Lectures/Operations_Research_2/gametheory1.pdf
 
 \chapter{CHAPTER - GAME THEORY}
-\section{3.1 The Concept of a Game}
-
+\section{The Concept of a Game}
+%%- David Ramsey Section 3.1
+Game Theory (GT) is the study of strategic interdependence. 
 \begin{framed}
-A game is defined by
+\noindent A game is defined by
 \begin{itemize}
-	\item[(a)] The set of players (at least two ”rational” players).
-	\item[(b) The set of actions available to each player (each has at least
+	\item[(a)] The set of players (at least two ``\textbf{\textit{rational}}" players).
+	\item[(b)] The set of actions available to each player (each has at least
 	two possible actions).
-	\item[(c) A payoff function, which gives the (expected) payoff of each
+	\item[(c)] A payoff function, which gives the (expected) payoff of each
 	player given the actions used by the players. The (expected) payoff
 	of a player does depend on the actions used by the other players.
 \end{itemize}
 \end{framed}
+\noindent The typical ``game'' consists of players, actions, strategies and payoffs. The standard modes of analysis are once-played games in either
+\begin{enumerate}
+	\item[(i)] matrix or strategic form where players' choice of actions are made simultaneously,
+	\item[] \hspace*{50mm} or
+	\item[(ii)] extensive form where choice of actions are made sequentially.
+\end{enumerate}
 
 
 %%- 1 / 45
@@ -86,9 +93,25 @@ A game is defined by
 %===========================================================%
 %% 3.2 The Matrix Form of a 2-Player Game
 For example, the following describes a so called \textbf{\textit{Hawk-Dove}} game
-H D
-H (-2,-2) (4,0)
-D (0,4) (2,2)
+
+
+	\begin{center}
+		{\color{blue}
+			\begin{tabular}{c|c|c|c|}
+				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
+				\cline{3-4}
+				\multicolumn{2}{c|}{} & Hawk         & Dove      \\
+				\cline{2-4}
+				\multirow{2} {*} {{\color{red}Player 1}}& Hawk & (-2,-2)&  (4,0) \\
+				\cline{2-4}
+				& Dove &(0,4)& (2,2)\\
+				\cline{2-4}
+				%C & (2,6) & (4,7)& (0,8) \\
+				%\hline
+			\end{tabular}
+		}
+	\end{center}
+	
 For example, when Player 1 plays H and Player 2 plays D, Player 1
 obtains a payoff of 4 and Player 2 obtains a payoff of 0.
 
@@ -98,9 +121,9 @@ obtains a payoff of 4 and Player 2 obtains a payoff of 0.
 In general, a 2-player matrix game can be described by
 \begin{enumerate}
 	\item The set of actions available to Player 1,
-	\[A = {a1, a2, . . . , am}\].
+	\[A = \{a_1, a_2, \ldots , a_m\}\].
 \item The set of actions available to Player 2,
-	\[B = {b1, b2, . . . , bn}\].
+	\[B = \{b_1, b_2, \ldots , b_n\}\].
 \item The m × n matrix of 2-dimensional vectors giving the
 	payoffs of both players for each of the m × n possible
 	combinations of actions. 
@@ -116,12 +139,12 @@ In general, a 2-player matrix game can be described by
 %% 3.2 The Matrix Form of a 2-Player Game
 \begin{itemize}
 	\item One advantage of the matrix form of a game is its simplicity.
-	\item	One disadvantage is that it is assumed that players choose their
+	\item One disadvantage is that it is assumed that players choose their
 	actions simultaneously.
 	\item That is to say, the actions may be
 	interpreted as strategies which are chosen at the beginning of a
 	game.
-	\item	As we continue through this chapter, we will differentiate between
+	\item As we continue through this chapter, we will differentiate between
 	the concept of action and the concept of strategy.
 	
 \end{itemize}
@@ -145,8 +168,9 @@ In general, a 2-player matrix game can be described by
 \end{itemize}
 
 %% 7 / 45
+%%- David Ramsey Section 3.3 
 %==========================================================%
-\section{3.3 The Extensive Form of a Game}
+\section{The Extensive Form of a Game}
 \begin{itemize}
 	\item In many games, e.g. chess, each player makes a sequence of moves.
 	Such a game can be represented by a tree. 
@@ -160,12 +184,12 @@ In general, a 2-player matrix game can be described by
 %% 8 / 45
 %==========================================================%
 
-\subsection{The Asymmetric Hawk-Dove Game}
+%%\subsection{The Asymmetric Hawk-Dove Game}
 
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.7\linewidth]{images/DR5-Slide09}
+\includegraphics[width=0.55\linewidth]{images/DR5-Slide09}
 \caption{}
 \label{fig:DR5-Slide09}
 \end{figure}
@@ -173,11 +197,14 @@ In general, a 2-player matrix game can be described by
 
 %% 9 / 45
 %% The Asymmetric Hawk-Dove Game
-In such a game, Player 1 first decides whether to play H and D.
-After observing the decision of Player 1, Player 2 then decides
-whether to play H and D.
-For example, if Player 1 chooses H and Player 2 chooses D, Player
-1 obtains a payoff of 4 and Player 2 obtains a payoff of 0.
+\begin{itemize}
+	\item In such a game, Player 1 first decides whether to play H and D.
+	\item After observing the decision of Player 1, Player 2 then decides
+	whether to play H and D.
+	\item For example, if Player 1 chooses H and Player 2 chooses D, Player
+	1 obtains a payoff of 4 and Player 2 obtains a payoff of 0.
+\end{itemize}
+
 
 \subsection{The Asymmetric Hawk-Dove Game}
 %-----------------------------------------------------------%
@@ -214,12 +241,12 @@ For example, if Player 1 chooses H and Player 2 chooses D, Player
 % 12 / 45
 In the extended game described above, Player 2’s strategies are
 \begin{enumerate}
-	\item  H|H, H|D, i.e. play H when Player 1 plays H and
+	\item  $H|H$, $H|D$, i.e. play H when Player 1 plays H and
 	play H when Player 1 plays D, in other words always
 	play H.
-	\item  H|H, D|D, i.e. take the same action as Player 1.
-	\item  D|H, D|D, i.e. always play D.
-	\item  D|H, H|D, i.e. play D when Player 1 plays H and
+	\item  $H|H$, $D|D$, i.e. take the same action as Player 1.
+	\item  D|H, $D|D$, i.e. always play D.
+	\item  D|H, $H|D$, i.e. play D when Player 1 plays H and
 	play H when Player 1 plays D.
 \end{enumerate}
 
@@ -230,17 +257,20 @@ strategies corresponding to the two actions H and D.
 %-----------------------------------------------------------%
 %% 13 / 45
 \subsection{Simultaneous Moves in Extensive Form Games}
-Although the extensive form of the game is designed to describe
-games in which a sequence of moves are made, they can be
-adapted to describe games in which moves are made
-simultaneously.
-This is done using information sets. Suppose two nodes represent
-states in which one player moves and that player cannot
-differentiate between the states.
-These two nodes are said to be in the same information set. An
-information set is represented by a box.
-A player may only condition an action on the information set,
-he/she is presently in.
+\begin{itemize}
+	\item Although the extensive form of the game is designed to describe
+	games in which a sequence of moves are made, they can be
+	adapted to describe games in which moves are made
+	simultaneously.
+	\item This is done using information sets. Suppose two nodes represent
+	states in which one player moves and that player cannot
+	differentiate between the states.
+	\item These two nodes are said to be in the same information set. An
+	information set is represented by a box.
+	\item A player may only condition an action on the information set,
+	he/she is presently in.
+\end{itemize}
+
 
 %-----------------------------------------------------------%
 %% - 14 / 45
@@ -248,7 +278,7 @@ he/she is presently in.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.7\linewidth]{images/DR5-Slide15}
+\includegraphics[width=0.55\linewidth]{images/DR5-Slide15}
 \caption{}
 \label{fig:DR5-Slide15}
 \end{figure}
@@ -288,7 +318,7 @@ each possible strategy pair.
 %%- \subsection{Translating the Asymmetric Hawk-Dove Game into Matrix Form}
 \begin{itemize}
 	\item Since Player 1 has 2 strategies and Player 2 has 4 strategies, the
-	payoff matrix will be of dimension 2 × 4.
+	payoff matrix will be of dimension $2 \times 4$.
 	\item Player 1 can play H or D.
 	\item 	Player 2 can play \[(H|H, H|D), (H|H, D|D), (D|H, D|D) or
 	(D|H, H|D). \]
@@ -302,9 +332,9 @@ pair.
 \begin{framed}
 \noindent Suppose Player 1 plays H.
 \begin{itemize}
-	\item[(a)] If Player 2 plays (H|H, H|D) or (H|H, D|D), then both players
+	\item[(a)] If Player 2 plays $(H|H, H|D)$ or $(H|H, D|D)$, then both players
 take the action H and the resulting payoff vector is (−2, −2).
-	\item[(b)] If Player 2 plays (D|H, D|D) or (D|H, H|D), then Player 1
+	\item[(b)] If Player 2 plays (D|H, D|D) or $(D|H, H|D)$, then Player 1
 takes the action H and Player 2 takes the action D and the
 resulting payoff vector is (4, 0).
 \end{itemize}
@@ -315,19 +345,18 @@ resulting payoff vector is (4, 0).
 %Translating the Asymmetric Hawk-Dove Game into Matrix Form
 Now suppose Player 1 plays D.
 \begin{itemize}
-	\item [(a)] If Player 2 plays (D|H, D|D) or (H|H, D|D), then both players
+	\item[(a)] If Player 2 plays $(D|H, D|D)$ or $(H|H, D|D)$, then both players
 	take the actions D and the resulting payoff vector is (2, 2).
-	\item [(b)] If Player 2 plays (H|H, H|D) or (D|H, H|D), then Player 1 takes
+	\item[(b)] If Player 2 plays $(H|H, H|D)$ or $(D|H, H|D)$, then Player 1 takes
 	the action D and Player 2 takes the action H and the resulting
 	payoff vector is (0, 4).
 \end{itemize}
 
 %-----------------------------------------------------------%
 % 20 / 45
-Translating the Asymmetric Hawk-Dove Game into Matrix
-Form
+%% Translating the Asymmetric Hawk-Dove Game into Matrix Form
 It follows that the matrix form of the asymmetric game is given by
-(H|H, H|D) (H|H, D|D) (D|H, D|D) (D|H, H|D)
+\[(H|H, H|D) (H|H, D|D) (D|H, D|D) (D|H, H|D)\]
 H (-2,-2) (-2,-2) (4,0) (4,0)
 D (0,4) (2,2) (2,2) (0,4)
 
@@ -341,10 +370,11 @@ D (0,4) (2,2) (2,2) (0,4)
 	edges from this node correspond to the possible results. The
 	probability of each result should also be given.
 \item When such a game is written in matrix form, we only consider the
-	strategies that the players can use. In order to define the vector of
+	strategies that the players can use. 
+\item In order to define the vector of
 	expected payoffs given the combination of strategies used, we
 	take expectations with respect to the moves of nature (i.e. nature
-	is assumed to be ”random” or ”non-rational”).
+	is assumed to be ”\textbf{random}” or ”\textbf{non-rationa}l”).
 \end{itemize}
 
 
@@ -378,7 +408,8 @@ D (0,4) (2,2) (2,2) (0,4)
 	\item In this example, Player 1 does not know the result of the coin toss
 	(or Player 2’s move).
 	\item	Player 2 does not know Player 1’s move, but knows the result of
-	the coin toss. Hence, Player 2’s move must come lower down the
+	the coin toss. 
+	\item Hence, Player 2’s move must come lower down the
 	tree than the coin toss. We can order the moves as follows:
 	nature, Player 1, Player 2.
 \end{itemize}
@@ -388,7 +419,7 @@ D (0,4) (2,2) (2,2) (0,4)
 
 \begin{figure}
 \centering
-\includegraphics[width=0.7\linewidth]{images/DR5-Slide25}
+\includegraphics[width=0.55\linewidth]{images/DR5-Slide25}
 \caption{}
 \label{fig:DR5-Slide25}
 \end{figure}
@@ -416,42 +447,44 @@ D (0,4) (2,2) (2,2) (0,4)
 	\item	When Player 2 plays (A|H, A|T), i.e. always A, Player 1 wins 1 if
 	the result of the coin toss was H and loses 2 if the result of the
 	coin toss was tails. Player 1’s expected reward is
-	0.5 × 1 − 0.5 × 2 = −0.5. Since the game is zero-sum, Player 2’s
+	$0.5 × 1 − 0.5 × 2 = −0.5$. 
+	\item Since the game is zero-sum, Player 2’s
 	expected payoff is 0.5.
 	\item	When Player 2 plays (B|H, B|T), i.e. always B, Player 1 loses 1 if
 	the result of the coin toss was H and wins 2 if the result of the
 	coin toss was tails. Player 1’s expected reward is
-	0.5 × 2 − 0.5 × 1 = 0.5.
+	$0.5 × 2 − 0.5 × 1 = 0.5$.
 	\item	The expected rewards under all the other possible pairs of
 	strategies can be calculated in a similar way.
 \end{itemize}
-
+%%- 27 / 45
 %-----------------------------------------------------------%
 
-27 / 45
+
 \subsection{Example}
 The matrix form of this game is given by
 (A|H, A|T) (A|H, B|T) (B|H, B|T) (B|H, A|T)
 A (-0.5,0.5) (1.5,-1.5) (0.5,-0.5) (-1.5,1.5)
 B (0.5,-0.5) (-1.5,1.5) (-0.5,0.5) (1.5,-1.5)
 
-%-----------------------------------------------------------%
 %% 28 / 45
-Extensive Forms of Games with a Continuum of Strategies
+%-----------------------------------------------------------%
+\subsection{Extensive Forms of Games with a Continuum of Strategies}
 Consider the following game:
 \begin{itemize}
 	\item Player 1 chooses a number x between 0 and 1. Having observed
 	the choice of Player 1, Player 2 chooses a number y between 0 and
 	1.
-	\item The payoff of Player 1 is given by R1(x, y) = 4xy − x. The payoff
-	of Player 2 is given by R2(x, y) = 4xy − y.
+	\item The payoff of Player 1 is given by $R1(x, y) = 4xy − x$. 
+	\item The payoff
+	of Player 2 is given by $R2(x, y) = 4xy − y$.
 	\item In order to depict choice from a continuum, instead of using
 	branches we can use a triangle with a horizontal base. The
 	strategy set is described alongside the corresponding triangle.
 \end{itemize}
-
-%-----------------------------------------------------------%
 %% 29 / 45
+%-----------------------------------------------------------%
+
 %% Extensive Forms of Games with a Continuum of Strategies
 \begin{itemize}
 	\item If a move is unobserved by the next player to move, the base of the
@@ -462,15 +495,15 @@ Consider the following game:
 	\item  The possible moves of Player 2 corresponding to each information
 	set should be depicted by triangles extending out of these sets. 
 \end{itemize}
-
-%-----------------------------------------------------------%
 %%  30 / 45
+%-----------------------------------------------------------%
+
 \subsection{Example 3.3.1}
 The extensive form of the game described above is
 
 \begin{figure}
 \centering
-\includegraphics[width=0.7\linewidth]{images/DR5-Slide31}
+\includegraphics[width=0.55\linewidth]{images/DR5-Slide31}
 \caption{}
 \label{fig:DR5-Slide31}
 \end{figure}
@@ -690,18 +723,76 @@ the probability distribution over the set of strategy pairs. Hence,
 =pRqS + pS qP + pPqR − pS qR − pPqS − pRqP.
 \]
 \newpage
+\chapter{Glossary}
+\section{Glossary}
 
+\begin{itemize}
+	\item \textbf{Normal form game}
+	A game in normal form is a function:
+	
+	${\displaystyle \pi \ :\prod _{i\in \mathrm {N} }\Sigma \ ^{i}\to \mathbb {R} ^{\mathrm {N} }} \pi \ :\prod _{i\in \mathrm {N} }\Sigma \ ^{i}\to \mathbb {R} ^{\mathrm {N} }$
+	Given the tuple of strategies chosen by the players, one is given an allocation of payments (given as real numbers).
+	
+	A further generalization can be achieved by splitting the game into a composition of two functions:
+	
+	${\displaystyle \pi \ :\prod _{i\in \mathrm {N} }\Sigma \ ^{i}\to \Gamma \ } \pi \ :\prod _{i\in \mathrm {N} }\Sigma \ ^{i}\to \Gamma \ $
+	the outcome function of the game (some authors call this function "the game form"), and:
+	
+	${\displaystyle \nu \ :\Gamma \ \to \mathbb {R} ^{\mathrm {N} }} \nu \ :\Gamma \ \to \mathbb {R} ^{\mathrm {N} }$
+	the allocation of payoffs (or preferences) to players, for each outcome of the game.
+	
+	\item \textbf{Extensive form game}
+	This is given by a tree, where at each vertex of the tree a different player has the choice of choosing an edge. The outcome set of an extensive form game is usually the set of tree leaves.
+	
+	\item \textbf{Cooperative game}
+	A game in which players are allowed to form coalitions (and to enforce coalitionary discipline). A cooperative game is given by stating a value for every coalition:
+	
+	${\displaystyle \nu \ :2^{\mathbb {P} (N)}\to \mathbb {R} } \nu \ :2^{\mathbb {P} (N)}\to \mathbb {R} $
+	It is always assumed that the empty coalition gains nil. Solution concepts for cooperative games usually assume that the players are forming the grand coalition ${\displaystyle N} N$, whose value ${\displaystyle \nu (N)} \nu (N) $ is then divided among the players to give an allocation.
+	
+	\item \textbf{Simple game}
+	A Simple game is a simplified form of a cooperative game, where the possible gain is assumed to be either '0' or '1'. A simple game is couple (N, W), where W is the list of "winning" coalitions, capable of gaining the loot ('1'), and N is the set of players.
+	
+	\item Finite game 
+	is a game with finitely many players, each of which has a finite set of strategies.
+	Grand coalition 
+	refers to the coalition containing all players. In cooperative games it is often assumed that the grand coalition forms and the purpose of the game is to find stable imputations.
+	Mixed strategy 
+	for player i is a probability distribution P on ${\displaystyle \Sigma \ ^{i}} \Sigma \ ^{i}$. It is understood that player i chooses a strategy randomly according to P.
+	Mixed Nash Equilibrium 
+	Same as Pure Nash Equilibrium, defined on the space of mixed strategies. Every finite game has Mixed Nash Equilibria.
+	\item Pareto efficiency 
+	An outcome a of game form π is (strongly) pareto efficient if it is undominated under all preference profiles.
+	\item Preference profile 
+	is a function ${\displaystyle \nu \ :\Gamma \ \to \mathbb {R} ^{\mathrm {N} }} \nu \ :\Gamma \ \to \mathbb {R} ^{\mathrm {N} }$. This is the ordinal approach at describing the outcome of the game. The preference describes how 'pleased' the players are with the possible outcomes of the game. See allocation of goods.
+	\item Pure Nash Equilibrium 
+	An element ${\displaystyle \sigma \ =(\sigma \ _{i})_{i\in \mathrm {N} }} \sigma \ =(\sigma \ _{i})_{i\in \mathrm {N} }$ of the strategy space of a game is a pure nash equilibrium point if no player i can benefit by deviating from his strategy ${\displaystyle \sigma \ _{i}} \sigma \ _{i}$, given that the other players are playing in ${\displaystyle \sigma \ } \sigma \$ . Formally:
+	{\displaystyle \forall i\in \mathrm {N} \quad \forall \tau \ _{i}\in \ \Sigma \ ^{i}\quad \pi \ (\tau \ ,\sigma \ _{-i})\leq \pi \ (\sigma \ )} \forall i\in \mathrm {N} \quad \forall \tau \ _{i}\in \ \Sigma \ ^{i}\quad \pi \ (\tau \ ,\sigma \ _{-i})\leq \pi \ (\sigma \ )$.
+	No equilibrium point is dominated.
+	Say 
+	%A player i has a Say if he is not a Dummy, i.e. if there is some tuple of complement strategies s.t. π (σ_i) is not a constant function.
+	%Antonym: Dummy.
+	
+	\item Value 
+	A value of a game is a rationally expected outcome. There are more than a few definitions of value, describing different methods of obtaining a solution to the game.
+	\item Veto 
+	A veto denotes the ability (or right) of some player to prevent a specific alternative from being the outcome of the game. A player who has that ability is called a veto player.
+	Antonym: Dummy.
+	
+	\item Weakly acceptable game 
+	is a game that has pure nash equilibria some of which are pareto efficient.
+	\item Zero sum game 
+	is a game in which the allocation is constant over different outcomes. Formally:
+	${\displaystyle \forall \gamma \ \in \Gamma \ \sum _{i\in \mathrm {N} }\nu \ _{i}(\gamma \ )=const.} \forall \gamma \ \in \Gamma \ \sum _{i\in \mathrm {N} }\nu \ _{i}(\gamma \ )=const.$
+	w.l.g. we can assume that constant to be zero. In a zero sum game, one player's gain is another player's loss. Most classical board games (e.g. chess, checkers) are zero sum.
+	
+\end{itemize}
 \chapter{Mark Burke}
 	\begin{center}
 		\textbf{Game Theory %(  au Spaniel)
 		}
 	\end{center}
-	Game Theory (GT) is the study of strategic interdependence. The typical ``game'' consists of players, actions, strategies and payoffs. The standard modes of analysis are once-played games in either
-	\begin{enumerate}
-		\item[(i)] matrix or strategic form where players' choice of actions are made simultaneously,
-		\item[] \hspace*{50mm} or
-		\item[(ii)] extensive form where choice of actions are made sequentially.
-	\end{enumerate}
+
 	
 	\section{Analysis of (finite) Matrix Games}
 	One of the best known games is \\
@@ -898,200 +989,8 @@ the probability distribution over the set of strategy pairs. Hence,
 	M $\geq$ U, L $\geq$ R. The solution is then $\langle$ Middle, Left $\rangle$. Alternatively we might argue that M $\geq$ D, R $\geq$ L which leads to the solution $\langle$ Middle, Right $\rangle$.
 	
 
-	\section{Analysis of (finite) Matrix Games}
-	One of the best known games is \\
-	
-	{ \color{red} Prisoner's Dilemma (PD)} \vspace{3mm} \\
-	
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} & Keep Quiet         & Confess        \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{green}Player 1}}& Keep Quiet & (-1,-1) & (-12,0) \\
-				\cline{2-4}
-				& Confess &(0,-12)& (-8,-8) \\
-				\cline{2-4}
-				%C & (2,6) & (4,7)& (0,8) \\
-				%\hline
-			\end{tabular}
-		}
-	\end{center}
-	
-	The solution is $\langle$ confess, confess $\rangle$. (See IESDS). \\ Why don't the players coordinate to get $\langle$ Keep Quiet, Keep Quiet $\rangle$ ?
-	
-	The exact payoffs are irrelevant, the game can also be represented by the order of players' preferences  - most preferred (p1) to least preferred (p4) :
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} & Keep Quiet         & Confess        \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{green}Player 1}}& Keep Quiet & (p2,p2) & (p4,p1) \\
-				\cline{2-4}
-				& Confess &(p1,p4)& (p3,p3) \\
-				\cline{2-4}
-				%C & (2,6) & (4,7)& (0,8) \\
-				%\hline
-			\end{tabular}
-		}
-	\end{center}
-	
-	Other examples of PD-like games are
-	\begin{itemize}
-		\item {\color{red} War} with strategies {\color{blue} Defend, Attack} respectively.
-		\item {\color{red} Arms Race} with strategies {\color{blue} Pass, Build} respectively.
-		\item {\color{red} Free Trade/ Protection} with strategies {\color{blue} No Tax, Tax} respectively.
-		\item {\color{red} Advertising} with strategies {\color{blue} No Ads, Ads} respectively.
-	\end{itemize}
-	
-	{ \color{red}Deadlock} is another game ( success is to fail!): \vspace{3mm} \\
-	
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} & Try         & Fail       \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{green}Player 1}}& Try & (0,0) & (-1,1) \\
-				\cline{2-4}
-				& Fail &(1,-1)& (0,0) \\
-				\cline{2-4}
-				%C & (2,6) & (4,7)& (0,8) \\
-				%\hline
-			\end{tabular}
-		}
-	\end{center}
-	
-	Using preferences, we can consider the more general version of deadlock
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} & Left        & Right        \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{green}Player 1}}& Up & (p2,p2) & (p1,p4) \\
-				\cline{2-4}
-				& Down &(p4,p1)& (p3,p3) \\
-				\cline{2-4}
-				%C & (2,6) & (4,7)& (0,8) \\
-				%\hline
-			\end{tabular}
-		}
-	\end{center}
-	The solution is $\langle$ Up, Left $\rangle$. (See IESDS). Neither player gets hir first choice unless the other makes a mistake.
-	
 \newpage
-	\subsection{Strict Dominance}
-	
-	\textit{Strategy X strictly dominates strategy Y for a player if X gives a bigger (more preferred) payoff than Y no matter what the other players do. Players never rationally choose strictly dominated strategies.}
-	
-	Reduce the matrix by \textbf{\textit{Iterated Elimination of Strictly Dominated Strategies}} (IESDS) - see PD and Deadlock above. The order of elimination is irrelevant. Another example is the {\color{red} Dance Club} game:
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Boon docks}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} &   Salsa       &  Hip Hop       \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{green}Downtown}}& Salsa & (80,0) & (60,40) \\
-				\cline{2-4}
-				& Hip Hop &(40,60)& (40,0) \\
-				\cline{2-4}
-				%C & (2,6) & (4,7)& (0,8) \\
-				%\hline
-			\end{tabular}
-		}
-	\end{center}
-	The solution is $\langle$ Salsa, Hip Hop $\rangle$. Salsa dominates Hip Hop for Club Downtown, then Boonies choses Hip Hop.
-	
-	Some more examples
-	
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{3}{c} {{\color{green}Player 2}} \\
-				\cline{3-5}
-				\multicolumn{2}{c|}{} & Left        & Centre & Right        \\
-				\cline{2-5}
-				\multirow{3} {*} {{\color{green}Player 1}}& Up & (13,3) & (1,4)  & (7, 3)\\
-				\cline{2-5}
-				& Middle &(4,1)& (3,3) & (6,2) \\
-				\cline{2-5}
-				& Down & (-1,9) & (2,8)& (8,-1) \\
-				\cline{2-5}
-			\end{tabular}
-		}
-	\end{center}
-	Denoting strict dominance by $>$, then in the order given C $>$ R,  M $>$ D, C $>$ L, M $>$ U. Thus the solution is $\langle$ Middle, Centre $\rangle$.
-	
-	{\color{red} Cournot Duopoly game}. Firm 1 can produce $i$ units at a cost of \euro 1 each. Similarly firm 2 can produce $j$ units at a cost of \euro 1 each. The units sell on the market at a price of \euro $[8-2(i+j)]^{+}$ each, where $[ . ]^{+}$ is the positive part of $[.]$ The payoff to firm 1 is the profit gained  which is \euro $ [8-2(i+j)]^{+}i - i$. Similarly the payoff to firm 2 is \euro $[8-2 (i+j)]^{+}j-j$. The game matrix is
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{4}{c} {{\color{green}Firm 2}} \\
-				\cline{3-6}
-				\multicolumn{2}{c|}{} & $j = 0$        & $j = 1$ & $j = 2$  &  $j = 3$    \\
-				\cline{2-6}
-				\multirow{4} {*} {{\color{green}Firm 1}}& $i=0$ & (0,0) & (0,5)  & (0, 6)& (0,1)\\
-				\cline{2-6}
-				& $i=1$ &(5,0)& (3,3) & (1,2)& (-1,-3)\\
-				\cline{2-6}
-				& $i=2$ & (6,0) & (2,1)& (-2,-2)& (-2,-3) \\
-				\cline{2-6}
-				& $i=3$ & (1,0)& (-3,-1)& (-3,-2) & (-3,-3) \\
-				\cline{2-6}
-			\end{tabular}
-		}
-	\end{center}
-	The solution is $\langle i=1, j=1\rangle$. What is the sequence of eliminations that leads to this?
-	
-	All routes lead to the same result (proof?):
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} & Left        & Right        \\
-				\cline{2-4}
-				\multirow{3} {*} {{\color{green}Player 1}}& Up & (1,-1) & (4,2)  \\
-				\cline{2-4}
-				& Middle &(0,2)& (3,3)  \\
-				\cline{2-4}
-				& Down & (-2,-2) & (2,-1) \\
-				\cline{2-4}
-			\end{tabular}
-		}
-	\end{center}
-	The solution is $\langle$ Up, Right $\rangle$.
-	
-	\subsection{Weak Dominance} \label{M-WDS}
-	\textit{Strategy X weakly dominates strategy Y for a player if X gives at least as big a payoff as Y no matter what the other players do and there is one at least one X payoff than is strictly greater than the corresponding Y payoff.}
-	
-	\textbf{Iterated Elimination of Weakly Dominated Strategies} (IEWDS) is in general not a valid technique. Consider the game:
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} & Left        & Right        \\
-				\cline{2-4}
-				\multirow{3} {*} {{\color{green}Player 1}}& Up & (0,1) & (-4,2)  \\
-				\cline{2-4}
-				& Middle &(0,3)& (3,3)  \\
-				\cline{2-4}
-				& Down & (-2,2) & (3,-1) \\
-				\cline{2-4}
-			\end{tabular}
-		}
-	\end{center}
-	If we proceed as before and denoting weak dominance by $\geq$, we  might argue that
-	M $\geq$ U, L $\geq$ R. The solution is then $\langle$ Middle, Left $\rangle$. Alternatively we might argue that M $\geq$ D, R $\geq$ L which leads to the solution $\langle$ Middle, Right $\rangle$.
+
 	
 \newpage
 	\section{Best Response \& Nash Equilibrium}
@@ -1229,141 +1128,7 @@ the probability distribution over the set of strategy pairs. Hence,
 	
 	
 \newpage
-	\section{Best Response \& Nash Equilibrium}
-	
-	{ \color{red} Stag Hunt(SH)} - it requires cooperation to catch a stag! \vspace{3mm} \\
-	
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} & Stag         & Hare       \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{green}Player 1}}& Stag & ($3^*,3^*$) & (0,2) \\
-				\cline{2-4}
-				& Hare &(2,0)& ($1^*,1^*$) \\
-				\cline{2-4}
-				%C & (2,6) & (4,7)& (0,8) \\
-				%\hline
-			\end{tabular}
-		}
-	\end{center}
-	For this game there is no SDS nor WDS.\\
-	
-	A \textbf{Nash equilibrium} (NE) is a set of strategies, one for each player, from which there is no incentive for any one player to deviate if all the other players play these strategies, i.e. no player can gain by changing, also called a ``No regrets'' choice. The \emph{Best Response} of a player to another player's choice of strategy is the strategy that gives the largest or best payoff. We'll denote this by placing an $^*$ beside the payoff, e.g. in the stag game above , ``stag'' with associated payoff 3 is the best response of player 1 to player 2 playing ``stag''. Hence if both parts of a payoff pair have asterisks beside them, this must be a pure strategy \textit{Nash} equilibrium (PSNE) - a pair of strategies where both players are playing deterministic strategies as opposed to a mixed strategy \textit{Nash} equilibrium (MSNE), where players are randomly mixing between the strategies available to them.\\
-	
-	Thus in the stag game, the PSNE solutions are $\langle$ stag, stag $\rangle$ and $\langle$ hare, hare $\rangle$. Notice that without efficient coordination, either solution is possible.
-	
-	Consider the ``Good buddies prisoner's dilemma'' game:
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} & Keep Quiet        & Confess      \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{green}Player 1}}& Keep Quiet & (p1,p1) & (p4,p2) \\
-				\cline{2-4}
-				& Confess &(p2,p4)& (p3,p3) \\
-				\cline{2-4}
-				%C & (2,6) & (4,7)& (0,8) \\
-				%\hline
-			\end{tabular}
-		}
-	\end{center}
-	This is identical to the stag hunt game.\\
-	
-	An alternative definition of a NE is ``mutual best response''. Some further examples:\\
-	{ \color{red} Traffic Lights(TL)}   \vspace{3mm} \\
-	
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Car 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} & Go         & Stop      \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{green}Car 1}}& Go & (-5,-5) & (1,0) \\
-				\cline{2-4}
-				& Stop &(0,1)& (-1,-1) \\
-				\cline{2-4}
-				%C & (2,6) & (4,7)& (0,8) \\
-				%\hline
-			\end{tabular}
-		}
-	\end{center}
-	The PSNE solutions are $\langle$ go, stop $\rangle$ and $\langle$ stop, go $\rangle$.\\
-	
-	{\color{red} Generals, Armies \& Battles}. Each general commands 3 armies. No battle occurs if either general puts 0 armies in the field. Otherwise the general with more armies wins the day. With $i$ and$j$ standing for the number of armies of General 1 and General 2 respectively in the battlefield, one possible game matrix is
-	
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{4}{c} {{\color{green}General 2}} \\
-				\cline{3-6}
-				\multicolumn{2}{c|}{} & $j= 0$        & $j = 1$ & $j = 2$  &  $j = 3$    \\
-				\cline{2-6}
-				\multirow{4} {*} {{\color{green}General 1}}& $i=0$ & (0,0) & (0,0)  & (0, 0)& (0,0)\\
-				\cline{2-6}
-				& $i=1$ &(0,0)& (0,0) & (-1,1)& (-1,1)\\
-				\cline{2-6}
-				& $i=2$ & (0,0) & (1,-1)& (0,0)& (-1,1) \\
-				\cline{2-6}
-				& $i=3$ & (0,0)& (1,-1)& (1,-1) & (0,0) \\
-				\cline{2-6}
-			\end{tabular}
-		}
-	\end{center}
-	What are the PSNE(s) ?
-	
-	\subsection{Dominance \& NE} \label{D-NE}
-	
-	If IESDS results in a unique solution then it is a (unique) NE. [proof by  appeal to ``no regrets'']. IESDS does not remove any NE.\\
-	
-	IEWDS may lose NE. It is necessary to check using e.g. Best Responses. If you have a choice eliminate SDS before WDS. Examples:
-	\begin{itemize}
-		\item The example of Section \ref{M-WDS} has two NE, each obtained by a different sequence of IEWDS.
-		\item Consider the game
-		\begin{center}
-			{\color{blue}
-				\begin{tabular}{c|c|c|c|}
-					\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
-					\cline{3-4}
-					\multicolumn{2}{c|}{} & Left        & Right      \\
-					\cline{2-4}
-					\multirow{2} {*} {{\color{green}Player 1}}& Up & (2,3) & (4,3) \\
-					\cline{2-4}
-					& Down &(3,3)& (1,1) \\
-					\cline{2-4}
-					%C & (2,6) & (4,7)& (0,8) \\
-					%\hline
-				\end{tabular}
-			}
-		\end{center}
-		Using IEWDS, L $\geq$ R, then D $>$ U. Hence the solution is $\langle$ Down, Left $\rangle$. But using Best Responses, another NE is $\langle$ Up, Right $\rangle$.
-		\item The game
-		\begin{center}
-			{\color{blue}
-				\begin{tabular}{c|c|c|c|c|}
-					\multicolumn{2} {c} {} & \multicolumn{3}{c} {{\color{green}Player 2}} \\
-					\cline{3-5}
-					\multicolumn{2}{c|}{} & Left        & Centre & Right        \\
-					\cline{2-5}
-					\multirow{3} {*} {{\color{green}Player 1}}& Up & (2,2) & (4,2)  & (4, 3)\\
-					\cline{2-5}
-					& Middle &(2,4)& (5,5) & (7,3) \\
-					\cline{2-5}
-					& Down & (3,4) & (3,7)& (6,6) \\
-					\cline{2-5}
-				\end{tabular}
-			}
-		\end{center}
-		Using IEWDS C $\geq$ L, then M $>$ U, M $>$ D and C$>$ R. Hence the solution is \\ $\langle$ Middle, Centre $\rangle$. This is the only NE.
-	\end{itemize}
-	
-	
-\newpage
+
 	\section{MB2-MSNE}
 	
 	{ \color{red} Matching Pennies(MP)} is an example of a game with no PSNE.  \vspace{3mm} \\
@@ -1482,160 +1247,6 @@ the probability distribution over the set of strategy pairs. Hence,
 		\end{center}
 		PSNEs occur at $\langle$ Ballet, Ballet $\rangle$ and at $\langle$ Fight, Fight $\rangle$. Show that there is a MSNE at $\langle$ 1/3 ballet + 2/3 fight, 2/3 ballet + 1/3 fight $\rangle$ with $v_1= 2/3 = v_2$. Compare and contast this with the payoffs of the PSNEs.
 	\end{itemize}
-	\subsection{MSNE and Dominance}
-	
-	A SDS cannot be played with positive probability in a MSNE (otherwise a higher payoff can be obtained by not playing the SDS when the strategy says to play it).
-	
-	\subsection{Strict Dominance in Mixed Strategies}
-	Consider the game:
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} & Left        & Right        \\
-				\cline{2-4}
-				\multirow{3} {*} {{\color{green}Player 1}}& Up & (3,-1) & (-1,1)  \\
-				\cline{2-4}
-				& Middle &(0,0)& (0,0)  \\
-				\cline{2-4}
-				& Down & (-1,2) & (2,-1) \\
-				\cline{2-4}
-			\end{tabular}
-		}
-	\end{center}
-	This game has no SDS dominated by a pure strategy nor any PSNE. If a mixture of two pure strategies dominates another, then that strategy is a SDS.\\ In the above game 1/2 Up + 1/2 Down $>$ Middle. Remove Middle to get
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} & Left         & Right      \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{green}Player 1}}& Up & (3,-1) & (-1,1) \\
-				\cline{2-4}
-				& Down &(-1,2)& (2,-1) \\
-				\cline{2-4}
-				%C & (2,6) & (4,7)& (0,8) \\
-				%\hline
-			\end{tabular}
-		}
-	\end{center}
-	Show that a MSNE exists at $\langle$ (3/5)Up + (2/5)Down, (3/7)Left + (4/7)Right $\rangle$.\\
-	
-	Another example:
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{3}{c} {{\color{green}Player 2}} \\
-				\cline{3-5}
-				\multicolumn{2}{c|}{} & Left        & Centre & Right        \\
-				\cline{2-5}
-				\multirow{3} {*} {{\color{green}Player 1}}& Up & (-3,6) & (9,1)  & (0, 2)\\
-				\cline{2-5}
-				& Middle &(3,-4)& (2,4) & (4,1) \\
-				\cline{2-5}
-				& Down & (4,7) & (3,2)& (-3,2) \\
-				\cline{2-5}
-			\end{tabular}
-		}
-	\end{center}
-	Using IESDS, we get (1/4)L + (3/4)C $>$ R, D $>$ M, L $>$ C, D $>$ U. Thus the solution is $\langle$ Down, Left $\rangle$.
-	
-	\subsection{Atypical Matrix Games}
-	Almost all matrix games have an odd number of solutions (Wilson 1971). Examples of non generic games follow. Weak dominance is usually the culprit.
-	\begin{itemize}
-		\item \textit{}
-		\begin{center}
-			{\color{blue}
-				\begin{tabular}{c|c|c|c|}
-					\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
-					\cline{3-4}
-					\multicolumn{2}{c|}{} & Left         & Right      \\
-					\cline{2-4}
-					\multirow{2} {*} {{\color{green}Player 1}}& Up & (1,1) & (0,0) \\
-					\cline{2-4}
-					& Down &(0,0)& (0,0) \\
-					\cline{2-4}
-					%C & (2,6) & (4,7)& (0,8) \\
-					%\hline
-				\end{tabular}
-			}
-		\end{center}
-		There are two PSNEs.
-		\item\textit{}
-		\begin{center}
-			{\color{blue}
-				\begin{tabular}{c|c|c|c|}
-					\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
-					\cline{3-4}
-					\multicolumn{2}{c|}{} & Left         & Right      \\
-					\cline{2-4}
-					\multirow{2} {*} {{\color{green}Player 1}}& Up & (2,2) & (9,0) \\
-					\cline{2-4}
-					& Down &(2,3)& (5,-1) \\
-					\cline{2-4}
-					%C & (2,6) & (4,7)& (0,8) \\
-					%\hline
-				\end{tabular}
-			}
-		\end{center}
-		Using IESDS, L $>$ R. Player 1 can choose Up or Down as pure strategies or any mixture of the two. All strategies yield a payoff of 2: an infinite number of strategies.\\
-		If tempted to use IEWDS, U $\geq$ D, leading to the solution $\langle$ Up, Right $\rangle$. Caveat emptor!
-		\item Example 2 of Section \ref{D-NE} had two PSNEs. It also has an infinite number of MSNEs at $\langle$ Up, $q$Left + $(1-q)$Right $\rangle$ for $ q \leq 3/4$.
-		\item { \color{red} \textit{Selten}'s Horse}:  \vspace{3mm} \\
-		
-		\begin{center}
-			{\color{blue}
-				\begin{tabular}{c|c|c|c|}
-					\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
-					\cline{3-4}
-					\multicolumn{2}{c|}{} & Left         & Right      \\
-					\cline{2-4}
-					\multirow{2} {*} {{\color{green}Player 1}}& Up & (3,1) & (0,0) \\
-					\cline{2-4}
-					& Down &(2,2)& (2,2) \\
-					\cline{2-4}
-					%C & (2,6) & (4,7)& (0,8) \\
-					%\hline
-				\end{tabular}
-			}
-		\end{center}
-		There are two PSNEs at $\langle$ Up,Left $\rangle$ and $\langle$ Down,Right $\rangle$ and an infinite number of MSNEs at $\langle$ Down, $q$Left + $(1-q)$Right $\rangle$ for $ q \leq 2/3$.
-		
-		\item { \color{red} Take or Share} - TV game show:  \vspace{3mm} \\
-		
-		\begin{center}
-			{\color{blue}
-				\begin{tabular}{c|c|c|c|}
-					\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
-					\cline{3-4}
-					\multicolumn{2}{c|}{} & Share         & Take     \\
-					\cline{2-4}
-					\multirow{2} {*} {{\color{green}Player 1}}& Share & (4,4) & (0,8) \\
-					\cline{2-4}
-					& Take &(8,0)& (0,0) \\
-					\cline{2-4}
-					%C & (2,6) & (4,7)& (0,8) \\
-					%\hline
-				\end{tabular}
-			}
-		\end{center}
-		There are three PSNEs at all but $\langle$ Share, Share $\rangle$.
-		If one player chooses Take, then the other is indifferent between Share and Take which leads to an infinity of MSNEs.
-	\end{itemize}
-	
-	%\section{Analysis of Extensive Form Games}
-	\begin{center}
-		\textbf{Minimax Game Solution %(  au Spaniel)
-		}
-	\end{center}
-	An alternative to ``solving '' matrix games using the concept of \textit{Nash} Equilibrium is the Minimax approach. It was originally devised for 2-player ``Zero Sum'' or ``Constant Sum'' games whereby what one player gains the other player loses. Each player attempts to maximise hir payoff assuming that hir opponent is attempting to minimise it.\\
-	
-	Consider the constant sum game
-	
-	
-	
 \newpage
 \section{MB1-MSNE}
 	
@@ -1755,10 +1366,14 @@ the probability distribution over the set of strategy pairs. Hence,
 		\end{center}
 		PSNEs occur at $\langle$ Ballet, Ballet $\rangle$ and at $\langle$ Fight, Fight $\rangle$. Show that there is a MSNE at $\langle$ 1/3 ballet + 2/3 fight, 2/3 ballet + 1/3 fight $\rangle$ with $v_1= 2/3 = v_2$. Compare and contast this with the payoffs of the PSNEs.
 	\end{itemize}
+
+\newpage
 	\subsection{MSNE and Dominance}
 	
 	A SDS cannot be played with positive probability in a MSNE (otherwise a higher payoff can be obtained by not playing the SDS when the strategy says to play it).
 	
+\newpage
+
 	\subsection{Strict Dominance in Mixed Strategies}
 	Consider the game:
 	\begin{center}
@@ -1815,6 +1430,7 @@ the probability distribution over the set of strategy pairs. Hence,
 	\end{center}
 	Using IESDS, we get (1/4)L + (3/4)C $>$ R, D $>$ M, L $>$ C, D $>$ U. Thus the solution is $\langle$ Down, Left $\rangle$.
 	
+\newpage
 	\subsection{Atypical Matrix Games}
 	Almost all matrix games have an odd number of solutions (Wilson 1971). Examples of non generic games follow. Weak dominance is usually the culprit.
 	\begin{itemize}
@@ -1898,6 +1514,99 @@ the probability distribution over the set of strategy pairs. Hence,
 		If one player chooses Take, then the other is indifferent between Share and Take which leads to an infinity of MSNEs.
 	\end{itemize}
 	
-	%\section{Analysis of Extensive Form Games}
+
+	
+
+	
+	
+	\newpage
+	\subsection{Atypical Matrix Games}
+	Almost all matrix games have an odd number of solutions (Wilson 1971). Examples of non generic games follow. Weak dominance is usually the culprit.
+	\begin{itemize}
+		\item \textit{}
+		\begin{center}
+			{\color{blue}
+				\begin{tabular}{c|c|c|c|}
+					\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
+					\cline{3-4}
+					\multicolumn{2}{c|}{} & Left         & Right      \\
+					\cline{2-4}
+					\multirow{2} {*} {{\color{green}Player 1}}& Up & (1,1) & (0,0) \\
+					\cline{2-4}
+					& Down &(0,0)& (0,0) \\
+					\cline{2-4}
+					%C & (2,6) & (4,7)& (0,8) \\
+					%\hline
+				\end{tabular}
+			}
+		\end{center}
+		There are two PSNEs.
+		\item\textit{}
+		\begin{center}
+			{\color{blue}
+				\begin{tabular}{c|c|c|c|}
+					\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
+					\cline{3-4}
+					\multicolumn{2}{c|}{} & Left         & Right      \\
+					\cline{2-4}
+					\multirow{2} {*} {{\color{green}Player 1}}& Up & (2,2) & (9,0) \\
+					\cline{2-4}
+					& Down &(2,3)& (5,-1) \\
+					\cline{2-4}
+					%C & (2,6) & (4,7)& (0,8) \\
+					%\hline
+				\end{tabular}
+			}
+		\end{center}
+		Using IESDS, L $>$ R. Player 1 can choose Up or Down as pure strategies or any mixture of the two. All strategies yield a payoff of 2: an infinite number of strategies.\\
+		If tempted to use IEWDS, U $\geq$ D, leading to the solution $\langle$ Up, Right $\rangle$. Caveat emptor!
+		\item Example 2 of Section \ref{D-NE} had two PSNEs. It also has an infinite number of MSNEs at $\langle$ Up, $q$Left + $(1-q)$Right $\rangle$ for $ q \leq 3/4$.
+		\item { \color{red} \textit{Selten}'s Horse}:  \vspace{3mm} \\
+		
+		\begin{center}
+			{\color{blue}
+				\begin{tabular}{c|c|c|c|}
+					\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
+					\cline{3-4}
+					\multicolumn{2}{c|}{} & Left         & Right      \\
+					\cline{2-4}
+					\multirow{2} {*} {{\color{green}Player 1}}& Up & (3,1) & (0,0) \\
+					\cline{2-4}
+					& Down &(2,2)& (2,2) \\
+					\cline{2-4}
+					%C & (2,6) & (4,7)& (0,8) \\
+					%\hline
+				\end{tabular}
+			}
+		\end{center}
+		There are two PSNEs at $\langle$ Up,Left $\rangle$ and $\langle$ Down,Right $\rangle$ and an infinite number of MSNEs at $\langle$ Down, $q$Left + $(1-q)$Right $\rangle$ for $ q \leq 2/3$.
+		
+		\item { \color{red} Take or Share} - TV game show:  \vspace{3mm} \\
+		
+		\begin{center}
+			{\color{blue}
+				\begin{tabular}{c|c|c|c|}
+					\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{green}Player 2}} \\
+					\cline{3-4}
+					\multicolumn{2}{c|}{} & Share         & Take     \\
+					\cline{2-4}
+					\multirow{2} {*} {{\color{green}Player 1}}& Share & (4,4) & (0,8) \\
+					\cline{2-4}
+					& Take &(8,0)& (0,0) \\
+					\cline{2-4}
+					%C & (2,6) & (4,7)& (0,8) \\
+					%\hline
+				\end{tabular}
+			}
+		\end{center}
+		There are three PSNEs at all but $\langle$ Share, Share $\rangle$.
+		If one player chooses Take, then the other is indifferent between Share and Take which leads to an infinity of MSNEs.
+	\end{itemize}
+	
+	\section{Minimax Game Solution}
+	An alternative to ``solving '' matrix games using the concept of \textit{Nash} Equilibrium is the Minimax approach. It was originally devised for 2-player ``Zero Sum'' or ``Constant Sum'' games whereby what one player gains the other player loses. Each player attempts to maximise hir payoff assuming that hir opponent is attempting to minimise it.\\
+	
+	Consider the constant sum game
+
 	
 \end{document}

@@ -185,7 +185,7 @@ Since prisoners cannot communicate and will (supposedly) make their decision at 
 
 As described before, if both prisoners confess the crime they will be charged an eight years sentence each. If neither confesses, they will be charged one year each. If only one confesses, that prisoner will go free, while the other will be charged a ten years sentence. These can be seen as the respective payoffs for each set of strategies.
 
-Prisoner's dilemma - Nash and Pareto equilibria
+\subsection{Prisoner's dilemma - Nash and Pareto equilibria}
 \begin{itemize}
 \item Eliminating all dominated strategies, in order to get the dominant strategy, can solve this game. This is, each prisoner will analyse their best strategy given the other prisoner’s possible strategies. Prisoner 1 (P1) has to build a belief about what choice P2 is going to make, in order to choose the best strategy. If P2 confesses (P2C), he will get either -8 or 0, and if he lies (P2L) he will get either -10 or -1. 
 	
@@ -218,67 +218,5 @@ When the prisoners know the number of repetitions, it’s interesting to operate
 The situation with an infinite number of repetitions is different, since there will be no last round, a backwards induction reasoning does not work here. At each round, both prisoners reckon there will be another round and therefore there are always benefits arising form the cooperate (lie) strategy. However, prisoners must take into account punishment strategies, in case the other player confesses in any round.
 
 
-\section{Glossary}
 
-\begin{itemize}
-\item \textbf{Normal form game}
-A game in normal form is a function:
-
-${\displaystyle \pi \ :\prod _{i\in \mathrm {N} }\Sigma \ ^{i}\to \mathbb {R} ^{\mathrm {N} }} \pi \ :\prod _{i\in \mathrm {N} }\Sigma \ ^{i}\to \mathbb {R} ^{\mathrm {N} }$
-Given the tuple of strategies chosen by the players, one is given an allocation of payments (given as real numbers).
-
-A further generalization can be achieved by splitting the game into a composition of two functions:
-
-${\displaystyle \pi \ :\prod _{i\in \mathrm {N} }\Sigma \ ^{i}\to \Gamma \ } \pi \ :\prod _{i\in \mathrm {N} }\Sigma \ ^{i}\to \Gamma \ $
-the outcome function of the game (some authors call this function "the game form"), and:
-
-${\displaystyle \nu \ :\Gamma \ \to \mathbb {R} ^{\mathrm {N} }} \nu \ :\Gamma \ \to \mathbb {R} ^{\mathrm {N} }$
-the allocation of payoffs (or preferences) to players, for each outcome of the game.
-
-\item \textbf{Extensive form game}
-This is given by a tree, where at each vertex of the tree a different player has the choice of choosing an edge. The outcome set of an extensive form game is usually the set of tree leaves.
-
-\item \textbf{Cooperative game}
-A game in which players are allowed to form coalitions (and to enforce coalitionary discipline). A cooperative game is given by stating a value for every coalition:
-
-${\displaystyle \nu \ :2^{\mathbb {P} (N)}\to \mathbb {R} } \nu \ :2^{\mathbb {P} (N)}\to \mathbb {R} $
-It is always assumed that the empty coalition gains nil. Solution concepts for cooperative games usually assume that the players are forming the grand coalition ${\displaystyle N} N$, whose value ${\displaystyle \nu (N)} \nu (N) $ is then divided among the players to give an allocation.
-
-\item \textbf{Simple game}
-A Simple game is a simplified form of a cooperative game, where the possible gain is assumed to be either '0' or '1'. A simple game is couple (N, W), where W is the list of "winning" coalitions, capable of gaining the loot ('1'), and N is the set of players.
-
-\item Finite game 
-is a game with finitely many players, each of which has a finite set of strategies.
-Grand coalition 
-refers to the coalition containing all players. In cooperative games it is often assumed that the grand coalition forms and the purpose of the game is to find stable imputations.
-Mixed strategy 
-for player i is a probability distribution P on ${\displaystyle \Sigma \ ^{i}} \Sigma \ ^{i}$. It is understood that player i chooses a strategy randomly according to P.
-Mixed Nash Equilibrium 
-Same as Pure Nash Equilibrium, defined on the space of mixed strategies. Every finite game has Mixed Nash Equilibria.
-\item Pareto efficiency 
-An outcome a of game form π is (strongly) pareto efficient if it is undominated under all preference profiles.
-\item Preference profile 
-is a function ${\displaystyle \nu \ :\Gamma \ \to \mathbb {R} ^{\mathrm {N} }} \nu \ :\Gamma \ \to \mathbb {R} ^{\mathrm {N} }$. This is the ordinal approach at describing the outcome of the game. The preference describes how 'pleased' the players are with the possible outcomes of the game. See allocation of goods.
-\item Pure Nash Equilibrium 
-An element ${\displaystyle \sigma \ =(\sigma \ _{i})_{i\in \mathrm {N} }} \sigma \ =(\sigma \ _{i})_{i\in \mathrm {N} }$ of the strategy space of a game is a pure nash equilibrium point if no player i can benefit by deviating from his strategy ${\displaystyle \sigma \ _{i}} \sigma \ _{i}$, given that the other players are playing in ${\displaystyle \sigma \ } \sigma \$ . Formally:
-{\displaystyle \forall i\in \mathrm {N} \quad \forall \tau \ _{i}\in \ \Sigma \ ^{i}\quad \pi \ (\tau \ ,\sigma \ _{-i})\leq \pi \ (\sigma \ )} \forall i\in \mathrm {N} \quad \forall \tau \ _{i}\in \ \Sigma \ ^{i}\quad \pi \ (\tau \ ,\sigma \ _{-i})\leq \pi \ (\sigma \ )$.
-No equilibrium point is dominated.
-Say 
-%A player i has a Say if he is not a Dummy, i.e. if there is some tuple of complement strategies s.t. π (σ_i) is not a constant function.
-%Antonym: Dummy.
-
-\item Value 
-A value of a game is a rationally expected outcome. There are more than a few definitions of value, describing different methods of obtaining a solution to the game.
-\item Veto 
-A veto denotes the ability (or right) of some player to prevent a specific alternative from being the outcome of the game. A player who has that ability is called a veto player.
-Antonym: Dummy.
-
-\item Weakly acceptable game 
-is a game that has pure nash equilibria some of which are pareto efficient.
-\item Zero sum game 
-is a game in which the allocation is constant over different outcomes. Formally:
-${\displaystyle \forall \gamma \ \in \Gamma \ \sum _{i\in \mathrm {N} }\nu \ _{i}(\gamma \ )=const.} \forall \gamma \ \in \Gamma \ \sum _{i\in \mathrm {N} }\nu \ _{i}(\gamma \ )=const.$
-w.l.g. we can assume that constant to be zero. In a zero sum game, one player's gain is another player's loss. Most classical board games (e.g. chess, checkers) are zero sum.
-
-\end{itemize}
 \end{document}
