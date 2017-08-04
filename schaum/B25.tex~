@@ -222,36 +222,3 @@ Observe there is no saddle point and so the game is not strictly determined.
 We now test for recessive rows and columns.
 Not that the third column is recessive since each entry is larger than the corresponding entry in the
 second column. Hence the third column can be omitted to obtain the game.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Exercise 25.4}
-
-
-\subsection{Exercise 25.5}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Exercise 25.6}
-
-\subsection{Exercise 25.7}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Exercise 25.8}
-
-Two players $R$ and $C$ match pennies. If the coins match, then R wins, if the coins
-do not match then C wins. Determine optimum strategies
-
-\subsection{Exercise 25.9}
-
-
-\subsection{Exercise 25.10}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Exercise 25.11}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
