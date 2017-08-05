@@ -45,22 +45,6 @@ they would show 2 fingers.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- A17 Page 314
 
-\subsection{Unstable Games}
-
-\[ E(\boldsymbol{X}.\boldsymbol{Y}) = \sum \sum a_{ij} \]
-
-
-\subsection{Minimax Theorem}
-For any game matrix, there exists optimal strategies X and Y such that
-
-\[ E(\boldsymbol{X}.\boldsymbol{Y}) = M = M = G^{\ast} \]
-
-
-Solution by Linearr Programming
-
-The optimal strategies guaranteed by the minimax theorem, as well as the value of the game, can be calculated via linear programming.
-
-The optimal strategy for player II is incorporated in the solution of the following linear program.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -69,25 +53,12 @@ The optimal strategy for player II is incorporated in the solution of the follow
 
 \section{Dominance}
 
-A pure strategy P is dominbated by a pure strategy Q if, for each pure strategy of the opponent's the pay-off asssociaed
-with P is no better than the payoff associated with $Q$. Since a dominated pure strategy
-can be never of an optimal strategy, the corresponding row or column of the game matrix may be deleted a priori.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+A pure strategy P is dominbated by a pure strategy Q if, for each,
+
 %% -- A17 Page 316 Payoff matrix
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Page 317
-
-\subsection{Example 17.3}
-
-
-\subsection{Example 17.4}
-
-Let G denoted the game matrix obtained from matrix G by eliminated dominated rows and columns. Show that G is stable if and only f G
-is stable.
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -95,25 +66,9 @@ is stable.
 %Page 318
 
 
-\subsection{Example 17.5}
-Is the game of Table 17.3 stable?
-
-
-
-\subsection{Example 17.6}
-Is the game of Table 17.4 stable?
-
-\subsection{Example 17.7}
-
-
-\subsection{Example 17.8}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Page 319
-
-\subsection{Example 17.9}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
