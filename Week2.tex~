@@ -1,3 +1,39 @@
+
+\documentclass[]{report}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
+
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+
+\begin{document}
+
+
 %%- https://cs.stanford.edu/people/eroberts/courses/soco/projects/1998-99/game-theory/Minimax.html
 
 \section{STRATEGIES OF PLAY}
@@ -5,7 +41,7 @@ The Minimax algorithm is the most well-known strategy of play of two-player, zer
 
 \subsection{Maximax}
 
-Maximax principle counsels the player to choose the strategy that yields the best of the best possible outcomes. For example, let's consider a zero-sum game where two players simultaneously put either a blue or a red card on the table. If player 1 puts a red card down on the table, whichever card player 2 puts down, no one wins anything. If player 1 puts a blue card on the table and player 2 puts a red card, then player 2 wins $1,000 from player 1. Finally, if player 1 puts a blue card on the table and player 2 puts a blue card down, then player 1 wins $1,000 from player 2.
+Maximax principle counsels the player to choose the strategy that yields the best of the best possible outcomes. For example, let's consider a zero-sum game where two players simultaneously put either a blue or a red card on the table. If player 1 puts a red card down on the table, whichever card player 2 puts down, no one wins anything. If player 1 puts a blue card on the table and player 2 puts a red card, then player 2 wins \$1,000 from player 1. Finally, if player 1 puts a blue card on the table and player 2 puts a blue card down, then player 1 wins \$1,000 from player 2.
 
 The payoff matrix for player 1 is shown in this table:
 
@@ -176,15 +212,17 @@ Tails
 
 1
 
-
-There is no clearly defined strategy for each player. The best way to play is to choose the position of the coin randomly. If either player follows this strategy, then in the long run, the payoffs for each will be 0. Notice that if, say, player 1 uses a 50/50 strategy, while player 2 plays heads 75% of the time, in the long run, both players will still have payoffs of 0. But if player 2 follows the 75/25 strategy, then player 1 can easily take advantage of it by playing heads more frequently, and therefore winning more frequently. So, it is important for each player to not only maintain a random strategy, but to also analyze the strategy of the other player.
-
-
-\subsection{{Applications to Computing}
-
-In computer simulations for cases such as this, it is important not to program the computer with a specific strategy in advance, but let it decide it at run-time. If the computer does not maintain unpredictability, then the opposing player may use this knowledge to his advantage. Many computer games suffer because although the computer is programmed with a strong strategy, it becomes predictable and easy to take advantage of.
-
-On the other hand, the computer might very well benefit if it recognizes a predictable strategy on the part of an opponent. Even in such a simple game as "Matching Pennies," where a 50/50 is called for, while the computer may follow a 50% algorithm for deciding whether to play heads or tails, a human cannot come up with completely random numbers. In fact, it has been observed that humans tend to play heads slightly more often. If a computer recognizes that the probability of its opponent of picking heads is slightly higher, it may adjust its own strategy to have an advantage.
-
+\begin{itemize}
+\item There is no clearly defined strategy for each player. The best way to play is to choose the position of the coin randomly. If either player follows this strategy, then in the long run, the payoffs for each will be 0. 
+\item Notice that if, say, player 1 uses a 50/50 strategy, while player 2 plays heads 75\% of the time, in the long run, both players will still have payoffs of 0.
+\item  But if player 2 follows the 75/25 strategy, then player 1 can easily take advantage of it by playing heads more frequently, and therefore winning more frequently. So, it is important for each player to not only maintain a random strategy, but to also analyze the strategy of the other player.
+\end{itemize}
+%========================================%
+\subsection{Applications to Computing}
+\begin{itemize}
+\item In computer simulations for cases such as this, it is important not to program the computer with a specific strategy in advance, but let it decide it at run-time. If the computer does not maintain unpredictability, then the opposing player may use this knowledge to his advantage. Many computer games suffer because although the computer is programmed with a strong strategy, it becomes predictable and easy to take advantage of.
+\item 
+On the other hand, the computer might very well benefit if it recognizes a predictable strategy on the part of an opponent. Even in such a simple game as "Matching Pennies," where a 50/50 is called for, while the computer may follow a 50\% algorithm for deciding whether to play heads or tails, a human cannot come up with completely random numbers. In fact, it has been observed that humans tend to play heads slightly more often. If a computer recognizes that the probability of its opponent of picking heads is slightly higher, it may adjust its own strategy to have an advantage.
+\end{itemize}
 
 \end{document}

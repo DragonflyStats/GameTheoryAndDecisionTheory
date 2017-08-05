@@ -75,16 +75,15 @@ Player 1	T
 3,0	1,1
 B
 There are four action profiles ((T,L), (T,R), (B,L), and (B,R)); we can examine each in turn to check whether it is a Nash equilibrium.
-\begin{itemize}
-\item (T,L)
+
+(T,L)
 By choosing B rather than T, player 1 obtains a payoff of 3 rather than 2, given player 2's action. Thus (T,L) is not a Nash equilibrium. [Player 2 also can increase her payoff (from 2 to 3) by choosing R rather than L.]
-\item (T,R)
+(T,R)
 By choosing B rather than T, player 1 obtains a payoff of 1 rather than 0, given player 2's action. Thus (T,R) is not a Nash equilibrium.
-\item (B,L)
+(B,L)
 By choosing R rather than L, player 2 obtains a payoff of 1 rather than 0, given player 1's action. Thus (B,L) is not a Nash equilibrium.
-item (B,R)
+(B,R)
 Neither player can increase her payoff by choosing an action different from her current one. Thus this action profile is a Nash equilibrium.
-\end{itemize}
 We conclude that the game has a unique Nash equilibrium, (B,R).
 Notice that in this equilibrium both players are worse off than they are in the action profile (T,L). Thus they would like to achieve (T,L); but their individual incentives point them to (B,R).
 \newpage

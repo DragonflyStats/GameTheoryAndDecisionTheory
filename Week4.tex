@@ -1,0 +1,113 @@
+
+\documentclass[]{report}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
+
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+
+\begin{document}
+%%- http://policonomics.com/prisoners-dilemma/
+
+
+\section{Prisoner’s dilemma}
+
+The prisoner’s dilemma is probably the most widely used game in game theory. Its use has transcended Economics, being used in fields such as business management, psychology or biology, to name a few. Nicknamed in 1950 by Albert W. Tucker, who developed it from earlier works, it describes a situation where two prisoners, suspected of burglary, are taken into custody. However, policemen do not have enough evidence to convict them of that crime, only to convict them on the charge of possession of stolen goods.
+
+\begin{verbatim}
+Example PD payoff matrix
+Prisoner 2
+Prisoner 1
+Cooperate (with other)	Defect (betray other)
+Cooperate (with other)	2, 2	0, 3
+Defect (betray other)	3, 0	1, 1
+\end{verbatim}
+
+Imagine two prisoners held in separate cells, interrogated simultaneously, and offered deals (lighter jail sentences) for betraying their fellow criminal. They can "cooperate" (with the other prisoner) by not snitching, or "defect" by betraying the other. However, there is a catch; if both players defect, then they both serve a longer sentence than if neither said anything. Lower jail sentences are interpreted as higher payoffs (shown in the table).
+
+The prisoner's dilemma has a similar matrix as depicted for the coordination game, but the maximum reward for each player (in this case, 3) is obtained only when the players' decisions are different. Each player improves their own situation by switching from "cooperating" to "defecting", given knowledge that the other player's best decision is to "defect". The prisoner's dilemma thus has a single Nash equilibrium: both players choosing to defect.
+
+What has long made this an interesting case to study is the fact that this scenario is globally inferior to "both cooperating". That is, both players would be better off if they both chose to "cooperate" instead of both choosing to defect. However, each player could improve their own situation by breaking the mutual cooperation, no matter how the other player possibly (or certainly) changes their decision.
+
+
+
+
+Prisoner's dilemmaIf none of them confesses (they cooperate with each other), they will both be charged the lesser sentence, a year of prison each. The police will question them on separate interrogation rooms, which means that the two prisoners cannot communicate (hence imperfect information). The police will try to convince each prisoner to confess the crime by offering them a “get out of jail free card”, while the other prisoner will be sentenced to a ten years term. If both prisoners confess (and therefore they defect), each prisoner will be sentenced to eight years. Both prisoners are offered the same deal and know the consequences of each action (complete information) and are completely aware that the other prisoner has been offered the exact same deal (therefore, it’s common knowledge).
+
+Takeaway Points
+To calculate payoffs in mixed strategy Nash equilibria, do the following:
+
+\begin{enumerate}
+	\item Solve for the mixed strategy Nash equilibrium. Write the probabilities of playing each strategy next to those strategies.
+	\item	For each cell, multiply the probability player 1 plays his corresponding strategy by the probability player 2 plays her corresponding strategy. Write this in the cell.
+	\item	Choose which player whose payoff you want to calculate. Multiply each probability in each cell by his or her payoff in that cell.
+	\item	Sum these numbers together. This is the expected payoff in the mixed strategy Nash equilibrium for that player.
+\end{enumerate}
+
+
+\subsection{Description:}
+
+Since prisoners cannot communicate and will (supposedly) make their decision at the same time, this is considered to be a simultaneous game, and can be analysed using the strategic form, as in the adjacent game matrix. 
+
+As described before, if both prisoners confess the crime they will be charged an eight years sentence each. If neither confesses, they will be charged one year each. If only one confesses, that prisoner will go free, while the other will be charged a ten years sentence. These can be seen as the respective payoffs for each set of strategies.
+
+\subsection{Prisoner's dilemma - Nash and Pareto equilibria}
+\begin{itemize}
+\item Eliminating all dominated strategies, in order to get the dominant strategy, can solve this game. This is, each prisoner will analyse their best strategy given the other prisoner’s possible strategies. Prisoner 1 (P1) has to build a belief about what choice P2 is going to make, in order to choose the best strategy. If P2 confesses (P2C), he will get either -8 or 0, and if he lies (P2L) he will get either -10 or -1. 
+	
+\item It can be easily seen that P2 will choose to confess, since he will be better off. Therefore, P1 must choose the best strategy given that P2 will choose to confess: P1 can either confess (P1C, which pays -8) or lie (P1L, which pays -10). The rational thing to do for P1 is to confess. 
+	
+\item	Proceeding inversely, we analyse the beliefs of P2 about P1’s strategies, which gets us to the same point: the rational thing to do for P2 is to confess. Therefore, “to confess” is the dominant strategy. P1C, P2C is the Nash equilibrium in this game (underlined in red), since it is the set of strategies that maximise each prisoner’s utility given the other prisoner’s strategy.
+	
+\item Nash equilibriums can be used to predict the outcome of finite games, whenever such equilibrium exists. On the downside, we find the issue that arises when dealing with a Nash equilibrium that is neither social nor ethical, and where efficiency may be subjective, which is the case in the prisoner’s dilemma, where the Nash equilibrium does not meet the criteria for being Pareto optimal (underlined in green).
+	
+\end{itemize}
+
+
+
+\subsection{Generalisation of the game:}
+
+The prisoner’s dilemma is not always presented as we have seen in this case. Payoffs for each set of strategies will vary, depending on each person. However, there are a few rules that can be used to build a “proper” prisoner’s dilemma game.
+
+Prisoner's dilemma - StructureIn the adjacent game matrix, we’ve renamed each player’s payoffs, in order to determine the conditions needed to design a prisoner’s dilemma game. In a traditional prisoner’s dilemma, we have: A > B > C > D (in absolute terms). In our previous example, this condition is met (A=10, B=8, C=1 and D=0). In every case, A>B and C>D imply that confess-confess is a Nash equilibrium.
+
+It must be noted that the asymmetry of the game is not the important part of the prisoner’s dilemma. The interesting thing about this game is the fact that its Nash equilibrium is not socially optimum.
+
+
+
+\subsection{Repeated prisoner’s dilemma games:}
+
+In order to see what equilibrium will be reached in a repeated game of the prisoner’s dilemma kind, we must analyse two cases: the game is repeated a finite number of times, and the game is repeated an infinite number of times.
+
+When the prisoners know the number of repetitions, it’s interesting to operate a backwards induction to solve the game. Consider the strategies of each player when they realise the next round is going to be the last. They behave as if it was a one-shot game, thus the Nash equilibrium applies, and the equilibrium would be confess-confess, just like in the one-time game. Now consider the game before the last. Since each player knows in the next, final round they are going to confess, there’s no advantage to lie (cooperate with each other) on this round either. The same logic applies for prior moves. Therefore, confess-confess is the Nash equilibrium for all rounds.
+
+The situation with an infinite number of repetitions is different, since there will be no last round, a backwards induction reasoning does not work here. At each round, both prisoners reckon there will be another round and therefore there are always benefits arising form the cooperate (lie) strategy. However, prisoners must take into account punishment strategies, in case the other player confesses in any round.
+
+
+
+\end{document}
