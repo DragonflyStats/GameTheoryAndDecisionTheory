@@ -1,3 +1,36 @@
+
+\documentclass[]{report}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
+
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+\begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- A17 Page 312
 
@@ -15,6 +48,9 @@ In a matrix, either player has a finite set of pure strategies, although their n
 Thus a complete characterization of the game is provided by its pay-off matrix.
 Table 1.7 gives the amount$a_{ij}$ won by player 1 from player II when I players their $i$th pure strategy.
 
+% table 17.1
+
+% Table 17.2
 
 The objective is game theory is to determine a best stategy for a given player under the assumption that the opponent is rational and will 
 make intelligent countermoves. Consequently, if one player always chooses the same pure strategy or chooses pure strategies in a fixed order, their oppponent will in time 
@@ -22,15 +58,19 @@ make intelligent countermoves. Consequently, if one player always chooses the sa
 %% -- A17 Page 313 Top
 recognize patterns and will move to defeat if possible.
 
-Generally, therefore, the most effective strategy is a mixed staategy.
+\[X \equiv [x_1,x_2,x_3,\ldots]^T  \]
 
+Generally, therefore, the most effective strategy is a mixed staategy.
+\[Y \equiv [y_1,y_2,y_3,y_4,\ldots,y_n]^T  \]
+
+\[  \sum X \equiv \sum y_j  = 1 \]
 
 %% -- \subsection{Example 17.2}
 If the game in example 17.1 , if player 1 always shows three fingers, player II can defeat that pure strategy by always showing two fingers.
 If player I adopts the set sequence of pure strategies \{3,3,2,3,3,2,3,3,2\}, then player II can defeat it with the corresponding sequence
 \{2,2,3,2,2,3,2,2,3, \ldots\}.
 
-If player I adopts the mixed strategy $\boldsymbol{X} =\[1//6,1/3,1/2\}^T$, then player I plans to show 1 fnger one-sixth of the time, 2 fingers one-third of the time, and 3 fingers one-half of the time.
+If player I adopts the mixed strategy $\boldsymbol{X} =\{1/6,1/3,1/2\}^T$, then player I plans to show 1 fnger one-sixth of the time, 2 fingers one-third of the time, and 3 fingers one-half of the time.
 
 To implement the strategy, player i could roll one die before each play.
 
@@ -171,3 +211,6 @@ Simultaneously, both players show one card of their choice.
 
 If the two cards match in terms of colour, player 
 I wins
+
+
+\end{document}

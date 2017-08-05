@@ -61,7 +61,7 @@ Not gamble
 0
 
 
-According to the maximin principle, the player should never gamble, because he faces a risk of losing \$1. It is clear that the maximin principle is quite inefficient, since it discourages taking any risks, no matter how high the reward may be.
+According to the maximin principle, the player should never gamble, because he faces a risk of losing $1. It is clear that the maximin principle is quite inefficient, since it discourages taking any risks, no matter how high the reward may be.
 
 
 \subsection{Minimax for One-Person Games}

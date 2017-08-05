@@ -1,0 +1,26 @@
+
+
+
+%==================================================%
+
+\begin{itemize}
+\item A pure strategy determines all your moves during the game (and should therefore specify your moves for all possible other players' moves). 
+\item A mixed strategy is a probability distribution over all possible pure strategies (some of which may get zero weight).
+\end{itemize}
+
+%==================================================%
+
+
+\subsection{What is a pure strategy?}
+
+A pure strategy is an unconditional, defined choice that a person makes in a situation or game. For example, in the game of Rock-Paper-Scissors,if a player would choose to only play scissors for each and every independent trial, regardless of the other player’s strategy, choosing scissors would be the player’s pure strategy. The probability for choosing scissors equal to 1 and all other options (paper and rock) is chosen with the probability of 0. The set of all options (i.e. rock, paper, and scissors) available in this game is known as the strategy set.
+
+%==================================================%
+
+\subsection{What is a mixed strategy?}
+
+A mixed strategy is an assignment of probability to all choices in the strategy set. Using the example of Rock-Paper-Scissors, if a person’s probability of employing each pure strategy is equal, then the probability distribution of the strategy set would be 1/3 for each option, or approximately 33%. In other words, a person using a mixed strategy incorporates more than one pure strategy into a game.
+
+The definition of a mixed strategy does not rule out the possibility for an option(s)to never be chosen (eg. pscissors= 0.5, prock = 0.5, ppaper = 0). This means that in a way, a pure strategy can also be considered a mixed strategy at its extreme, with a binary probability assignment (setting one option to 1 and all others equal to 0). For this article, we shall say that pure strategies are not mixed strategies.
+
+

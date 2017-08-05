@@ -1,0 +1,9 @@
+
+
+Stackelberg duopoly
+
+Stackelberg duopoly, also called Stackelberg competition, is a model of imperfect competition based on a non-cooperative game. It was developed in 1934 by Heinrich Stackelbelrg in his “Market Structure and Equilibrium” and represented a breaking point in the study of market structure, particularly the analysis of duopolies, since it was a model based on different starting assumptions and gave different conclusions to those of the Cournot’s and Bertrand’s duopoly models.
+
+In game theory, a Stackelberg duopoly is a sequential game (not simultaneous as in Cournot’s model). There are two firms, which sell homogeneous products, and are subject to the same demand and cost functions. One firm, the leader, is perhaps better known or has greater brand equity, and is therefore better placed to decide first which quantity q1 to sell, and the other firm, the follower, observes this and decides on its production quantity q2. To find the Nash equilibrium of the game we need to use backward induction, as in any sequential game. That is, start analyzing the decision of the follower.
+
+
