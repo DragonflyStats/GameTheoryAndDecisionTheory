@@ -4,7 +4,7 @@
 \oddsidemargin=0.0cm
 \textwidth = 480pt
 
-\documentclass[a4paper,12pt]{article}
+
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{amssymb}

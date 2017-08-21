@@ -1,7 +1,35 @@
+\documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{LastRevised=Wednesday, February 23, 2011 13:24:34}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+\pagestyle{fancy}
+\setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
+\lhead{Hibernia College} \rhead{Mr. Kevin O'Brien}
+\chead{Mathematics for Computing}
+%\input{tcilatex}
+
+\begin{document}
 
 % MLT PAGE 404
 
-Introduction to Game Theory
+\section{Introduction to Game Theory}
 
 
 %==========================================%
@@ -14,68 +42,10 @@ Introduction to Game Theory
 
 \section{Two-Person Zero Sum Games}
 
-Formulation of Two-Person Zero Sum Games
+% Formulation of Two-Person Zero Sum Games
 
-Pay-Off Matrix
+% Pay-Off Matrix
 
-%==========================================%
-% Add Ins
-
-
-
-\section{Two-Person Zero-Sum Games: Basic Concepts}
-% - https://neos-guide.org/content/game-theory-basics
-
-Game theory provides a mathematical framework for analyzing the decision-making processes and strategies of adversaries (or players) in different types of competitive situations. The simplest type of competitive situations are two-person, zero-sum games. These games involve only two players; they are called zero-sum games because one player wins whatever the other player loses.
-
-
-\begin{framed}
-A zero-sum game is a mathematical representation of a situation in which each participant's gain or loss of utility is exactly balanced by the losses or gains of the utility of the other participants.
-\end{framed}
-
-\section{Example: Odds and Evens}
-Consider the simple game called \textbf{odds and evens}. Suppose that player 1 takes evens and player 2 takes odds. Then, each player simultaneously shows either one finger or two fingers. If the number of fingers matches, then the result is even, and player 1 wins the bet (\$2). If the number of fingers does not match, then the result is odd, and player 2 wins the bet (\$2). Each player has two possible strategies: show one finger or show two fingers. The payoff matrix shown below represents the payoff to player 1.
-
-\[Image\]
-
-
-\section{Basic Concepts of Two-Person Zero-Sum Games}
-This game of odds and evens illustrates important concepts of simple games.
-
-A two-person game is characterized by the strategies of each player and the payoff matrix.
-
-\begin{itemize}
-\item The payoff matrix shows the gain (positive or negative) for player 1 that would result from each combination of strategies for the two players. Note that the matrix for player 2 is the negative of the matrix for player 1 in a zero-sum game.
-\item The entries in the payoff matrix can be in any units as long as they represent the utility (or value) to the player.
-\item There are two key assumptions about the behavior of the players. The first is that both players are rational. The second is that both players are greedy meaning that they choose their strategies in their own interest (to promote their own wealth).
-\end{itemize}
-
-%===========================%
-
-\section{Payoff Matrix}
-%- http://economicsmicro.blogspot.ie/2008/11/how-to-read-payoff-matrix-game-theory.html
-
-How to read a payoff matrix : Game Theory
-Eg – Payoff matrix for a new technology game 
-
-\[IMAGE\]
-
-
-
-Explanation 
-\begin{enumerate}
-
-\item There are 2 firms A and B and they want to decide whether to Start a new campaign. 
-\item each firm will be affected by its competitor’s decision. 
-\item The above table shows the payoff to both firms. This table is called payoff matrix. 
-\item (a,b) -The first number in each cell is the payoff(profits) to A and second number in each cell 
-is the payoff to B. 
--(10,5) shows the payoffs when both firms start a new campaign. 
-Firm A’s profits are 10 and firm B’s are 5. 
--(15,0) shows the payoffs when firm A starts a new campaign abd Firm B does not. 
-Firm A’s profits are 15 and firm B’s are 0. 
-\end{itemize}
-%-------------------------------------%
 %==========================================%
 
 % MLT Page 407
@@ -91,4 +61,4 @@ Firm A’s profits are 15 and firm B’s are 0.
 %==========================================%
 
 % MLT Page 410
-
+\end{document}
