@@ -30,8 +30,7 @@
 \usepackage{framed}
 \usepackage{graphics}
 \usepackage{epsfig}
-\usepackage{subfigure}re
-
+\usepackage{subfigure}
 %\input def.tex
 %\input dsdef.tex
 %\input rgb.tex
