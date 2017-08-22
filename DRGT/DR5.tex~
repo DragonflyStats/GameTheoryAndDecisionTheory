@@ -93,7 +93,7 @@ Let's start out by defining a few terms commonly used in the study of game theor
 \end{description}
 
 \subsection{Assumptions}
-As with any concept in economics, there is the assumption of rationality. There is also an assumption of maximization. It is assumed that players within the game are rational and will strive to maximize their payoffs in the game. 
+As with any concept in economics, there is the assumption of rationality. There is also an assumption of maximization. It is assumed that players within the game are rational and will strive to maximize their payoffs in the game. (The question of rationality has been applied to investor behavior as well. Read Understanding Investor Behavior to learn more.)
 
 When examining games that are already set up, it is assumed on your behalf that the payouts listed include the sum of all payoffs that are associated with that outcome. This will exclude any "what if" questions that may arise.
 
@@ -359,7 +359,7 @@ pair.
 \begin{itemize}
 	\item[(a)] If Player 2 plays $(H|H, H|D)$ or $(H|H, D|D)$, then both players
 take the action H and the resulting payoff vector is (−2, −2).
-	\item[(b)] If Player 2 plays $(D|H, D|D)$ or $(D|H, H|D)$, then Player 1
+	\item[(b)] If Player 2 plays (D|H, D|D) or $(D|H, H|D)$, then Player 1
 takes the action H and Player 2 takes the action D and the
 resulting payoff vector is (4, 0).
 \end{itemize}
@@ -387,7 +387,7 @@ D (0,4) (2,2) (2,2) (0,4)
 
 %-----------------------------------------------------------%
 %% 21 / 45
-\subsection{Moves by Nature}
+\subsection{Moves by ”Nature”}
 \begin{itemize}
 	\item Extensive form can also be used to describe moves by ”nature”,
 	i.e. random events, the roll of a die, dealing cards.
@@ -488,7 +488,7 @@ D (0,4) (2,2) (2,2) (0,4)
 
 \subsection{Example}
 The matrix form of this game is given by
-\[(A|H, A|T) (A|H, B|T) (B|H, B|T) (B|H, A|T)\]
+(A|H, A|T) (A|H, B|T) (B|H, B|T) (B|H, A|T)
 A (-0.5,0.5) (1.5,-1.5) (0.5,-0.5) (-1.5,1.5)
 B (0.5,-0.5) (-1.5,1.5) (-0.5,0.5) (1.5,-1.5)
 
@@ -533,7 +533,7 @@ The extensive form of the game described above is
 \label{fig:DR5-Slide31}
 \end{figure}
 
-\[(4xy − x, 4xy − y)\]
+(4xy − x, 4xy − y)
 %-----------------------------------------------------------%
 %%  31 / 45
 \subsection{The Concepts of Complete Information and Perfect
