@@ -202,11 +202,11 @@ Now, we combine the bold options for both players onto the full matrix.
 			\begin{tabular}{c|c|c|c|}
 				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
 				\cline{3-4}
-				\multicolumn{2}{c|}{} &   Left       &  Right       \\
+				\multicolumn{2}{c|}{} &   Up      &  Down       \\
 				\cline{2-4}
-				\multirow{2} {*} {{\color{red}Player 1}}& Left & (80,0) & (60,40) \\
+				\multirow{2} {*} {{\color{red}Player 1}}& Up & (1,3) & (4,2) \\
 				\cline{2-4}
-				& Right &(40,60)& (40,0) \\
+				& Down &(3,2)& (3,1) \\
 				\cline{2-4}
 				%C & (2,6) & (4,7)& (0,8) \\
 				%\hline
@@ -261,5 +261,161 @@ This method of finding Nash Equilibrium is well-suited to finding equilibria in 
 
 With these advanced methods, more real-world situations can be modeled and solved. 
 \item The different kinds of Nash Equilibrium we discussed are the most commonly found solutions to real-world modeled games. A working knowledge of Game Theory can help you form a strategy, whether playing a friend playing tic-tac-toe or vying for the largest profits.
+\end{itemize}
+
+\newpage
+
+%==========================================================%
+
+\subsection{Nash Equilibrium and Dominant Strategies}
+
+Nash Equilibrium is a term used in game theory to describe an equilibrium where each player's strategy is optimal given the strategies of all other players. A Nash Equilibrium exists when there is no unilateral profitable deviation from any of the players involved. In other words, no player in the game would take a different action as long as every other player remains the same. Nash Equilibria are self-enforcing; when players are at a Nash Equilibrium they have no desire to move because they will be worse off.
+
+Necessary Conditions
+
+The following game doesn't have payoffs defined:
+
+L	R
+T	a,b	c,d
+B	e,f	g,h
+In order for (T,L) to be an equilibrium in dominant strategies (which is also a Nash Equilibrium), the following must be true:
+
+a > e
+c > g
+b > d
+f > h
+In order for (T,L) to be a Nash Equilibrium, only the following must be true:
+a > or = e
+b > or = d
+\subsection{Prisoners' Dilemma (Again)}
+
+If every player in a game plays his dominant pure strategy (assuming every player has a dominant pure strategy), then the outcome will be a Nash equilibrium. The Prisoners' Dilemma is an excellent example of this. It was reviewed in the introduction, but is worth reviewing again. Here's the game (remember that in the Prisoners' Dilemma, the numbers represent years in prison):
+
+Jack
+C	NC
+Tom	C	-10,-10	0,-20
+NC	-20,0	-5,-5
+
+%==========================================%
+In this game, both players know that 10 years is better than 20 and 0 years is better than 5; therefore, C is their dominant strategy and they will both choose C (cheat). Since both players chose C, (10,10) is the outcome and also the Nash Equilibrium. To check whether this is a Nash Equilibrium, check whether either player would like to deviate from this position. Jack wouldn't want to deviate, because if he chose NC and Tom stayed at C, Jack would increase his prison time by 10 years.
+
+\subsection{Iterated Deletion of Dominated Strategies}
+
+Here's another game that doesn't have dominant pure strategies, but that we can solve by iterated deletion of dominated strategies. In other words, we can eliminate strategies that are dominated until we come to a conclusion:
+
+2
+Left	Middle	Right
+1	Up	1,0	1,2	0,1
+Down	0,3	0,1	2,0
+
+%==========================================%
+Let's find the dominant strategies. The first strategy that is dominated, is Right. Player 2 will always be better off by playing Middle, so Right is dominated by Middle. At this point the column under Right can be eliminated since Right is no longer an option. This will be shown by crossing out the column:
+
+\begin{center}
+		{\color{blue}
+			\begin{tabular}{c|c|c|c|c|}
+				\multicolumn{2} {c} {} & \multicolumn{3}{c} {{\color{red}Player 2}} \\
+				\cline{3-5}
+				\multicolumn{2}{c|}{} &   Heads      &  Tails & Right      \\
+				\cline{2-5}
+				\multirow{2} {*} {{\color{red}Player 1}}& Heads & 1 & -1 & \\
+				\cline{2-5}
+				& Tails &-1& 1&  \\
+				\cline{2-5}
+			
+			\end{tabular}
+		}
+	\end{center}
+2
+Left	Middle	Right
+1	Up	1,0	1,2	0,1
+Down	0,3	0,1	2,0
+%==========================================%
+Remember that both players understand that player 2 has no reason to play Right--player 1 understands that player 2 is trying to find an optimum, so he also no longer considers the payoffs in the Right column. With the Right column gone, Up now dominates Down for player 1. Whether player 2 plays Left or Middle, player 1 will get a payoff of 1 as long as he chooses Up. So now we no longer consider Down:
+
+2
+Left	Middle	Right
+\begin{center}
+		{\color{blue}
+			\begin{tabular}{c|c|c|c|c|}
+				\multicolumn{2} {c} {} & \multicolumn{3}{c} {{\color{red}Player 2}} \\
+				\cline{3-5}
+				\multicolumn{2}{c|}{} &   Heads      &  Tails & Right      \\
+				\cline{2-5}
+				\multirow{2} {*} {{\color{red}Player 1}}& Heads & 1 & -1 & \\
+				\cline{2-5}
+				& Tails &-1& 1&  \\
+				\cline{2-5}
+			
+			\end{tabular}
+		}
+	\end{center}
+1	Up	1,0	1,2	0,1
+Down	0,3	0,1	2,0
+
+%==========================================%
+Now we know that player 1 will choose Up, and player 2 will choose Left or Middle. Since Middle is better than Left (a payoff of 2 vs. 0), player 2 will choose Middle and we have solved the game for the Nash Equilibrium:
+
+	\begin{center}
+		{\color{blue}
+			\begin{tabular}{c|c|c|c|c|}
+				\multicolumn{2} {c} {} & \multicolumn{3}{c} {{\color{red}Player 2}} \\
+				\cline{3-5}
+				\multicolumn{2}{c|}{} &   Heads      &  Tails & Right      \\
+				\cline{2-5}
+				\multirow{2} {*} {{\color{red}Player 1}}& Heads & 1 & -1 & \\
+				\cline{2-5}
+				& Tails &-1& 1&  \\
+				\cline{2-5}
+			
+			\end{tabular}
+		}
+	\end{center}
+2
+Left	Middle	Right
+1	Up	1,0	1,2	0,1
+Down	0,3	0,1	2,0
+
+%==========================================%
+To ensure that this answer (Up, Middle) is a Nash Equilibrium, check to see whether either player would like to deviate. As long as player 1 has chosen Up, player 2 will choose Middle. On the other hand, as long as player 2 has chosen Middle, player 1 will choose up.
+
+\subsection{Multiple Nash Equilibria}
+
+Here's a game that demonstrates multiple Nash Equilibria: Two drivers are traveling towards each other on a road. Should they drive on the left or the right side? They don't want to wreck...
+
+Driver 2
+Left	Right
+Driver 1	Left	1,1	-1,-1
+Right	-1,-1	1,1
+Both (Left,Left) and (Right,Right) are Nash Equilibria. As long as they're on opposite sides of the road, the drivers are happy and don't want to deviate. Games like this are often solved by social convention--beforehand all the players agree on a strategy so that everyone is better off. Of course, everyone knows that the right side is the best side to drive on, so the game should look more like this:
+
+Driver 2
+Left	Right
+Driver 1	Left	1,1	-1,-1
+Right	-1,-1	2,2
+In this case, the game itself gives the players a clue as to where the other player will be, even though there are two Nash Equilibria.
+
+Here's a game with three Nash Equilibria and no dominated strategies:
+
+2
+a	b	c
+1	A	1,1	2,0	3,0
+B	0,2	3,3	0,0
+C	0,3	0,0	10,10
+The Nash Equilibria are (A,a), (B,b), and (C,c).
+
+%=============================================%
+
+\subsection{Example of an iterated deletion of dominated strategy equilibrium}
+\begin{itemize}
+\item Consider the following game to better understand the concept of iterated elimination of strictly dominated strategies.
+\item Player 1 has two strategies and player 2 has three. S1={up,down} and S2={left,middle,right}. For player 1, neither up nor down is strictly dominated. Up is better than down if 2 plays left (since 1>0), but down is better than up if 2 plays right (since 2>0). For player 2, however, right is strictly dominated by middle (since 2>1 and 1>0), so player 2 being rational will not play right.
+
+\item Thus if player 1 knows that player 2 is rational then player 1 can eliminate right from player 2's strategy space. So, if player 1 knows that player 2 is rational then player 1 can play the game as if it was the game depicted below.
+
+\item In the figure above, down is strictly dominated by up for player 1 , and so if player 1 is rational (and player 1 knows that player 2 is rational, so that the second game applies) then player 1 will not play down. Consequently, if player 2 knows that player 1 is rational, and player 2 knows that player 1 knows that player 2 is rational ( so that player 2 knows that the second game applies) then player 2 can eliminate down from player 1's strategy space, leaving the game looking like below.
+
+\item 
+And now left is strictly dominated by middle for player 2 , leaving (up,middle) as the outcome of the game. This is process is called the iterated elimination of strictly dominated strategies.
 \end{itemize}
 \end{document}
