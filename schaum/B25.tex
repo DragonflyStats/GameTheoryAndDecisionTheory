@@ -39,54 +39,88 @@
 
 
 
-Introduction to Matrix Games
+\section{Introduction to Matrix Games}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %B25 - Page 321
 Every matrix A defines a game as follows
 \begin{itemize}
-\item[(1)] There are two players , one called R, and the other called C.
-\item[(2)] A play of the game  consists of R choosing a row of A and, simultaneously, C's choosing of a column of A.
-\item[(3)] After each play of the game, R receives from C an amoun equal to the entry in the chosen cell . A negative entry denotes a payment from R to C.
+\item[(1)] There are two players, one called R (or player 1), and the other called C (or player 2).
+\item[(2)] A play of the game consists of R choosing a row of matrix A and, simultaneously, C's choosing of a column of matrix A.
+\item[(3)] After each play of the game, R receives from C an amount equal to the entry in the chosen cell. A negative entry denotes a payment from R to C.
 
 \end{itemize}
+%-----------------------------------%
 
+
+%-----------------------------------%
 In the first game, if R consistently plays the first row, hoping to win an amount 3 or 4, then C can play the second column
-and so win an amount 1.
+and so win an amount 1.t
 
 However if C consistently plays the second column then R can play the second row and so win an amount 1.
 
 The we see that if either player should consistently play a particular row or column, the other player can take advantage of that fact.
 
 On the other hand, suppose a competitive situation is as follows:
-\begin{itemize}
-\item[(i)]
-\item[(ii)]
-\item[(iii)]
+\begin{itemize},j
+\item[(i)] there are two people (oe organizations, or competitors etc)
+\item[(ii)] each competitor has a finite number of courses of action.
+\item[(iii)] both competitors choose a course of action simultaneously.
 \item[(iv)] for each pair $i,j$ of choices, there is a payment $b_{ij}$ from one given player to the other.
 \end{itemize}
 
+The the above competitive situation is equivalent to the matrix game determined by the matrix $B=b_{i}$
 \subsection{Example 1.2}
+Each of the two competitors R and C simultaneously show 1 or 2 fingers. If the sum of the fingers is even, then R wins the sum from C, of the sum is odd, the R loses the sum to C. The matrix of this game is as follows:
+
+\[Matrix\]
 
 We shall show later that this game is favourable to C.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %B25 - Page 322
 
 We remark that matrix games and the above competition games which can be represented
-by matrix games are termed two-person zero sum games.
+by matrix games are termed \textit{two-person zero sum games}.
 The zero sum corresponds to the fact that the sum of the winnings and losses of all of the players
 is zero after each play.
 There also exists a theory for n-person games and non-zero sum games but that lies beyond the scope of this course.
+%-----------------------------------%
 \subsection{Strategies}
-
-By a strategy for R in a matrix game, we mean a decision by R to play the various rows with a given probability distribution, for example
+\begin{itemize}
+\item By a strategy for R in a matrix game, we mean a decision by R to play the various rows with a given probability distribution, for example
  to play row 1 with a probability of $p_1$, to play row 2 with a probability of $p_2$ and so on.
 The strategy for R is formally denoted by the probability vector $\boldsymbol{p} = {p_1,p_2,\ldots,p_n\}$.
+\item For example, if the matrix game has two rows and r tosses a coin to decide which row to play, then their strategy is the probability vector $p=(1/2,1/2)$.
+
+\item Similarly By a strategy for C in a matrix game, we mean a decision by C to play the various columns with a given probability distribution, for example
+ to play columns 1 with a probability of $q_1$, to play column 2 with a probability of $q_2$ and so on.
+\item The strategy for C is formally denoted by the probability vector $\boldsymbol{q} = {q_1,_2,\ldots,q_n\}$.
+\end{itemize}
+
+%-----------------------------------%
 
 A strategy which contains a 1 as a component and 0 everywhere else, i.e. where R decides to play consistently a given 
-row or C decides to play consistently a given column, is called a pure strategy, otherwise it is called a mixed strategy.
+row or C decides to play consistently a given column, is called a \textbf{\textit{pure strategy}}, otherwise it is called a \textbf{\textit{mixed strategy}}.
+%-----------------------------------%
+\section{Optimum Strategies and the Value of the game}
+For simplicity, we shall first consider a $2 \times 2$ matrix game, say 
 
-\subsection{Optimum Strategies and the Value of the game}
+\[ A = \begin{array}{|c|c|} \hline
+a & b \\ \hline
+c & d \\ \hline
+\end{array} \]
 
+Suppose player R adopts the strategy $p=(p_1,p_2)$ and player C adopts a strategy $q=(q_1,q_2)$. Then R play row 1 with 
+probability $p_1$ and C plays column 1 with probability $q_1$, and so the entry $a$ will occur with probability $p_1 \time q_1$, entry $b$ will occur with probability $p_1 \time q_2$ and so on.
+
+The expected winnings for player R
+\[ E(p,q) = a(p_1 \time q_1) + b(p_1 \time q_2) + c(p_2 \time q_1) + d(p_2 \time q_2) \]
+\[ E(p,q) = (p_1,p_2) \left(\begin{array}{cc} 
+a & b \\
+c & d \\ \end{array} \right)\left(\begin{array}{c} 
+q_1\\
+q_2\\ \end{array} \right) = (p A q^t) \]
+You can show that E(p,q) can be expressed as $q A^t p^t$.
+\smallskip
 
 Similarly if $A$ is any $k \times m$ matrix and player R adopts the strategy $p=()$ and C adopts the strategy $q=()$ then the expected winding of R is given b
 \[ E(p,q) =  pAq^t = q A^t p^t \]
