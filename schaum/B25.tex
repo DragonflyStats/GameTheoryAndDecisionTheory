@@ -182,16 +182,41 @@ Suppose that the above matrix A is strictly determined. Then $P^0 = (x_1,x_2)$ i
 \[ \frac{d-b}{a+d-b-c}, \frac{a-c}{a+d-b-c}\]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %B25 - Page 325
+
+Note that the five quotients above have the same denominator, and that the numerator of the formula for $v$ is the determinant of 
+the matrix $A$.
+
 \subsection*{Example 3.1}
 Consider the following matrix game (see Example 1.2).
-Thus the game is not fair and is in favour of the column player $C$.
+\[
+\begin{array}{cc}
+   2 & -3 \\ \hline
+  -3 & 4 \\ \hline
+\end{array}.
+\]
+
+Use the above formula, we can obtain the value of the game.
+\[ v = \frac{(2\times4)-(-3 \times-3)}{2+4+3+3} = \frac{-1}{12} \]
+
+Thus the game is not fair and is in favour of the column player $C$. Optimum strategies $p^0$ for R and $q^0$ for C are as follows:
+$p^0 = (7/12,5/12)$ and $q^0 = (7/12,5/12)$.
+
+%-----------------------------------------------%
+
 \subsection{Recessive Rows and Columns}
 Let A be a matrix game. Suppose A contains a row $r_i$ such that $r_i \leq rj$ for some other
 row $r_j$.
 Recall that $r_i\leq r_j$ means that every entry of $r_i$ is less than or equal to the corresponding entry of $r_j$.
-The $r_i$ is called a recessive row, and $r_j$ is said to domninate it.
-Cleary player $R$ would always play row $j$ than row $i$ since they are guaranteed to win the same or a greater amount in each possible play of the game.
-Accordingly a recessive row can be omitted from the game.
+The $r_i$ is called a \textbf{\textit{recessive row}}, and $r_j$ is said to dominate it.
+
+Cleary player $R$ would always play row $j$ than row $i$ since they are guaranteed to win the same or a greater amount in each possible play of the game. Accordingly a recessive row can be omitted from the game.
+
+On the other hand, suppose A contains a column $c_i$ such that $c \geq c_i$ for some other column $c_i$. Then $c_i$ is called
+a recessive column and $c_j$ is said to dominate it.
+
+For analogous reasons player C would always rather play column $c_j$ than $c_i$. Hence the recessive column $c_i$ can be
+omitted from the game.
+
 We emphasize the a recessive row contains numbers smaller than those of another
 row, whereas a recessive column contains numbers than those of another column.
 %------------------------------------------------------%
