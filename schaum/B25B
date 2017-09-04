@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%B25 - Page 326
+\subsection{Solution of a matrix game by the simplex method.}
+Suppose we are given a matrix game $A$. We assume that $A$ is non-strictly determined and does not contain any 
+recessive rows or columns. We obtain the solution to $A$ as follows:
+\begin{itemize}
+\item[(1)] Add a sufficiently large number
+(The purpose of this step is to guarantee that the value of the new matrix game is positive.)
+\item[(2)] Form the following initial tableau:
+The tableay corresponds to the linear programming problem:
+\item[(3)] Solve the above linear programming problem by the simplex method. Let $P$ be the
+optimum solution to the maximum problem, $Q$ the optimum solution to the dual minimum problem.
+\begin{multicols}{3}
+\begin{enumerate}[(i)]
+\item Add a sufficiently large number $k$ to every entry of A to form,say, the following matrix game which has only positive entries:
+(The purpose of the step is to guarantee that the value of the new matrix game is positive).
+\item
+\item
+\end{enumerate}
+\end{multicols}
+\end{itemize}
+\subsection*{Example 5.1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%B25 - Page 327
+\subsection*{Example 5.2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%B25 - Page 328
+The value of the game is therefore $-4/13$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%B25 - Page 329
+\section{Summary}
+In finding a soultion to the matrix game, you should follow the following steps.
+\begin{itemize}
+\item[(1)] Test to see if the game is strictly determined.
+\item[(2)] Eliminate all recessive rows and columns.
+\item[(3)] In the case of $2 \times 2$, use the following formula in Theorem 25.3
+\item[(4)] In the case of a $2 \times m$ or an $m \times 2$, reduce the game to a $2 \times 2$ game.
+\item[(5)] Use the simplex method in all other cases.
+\end{itemize}
+\section*{Solved Problems}
+\subsection{Exercise 25.1}
+\begin{itemize}
+\item[(1)]
+\item[(2)]
+\item[(3)]
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Exercise 25.2}
+Find the solution to the following $2 \times 2$ matrix game.
+\begin{itemize}
+\item[(1)] The game is non-strictly
+\item[(2)] The game is strictly determined with saddle point -1
+\item[(3)] The game is non-strictly determined.
+\item[(4)] The game is non-strictly determined. First compute $a+d-b-c = -3-3-2-5 = -13$
+Then $x_1 = 5/13, x_2 = 8/13,y_1=8/13,y_2=5/13$
+\end{itemize}
+\subsection{Exercise 25.3}
+Find the solution to the following matrix game.
+First circle each row minimum and box each column maxmimum.
+Observe there is no saddle point and so the game is not strictly determined.
+We now test for recessive rows and columns.
+Not that the third column is recessive since each entry is larger than the corresponding entry in the
+second column. Hence the third column can be omitted to obtain the game.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Exercise 25.4}
+\subsection{Exercise 25.5}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Exercise 25.6}
+\subsection{Exercise 25.7}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Exercise 25.8}
+Two players $R$ and $C$ match pennies. If the coins match, then R wins, if the coins
+do not match then C wins. Determine optimum strategies
+\subsection{Exercise 25.9}
+\subsection{Exercise 25.10}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Exercise 25.11}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

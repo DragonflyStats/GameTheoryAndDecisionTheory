@@ -1,4 +1,3 @@
-
 \documentclass[]{report}
 \voffset=-1.5cm
 \oddsidemargin=0.0cm
@@ -39,262 +38,294 @@
 
 
 
-Introduction to Matrix Games
+\section{Introduction to Matrix Games}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %B25 - Page 321
 Every matrix A defines a game as follows
 \begin{itemize}
-\item[(1)] There are two players , one called R, and the other called C.
-\item[(2)] A play of the game  consists of R choosing a row of A and, simultaneously, C's choosing of a column of A.
-\item[(3)] After each play of the game, R receives from C an amoun equal to the entry in the chosen cell . A negative entry denotes a payment from R to C.
+\item[(1)] There are two players, one called R (or player 1), and the other called C (or player 2).
+\item[(2)] A play of the game consists of R choosing a row of matrix A and, simultaneously, C's choosing of a column of matrix A.
+\item[(3)] After each play of the game, R receives from C an amount equal to the entry in the chosen cell. A negative entry denotes a payment from R to C.
 
 \end{itemize}
+%-----------------------------------%
+\[ \begin{array}{|c|c|c|} \hline
+3 & -1 & 4 \\ \hline 
+-1 & 1  & -2 \\ \hline
+\end{array} \;\;\;
+\begin{array}{cc}
+0  & -5 \\
+1  & 2  \\
+\end{array}\]
 
+%-----------------------------------%
 In the first game, if R consistently plays the first row, hoping to win an amount 3 or 4, then C can play the second column
-and so win an amount 1.
-
-However if C consistently plays the second column then R can play the second row and so win an amount 1.
-
+and so win an amount 1. However if C consistently plays the second column then R can play the second row and so win an amount 1.
 The we see that if either player should consistently play a particular row or column, the other player can take advantage of that fact.
 
+
+%-------------------------------------------------------------------%
 On the other hand, suppose a competitive situation is as follows:
 \begin{itemize}
-\item[(i)]
-\item[(ii)]
-\item[(iii)]
+\item[(i)] there are two people (oe organizations, or competitors etc)
+\item[(ii)] each competitor has a finite number of courses of action.
+\item[(iii)] both competitors choose a course of action simultaneously.
 \item[(iv)] for each pair $i,j$ of choices, there is a payment $b_{ij}$ from one given player to the other.
 \end{itemize}
 
+The the above competitive situation is equivalent to the matrix game determined by the matrix $B=b_{i}$
 \subsection{Example 1.2}
+Each of the two competitors R and C simultaneously show 1 or 2 fingers. If the sum of the fingers is even, then R wins the sum from C, of the sum is odd, the R loses the sum to C. The matrix of this game is as follows:
+
+\[
+A = 
+\begin{array}{cccc}
+3 & 0 & -4 & -3 \\
+2 & 3 & \boldsymbol{1} & 2 \\
+-4 & 2 & -1 & 3 \\
+\end{array}
+\]
 
 We shall show later that this game is favourable to C.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %B25 - Page 322
 
 We remark that matrix games and the above competition games which can be represented
-by matrix games are termed two-person zero sum games.
+by matrix games are termed \textit{two-person zero sum games}.
 The zero sum corresponds to the fact that the sum of the winnings and losses of all of the players
 is zero after each play.
 There also exists a theory for n-person games and non-zero sum games but that lies beyond the scope of this course.
+%-----------------------------------%
 \subsection{Strategies}
-
-By a strategy for R in a matrix game, we mean a decision by R to play the various rows with a given probability distribution, for example
+\begin{itemize}
+\item By a strategy for R in a matrix game, we mean a decision by R to play the various rows with a given probability distribution, for example
  to play row 1 with a probability of $p_1$, to play row 2 with a probability of $p_2$ and so on.
-The strategy for R is formally denoted by the probability vector $\boldsymbol{p} = {p_1,p_2,\ldots,p_n\}$.
-
+The strategy for R is formally denoted by the probability vector $\boldsymbol{p} = \{p_1,p_2,\ldots,p_n\}$.
+\item For example, if the matrix game has two rows and r tosses a coin to decide which row to play, then their strategy is the probability vector $p=(1/2,1/2)$.
+\item Similarly By a strategy for C in a matrix game, we mean a decision by C to play the various columns with a given probability distribution, for example
+ to play columns 1 with a probability of $q_1$, to play column 2 with a probability of $q_2$ and so on.
+\item The strategy for C is formally denoted by the probability vector $\boldsymbol{q} = \{q_1,_2,\ldots,q_n\}$.
+\end{itemize}
+%-----------------------------------%
 A strategy which contains a 1 as a component and 0 everywhere else, i.e. where R decides to play consistently a given 
-row or C decides to play consistently a given column, is called a pure strategy, otherwise it is called a mixed strategy.
+row or C decides to play consistently a given column, is called a \textbf{\textit{pure strategy}}, otherwise it is called a \textbf{\textit{mixed strategy}}.
+%-----------------------------------%
+\section{Optimum Strategies and the Value of the game}
+For simplicity, we shall first consider a $2 \times 2$ matrix game, say 
+\[ A = \begin{array}{|c|c|} \hline
+a & b \\ \hline
+c & d \\ \hline
+\end{array} \]
 
-\subsection{Optimum Strategies and the Value of the game}
+Suppose player R adopts the strategy $p=(p_1,p_2)$ and player C adopts a strategy $q=(q_1,q_2)$. Then R play row 1 with 
+probability $p_1$ and C plays column 1 with probability $q_1$, and so the entry $a$ will occur with probability $p_1 \times q_1$, entry $b$ will occur with probability $p_1 \times q_2$ and so on.
 
-
+The expected winnings for player R
+\[ E(p,q) = a(p_1 \times q_1) + b(p_1 \times q_2) + c(p_2 \times q_1) + d(p_2 \times q_2) \]
+\[ E(p,q) = (p_1,p_2) \left(\begin{array}{cc} 
+a & b \\
+c & d \\ \end{array} \right)\left(\begin{array}{c} 
+q_1\\
+q_2\\ \end{array} \right) = (p A q^t) \]
+You can show that E(p,q) can be expressed as $q A^t p^t$.
+\smallskip
 Similarly if $A$ is any $k \times m$ matrix and player R adopts the strategy $p=()$ and C adopts the strategy $q=()$ then the expected winding of R is given b
 \[ E(p,q) =  pAq^t = q A^t p^t \]
-
 Now suppose that $v_1$ is the maximum numer for which there is a strategy $p^0$ for R such that expected winnings of R is at least $v_1$ for any strategy adopted by C:
-
 \[E  \mbox{ for every strategy q of C}\]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %B25 - Page 323
-
 Since $v_1$ is the maximum of such numbers of such numbers, the strategy $p^0$ is in a certain sense a best strategy that R can adopt; we called $p^0$ an optimum strategy for R.
 We show in problem 25.9 page 233 that (1) is equivalent to the condition
-
-\[ A \geq \{ v_1,v1,\ldots,\v_1 \}\]
+\[ A \geq \{ v_1,v1,\ldots,v_1 \}\]
 
 On the other hand, suppose $v_2$ is the minimum number for which there is a strategy $q^0$ for player $C$ such that 
 the expected loss of $C$ is not greater than $v_2$ for any strategy adopted by$R$
-
 Then the strategy $q^0$ is in a certain sense a best strategy that $C$ can adopt, we call $q^0$ an optimum strategy
 or C.
-
+%-------------------------------------------------------------%
 The fundamental theorem on game theory by Von Neumann states that $v_1$ and $v_2$ exist for any matrix game
-and are equal to each other : $v = v_1 = v_2$. This number $v$ is called the value of the game, and the game is said to be fair if $v=0$.
-
-
+and are equal to each other : $v = v_1 = v_2$. This number $v$ is called the value of the game, and the game is said to be fair if $v=0$.ann's th
+We observe that (1) and (2) imply that $v_1 leq E(p^0,q^0) \leq v_2$, hence by von Neumann's Theorem we have the 
+equality relation
+\[ E(p^0,q^0) = p^0 A (q^0)^{t} = q^0 A^t (p^0)^{t} = v\]
+WE summarize and formally define the terms introduced above.
+%-------------------------------------------------------------%
 \subsection{Definition}
 In a matrix game A, a strategy $P^0$ for player R is an optimum strategy, a strategy $q^0$ for player C is an optimum strategy.
-
 We point out that  the solution of a matrix means find optimum strategies for the players and the value of the game.
 Before we give the solution to an arbitrary matrix game by means of the simplex method
-
 We shall discuss two special cases which occur frequently and which offer simple solutions: striclty determined games and $2 \times 2$ games.
+
+%-------------------------------------------------------------%
+\section{Strictly Determined Games}
+
+A matrix game is called strictly determined if the matrix has an entry which is a minimum in its row and a maximum in its column.
+Such an entry is called a "saddle point".
+
+Theorem Let $v$ be a saddle point of a strictly determined game. Then an optimum strategy for R is always to play the row 
+containing $v$, an optimum strategy for C is always to play the column containing $v$, and $v$ is the value of the game.
+
+Thus in a strictly determined game a pure strategy for each player is an optimum strategy.
+
+\[
+A = 
+\begin{array}{cccc}
+3 & 0 & -4 & -3 \\
+2 & 3 & 1 & 2 \\
+-4 & 2 & -1 & 3 \\
+\end{array}
+\]
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %B25 - Page 324
 
+If we choose the minimum entry in each row,
+
+\[
+A = 
+\begin{array}{|c|c|c|c|}
+3 & 0 & \boldsymbol{-4} & -3 \\ \hline
+2 & 3 & \boldsymbol{1} & 2 \\ \hline
+\boldsymbol{-4} & 2 & -1 & 3 \\ \hline
+\end{array}
+\]
 
 
+
+ and the maximum entry in each column, 
+
+\[
+A = 
+\begin{array}{|c|c|c|c|}
+\boldsymbol{3} & 0 & -4 & -3 \\ \hline
+2 & \boldsymbol{3} & \boldsymbol{1} & 2 \\ \hline
+-4 & 2 & -1 & \boldsymbol{3} \\ \hline
+\end{array}
+\]
+
+
+we obtain the following.
+
+\[
+A = 
+\begin{array}{cccc}
+3 & 0 & -4 & -3 \\
+2 & 3 & \boldsymbol{1} & 2 \\
+-4 & 2 & -1 & 3 \\
+\end{array}
+\]
+
+%-------------------------------------------------%
 We now show that $p^0,q^0$ and $v$ do satisfy the required properties to be optimum strategies and the value of the game:
-
 \begin{enumerate}
 \item
-
+\[
+A = 
+\begin{array}{cccc}
+3 & 0 & -4 & -3 \\
+2 & 3 & \boldsymbol{1} & 2 \\
+-4 & 2 & -1 & 3 \\
+\end{array}
+\]
 \item
+\[
+A = 
+\begin{array}{ccc}
+3 & 0  & -3 \\
+2 & 3 & 2 \\
+-4 &  -1 & 3 \\
+-4 &  -1 & 3 \\
+\end{array}
+\]
 
 \end{enumerate}
-
-
 We remark that the proof of Theorem 25.1 is similar to the proof above the special case.
-
 \subsection{$2 \times 2$ Matrix Games}
-
-
 If A is strictly determined, then the solution is indicated in the preceding section. Thus we
 need only considered the case in which A is non-strictly determined.
-
 We first state a useful criterion to determine whether or not a $2 \times 2$ matrix game is strictly determined.
 
 Lemma
-
 The following theorem applies
-
 Lemma
-
 Suppose that the above matrix A is strictly determined. Then $P^0 = (x_1,x_2)$ is an optimum strategy for player $R$, $Q^0 = (y_1,y_2)$ is an optimum strategy for player C, and y is the value of the game.
+\[ x_1 = \frac{d-c}{a+d-b-c}, x_2 = \frac{a-b}{a+d-b-c}\]
+\[ y_1 = \frac{d-b}{a+d-b-c}, y_2 = \frac{a-c}{a+d-b-c}\]
 
-
-\[ \frac{d-c}{a+d-b-c}, \frac{a-b}{a+d-b-c}\]
-
-
-\[ \frac{d-b}{a+d-b-c}, \frac{a-c}{a+d-b-c}\]
+\[ v = \frac{ad-bc}{a+d-b-c} \]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %B25 - Page 325
 
+Note that the five quotients above have the same denominator, and that the numerator of the formula for $v$ is the determinant of 
+the matrix $A$.
+
 \subsection*{Example 3.1}
 Consider the following matrix game (see Example 1.2).
+\[
+\begin{array}{cc}
+   2 & -3 \\ \hline
+  -3 & 4 \\ \hline
+\end{array}.
+\]
 
-Thus the game is not fair and is in favour of the column player $C$.
+Use the above formula, we can obtain the value of the game.
+\[ v = \frac{(2\times4)-(-3 \times-3)}{2+4+3+3} = \frac{-1}{12} \]
+
+Thus the game is not fair and is in favour of the column player $C$. Optimum strategies $p^0$ for R and $q^0$ for C are as follows:
+$p^0 = (7/12,5/12)$ and $q^0 = (7/12,5/12)$.
+
+%-----------------------------------------------%
 
 \subsection{Recessive Rows and Columns}
-
 Let A be a matrix game. Suppose A contains a row $r_i$ such that $r_i \leq rj$ for some other
 row $r_j$.
 Recall that $r_i\leq r_j$ means that every entry of $r_i$ is less than or equal to the corresponding entry of $r_j$.
-The $r_i$ is called a recessive row, and $r_j$ is said to domninate it.
-Cleary player $R$ would always play row $j$ than row $i$ since they are guaranteed to win the same or a greater amount in each possible play of the game.
-Accordingly a recessive row can be omitted from the game.
+The $r_i$ is called a \textbf{\textit{recessive row}}, and $r_j$ is said to dominate it.
+
+Cleary player $R$ would always play row $j$ than row $i$ since they are guaranteed to win the same or a greater amount in each possible play of the game. Accordingly a recessive row can be omitted from the game.
+
+On the other hand, suppose A contains a column $c_i$ such that $c \geq c_i$ for some other column $c_i$. Then $c_i$ is called
+a recessive column and $c_j$ is said to dominate it.
+
+For analogous reasons player C would always rather play column $c_j$ than $c_i$. Hence the recessive column $c_i$ can be
+omitted from the game.
 
 We emphasize the a recessive row contains numbers smaller than those of another
 row, whereas a recessive column contains numbers than those of another column.
+%------------------------------------------------------%
 \subsection{Example 4.1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%B25 - Page 326
+Consider the game A.
+\[
+\begin{array}{ccc}
+2 & -1 & 2 \\ \hline
+-2 & 3 & 4 \\ \hline
+-2 & 3 & 4 \\ \hline
+\end{array}.
+\]
+Note the $(-5,-3,1) \leq (2,-1,2)$, i.e. every entry is the first row is $\leq$ the corresponding entry in
+the second row. Thus the first row is recessive and can be omitted from the game may be reduced to 
+\[
+\begin{array}{ccc}
+2 & -1 & 2 \\ \hline
+-2 & 3 & 4 \\ \hline
+\end{array}.
+\]
+Now observe that the third row is recessive since each entry is greater than corresponding entry in the second column.
+Thus the game can be reduced to a $2 \times 2$ game.
+\[
+\begin{array}{cc}
+2 & -1  \\ \hline
+-2 & 3 \\ \hline
+\end{array}.
+\]
+The solution to $A^{\ast}$ can be found by using the Theorem and is
 
-\subsection{Solution of a matrix game by the simplex method.}
-Suppose we are given a matrix game $A$. We assume that $A$ is non-strictly determined and does not contain any 
-recessive rows or columns. We obtain the solution to $A$ as follows:
-\begin{itemize}
-\item[(1)] Add a sufficiently large number
+\[ v = \frac{4}{8} = {1}{2} ; p^{\ast}_{0} =(5/8,3/8); q^{\ast}_{0} =(1/2,1/2) \]
 
-(The purpose of this step is to guarantee that the value of the new matrix game is positive.)
-\item[(2)] Form the following initial tableau:
-
-The tableay corresponds to the linear programming problem:
-
-\item[(3)] Solve the above linear programming problem by the simplex method. Let $P$ be the
-optimum solution to the maximum problem, $Q$ the optimum solution to the dual minimum problem.
-
-\begin{multicols}{3}
-\begin{enumerate}[(i)]
-
-\item
-\item
-\item
-\end{enumerate}
-\end{multicols}
-\end{itemize}
-
-\subsection*{Example 5.1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%B25 - Page 327
-
-\subsection*{Example 5.2}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%B25 - Page 328
+Then the solution to the original game $A$ is
 
 
-The value of the game is therefore $-4/13$.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%B25 - Page 329
-
-\section{Summary}
-
-In finding a soultion to the matrix game, you should follow the following steps.
-\begin{itemize}
-\item[(1)] Test to see if the game is strictly determined.
-\item[(2)] Eliminate all recessive rows and columns.
-\item[(3)] In the case of $2 \times 2$, use the following formula in Theorem 25.3
-\item[(4)] In the case of a $2 \times m$ or an $m \times 2$, reduce the game to a $2 \times 2$ game.
-\item[(5)] Use the simplex method in all other cases.
-\end{itemize}
-
-
-
-\section*{Solved Problems}
-
-
-\subsection{Exercise 25.1}
-
-\begin{itemize}
-\item[(1)]
-\item[(2)]
-\item[(3)]
-\end{itemize}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Exercise 25.2}
-Find the solution to the following $2 \times 2$ matrix game.
-
-\begin{itemize}
-\item[(1)] The game is non-strictly
-\item[(2)] The game is strictly determined with saddle point -1
-\item[(3)] The game is non-strictly determined.
-\item[(4)] The game is non-strictly determined. First compute $a+d-b-c = -3-3-2-5 = -13$
-Then $x_1 = 5/13, x_2 = 8/13,y_1=8/13,y_2=5/13$
-\end{itemize}
-
-\subsection{Exercise 25.3}
-Find the solution to the following matrix game.
-
-First circle each row minimum and box each column maxmimum.
-
-Observe there is no saddle point and so the game is not strictly determined.
-We now test for recessive rows and columns.
-Not that the third column is recessive since each entry is larger than the corresponding entry in the
-second column. Hence the third column can be omitted to obtain the game.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Exercise 25.4}
-
-
-\subsection{Exercise 25.5}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Exercise 25.6}
-
-\subsection{Exercise 25.7}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Exercise 25.8}
-
-Two players $R$ and $C$ match pennies. If the coins match, then R wins, if the coins
-do not match then C wins. Determine optimum strategies
-
-\subsection{Exercise 25.9}
-
-
-\subsection{Exercise 25.10}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Exercise 25.11}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\[ v= \frac{1}{2} ; p^{\ast}_{0} =(0,5/8,3/8); q^{\ast}_{0} =(1/2,1/2,0) \]
 
 \end{document}
