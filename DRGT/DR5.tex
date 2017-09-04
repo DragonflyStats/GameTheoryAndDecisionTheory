@@ -66,9 +66,9 @@ Game Theory (GT) is the study of strategic interdependence.
 %-----------------------------------------------------------%
 %% \section{3.1 The Concept of a Game}
 \begin{itemize}
-	\item According to such a definition, roulette is not a mathematical
-	game, since the expected winnings of a player only depend on how
-	they play.
+%	\item According to such a definition, roulette is not a mathematical
+%	game, since the expected winnings of a player only depend on how
+%	they play.
 	\item The lottery is a mathematical game. Although the probability of
 	winning the jackpot is independent of the choices of other players,
 	a player can maximise their expected reward by choosing
@@ -86,7 +86,7 @@ Any time we have a situation with two or more players that involves known payout
 Let's start out by defining a few terms commonly used in the study of game theory:
 
 \begin{description}
-	\item[Game:] Any set of circumstances that has a result dependent on the actions of two of more decision makers ("players")
+	\item[Game:] Any set of circumstances that has a result dependent on the actions of two of more decision makers (``players")
 	\item[Players:] A strategic decision maker within the context of the game
 	\item[Strategy:] A complete plan of action a player will take given the set of circumstances that might arise within the game
 	\item[Payoff:] The payout a player receives from arriving at a particular outcome. The payout can be in any quantifiable form, from dollars to utility.
@@ -95,11 +95,14 @@ Let's start out by defining a few terms commonly used in the study of game theor
 \end{description}
 
 \subsection{Assumptions}
-As with any concept in economics, there is the assumption of rationality. There is also an assumption of maximization. It is assumed that players within the game are rational and will strive to maximize their payoffs in the game. 
-
-When examining games that are already set up, it is assumed on your behalf that the payouts listed include the sum of all payoffs that are associated with that outcome. This will exclude any "what if" questions that may arise.
-
-The number of players in a game can theoretically be infinite, but most games will be put into the context of two players. One of the simplest games is a sequential game involving two players.
+\begin{itemize}
+	\item 
+	As with any concept in economics, there is the assumption of rationality. There is also an assumption of maximization. It is assumed that players within the game are rational and will strive to maximize their payoffs in the game. 
+	\item 	
+	When examining games that are already set up, it is assumed on your behalf that the payouts listed include the sum of all payoffs that are associated with that outcome. This will exclude any "what if" questions that may arise.
+	\item 	
+	The number of players in a game can theoretically be infinite, but most games will be put into the context of two players. One of the simplest games is a sequential game involving two players.
+\end{itemize}
 
 %-----------------------------------------------------------%
 %% 2 / 45
@@ -148,14 +151,14 @@ obtains a payoff of 4 and Player 2 obtains a payoff of 0.
 \noindent In general, a 2-player matrix game can be described by
 \begin{enumerate}
 	\item The set of actions available to Player 1,
-	\[A = \{a_1, a_2, \ldots , a_m\}\].
+	\[A = \{a_1, a_2, \ldots , a_m\}.\]
 \item The set of actions available to Player 2,
-	\[B = \{b_1, b_2, \ldots , b_n\}\].
-\item The m × n matrix of 2-dimensional vectors giving the
+	\[B = \{b_1, b_2, \ldots , b_n\}.\]
+\item The $m \times n$ matrix of 2-dimensional vectors giving the
 	payoffs of both players for each of the $m \times n$ possible
 	combinations of actions. 
 \item The payoff of Player k when
-	Player 1 plays ai and Player 2 plays $b_j$ will be
+	Player 1 plays $a_i$ and Player 2 plays $b_j$ will be
 	denoted $R_k (a_i, b_j)$.
 	
 \end{enumerate}
@@ -182,14 +185,14 @@ obtains a payoff of 4 and Player 2 obtains a payoff of 0.
 	\item A game is said to be a \textbf{constant sum} game, if the sum of the
 	payoffs obtained by the players is fixed, regardless of the
 	combination of strategies used.
-	\item	A game is said to be a \textbf{zero-sum game}, if the sum of payoffs
+	\item A game is said to be a \textbf{zero-sum game}, if the sum of payoffs
 	obtained by the players is always 0, regardless of the combination
 	of strategies used.
-	\item A game of constant sum k is essentially the same as a zero-sum
+	\item A game of constant sum $k$ is essentially the same as a zero-sum
 	game. A referee could pay both of the players $k/2$ and require that
 	they play the game in which each payoff is reduced by $k/2$ (this
 	would be a zero-sum game).
-	\item	2-player constant-sum games are games of \textbf{pure conflict}.
+	\item Two-player constant-sum games are games of \textbf{pure conflict}.
 	Whatever one player gains, the other will lose.
 \end{itemize}
 
@@ -243,7 +246,7 @@ obtains a payoff of 4 and Player 2 obtains a payoff of 0.
 	differentiate between strategies and actions.
 \item In a game represented in extensive form, a strategy is a rule that
 	defines which action a player should play at all the nodes where
-	he/she makes a move.
+	they make a move.
 \item An action is the observed behaviour resulting from such a strategy.
 \end{itemize}
 
@@ -256,10 +259,10 @@ obtains a payoff of 4 and Player 2 obtains a payoff of 0.
 	\item Thus Player 1’s strategies correspond exactly to her
 	possible actions ($H$ and $D$).
 	\item However, since Player 2 observes the move made by Player 1, he
-	can condition his move on the move made by Player 1.
+	can condition their move on the move made by Player 1.
 	\item For each of the moves made by Player 1, Player 2 has 2 possible
-	moves. Hence, he has $2 \times 2 = 4$ possible strategies. These are
-	listed on the following slide.
+	moves. Hence, they have $2 \times 2 = 4$ possible strategies. These are
+	listed on the following image.
 \end{itemize}
 
 % 12 / 45
@@ -276,7 +279,7 @@ In the extended game described above, Player 2’s strategies are
 \end{enumerate}
 
 In the matrix game presented earlier, Player 2 cannot condition his
-action on the action made by Player 1. Hence, he only has 2
+action on the action made by Player 1. Hence, they only have 2
 strategies corresponding to the two actions $H$ and $D$.
 %% 13 / 45
 %-----------------------------------------------------------%
@@ -345,7 +348,7 @@ each possible strategy pair.
 	\item Since Player 1 has 2 strategies and Player 2 has 4 strategies, the
 	payoff matrix will be of dimension $2 \times 4$.
 	\item Player 1 can play $H$ or $D$.
-	\item 	Player 2 can play the following \[(H|H, H|D), (H|H, D|D), (D|H, D|D) or
+	\item 	Player 2 can play the following \[(H|H, H|D), (H|H, D|D), (D|H, D|D) \mbox{ or }
 	(D|H, H|D). \]
 \end{itemize}
 
@@ -361,7 +364,7 @@ pair.
 take the action H and the resulting payoff vector is (−2, −2).
 	\item[(b)] If Player 2 plays $(D|H, D|D)$ or $(D|H, H|D)$, then Player 1
 takes the action H and Player 2 takes the action D and the
-resulting payoff vector is (4, 0).
+resulting payoff vector is $(4, 0)$.
 \end{itemize}
 \end{framed}
 
@@ -382,13 +385,13 @@ Now suppose Player 1 plays D.
 %% Translating the Asymmetric Hawk-Dove Game into Matrix Form
 It follows that the matrix form of the asymmetric game is given by
 
-
+\begin{center}
 \begin{tabular}{|c|c|c|c|c|} \hline
-  & (H|H, H|D) & (H|H, D|D) & (D|H, D|D) & (D|H, H|D)\\ \hline
+  & $(H|H, H|D)$ & $(H|H, D|D)$ & $(D|H, D|D)$ & $(D|H, H|D)$\\ \hline
 H & (-2,-2) & (-2,-2)& (4,0) & (4,0)\\ \hline
 D & (0,4) & (2,2) & (2,2) & (0,4)\\ \hline
 \end{tabular}
-
+\end{center}
 
 %-----------------------------------------------------------%
 %% 21 / 45
@@ -404,7 +407,7 @@ D & (0,4) & (2,2) & (2,2) & (0,4)\\ \hline
 \item In order to define the vector of
 	\textbf{expected payoffs} given the combination of strategies used, we
 	take expectations with respect to the moves of nature (i.e. nature
-	is assumed to be ”\textbf{random}” or ”\textbf{non-rational}”).
+	is assumed to be ``\textbf{random}” or ``\textbf{non-rational}”).
 \end{itemize}
 
 
@@ -493,11 +496,13 @@ D & (0,4) & (2,2) & (2,2) & (0,4)\\ \hline
 
 \subsection{Example}
 The matrix form of this game is given by
+\begin{center}
 \begin{tabular}{ccccc}
-  & (A|H, A|T) & (A|H, B|T) & (B|H, B|T) &  (B|H, A|T)\\ \hline
+  & $(A|H, A|T)$ & $(A|H, B|T)$ & $(B|H, B|T)$ &  $(B|H, A|T)$ \\ \hline
 A & (-0.5,0.5) & (1.5,-1.5) & (0.5,-0.5) & (-1.5,1.5) \\ \hline
 B & (0.5,-0.5) & (-1.5,1.5) & (-0.5,0.5) & (1.5,-1.5) \\ \hline
 \end{tabular}
+\end{center}
 %% 28 / 45
 %-----------------------------------------------------------%
 \subsection{Extensive Forms of Games with a Continuum of Strategies}
@@ -530,7 +535,7 @@ Consider the following game:
 %%  30 / 45
 %-----------------------------------------------------------%
 
-\subsection{Example 3.3.1}
+\subsection{Example}
 The extensive form of the game described above is
 
 \begin{figure}
@@ -801,7 +806,7 @@ For example, one could easily set up a game similar to the one above using compa
 By using simple methods of game theory, we can solve for what would be a confusing array 
 of outcomes in a real-world situation. Using game theory as a tool for financial analysis can be very helpful in sorting out potentially messy real-world situations, from mergers to product releases.
 
-
+\end{document}
 \chapter{Glossary}
 \section{Glossary}
 
