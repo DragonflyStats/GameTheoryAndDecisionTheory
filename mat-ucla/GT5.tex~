@@ -1,0 +1,495 @@
+5. The Extensive Form of a Game
+The strategic form of a game is a compact way of describing the mathematical aspects
+of a game. In addition, it allows a straightforward method of analysis, at least in principle.
+However, the flavor of many games is lost in such a simple model. Another mathematical
+model of a game, called the extensive form, is built on the basic notions of position and
+move, concepts not apparent in the strategic form of a game. In the extensive form, we
+may speak of other characteristic notions of games such as bluffing, signaling, sandbagging,
+and so on. Three new concepts make their appearance in the extensive form of a game:
+the game tree, chance moves, and information sets.
+5.1 The Game Tree. The extensive form of a game is modelled using a directed
+graph. A directed graph is a pair (T,F) where T is a nonempty set of vertices and F is
+a function that gives for each x ∈ T a subset, F(x) of T called the followers of x. When
+a directed graph is used to represent a game, the vertices represent positions of the game.
+The followers, F(x), of a position, x, are those positions that can be reached from x in one
+move.
+A path from a vertex t0 to a vertex t1 is a sequence, x0, x1,...,xn, of vertices
+such that x0 = t0, xn = t1 and xi is a follower of xi−1 for i = 1,...,n. For the extensive
+form of a game, we deal with a particular type of directed graph called a tree.
+Definition. A tree is a directed graph, (T,F) in which there is a special vertex, t0, called
+the root or the initial vertex, such that for every other vertex t ∈ T, there is a unique path
+beginning at t0 and ending at t.
+The existence and uniqueness of the path implies that a tree is connected, has a unique
+initial vertex, and has no circuits or loops.
+In the extensive form of a game, play starts at the initial vertex and continues along
+one of the paths eventually ending in one of the terminal vertices. At terminal vertices,
+the rules of the game specify the payoff. For n-person games, this would be an n-tuple of
+payoffs. Since we are dealing with two-person zero-sum games, we may take this payoff to
+be the amount Player I wins from Player II. For the nonterminal vertices there are three
+possibilities. Some nonterminal vertices are assigned to Player I who is to choose the move
+at that position. Others are assigned to Player II. However, some vertices may be singled
+out as positions from which a chance move is made.
+Chance Moves. Many games involve chance moves. Examples include the rolling of
+dice in board games like monopoly or backgammon or gambling games such as craps, the
+dealing of cards as in bridge or poker, the spinning of the wheel of fortune, or the drawing
+of balls out of a cage in lotto. In these games, chance moves play an important role. Even
+in chess, there is generally a chance move to determine which player gets the white pieces
+(and therefore the first move which is presumed to be an advantage). It is assumed that
+the players are aware of the probabilities of the various outcomes resulting from a chance
+move.
+II – 49
+Information. Another important aspect we must consider in studying the extensive
+form of games is the amount of information available to the players about past moves of
+the game. In poker for example, the first move is the chance move of shuffling and dealing
+the cards, each player is aware of certain aspects of the outcome of this move (the cards he
+received) but he is not informed of the complete outcome (the cards received by the other
+players). This leads to the possibility of “bluffing.”
+5.2 Basic Endgame in Poker. One of the simplest and most useful mathematical
+models of a situation that occurs in poker is called the “classical betting situation” by
+Friedman (1971) and “basic endgame” by Cutler (1976). These papers provide explicit
+situations in the game of stud poker and of lowball stud for which the model gives a very
+accurate description. This model is also found in the exercises of the book of Ferguson
+(1967). Since this is a model of a situation that occasionally arises in the last round of
+betting when there are two players left, we adopt the terminology of Cutler and call it
+Basic Endgame in poker. This will also emphasize what we feel is an important feature of
+the game of poker, that like chess, go, backgammon and other games, there is a distinctive
+phase of the game that occurs at the close, where special strategies and tactics that are
+analytically tractable become important.
+Basic Endgame is played as follows. Both players put 1 dollar, called the ante, in the
+center of the table. The money in the center of the table, so far two dollars, is called the
+pot. Then Player I is dealt a card from a deck. It is a winning card with probability 1/4
+and a losing card with probability 3/4. Player I sees this card but keeps it hidden from
+Player II. (Player II does not get a card.) Player I then checks or bets. If he checks, then
+his card is inspected; if he has a winning card he wins the pot and hence wins the 1 dollar
+ante from II, and otherwise he loses the 1 dollar ante to II. If I bets, he puts 2 dollars more
+into the pot. Then Player II – not knowing what card Player I has – must fold or call. If
+she folds, she loses the 1 dollar ante to I no matter what card I has. If II calls, she adds 2
+dollars to the pot. Then Player I’s card is exposed and I wins 3 dollars (the ante plus the
+bet) from II if he has a winning card, and loses 3 dollars to II otherwise.
+Let us draw the tree for this game. There are at most three moves in this game: (1)
+the chance move that chooses a card for I, (2) I’s move in which he checks or bets, and (3)
+II’s move in which she folds or calls. To each vertex of the game tree, we attach a label
+indicating which player is to move from that position. Chance moves we generally refer to
+as moves by nature and use the label N. See Figure 1.
+Each edge is labelled to identify the move. (The arrows are omitted for the sake of
+clarity. Moves are assumed to proceed down the page.) Also, the moves leading from a
+vertex at which nature moves are labelled with the probabilities with which they occur.
+At each terminal vertex, we write the numerical value of I’s winnings (II’ s losses).
+There is only one feature lacking from the above figure. From the tree we should be
+able to reconstruct all the essential rules of the game. That is not the case with the tree of
+Figure 1 since we have not indicated that at the time II makes her decision she does not
+know which card I has received. That is, when it is II’s turn to move, she does not know at
+which of her two possible positions she is. We indicate this on the diagram by encircling the
+II – 50
+3 1
+1
+−3 1
+−1
+N
+I
+II II
+I
+winning losing
+1/4 3/4
+bet check bet check
+call fold call fold
+Figure 1.
+two positions in a closed curve, and we say that these two vertices constitute an information
+set. The two vertices at which I is to move constitute two separate information sets since
+he is told the outcome of the chance move. To be complete, this must also be indicated
+on the diagram by drawing small circles about these vertices. We may delete one of the
+labels indicating II’s vertices since they belong to the same information set. It is really
+the information set that must be labeled. The completed game tree becomes
+3 1
+1
+−3 1
+−1
+N
+I I
+II
+winning losing
+1/4 3/4
+bet check bet check
+call fold call fold
+Figure 2.
+The diagram now contains all the essential rules of the game.
+5.3 The Kuhn Tree. The game tree with all the payoffs, information sets, and labels
+for the edges and vertices included is known as the Kuhn Tree. We now give the formal
+definition of a Kuhn tree.
+Not every set of vertices can form an information set. In order for a player not to
+be aware of which vertex of a given information set the game has come to, each vertex in
+that information set must have the same number of edges leaving it. Furthermore, it is
+important that the edges from each vertex of an information set have the same set of labels.
+The player moving from such an information set really chooses a label. It is presumed that
+a player makes just one choice from each information set.
+II – 51
+Definition. A finite two-person zero-sum game in extensive form is given by
+1) a finite tree with vertices T,
+2) a payoff function that assigns a real number to each terminal vertex,
+3) a set T0 of non-terminal vertices (representing positions at which chance moves
+occur) and for each t ∈ T0, a probability distribution on the edges leading from t,
+4) a partition of the rest of the vertices (not terminal and not in T0) into two groups
+of information sets T11, T12,...,T1k1 (for Player I) and T21, T22,...,T2k2 (for Player II),
+and
+5) for each information set Tjk for player j, a set of labels Ljk, and for each t ∈ Tjk,
+a one-to-one mapping of Ljk onto the set of edges leading from t.
+The information structure in a game in extensive form can be quite complex. It may
+involve lack of knowledge of the other player’s moves or of some of the chance moves. It
+may indicate a lack of knowledge of how many moves have already been made in the game
+(as is the case With Player II in Figure 3).
+0
+1 –1 1 –1 0 –2 2 1
+1 2
+I
+II II
+I
+A B
+a b c d
+e
+DE de DE a b c
+D E
+Figure 3.
+It may describe situations in which one player has forgotten a move he has made
+earlier (as is the case With Player I in Figures 3 or 4). In fact, one way to try to model
+the game of bridge as a two-person zero-sum game involves the use of this idea. In bridge,
+there are four individuals forming two teams or partnerships of two players each. The
+interests of the members of a partnership are identical, so it makes sense to describe this
+as a two-person game. But the members of one partnership make bids alternately based
+on cards that one member knows and the other does not. This may be described as a
+single player who alternately remembers and forgets the outcomes of some of the previous
+random moves. Games in which players remember all past information they once knew
+and all past moves they made are called games of perfect recall.
+A kind of degenerate situation exists when an information set contains two vertices
+which are joined by a path, as is the case with I’s information set in Figure 5.
+II – 52
+1
+–1 0 0 –1
+2
+I
+II
+I
+f g
+ab ab
+cd cd
+Figure 4.
+We take it as a convention that a player makes one choice from each information set
+during a game. That choice is used no matter how many times the information set is
+reached. In Figure 5, if I chooses option a there is no problem. If I chooses option b, then
+in the lower of I’s two vertices the a is superfluous, and the tree is really equivalent to
+Figure 6. Instead of using the above convention, we may if we like assume in the definition
+of a game in extensive form that no information set contains two vertices joined by a path.
+2 0
+0 1
+2
+I
+II
+a b
+cd cd
+a b
+2 0
+1
+2
+I
+I
+II
+a b
+cd cd
+b
+Figure 5. Figure 6.
+Games in which both players know the rules of the game, that is, in which both players
+know the Kuhn tree, are called games of complete information. Games in which one or
+both of the players do not know some of the payoffs, or some of the probabilities of chance
+moves, or some of the information sets, or even whole branches of the tree, are called
+games with incomplete information, or pseudogames. We assume in the following
+that we are dealing with games of complete information.
+5.4 The Representation of a Strategic Form Game in Extensive Form. The
+notion of a game in strategic form is quite simple. It is described by a triplet (X, Y, A) as in
+Section 1. The extensive form of a game on the other hand is quite complex. It is described
+II – 53
+by the game tree with each non-terminal vertex labeled as a chance move or as a move
+of one of the players, with all information sets specified, with probability distributions
+given for all chance moves, and with a payoff attached to each terminal vertex. It would
+seem that the theory of games in extensive is much more comprehensive than the theory
+of games in strategic form. However, by taking a game in extensive form and considering
+only the strategies and average payoffs, we may reduce the game to strategic form.
+First, let us check that a game in strategic form can be put into extensive form. In the
+strategic form of a game, the players are considered to make their choices simultaneously,
+while in the extensive form of a game simultaneous moves are not allowed. However,
+simultaneous moves may be made sequentially as follows. We let one of the players, say
+Player I, move first, and then let player II move without knowing the outcome of I’s move.
+This lack of knowledge may be described by the use of an appropriate information set.
+The example below illustrates this.
+ 3 01
+−120
+3 0 1 –1 2 0
+I
+II
+1 2
+1 23 1 23
+Matrix Form Equivalent Extensive Form
+Player I has 2 pure strategies and Player II has 3. We pretend that Player I moves first by
+choosing row 1 or row 2. Then Player II moves, not knowing the choice of Player I. This is
+indicated by the information set for Player II. Then Player II moves by choosing column
+1, 2 or 3, and the appropriate payoff is made.
+5.5 Reduction of a Game in Extensive Form to Strategic Form. To go in
+the reverse direction, from the extensive form of a game to the strategic form, requires the
+consideration of pure strategies and the usual convention regarding random payoffs.
+Pure strategies. Given a game in extensive form, we first find X and Y , the sets of
+pure strategies of the players to be used in the strategic form. A pure strategy for Player
+I is a rule that tells him exactly what move to make in each of his information sets. Let
+T11,...,T1k1 be the information sets for Player I and let L11,...,L1k1 be the corresponding
+sets of labels. A pure strategy for I is a k1-tuple x = (xl, ..., xk1 ) where for each i, xi is one
+of the elements of L1i. If there are mi elements in L1i, the number of such kl-tuples and
+hence the number of I s pure strategies is the product m1m2 ··· mk. The set of all such
+strategies is X. Similarly, if T21,...,T2k2 represent II’s information sets and L21,...,L2k2
+the corresponding sets of labels, a pure strategy for II is a k2-tuple, y = (y1,...,yk2 ) where
+yj ∈ L2j for each j. Player II has n1n2 ··· nk2 pure strategies if there are nj elements in
+L2j . Y denotes the set of these strategies.
+Random payoffs. A referee, given x ∈ X and y ∈ Y , could play the game, playing the
+appropriate move from x whenever the game enters one of I’s information sets, playing the
+II – 54
+appropriate move from y whenever the game enters one of II’s information sets, and playing
+the moves at random with the indicated probabilities at each chance move. The actual
+outcome of the game for given x ∈ X and y ∈ Y depends on the chance moves selected,
+and is therefore a random quantity. Strictly speaking, random payoffs were not provided
+for in our definition of games in normal form. However, we are quite used to replacing
+random payoffs by their average values (expected values) when the randomness is due to
+the use of mixed strategies by the players. We adopt the same convention in dealing with
+random payoffs when the randomness is due to the chance moves. The justification of this
+comes from utility theory.
+Convention. If for fixed pure strategies of the players, x ∈ X and y ∈ Y , the payoff is
+a random quantity, we replace the payoff by the average value, and denote this average
+value by A(x, y).
+For example, if for given strategies x ∈ X and y ∈ Y , Player I wins 3 with probability
+1/4, wins 1 with probability 1/4, and loses 1 with probability 1/2, then his average payoff
+is 1
+4 (3) + 1
+4 (1) + 1
+2 (−1) = 1/2 so we let A(x, y)=1/2.
+Therefore, given a game in extensive form, we say (X, Y, A) is the equivalent strategic
+form of the game if X and Y are the pure strategy spaces of players I and II respectively,
+and if A(x, y) is the average payoff for x ∈ X and y ∈ Y .
+5.6 Example. Let us find the equivalent strategic form to Basic Endgame in Poker
+described in the Section 5.2, whose tree is given in Figure 2. Player I has two information
+sets. In each set he must make a choice from among two options. He therefore has 2·2=4
+pure strategies. We may denote them by
+(b, b): bet with a winning card or a losing card.
+(b, c): bet with a winning card, check with a losing card.
+(c, b): check with a winning card, bet with a losing card.
+(c, c): check with a winning card or a losing card.
+Therefore, X = {(b, b),(b, c),(c, b),(c, c)}. We include in X all pure strategies whether
+good or bad (in particular, (c, b) seems a rather perverse sort of strategy.)
+Player II has only one information set. Therefore, Y = {c, f}, where
+c: if I bets, call.
+f: if I bets, fold.
+Now we find the payoff matrix. Suppose I uses (b, b) and II uses c. Then if I gets a
+winning card (which happens with probability 1/4), he bets, II calls, and I wins 3 dollars.
+But if I gets a losing card (which happens with probability 3/4), he bets, II calls, and I
+loses 3 dollars. I’s average or expected winnings is
+A((b, b), c) = 1
+4
+(3) + 3
+4
+(−3) = −3
+2
+.
+II – 55
+This gives the upper left entry in the following matrix. The other entries may be computed
+similarly and are left as exercises.
+⎛
+⎜⎜⎝
+c f
+(b, b) −3/2 1
+(b, c) 0 −1/2
+(c, b) −2 1
+(c, c) −1/2 −1/2
+⎞
+⎟⎟⎠
+Let us solve this 4 by 2 game. The third row is dominated by the first row, and the
+fourth row is dominated by the second row. In terms of the original form of the game, this
+says something you may already have suspected: that if I gets a winning card, it cannot
+be good for him to check. By betting he will win at least as much, and maybe more. With
+the bottom two rows eliminated the matrix becomes  −3/2 1
+0 −1/2
+
+, whose solution is
+easily found. The value is V = −1/4. I’s optimal strategy is to mix (b, b) and (b, c) with
+probabilities 1/6 and 5/6 respectively, while II’s optimal strategy is to mix c and f with
+equal probabilities 1/2 each. The strategy (b, b) is Player I’s bluffing strategy. Its use
+entails betting with a losing hand. The strategy (b, c) is Player I’s “honest” strategy, bet
+with a winning hand and check with a losing hand. I’s optimal strategy requires some
+bluffing and some honesty.
+In Exercise 4, there are six information sets for I each with two choices. The number
+of I’s pure strategies is therefore 26 = 64. II has 2 information sets each with two choices.
+Therefore, II has 22 = 4 pure strategies. The game matrix for the equivalent strategic
+form has dimension 64 by 4. Dominance can help reduce the dimension to a 2 by 3 game!
+(See Exercise 10(d).)
+5.7 Games of Perfect Information. Now that a game in extensive form has been
+defined, we may make precise the notion of a game of perfect information.
+Definition. A game of perfect information is a game in extensive form in which each
+information set of every player contains a single vertex.
+In a game of perfect information, each player when called upon to make a move knows
+the exact position in the tree. In particular, each player knows all the past moves of the
+game including the chance ones. Examples include tic-tac-toe, chess, backgammon, craps,
+etc.
+Games of perfect information have a particularly simple mathematical structure. The
+main result is that every game of perfect information when reduced to strategic form has
+a saddle point; both players have optimal pure strategies. Moreover, the saddle point can
+be found by removing dominated rows and columns. This has an interesting implication
+for the game of chess for example. Since there are no chance moves, every entry of the
+game matrix for chess must be either +1 (a win for Player I), or −1 (a win for Player
+II – 56
+II), or 0 (a draw). A saddle point must be one of these numbers. Thus, either Player
+I can guarantee himself a win, or Player II can guarantee himself a win, or both players
+can assure themselves at least a draw. From the game-theoretic viewpoint, chess is a very
+simple game. One needs only to write down the matrix of the game. If there is a row of all
++1’s, Player I can win. If there is a column of all −1’s, then Player II can win. Otherwise,
+there is a row with all +1’s and 0’s and a column with all −1’s and 0’s, and so the game is
+drawn with best play. Of course, the real game of chess is so complicated, there is virtually
+no hope of ever finding an optimal strategy. In fact, it is not yet understood how humans
+can play the game so well.
+5.8 Behavioral Strategies. For games in extensive form, it is useful to consider a
+different method of randomization for choosing among pure strategies. All a player really
+needs to do is to make one choice of an edge for each of his information sets in the game.
+A behavioral strategy is a strategy that assigns to each information set a probability
+distributions over the choices of that set.
+For example, suppose the first move of a game is the deal of one card from a deck of
+52 cards to Player I. After seeing his card, Player I either bets or passes, and then Player
+II takes some action. Player I has 52 information sets each with 2 choices of action, and
+so he has 252 pure strategies. Thus, a mixed strategy for I is a vector of 252 components
+adding to 1. On the other hand, a behavioral strategy for I simply given by the probability
+of betting for each card he may receive, and so is specified by only 52 numbers.
+In general, the dimension of the space of behavioral strategies is much smaller than
+the dimension of the space of mixed strategies. The question arises – Can we do as well
+with behavioral strategies as we can with mixed strategies? The answer is we can if both
+players in the game have perfect recall. The basic theorem, due to Kuhn in 1953 says that
+in finite games with perfect recall, any distribution over the payoffs achievable by mixed
+strategies is achievable by behavioral strategies as well.
+To see that behavioral strategies are not always sufficient, consider the game of imperfect
+recall of Figure 4. Upon reducing the game to strategic form, we find the matrix
+⎛
+⎜⎜⎝
+a b
+(f, c) 1 −1
+(f, d)10
+(g, c)02
+(g, d) −1 2
+⎞
+⎟⎟⎠
+The top and bottom rows may be removed by domination, so it is easy to see that the
+unique optimal mixed strategies for I and II are (0, 2/3, 1/3, 0) and (2/3, 1/3) respectively.
+The value is 2/3. However, Player I’s optimal strategy is not achievable by behavioral
+strategies. A behavioral strategy for I is given by two numbers, pf , the probability of choice
+f in the first information set, and pc, the probability of choice c in the second information
+set. This leads to the mixed strategy, (pf pc, pf (1 − pc),(1 − pf )pc,(1 − pf )(1 − pc)). The
+strategy (0, 2/3, 1/3, 0) is not of this form since if the first component is zero, that is if
+II – 57
+pf pc = 0, then either pf = 0 or pc = 0, so that either the second or third component must
+be zero also.
+If the rules of the game require players to use behavioral strategies, as is the case for
+certain models of bridge, then the game may not have a value. This means that if Player I
+is required to announce his behavioral strategy first, then he is at a distinct disadvantage.
+The game of Figure 4 is an example of this. (see Exercise 11.)
+5.9 Exercises.
+1. The Silver Dollar. Player II chooses one of two rooms in which to hide a silver
+dollar. Then, Player I, not knowing which room contains the dollar, selects one of the
+rooms to search. However, the search is not always successful. In fact, if the dollar is
+in room #1 and I searches there, then (by a chance move) he has only probability 1/2 of
+finding it, and if the dollar is in room #2 and I searches there, then he has only probability
+1/3 of finding it. Of course, if he searches the wrong room, he certainly won’t find it. If
+he does find the coin, he keeps it; otherwise the dollar is returned to Player II. Draw the
+game tree.
+2. Two Guesses for the Silver Dollar. Draw the game tree for problem 1, if
+when I is unsuccessful in his first attempt to find the dollar, he is given a second chance
+to choose a room and search for it with the same probabilities of success, independent of
+his previous search. (Player II does not get to hide the dollar again.)
+3. A Statistical Game. Player I has two coins. One is fair (probability 1/2 of heads
+and 1/2 of tails) and the other is biased with probability 1/3 of heads and 2/3 of tails.
+Player I knows which coin is fair and which is biased. He selects one of the coins and tosses
+it. The outcome of the toss is announced to II. Then II must guess whether I chose the
+fair or biased coin. If II is correct there is no payoff. If II is incorrect, she loses 1. Draw
+the game tree.
+4. A Forgetful Player. A fair coin (probability 1/2 of heads and 1/2 of tails) is
+tossed and the outcome is shown to Player I. On the basis of the outcome of this toss, I
+decides whether to bet 1 or 2. Then Player II hearing the amount bet but not knowing
+the outcome of the toss, must guess whether the coin was heads or tails. Finally, Player I
+(or, more realistically, his partner), remembering the amount bet and II’s guess, but not
+remembering the outcome of the toss, may double or pass. II wins if her guess is correct
+and loses if her guess is incorrect. The absolute value of the amount won is [the amount
+bet (+1 if the coin comes up heads)] (×2 if I doubled). Draw the game tree.
+5. A One-Shot Game of Incomplete Information. Consider the two games
+G1 =
+ 6 0
+0 0
+and G2 =
+ 3 0
+0 6
+. One of these games is chosen to be played at random
+with probability 1/3 for G1 and probability 2/3 for G2. The game chosen is revealed to
+Player I but not to Player II. Then Player I selects a row, 1 or 2, and simultaneously
+Player II chooses a column, 1 or 2, with payoff determined by the selected game. Draw
+the game tree. (If the game chosen by nature is played repeatedly with Player II learning
+only the pure strategy choices of Player I and not the payoffs, this is called a repeated
+II – 58
+game of incomplete information. There is a large literature concerning such games; see for
+example, the books of Aumann and Maschler (1995) and Sorin (2002).)
+6. Basic Endgame in Poker. Generalize Basic Endgame in poker by letting the
+probability of receiving a winning card be an arbitrary number p, 0 ≤ p ≤ 1, and by letting
+the bet size be an arbitrary number b > 0. (In Figure 2, 1/4 is replaced by p and 3/4 is
+replaced by 1 − p. Also 3 is replaced by 1 + b and −3 is replaced by −(1 + b).) Find the
+value and optimal strategies. (Be careful. For p ≥ (2 + b)/(2 + 2b) there is a saddle point.
+When you are finished, note that for p < (2+b)/(2+2b), Player II’s optimal strategy does
+not depend on p!) For other generalizations, see Ferguson and Ferguson (2007).
+7. (a) Find the equivalent strategic form of the game with the game tree:
+3
+3 0 3 –3 –3 0 0 0 3
+N
+I II
+II
+1/3 2/3
+a b c d e
+f g d e ab c f g
+(b) Solve the game.
+8. (a). Find the equivalent strategic form of the game with the game tree:
+0 2 1 –1 2 –2 0 4
+N
+I I
+II II
+1/2 1/2
+A B C D
+ab cd ab cd
+(b). Solve the game.
+9. Coin A has probability 1/2 of heads and 1/2 of tails. Coin B has probability 1/3 of
+heads and 2/3 of tails. Player I must predict “heads” or “tails”. If he predicts heads, coin
+A is tossed. If he predicts tails, coin B is tossed. Player II is informed as to whether I’s
+prediction was right or wrong (but she is not informed of the prediction or the coin that
+was used), and then must guess whether coin A or coin B was used. If II guesses correctly
+II – 59
+she wins 1 dollar from I. If II guesses incorrectly and I’s prediction was right, I wins 2
+dollars from II. If both are wrong there is no payoff.
+(a) Draw the game tree.
+(b) Find the equivalent strategic form of the game.
+(c) Solve.
+10. Find the equivalent strategic form and solve the game of
+(a) Exercise 1.
+(b) Exercise 2.
+(c) Exercise 3.
+(d) Exercise 4.
+(e) Exercise 5.
+11. Suppose, in the game of Figure 4, that Player I is required to use behavioral
+strategies. Show that if Player I is required to announce his behavioral strategy first, he
+can only achieve a lower value of 1/2. Whereas, if Player II is required to announce her
+strategy first, Player I has a behavioral strategy reply that achieves the upper value of 2/3
+at least.
+12. (Beasley (1990), Chap. 6.) Player I draws a card at random from a full deck of
+52 cards. After looking at the card, he bets either 1 or 5 that the card he drew is a face
+card (king, queen or jack, probability 3/13). Then Player II either concedes or doubles. If
+she concedes, she pays I the amount bet (no matter what the card was). If she doubles,
+the card is shown to her, and Player I wins twice his bet if the card is a face card, and
+loses twice his bet otherwise.
+(a) Draw the game tree. (You may argue first that Player I always bets 5 with a face card
+and Player II always doubles if Player I bets 1.)
+(b) Find the equivalent normal form.
+(c) Solve.
+II – 60
+

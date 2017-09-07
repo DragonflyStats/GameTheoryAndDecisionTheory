@@ -1,0 +1,495 @@
+2. Matrix Games — Domination
+A finite two-person zero-sum game in strategic form, (X, Y, A), is sometimes called
+a matrix game because the payoff function A can be represented by a matrix. If X =
+{x1,...,xm} and Y = {y1,...,yn}, then by the game matrix or payoff matrix we mean
+the matrix
+A =
+⎛
+⎝
+a11 ··· a1n
+.
+.
+. .
+.
+.
+am1 ··· amn
+⎞
+⎠ where aij = A(xi , yj ),
+In this form, Player I chooses a row, Player II chooses a column, and II pays I the entry
+in the chosen row and column. Note that the entries of the matrix are the winnings of the
+row chooser and losses of the column chooser.
+A mixed strategy for Player I may be represented by an m-tuple, p = (p1, p2,...,pm)
+T
+of probabilities that add to 1. If I uses the mixed strategy p = (p1, p2,...,pm)
+T and II
+chooses column j, then the (average) payoff to I is m
+i=1 piaij . Similarly, a mixed strategy
+for Player II is an n-tuple q = (q1, q2,...,qn)
+T. If II uses q and I uses row i the payoff
+to I is n
+j=1 aij qj . More generally, if I uses the mixed strategy p and II uses the mixed
+strategy q, the (average) payoff to I is pTAq = m
+i=1
+n
+j=1 piaij qj .
+Note that the pure strategy for Player I of choosing row i may be represented as the
+mixed strategy ei, the unit vector with a 1 in the ith position and 0’s elsewhere. Similarly,
+the pure strategy for II of choosing the jth column may be represented by ej. In the
+following, we shall be attempting to ‘solve’ games. This means finding the value, and at
+least one optimal strategy for each player. Occasionally, we shall be interested in finding
+all optimal strategies for a player.
+
+%====================================================================%
+\subsection{2.1 Saddle points.} Occasionally it is easy to solve the game. If some entry aij of
+the matrix A has the property that
+(1) aij is the minimum of the ith row, and
+(2) aij is the maximum of the jth column,
+then we say aij is a saddle point. If aij is a saddle point, then Player I can then win at
+least aij by choosing row i, and Player II can keep her loss to at most aij by choosing
+column j. Hence aij is the value of the game.
+Example 1.
+A =
+⎛
+⎝
+4 1 −3
+325
+016
+⎞
+⎠
+The central entry, 2, is a saddle point, since it is a minimum of its row and maximum
+of its column. Thus it is optimal for I to choose the second row, and for II to choose the
+second column. The value of the game is 2, and (0, 1, 0) is an optimal mixed strategy for
+both players.
+II – 9
+For large m × n matrices it is tedious to check each entry of the matrix to see if it
+has the saddle point property. It is easier to compute the minimum of each row and the
+maximum of each column to see if there is a match. Here is an example of the method.
+row min
+A =
+⎛
+⎜⎝
+3210
+0120
+1021
+3122
+⎞
+⎟⎠
+0
+0
+0
+1
+col max 3 2 2 2
+row min
+B =
+⎛
+⎜⎝
+3110
+0120
+1021
+3122
+⎞
+⎟⎠
+0
+0
+0
+1
+col max 3 1 2 2
+In matrix A, no row minimum is equal to any column maximum, so there is no saddle
+point. However, if the 2 in position a12 were changed to a 1, then we have matrix B. Here,
+the minimum of the fourth row is equal to the maximum of the second column; so b42 is a
+saddle point.
+2.2 Solution of All 2 by 2 Matrix Games. Consider the general 2 × 2 game
+matrix
+A =
+ a b
+d c
+.
+
+
+%====================================================================%
+To solve this game (i.e. to find the value and at least one optimal strategy for each player)
+we proceed as follows.
+1. Test for a saddle point.
+2. If there is no saddle point, solve by finding equalizing strategies.
+We now prove the method of finding equalizing strategies of Section 1.2 works whenever
+there is no saddle point by deriving the value and the optimal strategies.
+Assume there is no saddle point. If a ≥ b, then b<c, as otherwise b is a saddle point.
+Since b<c, we must have c>d, as otherwise c is a saddle point. Continuing thus, we see
+that d<a and a>b. In other words, if a ≥ b, then a>b<c>d<a. By symmetry, if
+a ≤ b, then a<b>c<d>a. This shows that
+If there is no saddle point, then either a>b, b<c, c>d and d<a, or a<b, b>c,
+c<d and d>a.
+
+%====================================================================%
+In equations (1), (2) and (3) below, we develop formulas for the optimal strategies
+and value of the general 2 × 2 game. If I chooses the first row with probability p (i.e. uses
+the mixed strategy (p, 1 − p)), we equate his average return when II uses columns 1 and 2.
+ap + d(1 − p) = bp + c(1 − p).
+Solving for p, we find
+p = c − d
+(a − b)+(c − d)
+. (1)
+II – 10
+Since there is no saddle point, (a−b) and (c−d) are either both positive or both negative;
+hence, 0 <p< 1. Player I’s average return using this strategy is
+v = ap + d(1 − p) = ac − bd
+a − b + c − d
+.
+If II chooses the first column with probability q (i.e. uses the strategy (q, 1−q)), we equate
+his average losses when I uses rows 1 and 2.
+aq + b(1 − q) = dq + c(1 − q)
+Hence,
+q = c − b
+a − b + c − d
+. (2)
+Again, since there is no saddle point, 0 <q< 1. Player II’s average loss using this strategy
+is
+aq + b(1 − q) = ac − bd
+a − b + c − d = v, (3)
+the same value achievable by I. This shows that the game has a value, and that the players
+have optimal strategies. (something the minimax theorem says holds for all finite games).
+Example 2.
+A =
+ −2 3
+3 −4
+
+p = −4 − 3
+−2 − 3 − 4 − 3 = 7/12
+q = same
+v = 8 − 9
+−2 − 3 − 4 − 3
+= 1/12
+Example 3.
+A =
+ 0 −10
+1 2  p = 2 − 1
+0 + 10 + 2 − 1
+= 1/11
+q = 2 + 10
+0 + 10 + 2 − 1
+= 12/11.
+But q must be between zero and one. What happened? The trouble is we “forgot to test
+this matrix for a saddle point, so of course it has one”. (J. D. Williams The Compleat
+Strategyst Revised Edition, 1966, McGraw-Hill, page 56.) The lower left corner is a saddle
+point. So p = 0 and q = 1 are optimal strategies, and the value is v = 1.
+2.3 Removing Dominated Strategies. Sometimes, large matrix games may be
+reduced in size (hopefully to the 2×2 case) by deleting rows and columns that are obviously
+bad for the player who uses them.
+Definition. We say the ith row of a matrix A = (aij ) dominates the kth row if
+aij ≥ akj for all j. We say the ith row of A strictly dominates the kth row if aij > akj
+for all j. Similarly, the jth column of A dominates (strictly dominates) the kth column if
+aij ≤ aik (resp. aij < aik) for all i.
+
+%====================================================================%
+Anything Player I can achieve using a dominated row can be achieved at least as well
+using the row that dominates it. Hence dominated rows may be deleted from the matrix.
+A similar argument shows that dominated columns may be removed. To be more precise,
+removal of a dominated row or column does not change the value of a game. However, there
+may exist an optimal strategy that uses a dominated row or column (see Exercise 9). If so,
+removal of that row or column will also remove the use of that optimal strategy (although
+there will still be at least one optimal strategy left). However, in the case of removal of a
+strictly dominated row or column, the set of optimal strategies does not change.
+
+%====================================================================%
+We may iterate this procedure and successively remove several rows and columns. As
+an example, consider the matrix, A.
+The last column is dominated by the middle
+column. Deleting the last column we obtain:
+A =
+⎛
+⎝
+204
+123
+412
+⎞
+⎠
+Now the top row is dominated by the bottom
+row. (Note this is not the case in the original
+matrix). Deleting the top row we obtain:
+⎛
+⎝
+2 0
+1 2
+4 1
+⎞
+⎠
+This 2 × 2 matrix does not have a saddle point, so p = 3/4,
+q = 1/4 and v = 7/4. I’s optimal strategy in the original game is
+(0, 3/4, 1/4); II’s is (1/4, 3/4, 0).
+ 1 2
+4 1
+A row (column) may also be removed if it is dominated by a probability combination
+of other rows (columns).
+If for some 0 <p< 1, pai1j +(1−p)ai2j ≥ akj for all j, then the kth row is dominated
+by the mixed strategy that chooses row i1 with probability p and row i2 with probability
+1 − p. Player I can do at least as well using this mixed strategy instead of choosing row
+k. (In addition, any mixed strategy choosing row k with probability pk may be replaced
+by the one in which k’s probability is split between i1 and i2. That is, i1’s probability is
+increased by ppk and i2’s probability is increased by (1 − p)pk.) A similar argument may
+be used for columns.
+Consider the matrix A =
+⎛
+⎝
+046
+574
+963
+⎞
+⎠.
+The middle column is dominated by the outside columns taken with probability 1/2
+each. With the central column deleted, the middle row is dominated by the combination
+of the top row with probability 1/3 and the bottom row with probability 2/3. The reduced
+matrix,  0 6
+9 3
+, is easily solved. The value is V = 54/12 = 9/2.
+Of course, mixtures of more than two rows (columns) may be used to dominate and
+remove other rows (columns). For example, the mixture of columns one two and three
+with probabilities 1/3 each in matrix B =
+⎛
+⎝
+1353
+4022
+3735
+⎞
+⎠ dominates the last column,
+II – 12
+and so the last column may be removed.
+Not all games may be reduced by dominance. In fact, even if the matrix has a saddle
+point, there may not be any dominated rows or columns. The 3 × 3 game with a saddle
+point found in Example 1 demonstrates this.
+
+%====================================================================%
+2.4 Solving 2 × n and m × 2 games. Games with matrices of size 2 × n or m × 2
+may be solved with the aid of a graphical interpretation. Take the following example.
+p
+1 − p
+ 2315
+4160
+Suppose Player I chooses the first row with probability p and the second row with probability
+1−p. If II chooses Column 1, I’s average payoff is 2p+4(1−p). Similarly, choices of
+Columns 2, 3 and 4 result in average payoffs of 3p+(1−p), p+6(1−p), and 5p respectively.
+We graph these four linear functions of p for 0 ≤ p ≤ 1. For a fixed value of p, Player I can
+be sure that his average winnings is at least the minimum of these four functions evaluated
+at p. This is known as the lower envelope of these functions. Since I wants to maximize
+his guaranteed average winnings, he wants to find p that achieves the maximum of this
+lower envelope. According to the drawing, this should occur at the intersection of the lines
+for Columns 2 and 3. This essentially, involves solving the game in which II is restricted
+to Columns 2 and 3. The value of the game  3 1
+1 6
+is v = 17/7 , I’s optimal strategy is
+(5/7, 2/7), and II’s optimal strategy is (5/7, 2/7). Subject to the accuracy of the drawing,
+we conclude therefore that in the original game I’s optimal strategy is (5/7, 2/7) , II’s is
+(0, 5/7, 2/7, 0) and the value is 17/7.
+Fig 2.1
+0
+1
+2
+3
+4
+5
+6
+col. 3
+col. 1
+col. 2
+col. 4
+0 1 5/7 p
+The accuracy of the drawing may be checked: Given any guess at a solution to a
+game, there is a sure-fire test to see if the guess is correct, as follows. If I uses the strategy
+(5/7, 2/7), his average payoff if II uses Columns 1, 2, 3 and 4, is 18/7, 17/7, 17/7, and 25/7
+II – 13
+respectively. Thus his average payoff is at least 17/7 no matter what II does. Similarly,
+if II uses (0, 5/7, 2/7, 0), her average loss is (at most) 17/7. Thus, 17/7 is the value, and
+these strategies are optimal.
+We note that the line for Column 1 plays no role in the lower envelope (that is, the
+lower envelope would be unchanged if the line for Column 1 were removed from the graph).
+This is a test for domination. Column 1 is, in fact, dominated by Columns 2 and 3 taken
+with probability 1/2 each. The line for Column 4 does appear in the lower envelope, and
+hence Column 4 cannot be dominated.
+
+%====================================================================%
+As an example of a m × 2 game, consider the matrix associated with Figure 2.2. If
+q is the probability that II chooses Column 1, then II’s average loss for I’s three possible
+choices of rows is given in the accompanying graph. Here, Player II looks at the largest
+of her average losses for a given q. This is the upper envelope of the function. II wants
+to find q that minimizes this upper envelope. From the graph, we see that any value of q
+between 1/4 and 1/3 inclusive achieves this minimum. The value of the game is 4, and I
+has an optimal pure strategy: row 2.
+Fig 2.2
+⎛
+⎝
+q 1 − q
+1 5
+4 4
+6 2
+⎞
+⎠
+0
+1
+2
+3
+4
+5
+6
+row 1
+row 2
+row 3
+0 1 1/4 1/2
+q
+These techniques work just as well for 2 × ∞ and ∞ × 2 games.
+
+%====================================================================%
+2.5 Latin Square Games. A Latin square is an n × n array of n different letters
+such that each letter occurs once and only once in each row and each column. The 5 × 5
+array at the right is an example. If in a Latin square each letter is assigned a numerical
+value, the resulting matrix is the matrix of a Latin square game. Such games have simple
+solutions. The value is the average of the numbers in a row, and the strategy that chooses
+each pure strategy with equal probability 1/n is optimal for both players. The reason is
+not very deep. The conditions for optimality are satisfied.
+II – 14
+⎛
+⎜⎜⎜⎝
+abcde
+beacd
+cadeb
+dceba
+edbac
+⎞
+⎟⎟⎟⎠
+a = 1, b = 2, c = d = 3, e = 6
+⎛
+⎜⎜⎜⎝
+12336
+26133
+31362
+33621
+63213
+⎞
+⎟⎟⎟⎠
+In the example above, the value is V = (1+2+3+3+6)/5 = 3, and the mixed strategy
+p = q = (1/5, 1/5, 1/5, 1/5, 1/5) is optimal for both players. The game of matching pennies
+is a Latin square game. Its value is zero and (1/2, 1/2) is optimal for both players.
+2.6 Exercises.
+1. Solve the game with matrix  −1 −3
+−2 2
+, that is find the value and an optimal
+(mixed) strategy for both players.
+2. Solve the game with matrix  0 2
+t 1
+
+for an arbitrary real number t. (Don’t forget
+to check for a saddle point!) Draw the graph of v(t), the value of the game, as a function
+of t, for −∞ <t< ∞.
+3. Show that if a game with m×n matrix has two saddle points, then they have equal
+values.
+4. Reduce by dominance to 2 × 2 games and solve.
+(a)
+⎛
+⎜⎝
+5410
+432 −1
+0 −143
+1 −212
+⎞
+⎟⎠ (b)
+⎛
+⎝
+10 0 7 1
+2 647
+6 335
+⎞
+⎠.
+5. (a) Solve the game with matrix  3240
+−2 1 −4 5
+.
+(b) Reduce by dominance to a 3 × 2 matrix game and solve:
+⎛
+⎝
+085
+846
+12 −4 3
+⎞
+⎠.
+6. Players I and II choose integers i and j respectively from the set {1, 2,...,n} for
+some n ≥ 2. Player I wins 1 if |i − j| = 1. Otherwise there is no payoff. If n = 7, for
+example, the game matrix is
+⎛
+⎜⎜⎜⎜⎜⎜⎜⎝
+0100000
+1010000
+0101000
+0010100
+0001010
+0000101
+0000010
+⎞
+⎟⎟⎟⎟⎟⎟⎟⎠
+II – 15
+(a) Using dominance to reduce the size of the matrix, solve the game for n = 7 (i.e.
+find the value and one optimal strategy for each player).
+(b) See if you can solve the game for arbitrary n.
+7. In general, the sure-fire test may be stated thus: For a given game, conjectured
+optimal strategies (p1,...,pm) and (q1,...,qn) are indeed optimal if the minimum of I’s
+average payoffs using (p1,...,pm) is equal to the maximum of II’s average payoffs using
+(q1,...,qn). Show that for the game with the following matrix the mixed strategies
+p = (6/37, 20/37, 0, 11/37) and q = (14/37, 4/37, 0, 19/37, 0) are optimal for I and II respectively.
+What is the value?
+⎛
+⎜⎝
+58316
+42635
+24641
+13253
+⎞
+⎟⎠
+8. Given that p = (52/143, 50/143, 41/143) is optimal for I in the game with the
+following matrix, what is the value?
+⎛
+⎝
+0 5 −2
+−304
+6 −4 0
+⎞
+⎠
+9. Player I secretly chooses one of the numbers, 1, 2 and 3, and Player II tries to guess
+which. If II guesses correctly, she loses nothing; otherwise, she loses the absolute value of
+the difference of I’s choice and her guess. Set up the matrix and reduce it by dominance
+to a 2 by 2 game and solve. Note that II has an optimal pure strategy that was eliminated
+by dominance. Moreover, this strategy dominates the optimal mixed strategy in the 2 by
+2 game.
+10. Magic Square Games. A magic square is an n × n array of the first n integers
+with the property that all row and column sums are equal. Show how to solve all games
+with magic square game matrices. Solve the example,
+⎛
+⎜⎝
+16 3 2 13
+5 10 11 8
+9 6 7 12
+4 15 14 1
+⎞
+⎟⎠ .
+(This is the magic square that appears in Albrecht D¨urer’s engraving, Melencolia. See
+http://freemasonry.bcy.ca/art/melencolia.html)
+
+%====================================================================%
+11. In an article, “Normandy: Game and Reality” by W. Drakert in Moves, No. 6
+(1972), an analysis is given of the invasion of Europe at Normandy in World War II. Six
+possible attacking configurations (1 to 6) by the Allies and six possible defensive strategies
+(A to F) by the Germans were simulated and evaluated, 36 simulations in all. The following
+II – 16
+table gives the estimated value to the Allies of each hypothetical battle in some numerical
+units.
+⎛
+⎜⎜⎜⎜⎜⎜⎝
+ABCDEF
+1 13 29 8 12 16 23
+2 18 22 21 22 29 31
+3 18 22 31 31 27 37
+4 11 22 12 21 21 26
+5 18 16 19 14 19 28
+6 23 22 19 23 30 34
+⎞
+⎟⎟⎟⎟⎟⎟⎠
+(a) Assuming this is a matrix of a six by six game, reduce by dominance and solve.
+(b) The historical defense by the Germans was B, and the historical attack by the Allies
+was 1. Criticize these choices.
+II – 17
+

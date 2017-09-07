@@ -1,0 +1,717 @@
+4. Solving Finite Games.
+Consider an arbitrary finite two-person zero-sum game, (X, Y, A), with m × n matrix,
+A. Let us take the strategy space X to be the first m integers, X = {1, 2,...,m}, and
+similarly, Y = {1, 2,...,n}. A mixed strategy for Player I may be represented by a column
+vector, (p1, p2,...,pm)
+T of probabilities that add to 1. Similarly, a mixed strategy for Player
+II is an n-tuple q = (q1, q2,...,qn)
+T. The sets of mixed strategies of players I and II will
+be denoted respectively by X∗ and Y ∗,
+X∗ = {p = (p1,...,pm)
+T : pi ≥ 0, for i = 1,...,m and m
+1 pi = 1}
+Y ∗ = {q = (q1,...,qn)
+T : qj ≥ 0, for j = 1,...,n and n
+1 qj = 1}
+The m-dimensional unit vector ek ∈ X∗ with a one for the kth component and zeros
+elsewhere may be identified with the pure strategy of choosing row k. Thus, we may
+consider the set of Player I’s pure strategies, X, to be a subset of X∗. Similarly, Y may
+be considered to be a subset of Y ∗. We could if we like consider the game (X, Y, A) in
+which the players are allowed to use mixed strategies as a new game (X∗, Y ∗, A), where
+A(p, q) = pTAq, though we would no longer call this game a finite game.
+In this section, we give an algorithm for solving finite games; that is, we show how to
+find the value and at least one optimal strategy for each player. Occasionally, we shall be
+interested in finding all optimal strategies for a player.
+4.1 Best Responses. Suppose that Player II chooses a column at random using
+q ∈ Y ∗. If Player I chooses row i, the average payoff to I is
+
+n
+j=1
+aij qj = (Aq)i, (1)
+the ith component of the vector Aq. Similarly, if Player I uses p ∈ X∗ and Player II
+chooses column j, Then I’s average payoff is
+
+n
+i=1
+piaij = (pTA)j , (2)
+the jth component of the vector pTA. More generally, if Player I uses p ∈ X∗ and Player
+II uses q ∈ Y ∗, the average payoff to I becomes
+
+m
+i=1
+⎛
+⎝
+n
+j=1
+aij qj
+⎞
+⎠ pi = 
+m
+i=1
+
+n
+j=1
+piaij qj = p
+TAq. (3)
+Suppose it is known that Player II is going to use a particular strategy q ∈ Y ∗. Then
+Player I would choose that row i that maximizes (1); or, equivalently, he would choose
+that p ∈ X∗ that maximizes (3). His average payoff would be
+max
+1≤i≤m
+
+n
+j=1
+aij qj = max
+p∈X∗ pTAq (4)
+II – 35
+To see that these quantities are equal, note that the left side is the maximum of pTAq over
+p ∈ X∗, and so, since X ⊂ X∗ , must be less than or equal to the right side. The reverse
+inequality follows since (3) is an average of the quantities in (1) and so must be less than
+or equal to the largest of the values in (1).
+Any p ∈ X∗ that achieves the maximum of (3) is called a best response or a Bayes
+strategy against q. In particular, any row i that achieves the maximum of (1) is a (pure)
+Bayes strategy against q. There always exist pure Bayes strategies against q for every
+q ∈ Y ∗ in finite games.
+Similarly, if it is known that Player I is going to use a particular strategy p ∈ X∗, then
+Player II would choose that column j that minimizes (2), or, equivalently, that q ∈ Y ∗
+that minimizes (3). Her average payoff would be
+min
+1≤j≤n
+
+m
+i=1
+piaij = min
+q∈Y ∗ p
+TAq. (5)
+Any q ∈ Y ∗ that achieves the minimum in (5) is called a best response or a Bayes strategy
+for Player II against p.
+The notion of a best response presents a practical way of playing a game: Make a
+guess at the probabilities that you think your opponent will play his/her various pure
+strategies, and choose a best response against this. This method is available in quite
+complex situations. In addition, it allows a player to take advantage of an opponent’s
+perceived weaknesses. Of course this may be a dangerous procedure. Your opponent may
+be better at this type of guessing than you. (See Exercise 1.)
+4.2 Upper and Lower Values of a Game. Suppose now that II is required to
+announce her choice of a mixed strategy q ∈ Y ∗ before I makes his choice. This changes
+the game to make it apparently more favorable to I. If II announces q, then certainly I
+would use a Bayes strategy against q and II would lose the quantity (4) on the average.
+Therefore, II would choose to announce that q that minimizes (4). The minimum of (4)
+over all q ∈ Y ∗ is denoted by V and called the upper value of the game (X, Y, A).
+V = min
+q∈Y ∗ max
+1≤i≤m
+
+n
+j=1
+aij qj = min
+q∈Y ∗ max
+p∈X∗ p
+TAq. (6)
+Any q ∈ Y ∗ that achieves the minimum in (6) is called a minimax strategy for II. It
+minimizes her maximum loss. There always exists a minimax strategy in finite games: the
+quantity (4), being the maximum of m linear functions of q, is a continuous function of q
+and since Y ∗ is a closed bounded set, this function assumes its minimum over Y ∗ at some
+point of Y ∗.
+In words, V as the smallest average loss that Player II can assure for herself no matter
+what I does.
+A similar analysis may be carried out assuming that I must announce his choice of a
+mixed strategy p ∈ X∗ before II makes her choice. If I announces p, then II would choose
+II – 36
+that column with the smallest average payoff, or equivalently that q ∈ Y ∗ that minimizes
+the average payoff (5). Given that (5) is the average payoff to I if he announces p, he
+would therefore choose p to maximize (5) and obtain on the average
+V = max
+p∈X∗ min
+1≤j≤n
+
+m
+i=1
+piaij = max
+p∈X∗ min
+q∈Y ∗ p
+TAq. (7)
+The quantity V is called the lower value of the game. It is the maximum amount that I can
+guarantee himself no matter what II does. Any p ∈ X∗ that achieves the maximum in (7)
+is called a minimax strategy for I. Perhaps maximin strategy would be more appropriate
+terminology in view of (7), but from symmetry (either player may consider himself Player
+II for purposes of analysis) the same word to describe the same idea may be preferable
+and it is certainly the customary terminology. As in the analysis for Player II, we see that
+Player I always has a minimax strategy. The existence of minimax strategies in matrix
+games is worth stating as a lemma.
+Lemma 1. In a finite game, both players have minimax strategies.
+It is easy to argue that the lower value is less than or equal to the upper value. For if
+V < V and if I can assure himself of winning at least V , Player II cannot assure herself of
+not losing more than V , an obvious contradiction. It is worth stating this fact as a lemma
+too.
+Lemma 2. The lower value is less than or equal to the upper value,
+V ≤ V.
+This lemma also follows from the general mathematical principle that for any realvalued
+function, f(x, y), and any sets, X∗ and Y ∗,
+max
+x∈X∗ min
+y∈Y ∗ f(x, y) ≤ min
+y∈Y ∗ max
+x∈X∗ f(x, y).
+To see this general principle, note that miny f(x, y
+) ≤ f(x, y) ≤ maxx f(x
+, y) for every
+fixed x and y. Then, taking maxx on the left does not change the inequality, nor does
+taking miny on the right, which gives the result.
+If V < V , the average payoff should fall between V and V . Player II can keep it from
+getting larger than V and Player I can keep it from getting smaller than V . When V = V ,
+a very nice stable situation exists.
+Definition. If V = V , we say the value of the game exists and is equal to the common
+value of V and V , denoted simply by V . If the value of the game exists, we refer to
+minimax strategies as optimal strategies.
+The Minimax Theorem, stated in Chapter 1, may be expressed simply by saying that
+for finite games, V = V .
+II – 37
+The Minimax Theorem. Every finite game has a value, and both players have minimax
+strategies.
+We note one remarkable corollary of this theorem. If the rules of the game are changed
+so that Player II is required to announce her choice of a mixed strategy before Player I
+makes his choice, then the apparent advantage given to Player I by this is illusory. Player
+II can simply announce her minimax strategy.
+4.3 Invariance under Change of Location and Scale. Another simple observation
+is useful in this regard. This concerns the invariance of the minimax strategies under
+the operations of adding a constant to each entry of the game matrix, and of multiplying
+each entry of the game matrix by a positive constant. The game having matrix A = (aij )
+and the game having matrix A = (a
+ij ) with a
+ij = aij + b, where b is an arbitrary real
+number, are very closely related. In fact, the game with matrix A is equivalent to the
+game in which II pays I the amount b, and then I and II play the game with matrix A.
+Clearly any strategies used in the game with matrix A give Player I b plus the payoff
+using the same strategies in the game with matrix A. Thus, any minimax strategy for
+either player in one game is also minimax in the other, and the upper (lower) value of the
+game with matrix A is b plus the upper (lower) value of the game with matrix A.
+Similarly, the game having matrix A = (a
+ij ) with a
+ij = caij , where c is a positive
+constant, may be considered as the game with matrix A with a change of scale (a change
+of monetary unit if you prefer). Again, minimax strategies do not change, and the upper
+(lower) value of A is c times the upper (lower) value of A. We combine these observations
+as follows. (See Exercise 2.)
+Lemma 3. If A = (aij ) and A = (a
+ij ) are matrices with a
+ij = caij + b, where c > 0,
+then the game with matrix A has the same minimax strategies for I and II as the game
+with matrix A
+. Also, if V denotes the value of the game with matrix A, then the value
+V  of the game with matrix A satisfies V  = cV + b.
+4.4 Reduction to a Linear Programming Problem. There are several nice proofs
+of the Minimax Theorem. The simplest proof from scratch seems to be that of G. Owen
+(1982). However, that proof is by contradiction using induction on the size of the matrix.
+It gives no insight into properties of the solution or on how to find the value and optimal
+strategies. Other proofs, based on the Separating Hyperplane Theorem or the Brouwer
+Fixed Point Theorem, give some insight but are based on nontrivial theorems not known
+to all students.
+Here we use a proof based on linear programming. Although based on material not
+known to all students, it has the advantage of leading to a simple algorithm for solving
+finite games. For a background in linear programming, the book by Chv´atal (1983) can be
+recommended. A short course on Linear Programming more in tune with the material as
+it is presented here may be found on the web at http://www.math.ucla.edu/˜tom/LP.pdf.
+A Linear Program is defined as the problem of choosing real variables to maximize or
+minimize a linear function of the variables, called the objective function, subject to linear
+II – 38
+constraints on the variables. The constraints may be equalities or inequalities. A standard
+form of this problem is to choose y1,... ,yn, to
+maximize b1y1 + ··· + bnyn, (8)
+subject to the constraints
+a11y1 + ··· + a1nyn ≤ c1
+.
+.
+.
+am1y1 + ··· + amnyn ≤ cm
+(9)
+and
+yj ≥ 0 for j = 1,...,n.
+Let us consider the game problem from Player I’s point of view. He wants to choose
+p1,..., pm to maximize (5) subject to the constraint p ∈ X∗. This becomes the mathematical
+program: choose p1,...,pm to
+maximize min
+1≤j≤n
+
+m
+i=1
+piaij (10)
+subject to the constraints
+p1 + ··· + pm = 1 (11)
+and
+pi ≥ 0 for i = 1, . . . , m.
+Although the constraints are linear, the objective function is not a linear function of
+the p’s because of the min operator, so this is not a linear program. However, it can be
+changed into a linear program through a trick. Add one new variable v to Player I’s list of
+variables, restrict it to be less than the objective function, v ≤ min1≤j≤n
+m
+i=1 piaij , and
+try to make v as large as possible subject to this new constraint. The problem becomes:
+Choose v and p1,...,pm to
+maximize v (12)
+subject to the constraints
+v ≤ 
+m
+i=1
+piai1
+.
+.
+.
+v ≤ 
+m
+i=1
+piain
+p1+ ··· + pm = 1
+(13)
+II – 39
+and
+pi ≥ 0 for i = 1, . . . , m.
+This is indeed a linear program. For solving such problems, there exists a simple algorithm
+known as the simplex method.
+In a similar way, one may view the problem from Player II’s point of view and arrive
+at a similar linear program. II’s problem is: choose w and q1,...,qn to
+minimize w (14)
+subject to the constraints
+w ≥ 
+n
+j=1
+a1j qj
+.
+.
+.
+w ≥ 
+n
+j=1
+amj qj
+q1+ ··· + qn = 1
+(15)
+and
+qj ≥ 0 for j = 1, . . . , n.
+In Linear Programming, there is a theory of duality that says these two programs,
+(12)-(13), and (14)-(15), are dual programs. And there is a remarkable theorem, called the
+Duality Theorem, that says dual programs have the same value. The maximum Player I
+can achieve in (14) is equal to the minimum that Player II can achieve in (12). But this is
+exactly the claim of the Minimax Theorem. In other words, the Duality Theorem implies
+the Minimax Theorem.
+There is another way to transform the linear program, (12)-(13), into a linear program
+that is somewhat simpler for computations when it is known that the value of the game
+is positive. So suppose v > 0 and let xi = pi/v. Then the constraint p1 + ··· + pm = 1
+becomes x1 + ··· + xm = 1/v, which looks nonlinear. But maximizing v is equivalent to
+minimizing 1/v, so we can remove v from the problem by minimizing x1 +···+xm instead.
+The problem, (12)-(13), becomes: choose x1,...,xm to
+minimize x1 + ··· + xm (16)
+subject to the constraints
+1 ≤ 
+m
+i=1
+xiai1
+.
+.
+.
+1 ≤ 
+m
+i=1
+xiain
+(17)
+II – 40
+and
+xi ≥ 0 for i = 1, . . . , m.
+When we have solved this problem, the solution of the original game may be easily found.
+The value will be v = 1/(x1 + ··· + xm) and the optimal strategy for Player I will be
+pi = vxi for i = 1, . . . .m.
+4.5 Description of the Pivot Method for Solving Games The following algorithm
+for solving finite games is essentially the simplex method for solving (16)-(17) as
+described in Williams (1966).
+Step 1. Add a constant to all elements of the game matrix if necessary to insure that the
+value is positive. (If you do, you must remember at the end to subtract this constant from
+the value of the new matrix game to get the value of the original matrix game.)
+Step 2. Create a tableau by augmenting the game matrix with a border of −1’s along
+the lower edge, +1’s along the right edge, and zero in the lower right corner. Label I’s
+strategies on the left from x1 to xm and II’s strategies on the top from y1 to yn.
+y1 y2 ··· yn
+x1 a11 a12 ··· a1n 1
+x2 a21 a22 ··· a2n 1
+.
+.
+. .
+.
+. .
+.
+. .
+.
+. .
+.
+.
+xm am1 am2 ··· amn 1
+−1 −1 ··· −1 0
+Step 3. Select any entry in the interior of the tableau to be the pivot, say row p column q,
+subject to the properties:
+a. The border number in the pivot column, a(m + 1, q), must be negative.
+b. The pivot, a(p, q), itself must be positive.
+c. The pivot row, p, must be chosen to give the smallest of the ratios the border
+number in the pivot row to the pivot, a(p, n+1)/a(p, q), among all positive pivots for that
+column.
+Step 4. Pivot as follows:
+a. Replace each entry, a(i, j), not in the row or column of the pivot by a(i, j)−a(p, j)·
+a(i, q)/a(p, q).
+b. Replace each entry in the pivot row, except for the pivot, by its value divided by
+the pivot value.
+c. Replace each entry in the pivot column, except for the pivot, by the negative of its
+value divided by the pivot value.
+d. Replace the pivot value by its reciprocal.
+This may be represented symbolically by
+p r
+c q −→ 1/p r/p
+−c/p q − (rc/p)
+II – 41
+where p stands for the pivot, r represents any number in the same row as the pivot, c
+represents any number in the same column as the pivot, and q is an arbitrary entry not in
+the same row or column as the pivot.
+Step 5. Exchange the label on the left of the pivot row with the label on the top of the
+pivot column.
+Step 6. If there are any negative numbers remaining in the lower border row, go back to
+step 3.
+Step 7. Otherwise, a solution may now be read out:
+a. The value, v, is the reciprocal of the number in the lower right corner. (If you
+subtracted a number from each entry of the matrix in step 1, it must be added to v here.)
+b. I’s optimal strategy is constructed as follows. Those variables of Player I that end
+up on the left side receive probability zero. Those that end up on the top receive the value
+of the bottom edge in the same column divided by the lower right corner.
+c. II’s optimal strategy is constructed as follows. Those variables of Player II that
+end up on the top receive probability zero. Those that end up on the left receive the value
+of the right edge in the same row divided by the lower right corner.
+4.6 A Numerical Example. Let us illustrate these steps using an example. Let’s
+take a three-by-three matrix since that is the simplest example one we cannot solve using
+previous methods. Consider the matrix game with the following matrix,
+B =
+⎛
+⎝
+2 −1 6
+0 1 −1
+−22 1
+⎞
+⎠
+We might check for a saddle point (there is none) and we might check for domination
+(there is none). Is the value positive? We might be able to guess by staring at the matrix
+long enough, but why don’t we simply make the first row positive by adding 2 to each
+entry of the matrix:
+B =
+⎛
+⎝
+418
+231
+043
+⎞
+⎠
+The value of this game is at least one since Player I can guarantee at least 1 by using the
+first (or second) row. We will have to remember to subtract 2 from the value of B to get
+the value of B. This completes Step 1 of the algorithm.
+In Step 2, we set up the tableau for the matrix B as follows.
+y1 y2 y3
+x1 418 1
+x2 231 1
+x3 043 1
+−1 −1 −1 0
+II – 42
+In Step 3, we must choose the pivot. Since all three columns have a negative number
+in the lower edge, we may choose any of these columns as the pivot column. Suppose we
+choose column 1. The pivot row must have a positive number in this column, so it must be
+one of the top two rows. To decide which row, we compute the ratios of border numbers
+to pivot. For the first row it is 1/4; for the second row it is 1/2. the former is smaller, so
+the pivot is in row 1. We pivot about the 4 in the upper left corner.
+Step 4 tells us how to pivot. The pivot itself gets replaced by its reciprocal, namely
+1/4. The rest of the numbers in the pivot row are simply divided by the pivot, giving 1/4,
+2, and 1/4. Then the rest of the numbers in the pivot column are divided by the pivot and
+changed in sign. The remaining nine numbers are modified by subtracting r · c/p for the
+corresponding r and c. For example, from the 1 in second row third column we subtract
+8 × 2/4 = 4, leaving −3. The complete pivoting operation is
+y1 y2 y3
+x1 418 1
+x2 231 1
+x3 043 1
+−1 −1 −1 0
+−→
+x1 y2 y3
+y1 1/4 1/4 2 1/4
+x2 −1/2 5/2 −3 1/2
+x3 043 1
+1/4 −3/4 1 1/4
+In the fifth step, we interchange the labels of the pivot row and column. Here we
+interchange x1 and y1. This has been done in the display.
+For Step 6, we check for negative entries in the lower edge. Since there is one, we
+return to Step 3.
+This time, we must pivot in column 2 since it has the unique negative number in the
+lower edge. All three numbers in this column are positive. We find the ratios of border
+numbers to pivot for rows 1, 2 and 3 to be 1, 1/5, and 1/4. The smallest occurs in the
+second row, so we pivot about the 5/2 in the second row, second column. Completing
+Steps 4 and 5, we obtain
+x1 y2 y3
+y1 1/4 1/4 2 1/4
+x2 −1/2 5/2 −3 1/2
+x3 043 1
+1/4 −3/4 1 1/4
+−→
+x1 x2 y3
+y1 .3 −.1 2.3 .2
+y2 −.2 .4 −1.2 .2
+x3 .8 −1.6 7.8 .2
+.1 .3 .1 .4
+At Step 6 this time, all values on the lower edge are non-negative so we pass to Step
+7. We may now read the solution to the game with matrix B
+.
+The value is the reciprocal of .4, namely 5/2.
+Since x3 is on the left in the final tableau, the optimal p3 is zero. The optimal p1
+and p2 are the ratios, .1/.4 and .3/.4, namely 1/4 and 3/4. Therefore, I’s optimal mixed
+strategy is (p1, p2, p3)=(.25, .75, 0).
+II – 43
+Since y3 is on the top in the final tableau, the optimal q3 is zero. The optimal q1
+and q2 are the ratios, .2/.4 and .2/.4, namely 1/2 and 1/2. Therefore, II’s optimal mixed
+strategy is (q1, q2, q3)=(.5, .5, 0).
+The game with matrix B has the same optimal mixed strategies but the value is
+5/2 − 2=1/2.
+Remarks. 1. The reason that the pivot row is chosen according to the rule in Step
+3(c) is so that the numbers in the resulting right edge of the tableau stay non-negative. If
+after pivoting you find a negative number in the last column, you have made a mistake,
+either in the choice of the pivot row, or in your numerical calculations for pivoting.
+2. There may be ties in comparing the ratios to choose the pivot row. The rule given
+allows you to choose among those rows with the smallest ratios. The smallest ratio may
+be zero.
+3. The value of the number in the lower right corner never decreases. (Can you see
+why this is?) In fact, the lower right corner is always equal to the sum of the values in the
+lower edge corresponding to Player I’s labels along the top. Similarly, it is also the sum
+of the values on the right edge corresponding to Player II’s labels on the left. This gives
+another small check on your arithmetic.
+4. One only pivots around numbers in the main body of the tableau, never in the
+lower or right edges.
+5. This method gives one optimal strategy for each player. If other optimal strategies
+exist, there will be one or more zeros in the bottom edge or right edge in the final tableau.
+Other optimal basic strategies can be found by pivoting further, in a column with a zero
+in the bottom edge or a row with a zero in the right edge, in such a way that the bottom
+row and right edge stay nonnegative.
+4.7 Approximating the Solution: Fictitious Play.
+As an alternative to the simplex method, the method of fictitious play may be used to
+approximate the value and optimal strategies of a finite game. It is a sequential procedure
+that approximates the value of a game as closely as desired, giving upper and lower bounds
+that converge to the value and strategies for the players that achieve these bounds.
+The advantage of the simplex method is that it gives answers that are accurate,
+generally to machine accuracy, and for small size problems is extremely fast. The advantage
+of the method of fictitious play is its simplicity, both to program and understand, and the
+fact that you can stop it at any time and obtain answers whose accuracy you know. The
+simplex method only gives answers when it is finished. For large size problems, say a
+matrix 50 by 50 or greater, the method of fictitious play will generally give a sufficiently
+accurate answer in a shorter time than the simplex method. For very large problems, it is
+the only way to proceed.
+Let A(i, j) be an m by n payoff matrix. The method starts with an arbitrary initial
+pure strategy 1 ≤ i1 ≤ m for Player I. Alternatively from then on, each player chooses his
+II – 44
+next pure strategy as a best reply assuming the other player chooses among his previous
+choices at random equally likely. For example, if i1,...,ik have already been chosen by
+Player I for some k ≥ 1, then jk is chosen as that j that minimizes the expectation
+(1/k)
+k
+=1 A(i, j). Similarly, if j1,...,jk have already been chosen, ik+1 is then chosen
+as that i that maximizes the expectation (1/k)
+k
+=1 A(i, j). To be specific, we define
+sk(j) = 
+
+k
+=1
+A(i, j) and tk(i) = 
+
+k
+=1
+A(i, j) (1)
+and then define
+jk = argmin sk(j) and ik+1 = argmax tk(i) (2)
+If the maximum of tk(i) is assumed at several different values of i, then it does not matter
+which of these is taken as ik+1. To be specific, we choose ik+1 as the smallest value of i
+that maximizes tk(i). Similarly jk is taken as the smallest j that minimizes sk(j). In this
+way, the sequences ik and jk are defined deterministically once i1 is given.
+Notice that Vk = (1/k)tk(ik+1) is an upper bound to the value of the game since
+Player II can use the strategy that chooses j randomly and equally likely from j1,...,jk
+and keep Player I’s expected return to be at most Vk. Similarly, Vk = (1/k)sk(jk) is a
+lower bound to the value of the game. It is rather surprising that these upper and lower
+bounds to the value converge to the value of the game as k tends to infinity.
+Theorem. If V denotes the value of the game, then Vk → V , Vk → V , and Vk ≤ V ≤ Vk,
+for all k.
+This approximation method was suggested by George Brown (1951), and the proof
+of convergence was provided by Julia Robinson (1951). The convergence of Vk and Vk to
+V is slow. It is thought to be of order at least 1/
+√
+k. In addition, the convergence is not
+monotone. See the example below.
+A modification of this method in which i1 and j1 are initially arbitrarily chosen, and
+then the selection of future ik and jk is made simultaneously by the players rather than
+sequentially, is often used, but it is not as fast.
+It should be mentioned that as a practical matter, choosing at each stage a best reply
+to an opponent’s imagined strategy of choosing among his previous choices at random is
+not a good idea. See Exercise 7. On the other hand, Alfredo Ba˜nos (1968) describes a
+sequential method for Player I, say, to choose mixed strategies such that liminf of the
+average payoff is at least the value of the game no matter what Player II does. This
+choice of mixed strategies is based only upon Player I’s past pure strategy choices and
+the past observed payoffs, but not otherwise on the payoff matrix or upon the opponent’s
+pure strategy choices. It would be nice to devise a practical method of choosing a mixed
+strategy depending on all the information contained in the previous plays of the game that
+performs well.
+II – 45
+EXAMPLE. Take as an example the game with matrix
+A =
+⎛
+⎝
+2 −1 6
+0 1 −1
+−22 1
+⎞
+⎠
+This is the game solved in Section 4.6. It has value .5, and optimal mixed strategies,
+(.25, .75, 0) and (.5, .5, 0) for Player I and Player II respectively. It is easy to set up a
+program to perform the calculations. In particular, the computations, (1), may be made
+recursively in the simpler form
+sk(j) = sk−1(j) + A(ik, j) and tk(i) = tk−1(i) + A(i, jk) (3)
+We take the initial i1 = 1, and find
+k ik sk(1) sk(2) sk(3) Vk jk tk(1) tk(2) tk(3) Vk
+1 1 2 −1 6 −1 2 −1 1 2 2
+2 3 0 1 70 1 1 1 00.5
+3 1 2 0 13 0 2 0 2 2 0.6667
+4 2 2 1 12 0.25 2 −1 3 4 1
+5 3 0 3 13 0 1 1 3 2 0.6
+6 2 0 4 12 0 1 3 3 00.5
+7 1 2 3 18 0.2857 1 5 3 −2 0.7143
+8 1 4 2 24 0.25 2 4 4 00.5
+9 1 6 1 30 0.1111 2 3 5 2 0.5556
+10 2 6 2 29 0.2 2 2 6 4 0.6
+11 2 6 3 28 0.2727 2 1 7 6 0.6364
+12 2 6 4 27 0.3333 2 0 8 8 0.6667
+13 2 6 5 26 0.3846 2 −1 9 10 0.7692
+14 3 4 7 27 0.2857 1 1 9 8 0.6429
+15 2 4 8 26 0.2667 1 3 9 6 0.6
+The initial choice of i1 = 1 gives (s1(1), s1(2), s1(3)) as the first row of A, which has a
+minimum at s1(2). Therefore, j1 = 2. The second column of A has t1(3) as the maximum,
+so i2 = 3. Then the third row of A is added to the s1 to produce the s2 and so on. The
+minimums of the sk and the maximums of the tk are indicated in boldface. The largest
+of the Vk found so far occurs at k = 13 and has value sk(jk)/k = 5/13 = 0.3846 .... This
+value can be guaranteed to Player I by using the mixed strategy (5/13,6/13,2/13), since in
+the first 13 of the ik there are 5 1’s, 6 2’s and 2 3’s. The smallest of the Vk occurs several
+times and has value .5. It can be achieved by Player II using the first and second columns
+equally likely. So far we know that .3846 ≤ V ≤ .5, although we know from Section 4.6
+that V = .5.
+Computing further, we can find that V91 = 44/91 = .4835 ... and is achieved by
+the mixed strategy (25/91, 63/91, 3/91). From row 9 on, the difference between the boldface
+numbers in each row seems to be bounded between 4 and 6. This implies that the
+convergence is of order 1/k.
+II – 46
+4.8 Exercises.
+1. Consider the game with matrix A. Past experience in playing the game with Player
+II enables Player I to arrive at a set of probabilities reflecting his belief of the column that II
+will choose. I thinks that with probabilities 1/5, 1/5, 1/5, and 2/5, II will choose columns
+1, 2, 3, and 4 respectively.
+A =
+⎛
+⎝
+0724
+1482
+9 3 −1 6
+⎞
+⎠ .
+(a) Find for I a Bayes strategy (best response) against (1/5, 1/5, 1/5, 2/5).
+(b) Suppose II guesses correctly that I is going to use a Bayes strategy against
+(1/5, 1/5, 1/5, 2/5). Instruct II on the strategy she should use - that is, find II’s Bayes
+strategy against I’s Bayes strategy against (1/5, 1/5, 1/5, 2/5).
+2. The game with matrix A has value zero, and (6/11, 3/11, 2/11) is optimal for I.
+A =
+⎛
+⎝
+0 −1 1
+2 0 −2
+−330
+⎞
+⎠ B =
+⎛
+⎝
+537
+951
+−1 11 5
+⎞
+⎠
+(a) Find the value of the game with matrix B and an optimal strategy for I.
+(b) Find an optimal strategy for II in both games.
+3. A game without a value. Let X = {1, 2, 3,...}, let Y = {1, 2, 3,...} and
+A(i, j) =  +1 if i>j
+0 if i = j
+−1 if i<j
+This is the game “The player that chooses the larger integer wins”. Here we may take for
+the space X∗ of mixed strategies of Player I
+X∗ = {(p1, p2,...) : pi ≥ 0 for all i, and 
+∞
+i=1
+pi = 1}.
+Similarly,
+Y ∗ = {(q1, q2,...) : qj ≥ 0 for all j, and 
+∞
+j=1
+qj = 1}.
+The payoff for given p ∈ X∗ and q ∈ Y ∗ is
+A(p, q) = 
+∞
+i=1
+
+∞
+j=1
+piA(i, j)qj .
+II – 47
+(a) Show that for all q ∈ Y ∗, sup1≤i<∞
+∞
+j=1 A(i, j)qj = +1.
+(b) Conclude that V = +1.
+(c) Using symmetry, argue that V = −1.
+(d) What are I’s minimax strategies in this game?
+4. Use the method presented in Section 4.5 to solve the game with matrix
+A =
+⎛
+⎝
+012
+2 −1 −2
+3 −3 0
+⎞
+⎠ .
+Either argue that the value is positive, or add +1 to the elements of the matrix. To go
+easy on the homework grader, make the first pivot in the second column.
+5. An Example In Which the Lower Value is Greater than the Upper
+Value? Consider the infinite game with strategy spaces X = Y = {0, 1, 2,...}, and payoff
+function,
+A(i, j) =  0 if i = j
+4j if i>j
+−4i if i<j.
+Note that the game is symmetric. Let p = (p0, p1, p2,...)
+T = (1/2, 1/4, 1/8,...)
+T be be a
+mixed strategy for Player I, pi = 2−(i+1).
+(a) Show that if Player I uses this strategy, his average return, ∞
+i=0 piA(i, j), is equal
+to 1/2 for all pure strategies j for Player II.
+(b) So p is an equalizer strategy that guarantees Player I at least 1/2. So the lower
+value is at least 1/2. Perhaps he can do better. In fact he can, but ...Wait a minute! The
+game is symmetric. Shouldn’t the value be zero? Worse, suppose Player II uses the same
+strategy. By symmetry, she can keep Player I’s winnings down to −1/2 no matter what
+pure strategy he chooses. So the upper value is at most −1/2. What is wrong? What
+if both players use the mixed strategy, p? We haven’t talked much about infinite games,
+but what restrictions would you place on infinite games to avoid such absurd examples?
+Should the restrictions be placed on the payoff function, A, or on the notion of a mixed
+strategy?
+6. Carry out the fictitious play algorithm on the matrix A =
+ 1 −1
+0 2
+through step
+k = 4. Find the upper and lower bounds on the value of the game that this gives.
+7. Suppose the game with matrix,  √
+2 0
+0 1
+is played repeatedly. On the first round
+the players make any choices.
+(a) Thereafter Player I makes a best response to his opponent’s imagined strategy of
+choosing among her previous choice at random. If Player II knows this, what should she
+do? What are the limiting average frequencies of the choices of the players?
+(b) Suppose Player II is required to play a best response to her opponent’s previous
+choices. What should Player I do, and what would his limiting average payoff be?
+II – 48
+

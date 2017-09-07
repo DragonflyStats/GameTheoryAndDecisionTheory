@@ -1,0 +1,838 @@
+6. Recursive and Stochastic Games
+6.1 Matrix Games with Games as Components. We consider now matrix games
+in which the outcome of a particular choice of pure strategies of the players may be that
+the players have to play another game. Let us take a simple example.
+Let G1 and G2 denote 2 × 2 games with matrices
+G1 =
+ 0 3
+2 –1
+and G2 =
+ 0 1
+4 3
+and let G denote the 2 × 2 game whose matrix is represented by
+G =
+ G1 4
+5 G2
+
+.
+The game G is played in the usual manner with Player I choosing a row and Player II
+choosing a column. If the entry in the chosen row and column is a number, II pays I that
+amount and the game is over. If I chooses row 1 and II chooses column 1, then the game
+G1 is played. If I chooses row 2 and II chooses column 2, then G2 is played.
+We may analyze the game G by first analyzing G1 and G2.
+G1 : Optimal for I is (1/2,1/2)
+Optimal for II is (2/3,1/3)
+Val(G1)=1.
+G2 : Optimal for I is (0,1)
+Optimal for II is (0,1)
+Val(G2)=3.
+If after playing the game G the players end up playing G1, then they can expect a payoff
+of the value of G1, namely 1, on the average. If the players end up playing G2, they can
+expect an average payoff of the value of G2, namely 3. Therefore, the game G can be
+considered equivalent to the game with matrix
+ 1 4
+5 3
+G :
+Optimal for I is (2/5,3/5)
+Optimal for II is (1/5,4/5)
+Val(G)=17/5.
+This method of solving the game G may be summarized as follows. If the matrix of
+a game G has other games as components, the solution of G is the solution of the game
+whose matrix is obtained by replacing each game in the matrix of G by its value.
+II – 61
+Decomposition. This example may be written as a 4×4 matrix game. The four pure
+strategies of Player I may be denoted {(1, 1),(1, 2),(2, 1),(1, 2)}, where (i, j) represents:
+use row i in G, and if this results in Gi being played use row j. A similar notation may
+be used for Player II. The 4 × 4 game matrix becomes
+G =
+⎛
+⎜⎝
+0 3
+2 –1
+4 4
+4 4
+5 5
+5 5
+0 1
+4 3
+⎞
+⎟⎠
+We can solve this game by the methods of Chapter 4.
+Conversely, suppose we are given a game G and suppose after some rearrangement of
+the rows and of the columns the matrix may be decomposed into the form
+G =
+ G11 G12
+G21 G22
+where G11 and G22 are arbitrary matrices and G12 and G21 are constant matrices. (A
+constant matrix has the same numerical value for all of its entries.) Then we can solve
+G by the above method, pretending that as the first move the players choose a row and
+column from the 2 × 2 decomposed matrix. See Exercise 1(b).
+6.2 Multistage Games. Of course, a game that is the component of some matrix
+game may itself have other games as components, in which case one has to iterate the
+above method to obtain the solution. This works if there are a finite number of stages.
+Example 1. The Inspection Game. (M. Dresher (1962)) Player II must try to perform
+some forbidden action in one of the next n time periods. Player I is allowed to inspect II
+secretly just once in the next n time periods. If II acts while I is inspecting, II loses 1 unit
+to I. If I is not inspecting when II acts, the payoff is zero.
+Let Gn denote this game. We obtain the iterative equations
+Gn =
+
+act wait
+inspect 1 0
+wait 0 Gn−1
+
+for n = 2, 3,...
+with boundary condition G1 = (1). We may solve iteratively.
+Val(G1)=1
+Val(G2) = Val  1 0
+0 1
+= 1/2
+Val(G3) = Val  1 0
+0 1/2
+
+= 1/3
+.
+.
+.
+Val(Gn) = Val  1 0
+0 1/(n − 1)
+= 1/n
+II – 62
+since inductively, Val(Gn) = 1
+n−1 /(1 + 1
+n−1 )=1/n. The optimal strategy in the game Gn
+for both players is (1/n,(n − 1)/n). For other games of this sort, see the book by Garnaev
+(2000).
+Example 2. Guess it! (Rufus Isaacs (1955); see also Martin Gardner (1978), p. 40.) As
+a more complex example of a multistage game, consider the following game loosely related
+to the game Cluedo. From a deck with m + n + 1 distinct cards, m cards are dealt to
+Player I, n cards are dealt to Player II, and the remaining card, called the “target card”,
+is placed face down on the table. Players knows their own cards but not those of their
+opponent. The objective is to guess correctly the target card. Players alternate moves,
+with Player I starting. At each move, a player may either
+(1) guess at the target card, in which case the game ends, with the winner being the player
+who guessed if the guess is correct, and his opponent if the guess is incorrect, or
+(2) ask if the other player holds a certain card. If the other player has the card, that card
+must be shown and is removed from play.
+With a deck of say 11 cards and each player receiving 5 cards, this is a nice playable
+game that illustrates need for bluffing in a clear way. If a player asks about a card that is
+in his own hand, he knows what the answer will be. We call such a play a bluff . If a player
+asks about a card not in his hand, we say he is honest. If a player is always honest and
+the card he asks about is the target card, the other player will know that the requested
+card is the target card and so will win. Thus a player must bluff occasionally. Bluffing
+may also lure the opponent into a wrong guess at the target card.
+Let us denote this game with Player I to move by Gm,n. The game Gm,0 is easy to
+play. Player I can win immediately. Since his opponent has no cards, he can tell what the
+target card is. Similarly, the game G0,n is easy to solve. If Player I does not make a guess
+immediately, his opponent will win on the next move. However, his probability of guessing
+correctly is only 1/(n + 1). Valuing 1 for a win and 0 for a loss from Player I’s viewpoint,
+the value of the game is just the probability I wins under optimal play. We have
+Val(Gm,0) = 1 for all m ≥ 0, and Val(G0,n) = 1
+n + 1
+for all n ≥ 0. (1)
+If Player I asks for a card that Player II has, that card is removed from play and it is
+Player II’s turn to move, holding n − 1 cards to her opponent’s m cards. This is exactly
+the game Gn−1,m but with Player II to move. We denote this game by Gn−1,m. Since the
+probability that Player I wins is one minus the probability that Player II wins, we have
+Val(Gn,m)=1 − Val(Gn,m) for all m and n. (2)
+Suppose Player I asks for a card that Player II does not have. Player II must immediately
+decide whether or not Player I was bluffing. If she decides Player I was honest, she
+will announce the card Player I asked for as her guess at the target card, and win if she
+was right and lose if she was wrong. If she decides Player I was bluffing and she is wrong,
+Player I will win on his turn. If she is correct, the card Player I asked for is removed from
+his hand, and the game played next is Gn,m−1.
+II – 63
+Using such considerations, we may write the game as a multistage game in which
+a stage consists of three pure strategies for Player I (honest, bluff, guess) and two pure
+strategies for Player II (ignore the asked card, call the bluff by guessing the asked card).
+The game matrix becomes, for m ≥ 1 and n ≥ 1,
+Gm,n =
+⎛
+⎝
+ignore call
+honest n
+n+1Gn−1,m + 1
+n+1
+n
+n+1Gn−1,m
+bluff Gn,m−1 1
+guess 1
+n+1
+1
+n+1
+⎞
+⎠ (3)
+This assumes that if Player I asks honestly, he chooses among the n + 1 unknown
+cards with probability 1/(n +1) each; also if he bluffs, he chooses among his m cards with
+probability 1/m each. That this may be done follows from the invariance considerations
+of Section 3.6.
+As an example, the upper left entry of the matrix is found as follows. With probability
+n/(n + 1), Player I asks a card that is in Player II’s hand and the game becomes Gn−1,m;
+with probability 1/(n + 1), Player I asks the target card, Player II ignors it and Player I
+wins on his next turn, i.e. gets 1. The upper right entry is similar, except this time if the
+asked card is the target card, Player II guesses it and Player I gets 0.
+It is reasonable to assume that if m ≥ 1 and n ≥ 1, Player I should not guess,
+because the probability of winning is too small. In fact if m ≥ 1 and n ≥ 1, there is a
+strategy for Player I that dominates guessing, so that the last row of the matrix may be
+deleted. This strategy is: On the first move, ask any of the m + n + 1 cards with equal
+probability 1/(m + n + 1) (i.e. use row 1 with probability (n + 1)/(m + n + 1) and row
+2 with probability m/(m + n + 1)), and if Player II doesn’t guess at her turn, then guess
+at the next turn. We must show that Player I wins with probability at least 1/(n + 1)
+whether or not Player II guesses at her next turn. If Player II guesses, her probability of
+win is exactly 1/(m + 1) whether or not the asked card is one of hers. So Player I’s win
+probability is m/(m + 1) ≥ 1/2 ≥ 1/(n + 1). If Player II does not guess, then at Player
+I’s next turn, Player II has at most n cards (she may have n − 1) so again Player I’s win
+probability is at least 1/(n + 1).
+So the third row may be removed in (3) and the games reduce to
+Gm,n =
+
+ignore call
+honest n
+n+1Gn−1,m + 1
+n+1
+n
+n+1Gn−1,m
+bluff Gn,m−1 1
+
+(4)
+for m ≥ 1 and n ≥ 1. These 2 by 2 games are easily solved recursively, using the boundary
+conditions (1). One can find the value and optimal strategies of Gm,n after one finds the
+values of Gn,m−1 and Gn−1,m and uses (2). For example, the game G1,1 reduces to the
+game with matrix  3/4 1/4
+0 1
+. The value of this game is 1/2, an optimal strategy for
+II – 64
+Player I is (2/3,1/3) (i.e. bluff with probability 1/3), and the optimal strategy of player
+II is (1/2,1/2).
+One can also show that for all m ≥ 1 and n ≥ 1 these games do not have saddle points.
+In fact, one can show more: that Val(Gm,n) is nondecreasing in m and nonincreasing in n.
+(The more cards you have in your hand, the better.) Let Vm,n = Val(Gm,n). Then using
+Val  a b
+c d
+= (ad − bc)/(a + d − b − c), we have after some algebra
+Vm,n = Val  n
+n+1 (1 − Vn−1,m) + 1
+n+1
+n
+n+1 (1 − Vn−1,m)
+(1 − Vn,m−1) 1
+= 1 + n(1 − Vn−1,m)Vn,m−1
+1+(n + 1)Vn,m−1
+.
+for m ≥ 1 and n ≥ 1. This provides a simple direct way to compute the values recursively.
+The following table gives the computed values as well as the optimal strategies for the
+players for small values of m and n.
+m\n 123456
+0.5000 0.5000 0.4000 0.3750 0.3333 0.3125
+1 0.3333 0.2500 0.2000 0.1667 0.1429 0.1250
+0.5000 0.5000 0.4000 0.3750 0.3333 0.3125
+0.6667 0.5556 0.5111 0.4500 0.4225 0.3871
+2 0.5000 0.3333 0.2667 0.2143 0.1818 0.1563
+0.3333 0.3333 0.2889 0.2500 0.2301 0.2055
+0.6875 0.6250 0.5476 0.5126 0.4667 0.4411
+3 0.5000 0.3750 0.2857 0.2361 0.1967 0.1701
+0.3750 0.3250 0.2762 0.2466 0.2167 0.1984
+0.7333 0.6469 0.5966 0.5431 0.5121 0.4749
+4 0.5556 0.3947 0.3134 0.2511 0.2122 0.1806
+0.3333 0.3092 0.2634 0.2342 0.2118 0.1899
+0.7500 0.6809 0.6189 0.5810 0.5389 0.5112
+5 0.5714 0.4255 0.3278 0.2691 0.2229 0.1917
+0.3333 0.2908 0.2566 0.2284 0.2062 0.1885
+0.7714 0.6972 0.6482 0.6024 0.5704 0.5353
+6 0.6000 0.4410 0.3488 0.2808 0.2362 0.2003
+0.3143 0.2834 0.2461 0.2236 0.2028 0.1854
+Table of values and optimal strategies of Gm,n for 1 ≤ m, n ≤ 6. The top number in each
+box is the value, the middle number is the probability with which Player I should bluff,
+and the bottom number is the probability with which Player II should call the asked card.
+II – 65
+6.3 Recursive Games. -Optimal Strategies. In some games with games as
+components, it may happen that the original game comes up again. Such games are called
+recursive. A simple example is
+G =
+ G 1
+1 0
+This is an infinite game. If the players always play the first row and first column, the game
+will be played forever. No matter how unlikely such a possibility is, the mathematical
+definition is not complete until we say what the payoff is if G is played forever. Let us say
+that II pays I Q units if they both choose their first pure strategy forever, and write
+G =
+ G 1
+1 0
+, Q.
+We are not automatically assured the existence of a value or the existence of optimal
+strategies in infinite games. However, it is easy to see that the value of G exists and is
+equal to 1 no matter what the value of the number Q is. The analysis can be made as
+follows.
+II can restrict her losses to at most 1 by choosing the second column. If Q ≥ 1, I can
+guarantee winning at least 1 by playing his first row forever. But if Q < 1, this won’t work.
+It turns out that an optimal strategy for I, guaranteeing him at least 1, does not exist in
+this case. However, for any  > 0 there is a strategy for I that guarantees him an average
+gain of at least 1 − . Such a strategy, that guarantees a player an average payoff within
+ of the value, is called -optimal. In this case, the strategy that continually uses the
+mixed strategy (1 − , ) (top row with probability 1 −  and bottom row with probability
+) is -optimal for I. The use of such a strategy by I insures that he will eventually choose
+row 2, so that the payoff is bound to be 0 or 1 and never Q. The best that Player II can
+do against this strategy is to choose column 2 immediately, hoping that I chooses row 2.
+The expected payoff would then be 1 · (1 − )+0 ·  = 1 − .
+In summary, for the game G above, the value is 1; Player II has an optimal strategy,
+namely column 2; If Q ≥ 1, the first row forever is optimal for I; if Q < 1, there is no
+optimal strategy for I, but the strategy (1 − , ) forever is -optimal for I.
+Consider now the game
+G0 =
+ G0 5
+1 0
+, Q.
+For this game, the value depends on Q. If Q ≥ 1, the first row forever is optimal for I,
+and the value is Q if 1 ≤ Q ≤ 5, and the value is 5 if Q ≥ 5. For Q < 1, the value is 1;
+however, in contrast to the game G above, I has an optimal strategy for the game G0, for
+example (1/2, 1/2) forever. II’s optimal strategy is the first column forever if Q < 5, the
+second column if Q > 5 and anything if Q = 5.
+In analogy to what we did for games with games as components, we might attempt
+to find the value v of such a game by replacing G0 by v in the matrix and solving the
+II – 66
+equation
+v = Val  v 5
+1 0
+for v. Here there are many solutions to this equation. The set of all solutions to this
+equation is the set of numbers v in the interval 1 ≤ v ≤ 5. (Check this!)
+This illustrates a general result that the equation, given by equating v to the value of
+the game obtained by replacing the game in the matrix by v, always has a solution equal
+to the value of the game. It may have more solutions but the value of the game is that
+solution that is closest to Q. For more information on these points, consult the papers of
+Everett (1957) and of Milnor and Shapley (1957).
+Example 3. Let
+G =
+⎛
+⎝
+G 1 0
+1 0 G
+0 G 1
+⎞
+⎠ , Q.
+Then, if the value of G is v,
+v = Val
+⎛
+⎝
+v 1 0
+1 0 v
+0 v 1
+⎞
+⎠ = 1 + v
+3 .
+This equation has a unique solution, v = 1/2. This must be the value for all Q. The
+strategy (1/3,1/3,1/3) forever is optimal for both players.
+Example 4. The basic game of Dare is played as follows. Player I, the leader, and Player
+II, the challenger, simultaneously “pass” or “dare”. If both pass, the payoff is zero (and
+the game is over). If I passes and II dares, I wins 1. If I dares and II passes, I wins 3. If
+both dare, the basic game is played over with the roles of the players reversed (the leader
+becomes the challenger and vice versa). If the players keep daring forever, let the payoff
+be zero. We might write
+G =
+
+pass dare
+pass 0 1
+dare 3 −GT
+
+where −GT represents the game with the roles of the players reversed. (Its matrix is the
+negative of the transpose of the matrix G.) The value of −GT is the negative of the value
+of G.
+If v represents the value of G, then v ≥ 0 because of the top row. Therefore the matrix
+for G with −GT replaced by −v does not have a saddle point, and we have
+v = Val  0 1
+3 −v
+
+= 3
+4 + v
+.
+This gives the quadratic equation, v2 + 4v − 3 = 0. The only nonnegative solution is
+v = √7 − 2 = .64575 ···. The optimal strategy for I is ((5 − √7)/3, (
+√7 − 2)/3) and the
+optimal strategy for II is (3 − √7,
+√
+7 − 2).
+II – 67
+Example 5. Consider the following three related games.
+G1 =
+ G2 0
+0 G3
+
+G2 =
+ G1 1
+1 0
+G3 =
+ G1 2
+2 0
+and suppose the payoff if the games are played forever is Q. Let us attempt to solve these
+games. Let v1 = Val(G1), v2 = Val(G2), and v3 = Val(G3). Player I can guarantee that
+v1 > 0, v2 > 0 and v3 > 0 by playing (1/2, 1/2) forever. In addition, v2 ≤ 1 and v3 ≤ 2,
+which implies v1 < 1. Therefore none of the games has a saddle point and we may write
+v1 = v2v3
+v2 + v3
+, v2 = 1
+2 − v1
+, v3 = 4
+4 − v1
+.
+Substituting the latter two equations into the former, we obtain
+v1
+2 − v1
++
+4v1
+4 − v1
+= 4
+(2 − v1)(4 − v1)
+5v2
+1 − 12v1 +4=0
+(5v1 − 2)(v1 − 2) = 0
+Since 0 < v1 < 1, this implies that v1 = 2/5. Hence
+Game value opt. for I= opt. for II
+G1 2/5 (16/25, 9/25)
+G2 5/8 (5/8, 3/8)
+G3 10/9 (5/9, 4/9)
+independent of the value of Q.
+6.4 Stochastic Movement Among Games. We may generalize the notion of a
+recursive game by allowing the choice of the next game played to depend not only upon the
+pure strategy choices of the players, but also upon chance. Let G1,...,Gn be games and
+let p1,...,pn be probabilities that sum to one. We use the notation, p1G1 +···+pnGn, to
+denote the situation where the game to be played next is chosen at random, with game Gi
+being chosen with probability pi, i = 1,...,n. Since, for a given number z, the 1×1 matrix
+(z) denotes the trivial game in which II pays I z, we may, for example, use 1
+2G1 + 1
+2 (3) to
+represent the situation where G1 is played if a fair coin comes up heads, and II pays I 3
+otherwise.
+Example 6. Let G1 and G2 be related as follows.
+G1 =
+ 1
+2G2 + 1
+2 (0) 1
+2 0
+G2 =
+ 2
+3G1 + 1
+3 (−2) 0
+0 −1
+
+The game must eventually end (with probability 1). In fact, the players could not play
+forever even if they wanted to. Even if they choose the first row and first column forever,
+II – 68
+eventually the game would end with a payoff of 0 or −2. Thus we do not need to specify
+any payoff if play continues forever. To solve, let vi = Val(Gi) for i = 1, 2. Then 0 ≤ v1 ≤ 1
+and −1 ≤ v2 ≤ 0, so neither game has a saddle point. Hence,
+v1 = Val  1
+2 v2 1
+2 0
+= 4
+6 − v2
+and
+v2 = Val  2
+3 v1 − 2
+3 0
+0 −1
+
+= −2(1 − v1)
+5 − 2v1
+Thus
+v1 = 4
+6 + 2(1−v1)
+5−2v1
+= 2(5 − 2v1)
+16 − 7v1
+.
+This leads to the quadratic equation, 7v2
+1−20v1+10 = 0, with solution, v1 = (10−
+√30)/7 =
+.646 ···. We may substitute back into the equation for v2 to find v2 = −(2√30 − 10)/5 =
+−.191 ···. From these values one can easily find the optimal strategies for the two games.
+Example 7. A coin with probability 2/3 of heads is tossed. Both players must guess
+whether the coin will land heads or tails. If I is right and II is wrong, I wins 1 if the coin
+is heads and 4 if the coin is tails and the game is over. If I is wrong and II is right, there
+is no payoff and the game is over. If both players are right, the game is played over. But
+if both players are wrong, the game is played over with the roles of the players reversed.
+If the game never ends, the payoff is Q.
+If we denote this game by G, then
+G =
+ 2
+3G + 1
+3 (−GT ) 2
+3 (1) + 1
+3 (0)
+2
+3 (0) + 1
+3 (4) 2
+3 (−GT ) + 1
+3G
+
+If we let its value be denoted by v, then
+v = Val  1
+3 v 2
+3 4
+3 −1
+3 v
+
+If v ≥ 2, then there is a saddle at the upper right corner with v = 2/3. This contradiction
+shows that v < 2 and there is no saddle. Therefore,
+v = 8 + v2
+18
+or v2 − 18v +8=0.
+This has a unique solution less than two,
+v = 9 − √
+73 = .456 ···
+from which we may calculate the optimal strategy for I:
+(
+13 − √73
+6 ,
+√
+73 − 7
+6 )=(.743 ··· , .256 ···)
+II – 69
+and the optimal strategy for II:
+(
+11 − √
+73
+6 ,
+√
+73 − 5
+6 )=(.409 ··· , .591 ···).
+The value and optimal strategies are independent of Q.
+6.5 Stochastic Games. If to the features of the games of the previous section is
+added the possibility of a payoff at each stage until the game ends, the game is called
+a Stochastic Game. This seems to be the proper level of generality for theoretical
+treatment of multistage games. It is an area of intense contemporary research. See for
+example the books of Filar and Vrieze (1997) and Maitra and Sudderth (1996). Stochastic
+games were introduced by Shapley in (1953) in a beautiful paper that has been reprinted
+in Raghavan et al. (1991), and more recently in Kuhn (1997). In this section, we present
+Shapley’s main result.
+A Stochastic Game, G, consists of a finite set of positions or states, {1, 2,...,N}, one
+of which is specified as the starting position. We denote by G(k) the game in which k is the
+starting position. Associated with each state, k, is a matrix game, A(k) = 
+a(k)
+ij 
+
+. If the
+stochastic game is in state k, the players simultaneously choose a row and column of A(k),
+say i and j. As a result, two things happen. First, Player I wins the amount a(k)
+ij from
+Player II. Second, with probabilities that depend on i, j and k, the game either stops, or
+it moves to another state (possibly the same one). The probability that the game stops is
+denoted by s
+(k)
+ij , and the probability that the next state is  is denoted by P(k)
+ij (), where
+s
+(k)
+ij +
+
+N
+=1
+P(k)
+ij () = 1 (5)
+for all i, j and k.
+The payoffs accumulate throughout the game until it stops. To make sure the game
+eventually stops, we make the assumption that all the stopping probabilities are positive.
+Let s denote the smallest of these probabilities.
+s = min
+i,j,k
+s
+(k)
+ij > 0 (6)
+Under this assumption, the probability is one that the game ends in a finite number of
+moves. This assumption also makes the expected accumulated payoff finite no matter how
+the game is played, since if M denotes the largest of the absolute values of the payoffs,
+M = maxi,j,k |a(k)
+ij |, then the total expected payoff to either player is bounded by
+M + (1 − s)M + (1 − s)
+2M + ··· = M/s. (7)
+Player I wishes to maximize the total accumulated payoff and Player II to minimize
+it. We use a modification of the notation of the previous section to describe this game.
+II – 70
+G(k) =
+
+a
+(k)
+ij +
+
+N
+=1
+P(k)
+ij ()G()
+
+. (8)
+Note that the probabilities in each component of this matrix sum to less than one. It is
+understood that with the remaining probability, s
+(k)
+ij , the game ends. It should be noted
+that in contrast to the previous section, a payoff does not end the game. After a payoff is
+made, it is then decided at random whether the game ends and, if not, which state should
+be played next.
+Since no upper bound can be placed on the length of the game, this is an infinite
+game. A strategy for a player must specify for every n how to choose an action if the game
+reaches stage n. In general, theory does not guarantee a value. Moreover, the choice of
+what to do at stage n may depend on what happened at all previous stages, so the space
+of possible strategies is extremely complex.
+Nevertheless, in stochastic games, the value and optimal strategies for the players
+exist for every starting position. Moreover, optimal strategies exist that have a very simple
+form. Strategies that prescribe for a player a probability distribution over his choices that
+depends only on the game, Gk, being played and not on the stage n or past history are
+called stationary strategies. The following theorem states that there exist stationary
+optimal strategies.
+Theorem 1. (Shapley (1952)) Each game G(k) has a value, v(k). These values are the
+unique solution of the set of equations,
+v(k) = Val 
+a(k)
+ij +
+
+N
+=1
+P(k)
+ij () v()
+
+for k = 1,...,N. (9)
+Each player has a stationary optimal strategy that in state k uses the optimal mixed
+strategy for the game with matrix
+A(k)
+(v) = 
+a(k)
+ij +
+
+N
+=1
+P(k)
+ij () v()
+
+(10)
+where v represents the vector of values, v = (v(1),...,v(N)).
+In equations (9), we see the same principle as in the earlier sections: the value of a
+game is the value of the matrix game (8) with the games replaced by their values. A proof
+of this theorem may be found in Appendix 2.
+Example 8. As a very simple example, consider the following stochastic game with
+one state, call it G.
+G =
+ 1 + (3/5)G 3 + (1/5)G
+1 + (4/5)G 2 + (2/5)G
+
+II – 71
+From Player II’s viewpoint, column 1 is better than column 2 in terms of immediate payoff,
+but column 2 is more likely to end the game sooner than column 1, so that it should entail
+smaller future payoffs. Which column should she choose?
+Assume that all strategies are active, i.e. that the game does not have a saddle point.
+We must check when we are finished to see if the assumption was correct. Then
+v = Val  1 + (3/5)v 3 + (1/5)v
+1 + (4/5)v 2 + (2/5)v
+
+= (1 + (4/5)v)(3 + (1/5)v) − (1 + (3/5)v)(2 + (2/5)v)
+1 + (4/5)v + 3 + (1/5)v − 1 − (3/5)v − 2 − (2/5)v
+=1+ v − (2/25)v2
+This leads to
+(2/25)v2 = 1.
+Solving this quadratic equation gives two possible solutions v = ±
+25/2 = ±(5/2)√
+2.
+Since the value is obviously positive, we must use the plus sign. This is v = (5/2)√
+2 =
+3.535. If we put this value into the matrix above, it becomes
+ 1 + (3/2)√2 3 + (1/2)√2
+1+2√2 2+ √2
+
+The optimal strategy for Player I in this matrix is p = (√
+2 − 1, 2 − √
+2) = (.414, .586),
+and the optimal strategy for Player II is q = (1 − √2/2,
+√2/2) = (.293, .707). Since these
+are probability vectors, our assumption is correct and these are the optimal strategies, and
+v = (5/2)√2 is the value of the stochastic game.
+6.6 Approximating the solution. For a general stochastic game with many states,
+equations (9) become a rather complex system of simultaneous nonlinear equations. We
+cannot hope to solve such systems in general. However, there is a simple iterative method
+of approximating the solution. This is based on Shapley’s proof of Theorem 1, and is called
+Shapley iteration.
+First we make a guess at the solution, call it v0 = (v0(1),...,v0(N)). Any guess will
+do. We may use all zero’s as the initial guess, v0 = 0 = (0,..., 0). Then given vn, we
+define inductively, vn+1, by the equations,
+vn+1(k) = Val 
+a
+(k)
+ij +
+
+N
+=1
+P(k)
+ij () vn()
+
+for k = 1,...,N. (11)
+With v0 = 0, the vn(k) have an easily understood interpretation. vn(k) is the value of the
+stochastic game starting in state k if there is forced stopping if the game reaches stage n.
+In particular, v1(k) = Val(Ak) for all k.
+The proof of Theorem 1 shows that vn(k) converges to the true value, v(k), of the
+stochastic game starting at k. Two useful facts should be noted. First, the convergence
+II – 72
+is at an exponential rate: the maximum error goes down at least as fast as (1 − s)n.
+(See Corollary 1 of Appendix 2.) Second, the maximum error at stage n + 1 is at most
+the maximum change from stage n to n + 1 multiplied by (1 − s)/s. (See Corollary 2 of
+Appendix 2.)
+Let us take an example of a stochastic game with two positions. The corresponding
+games G(1) and G(2), are related as follows.
+G(1) =
+ 4 + .3G(1) 0 + .4G(2)
+1 + .4G(2) 3 + .5G(1)
+G(2) =
+ 0 + .5G(1) −5
+−4 1+ .5G(2)
+Using v0 = (0, 0) as the initial guess, we find v1 = (2, −2), since
+v1(1) = Val  4 0
+1 3
+= 2 v1(2) = Val  0 −5
+−4 1
+= −2.
+The next iteration gives
+v2(1) = Val  4.6 −.8
+.2 4
+= 2.0174 v2(2) = Val  1 −5
+−4 0
+= −2.
+Continuing, we find
+v3(1) = 2.0210 v3(2) = −1.9983
+v4(1) = 2.0220 v4(2) = −1.9977
+v5(1) = 2.0224 v5(2) = −1.9974
+v6(1) = 2.0225 v6(2) = −1.9974
+The smallest stopping probability is .5, so the rate of convergence is at least (.5)n and the
+maximum error of v6 is at most .0002.
+The optimal strategies using v6 are easily found. For game G(1), the optimal strategies
+are p(1) = (.4134, .5866) for Player I and q(1) = (.5219, .4718) for Player II. For game G(2),
+the optimal strategies are p(2) = (.3996, .6004) for Player I and q(2) = (.4995, .5005) for
+Player II.
+6.7 Exercises
+1.(a) Solve the system of games
+G =
+ 0 G1
+G2 G3
+
+G1 =
+ 4 3
+1 2
+G2 =
+ 0 6
+5 1
+G3 =
+ 0 −2
+−2 0
+.
+(b). Solve the games with matrices
+(b1) (b2)
+⎛
+⎜⎝
+0602
+0305
+5020
+1040
+⎞
+⎟⎠
+⎛
+⎜⎜⎜⎝
+31522
+13522
+44122
+11163
+11147
+⎞
+⎟⎟⎟⎠
+II – 73
+2. The Inspection Game. Let Gm,n denote the inspection game in which I is
+allowed m inspections in the n time periods. (Thus, for 1 ≤ n ≤ m, Val(Gm,n) = 1, while
+for n ≥ 1, Val(G0,n) = 0.) Find the iterative structure of the games and solve.
+3. A Game of Endurance. II must count from n down to zero by subtracting
+either one or two at each stage. I must guess at each stage whether II is going to subtract
+one or two. If I ever guesses incorrectly at any stage, the game is over and there is no
+payoff. Otherwise, if I guesses correctly at each stage, he wins 1 from II. Let Gn denote
+this game, and use the initial conditions G0 = (1) and G1 = (1). Find the recursive
+structure of the games and solve. (In the solution, you may use the notation Fn to denote
+the Fibonacci sequence, 1, 1, 2, 3, 5, 8, 13,... , with definition F0 = 1, F1 = 1, and for
+n ≥ 2, Fn = Fn−1 + Fn−2.)
+4. Solve the sequence of games, G0, G1,..., where
+G0 =
+ 3 2
+1 G1
+
+,...,Gn =
+ n + 3 n + 2
+n + 1 Gn+1
+,...
+Assume that if play continues forever, the payoff is zero.
+5. (a) In the game “Guess it!”, G1,n, with m = 1 and arbitrary n, show that Player
+I’s optimal strategy if to bluff with probability 1/(n + 2).
+(b) Show that Player II’s optimal strategy in G1,n is to call the asked card with
+probability V1,n, the value of G1,n.
+6. Recursive Games. (a) Solve the game G =
+ G 2
+0 1
+, Q.
+(b) Solve the game G =
+⎛
+⎝
+G 1 1
+1 0 G
+1 G 0
+⎞
+⎠ , Q.
+7. Consider the following three related games.
+G1 =
+ G2 1
+1 0
+G2 =
+ G3 0
+0 2
+G3 =
+ G1 1
+1 0
+and suppose the payoff is Q if the games are played forever. Solve.
+8. Consider the following three related games.
+G1 =
+⎛
+⎝
+G1 G2 G3
+G2 G3 G1
+G3 G1 G2
+⎞
+⎠ G2 =
+ G1 0
+0 2
+G3 =
+ G2 1
+1 0
+and suppose the payoff is Q if the games are played forever. Solve.
+II – 74
+9. There is one point to go in the match. The player that wins the last point while
+serving wins the match. The server has two strategies, high and low. The receiver has
+two strategies, near and far. The probability the server wins the point is given in the
+accompanying table.
+near far
+high .8 .5
+low .6 .7
+If the server misses the point, the roles of the players are interchanged and the win probabilities
+for given pure strategies are the same for the new server. Find optimal strategies
+for server and receiver, and find the probability the server wins the match.
+10. Player I tosses a coin with probability p of heads. For each k = 1, 2,..., if I tosses
+k heads in a row he may stop and challenge II to toss the same number of heads; then II
+tosses the coin and wins if and only if he tosses k heads in a row. If I tosses tails before
+challenging II, then the game is repeated with the roles of the players reversed. If neither
+player ever challenges, the game is a draw.
+(a) Solve when p = 1/2.
+(b) For arbitrary p, what are the optimal strategies of the players? Find the limit as p → 1
+of the probability that I wins.
+11. Solve the following stochastic game.
+G =
+ 4 1 + (1/3)G
+0 1 + (2/3)G
+
+.
+12. Consider the following stochastic game with two positions.
+G(1) =
+ 2 2 + (1/2)G(2)
+0 4 + (1/2)G(2)
+G(2) =
+ −4 0
+−2 + (1/2)G(1) −4 + (1/2)G(1)
+(a) Solve the equations (9) exactly for the values v(1) and v(2).
+(b) Carry out Shapley iteration to find v2 starting with the initial guess v0 = (0, 0),
+and compare with the exact values found in (a).
+
