@@ -1,66 +1,40 @@
+
+\documentclass[]{report}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
+
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- A17 Page 312
+
 GAME THEORY
-Thomas S. Ferguson
-Part Player 2. Two-Person Zero-Sum Games
-1. The Strategic Form of a Game.
-1.1 Strategic Form.
-1.2 Example: Odd or Even.
-1.3 Pure Strategies and Mixed Strategies.
-1.4 The Minimax Theorem.
-1.5 Exercises.
-2. Matrix Games. Domination.
-2.1 Saddle Points.
-2.2 Solution of All 2 by 2 Matrix Games.
-2.3 Removing Dominated Strategies.
-2.4 Solving 2 × n and m × 2 Games.
-2.5 Latin Square Games.
-2.6 Exercises.
-3. The Principle of Indifference.
-3.1 The Equilibrium Theorem.
-3.2 Nonsingular Game Matrices.
-3.3 Diagonal Games.
-3.4 Triangular Games.
-3.5 Symmetric Games.
-3.6 Invariance.
-3.7 Exercises.
-Player 2 – 1
-4. Solving Finite Games.
-4.1 Best Responses.
-4.2 Upper and Lower Values of a Game.
-4.3 Invariance Under Change of Location and Scale.
-4.4 Reduction to a Linear Programming Problem.
-4.5 Description of the Pivot Method for Solving Games.
-4.6 A Numerical Example.
-4.7 Approximating the Solution: Fictitious Play.
-4.8 Exercises.
-5. The Extensive Form of a Game.
-5.1 The Game Tree.
-5.2 Basic Endgame in Poker.
-5.3 The Kuhn Tree.
-5.4 The Representation of a Strategic Form Game in Extensive Form.
-5.5 Reduction of a Game in Extensive Form to Strategic Form.
-5.6 Example.
-5.7 Games of Perfect Information.
-5.8 Behavioral Strategies.
-5.9 Exercises.
-6. Recursive and Stochastic Games.
-6.1 Matrix Games with Games as Components.
-6.2 Multistage Games.
-6.3 Recursive Games. -Optimal Strategies.
-6.4 Stochastic Movement Among Games.
-6.5 Stochastic Games.
-6.6 Approximating the Solution.
-6.7 Exercises.
-7. Infinite Games.
-7.1 The Minimax Theorem for Semi-Finite Games.
-Player 2 – 2
-7.2 Continuous Games.
-7.3 Concave and Convex Games.
-7.4 Solving Games.
-7.5 Uniform[0,1] Poker Models.
-7.6 Exercises.
-References.
-Player 2 – 3
-Part Player 2. Two-Person Zero-Sum Games
 %=========================================================================================%
 1. The Strategic Form of a Game.
 The individual most closely associated with the creation of the theory of games is
@@ -78,7 +52,7 @@ called two-person zero-sum games, i.e. games with only two players in which one 
 wins what the other player loses. In Part Player 2, we restrict attention to such games. We will
 refer to the players as Player 1 and Player Player 2.
 %=================================================================%
-1.1 Strategic Form. The simplest mathematical description of a game is the strategic
+\subsection{1.1 Strategic Form.} The simplest mathematical description of a game is the strategic
 form, mentioned in the introduction. For a two-person zero-sum game, the payoff
 function of Player Player 2 is the negative of the payoff of Player 1, so we may restrict attention
 to the single payoff function of Player 1, which we call here A.
@@ -90,6 +64,7 @@ by a triplet $(X, Y, A)$, where
 \item Y is a nonempty set, the set of strategies of Player Player 2
 \item A is a real-valued function defined on $X \times Y$ . (Thus, $A(x, y)$ is a real number for
 every $x \in X$ and every $y \in Y$ .)
+\end{enumerate}
 \end{framed}
 %-------------------------------%
 The interpretation is as follows. Simultaneously, Player 1 chooses $x \in X$ and Player
@@ -122,14 +97,15 @@ Odd-or-Even.
 numbers one or two. Player 1’s name is Odd; they wins if the sum of the numbers is odd.
 Player Player 2’s name is Even; she wins if the sum of the numbers is even. The amount paid to
 the winner by the loser is always the sum of the numbers in dollars. To put this game in
-strategic form we must specify X, Y and A. Here we may choose X = {1, 2}, Y = {1, 2},
+strategic form we must specify X, Y and A. Here we may choose X = {1, 2}, $Y = \{1, 2\}$,
 and A as given in the following table.
 Player 2 (even) y
-I (odd) x
-
-1 2
-1 −2 +3
-2 +3 −4
+
+%I (odd) x
+% 
+% 1 2
+% 1 −2 +3
+% 2 +3 −4
 
 $A(x, y)$ = I’s winnings = Player 2’s losses.
 It turns out that one of the players has a distinct advantage in this game. Can you
@@ -263,11 +239,11 @@ Holmes may detrain to avoid such a disaster. But of course, Moriarty is aware of
 and may himself stop instead at Canterbury. Von Neumann and Morgenstern (loc. cit.)
 estimate the value to Moriarty of these four possibilities to be given in the following matrix
 (in some unspecified units).
-Holmes
-Moriarty 
-Canterbury Dover
-Canterbury 100 −50
-Dover 0 100
+% Holmes
+% Moriarty 
+% Canterbury Dover
+% Canterbury 100 −50
+% Dover 0 100
 What are the optimal strategies for Holmes and Moriarty, and what is the value? (Historically,
 as related by Dr. Watson in “The Final Problem” in Arthur Conan Doyle’s The
 Memoires of Sherlock Holmes, Holmes detrained at Canterbury and Moriarty went on to

@@ -1,66 +1,41 @@
+
+\documentclass[]{report}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
+
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- A17 Page 312
+
 GAME THEORY
-Thomas S. Ferguson
-Part II. Two-Person Zero-Sum Games
-1. The Strategic Form of a Game.
-1.1 Strategic Form.
-1.2 Example: Odd or Even.
-1.3 Pure Strategies and Mixed Strategies.
-1.4 The Minimax Theorem.
-1.5 Exercises.
-2. Matrix Games. Domination.
-2.1 Saddle Points.
-2.2 Solution of All 2 by 2 Matrix Games.
-2.3 Removing Dominated Strategies.
-2.4 Solving 2 × n and m × 2 Games.
-2.5 Latin Square Games.
-2.6 Exercises.
-3. The Principle of Indifference.
-3.1 The Equilibrium Theorem.
-3.2 Nonsingular Game Matrices.
-3.3 Diagonal Games.
-3.4 Triangular Games.
-3.5 Symmetric Games.
-3.6 Invariance.
-3.7 Exercises.
-II – 1
-4. Solving Finite Games.
-4.1 Best Responses.
-4.2 Upper and Lower Values of a Game.
-4.3 Invariance Under Change of Location and Scale.
-4.4 Reduction to a Linear Programming Problem.
-4.5 Description of the Pivot Method for Solving Games.
-4.6 A Numerical Example.
-4.7 Approximating the Solution: Fictitious Play.
-4.8 Exercises.
-5. The Extensive Form of a Game.
-5.1 The Game Tree.
-5.2 Basic Endgame in Poker.
-5.3 The Kuhn Tree.
-5.4 The Representation of a Strategic Form Game in Extensive Form.
-5.5 Reduction of a Game in Extensive Form to Strategic Form.
-5.6 Example.
-5.7 Games of Perfect Information.
-5.8 Behavioral Strategies.
-5.9 Exercises.
-6. Recursive and Stochastic Games.
-6.1 Matrix Games with Games as Components.
-6.2 Multistage Games.
-6.3 Recursive Games. -Optimal Strategies.
-6.4 Stochastic Movement Among Games.
-6.5 Stochastic Games.
-6.6 Approximating the Solution.
-6.7 Exercises.
-7. Infinite Games.
-7.1 The Minimax Theorem for Semi-Finite Games.
-II – 2
-7.2 Continuous Games.
-7.3 Concave and Convex Games.
-7.4 Solving Games.
-7.5 Uniform[0,1] Poker Models.
-7.6 Exercises.
-References.
-II – 3
-Part II. Two-Person Zero-Sum Games
+%=========================================================================================%
 1. The Strategic Form of a Game.
 The individual most closely associated with the creation of the theory of games is
 John von Neumann, one of the greatest mathematicians of the 20th century. Although
@@ -74,33 +49,41 @@ edition, Academic Press, 1982, and the expository book, Game Theory and Strategy
 Philip D. Straffin, published by the Mathematical Association of America, 1993.
 The theory of von Neumann and Morgenstern is most complete for the class of games
 called two-person zero-sum games, i.e. games with only two players in which one player
-wins what the other player loses. In Part II, we restrict attention to such games. We will
-refer to the players as Player I and Player II.
-1.1 Strategic Form. The simplest mathematical description of a game is the strategic
+wins what the other player loses. In Part Player 2, we restrict attention to such games. We will
+refer to the players as Player 1 and Player Player 2.
+%=================================================================%
+\subsection{1.1 Strategic Form.} The simplest mathematical description of a game is the strategic
 form, mentioned in the introduction. For a two-person zero-sum game, the payoff
-function of Player II is the negative of the payoff of Player I, so we may restrict attention
-to the single payoff function of Player I, which we call here A.
+function of Player Player 2 is the negative of the payoff of Player 1, so we may restrict attention
+to the single payoff function of Player 1, which we call here A.
+\begin{framed}
 Definition 1. The strategic form, or normal form, of a two-person zero-sum game is given
-by a triplet (X, Y, A), where
-(1) X is a nonempty set, the set of strategies of Player I
-(2) Y is a nonempty set, the set of strategies of Player II
-(3) A is a real-valued function defined on X × Y . (Thus, A(x, y) is a real number for
-every x ∈ X and every y ∈ Y .)
-The interpretation is as follows. Simultaneously, Player I chooses x ∈ X and Player
-II chooses y ∈ Y , each unaware of the choice of the other. Then their choices are made
-known and I wins the amount A(x, y) from II. Depending on the monetary unit involved,
-A(x, y) will be cents, dollars, pesos, beads, etc. If A is negative, I pays the absolute value
-of this amount to II. Thus, A(x, y) represents the winnings of I and the losses of II.
+by a triplet $(X, Y, A)$, where
+\begin{enumerate}
+\item X is a nonempty set, the set of strategies of Player 1
+\item Y is a nonempty set, the set of strategies of Player Player 2
+\item A is a real-valued function defined on $X \times Y$ . (Thus, $A(x, y)$ is a real number for
+every $x \in X$ and every $y \in Y$ .)
+\end{enumerate}
+\end{framed}
+%-------------------------------%
+The interpretation is as follows. Simultaneously, Player 1 chooses $x \in X$ and Player
+Player 2 chooses $y \in Y$ , each unaware of the choice of the other. Then their choices are made
+known and I wins the amount $A(x, y)$ from Player 2. Depending on the monetary unit involved,
+$A(x, y)$ will be cents, dollars, pesos, beads, etc. If A is negative, I pays the absolute value
+of this amount to Player 2. Thus, $A(x, y)$ represents the winnings of I and the losses of Player 2.
 This is a very simple definition of a game; yet it is broad enough to encompass the
 finite combinatorial games and games such as tic-tac-toe and chess. This is done by being
 sufficiently broadminded about the definition of a strategy. A strategy for a game of chess,
-II – 4
+Player 2 – 4
 for example, is a complete description of how to play the game, of what move to make in
 every possible situation that could occur. It is rather time-consuming to write down even
 one strategy, good or bad, for the game of chess. However, several different programs for
 instructing a machine to play chess well have been written. Each program constitutes one
 strategy. The program Deep Blue, that beat then world chess champion Gary Kasparov
-in a match in 1997, represents one strategy. The set of all such strategies for Player I is
+in a match in 1997, represents one strategy. 
+
+The set of all such strategies for Player 1 is
 denoted by X. Naturally, in the game of chess it is physically impossible to describe all
 possible strategies since there are too many; in fact, there are more strategies than there
 are atoms in the known universe. On the other hand, the number of games of tic-tac-toe
@@ -110,82 +93,92 @@ other types of games may be modeled and described in strategic form.
 To illustrate the notions involved in games, let us consider the simplest non-trivial
 case when both X and Y consist of two elements. As an example, take the game called
 Odd-or-Even.
-1.2 Example: Odd or Even. Players I and II simultaneously call out one of the
-numbers one or two. Player I’s name is Odd; he wins if the sum of the numbers is odd.
-Player II’s name is Even; she wins if the sum of the numbers is even. The amount paid to
+\subsection{1.2 Example: Odd or Even.} Players I and Player 2 simultaneously call out one of the
+numbers one or two. Player 1’s name is Odd; they wins if the sum of the numbers is odd.
+Player Player 2’s name is Even; she wins if the sum of the numbers is even. The amount paid to
 the winner by the loser is always the sum of the numbers in dollars. To put this game in
-strategic form we must specify X, Y and A. Here we may choose X = {1, 2}, Y = {1, 2},
+strategic form we must specify X, Y and A. Here we may choose X = {1, 2}, $Y = \{1, 2\}$,
 and A as given in the following table.
-II (even) y
-I (odd) x
-
-1 2
-1 −2 +3
-2 +3 −4
+Player 2 (even) y
 
-A(x, y) = I’s winnings = II’s losses.
+%I (odd) x
+% 
+% 1 2
+% 1 −2 +3
+% 2 +3 −4
+
+$A(x, y)$ = I’s winnings = Player 2’s losses.
 It turns out that one of the players has a distinct advantage in this game. Can you
 tell which one it is?
-Let us analyze this game from Player I’s point of view. Suppose he calls ‘one’ 3/5ths
+Let us analyze this game from Player 1’s point of view. Suppose they calls ‘one’ 3/5ths
 of the time and ‘two’ 2/5ths of the time at random. In this case,
-1. If II calls ‘one’, I loses 2 dollars 3/5ths of the time and wins 3 dollars 2/5ths of the
-time; on the average, he wins −2(3/5) + 3(2/5) = 0 (he breaks even in the long run).
-2. If II call ‘two’, I wins 3 dollars 3/5ths of the time and loses 4 dollars 2/5ths of the time;
-on the average he wins 3(3/5) − 4(2/5) = 1/5.
-That is, if I mixes his choices in the given way, the game is even every time II calls
-‘one’, but I wins 20/c on the average every time II calls ‘two’. By employing this simple
-strategy, I is assured of at least breaking even on the average no matter what II does. Can
-Player I fix it so that he wins a positive amount no matter what II calls?
-II – 5
-Let p denote the proportion of times that Player I calls ‘one’. Let us try to choose p
-so that Player I wins the same amount on the average whether II calls ‘one’ or ‘two’. Then
-since I’s average winnings when II calls ‘one’ is −2p + 3(1 − p), and his average winnings
-when II calls ‘two’ is 3p − 4(1 − p) Player I should choose p so that
+1. If Player 2 calls ‘one’, I loses 2 dollars 3/5ths of the time and wins 3 dollars 2/5ths of the
+time; on the average, they wins −2(3/5) + 3(2/5) = 0 (he breaks even in the long run).
+2. If Player 2 call ‘two’, I wins 3 dollars 3/5ths of the time and loses 4 dollars 2/5ths of the time;
+on the average they wins 3(3/5) − 4(2/5) = 1/5.
+%-------------------------------------------------%
+That is, if I mixes their choices in the given way, the game is even every time Player 2 calls
+‘one’, but I wins 20/c on the average every time Player 2 calls ‘two’. By employing this simple
+strategy, I is assured of at least breaking even on the average no matter what Player 2 does. Can
+Player 1 fix it so that they wins a positive amount no matter what Player 2 calls?
+Player 2 – 5
+Let p denote the proportion of times that Player 1 calls ‘one’. Let us try to choose p
+so that Player 1 wins the same amount on the average whether Player 2 calls ‘one’ or ‘two’. Then
+since I’s average winnings when Player 2 calls ‘one’ is −2p + 3(1 − p), and their average winnings
+when Player 2 calls ‘two’ is 3p − 4(1 − p) Player 1 should choose p so that
 −2p + 3(1 − p)=3p − 4(1 − p)
 3 − 5p = 7p − 4
 12p = 7
 p = 7/12.
-Hence, I should call ‘one’ with probability 7/12, and ‘two’ with probability 5/12. On the
-average, I wins −2(7/12) + 3(5/12) = 1/12, or 8 1
-3 cents every time he plays the game, no
-matter what II does. Such a strategy that produces the same average winnings no matter
+\begin{itemize}
+\item Hence, Player 1 should call ‘one’ with probability 7/12, and ‘two’ with probability 5/12. On the
+average, Player 1 wins −2(7/12) + 3(5/12) = 1/12, or 8 1
+3 cents every time they plays the game, no
+matter what Player 2 does. 
+\item Such a strategy that produces the same average winnings no matter
 what the opponent does is called an equalizing strategy.
-Therefore, the game is clearly in I’s favor. Can he do better than 8 1
+Therefore, the game is clearly in Player 1’s favor. Can they do better than 8 1
 3 cents per game
-on the average? The answer is: Not if II plays properly. In fact, II could use the same
+on the average? The answer is: Not if Player 2 plays properly. Player 1n fact, Player 2 could use the same
 procedure:
 call ‘one’ with probability 7/12
 call ‘two’ with probability 5/12.
-If I calls ‘one’, II’s average loss is −2(7/12) + 3(5/12) = 1/12. If I calls ‘two’, II’s average
+\item If Player 1 calls ‘one’, Player 2’s average loss is −2(7/12) + 3(5/12) = 1/12. 
+\item If Player 1 calls ‘two’, Player 2’s average
 loss is 3(7/12) − 4(5/12) = 1/12.
-Hence, I has a procedure that guarantees him at least 1/12 on the average, and II has
+\item Hence, Player 1 has a procedure that guarantees him at least 1/12 on the average, and Player 2 has
 a procedure that keeps her average loss to at most 1/12. 1/12 is called the value of the
 game, and the procedure each uses to insure this return is called an optimal strategy or
 a minimax strategy.
-If instead of playing the game, the players agree to call in an arbitrator to settle this
-conflict, it seems reasonable that the arbitrator should require II to pay 8 1
-3 cents to I. For
-I could argue that he should receive at least 8 1
-3 cents since his optimal strategy guarantees
-him that much on the average no matter what II does. On the other hand II could argue
+\item If instead of playing the game, the players agree to call in an arbitrator to settle this
+conflict, it seems reasonable that the arbitrator should require Player 2 to pay 8 1
+3 cents to Player 1. For
+Player 1 could argue that they should receive at least 8 1
+3 cents since their optimal strategy guarantees
+him that much on the average no matter what Player 2 does. 
+\item On the other hand Player 2 could argue
 that she should not have to pay more than 8 1
 3 cents since she has a strategy that keeps
-her average loss to at most that amount no matter what I does.
-1.3 Pure Strategies and Mixed Strategies. It is useful to make a distinction
+her average loss to at most that amount no matter what Player 1 does.
+\end{itemize}
+%======================================================================%
+\subsection{1.3 Pure Strategies and Mixed Strategies.} It is useful to make a distinction
 between a pure strategy and a mixed strategy. We refer to elements of X or Y as pure
 strategies. The more complex entity that chooses among the pure strategies at random in
 various proportions is called a mixed strategy. Thus, I’s optimal strategy in the game of
 Odd-or-Even is a mixed strategy; it mixes the pure strategies one and two with probabilities
-7/12 and 5/12 respectively. Of course every pure strategy, x ∈ X, can be considered as
+7/12 and 5/12 respectively. Of course every pure strategy, $x \in X$, can be considered as
 the mixed strategy that chooses the pure strategy x with probability 1.
 In our analysis, we made a rather subtle assumption. We assumed that when a player
-uses a mixed strategy, he is only interested in his average return. He does not care about his
-II – 6
+uses a mixed strategy, they are only interested in their average return. He does not care about his
+Player 2 – 6
 maximum possible winnings or losses — only the average. This is actually a rather drastic
-assumption. We are evidently assuming that a player is indifferent between receiving 5
+assumption. We are evidently assuming that a Player 1s indifferent between receiving 5
 million dollars outright, and receiving 10 million dollars with probability 1/2 and nothing
-with probability 1/2. I think nearly everyone would prefer the $5,000,000 outright. This is
+with probability 1/2. I think nearly everyone would prefer the \$5,000,000 outright. This is
 because the utility of having 10 megabucks is not twice the utility of having 5 megabucks.
+%====================================================================%
+\subsubsection{Utility Theory}
 The main justification for this assumption comes from utility theory and is treated
 in Appendix 1. The basic premise of utility theory is that one should evaluate a payoff by
 its utility to the player rather than on its numerical monetary value. Generally a player’s
@@ -193,45 +186,53 @@ utility of money will not be linear in the amount. The main theorem of utility t
 states that under certain reasonable assumptions, a player’s preferences among outcomes
 are consistent with the existence of a utility function and the player judges an outcome
 only on the basis of the average utility of the outcome.
+%===================================================================%
 However, utilizing utility theory to justify the above assumption raises a new difficulty.
 Namely, the two players may have different utility functions. The same outcome may be
 perceived in quite different ways. This means that the game is no longer zero-sum. We
 need an assumption that says the utility functions of two players are the same (up to
 change of location and scale). This is a rather strong assumption, but for moderate to
 small monetary amounts, we believe it is a reasonable one.
+%===================================================================%
 A mixed strategy may be implemented with the aid of a suitable outside random
 mechanism, such as tossing a coin, rolling dice, drawing a number out of a hat and so
 on. The seconds indicator of a watch provides a simple personal method of randomization
-provided it is not used too frequently. For example, Player I of Odd-or-Even wants an
-outside random event with probability 7/12 to implement his optimal strategy. Since
-7/12 = 35/60, he could take a quick glance at his watch; if the seconds indicator showed
-a number between 0 and 35, he would call ‘one’, while if it were between 35 and 60, he
+provided it is not used too frequently. For example, Player 1 of Odd-or-Even wants an
+outside random event with probability 7/12 to implement their optimal strategy. Since
+7/12 = 35/60, they could take a quick glance at their watch; if the seconds indicator showed
+a number between 0 and 35, they would call ‘one’, while if it were between 35 and 60, he
 would call ‘two’.
-1.4 The Minimax Theorem. A two-person zero-sum game (X, Y, A) is said to be
+%====================================================================%
+\section{1.4 The Minimax Theorem.} A two-person zero-sum game $(X, Y, A)$ is said to be
 a finite game if both strategy sets X and Y are finite sets. The fundamental theorem
 of game theory due to von Neumann states that the situation encountered in the game of
-Odd-or-Even holds for all finite two-person zero-sum games. Specifically,
+Odd-or-Even holds for all finite two-person zero-sum games. 
+
+\begin{framed}
 The Minimax Theorem. For every finite two-person zero-sum game,
 (1) there is a number V , called the value of the game,
-(2) there is a mixed strategy for Player I such that I’s average gain is at least V no
-matter what II does, and
-(3) there is a mixed strategy for Player II such that II’s average loss is at most V no
+(2) there is a mixed strategy for Player 1 such that I’s average gain is at least V no
+matter what Player 2 does, and
+(3) there is a mixed strategy for Player Player 2 such that Player 2’s average loss is at most V no
 matter what I does.
-This is one form of the minimax theorem to be stated more precisely and discussed in
-greater depth later. If V is zero we say the game is fair. If V is positive, we say the game
-favors Player I, while if V is negative, we say the game favors Player II.
-II – 7
+\end{framed}
+%This is one form of the minimax theorem to be stated more precisely and discussed in greater depth later. 
+If V is zero we say the game is fair. If V is positive, we say the game
+favors Player 1, while if V is negative, we say the game favors Player Player 2.
+Player 2 – 7
+%===================================================================%
 1.5 Exercises.
-1. Consider the game of Odd-or-Even with the sole change that the loser pays the
+\begin{enumerate}
+\item Consider the game of Odd-or-Even with the sole change that the loser pays the
 winner the product, rather than the sum, of the numbers chosen (who wins still depends
 on the sum). Find the table for the payoff function A, and analyze the game to find the
 value and optimal strategies of the players. Is the game fair?
-2. Player I holds a black Ace and a red 8. Player II holds a red 2 and a black 7. The
+\item  Player 1 holds a black Ace and a red 8. Player Player 2 holds a red 2 and a black 7. The
 players simultaneously choose a card to play. If the chosen cards are of the same color,
-Player I wins. Player II wins if the cards are of different colors. The amount won is a
+Player 1 wins. Player Player 2 wins if the cards are of different colors. The amount won is a
 number of dollars equal to the number on the winner’s card (Ace counts as 1.) Set up the
 payoff function, find the value of the game and the optimal mixed strategies of the players.
-3. Sherlock Holmes boards the train from London to Dover in an effort to reach the
+\item  Sherlock Holmes boards the train from London to Dover in an effort to reach the
 continent and so escape from Professor Moriarty. Moriarty can take an express train and
 catch Holmes at Dover. However, there is an intermediate station at Canterbury at which
 Holmes may detrain to avoid such a disaster. But of course, Moriarty is aware of this too
@@ -247,20 +248,23 @@ What are the optimal strategies for Holmes and Moriarty, and what is the value? 
 as related by Dr. Watson in “The Final Problem” in Arthur Conan Doyle’s The
 Memoires of Sherlock Holmes, Holmes detrained at Canterbury and Moriarty went on to
 Dover.)
-4. The entertaining book The Compleat Strategyst by John Williams contains many
+\item  The entertaining book The Compleat Strategyst by John Williams contains many
 simple examples and informative discussion of strategic form games. Here is one of his
 problems.
+\begin{quote}
 “I know a good game,” says Alex. “We point fingers at each other; either
 one finger or two fingers. If we match with one finger, you buy me one Daiquiri,
 If we match with two fingers, you buy me two Daiquiris. If we don’t match I let
 you off with a payment of a dime. It’ll help pass the time.”
 Olaf appears quite unmoved. “That sounds like a very dull game — at least
-in its early stages.” His eyes glaze on the ceiling for a moment and his lips flutter
-briefly; he returns to the conversation with: “Now if you’d care to pay me 42
+in its early stages.” His eyes glaze on the ceiling for a moment and their lips flutter
+briefly; they returns to the conversation with: “Now if you’d care to pay me 42
 cents before each game, as a partial compensation for all those 55-cent drinks I’ll
 have to buy you, then I’d be happy to pass the time with you.
-Olaf could see that the game was inherently unfair to him so he insisted on a side
+\end{quote}
+Olaf could see that the game was inherently unfair to him so they insisted on a side
 payment as compensation. Does this side payment make the game fair? What are the
 optimal strategies and the value of the game?
-II – 8
-
+Player 2 – 8
+\end{enumerate}
+\end{document}
