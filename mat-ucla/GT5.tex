@@ -138,15 +138,17 @@ a player makes just one choice from each information set.
 II – 51
 \begin{framed}
 Definition. A finite two-person zero-sum game in extensive form is given by
-1) a finite tree with vertices T,
-2) a payoff function that assigns a real number to each terminal vertex,
-3) a set T0 of non-terminal vertices (representing positions at which chance moves
+\begin{enumerate}
+\item a finite tree with vertices T,
+\item a payoff function that assigns a real number to each terminal vertex,
+\item a set T0 of non-terminal vertices (representing positions at which chance moves
 occur) and for each t \in T0, a probability distribution on the edges leading from t,
-4) a partition of the rest of the vertices (not terminal and not in T0) into two groups
+\item a partition of the rest of the vertices (not terminal and not in T0) into two groups
 of information sets T11, T12,...,T1k1 (for Player I) and T21, T22,...,T2k2 (for Player II),
 and
-5) for each information set Tjk for player j, a set of labels Ljk, and for each t \in Tjk,
+\item for each information set Tjk for player j, a set of labels Ljk, and for each t \in Tjk,
 a one-to-one mapping of Ljk onto the set of edges leading from t.
+\end{enumerate}
 \end{framed}
 The information structure in a game in extensive form can be quite complex. It may
 involve lack of knowledge of the other player’s moves or of some of the chance moves. It
@@ -174,6 +176,7 @@ on cards that one member knows and the other does not. This may be described as 
 single player who alternately remembers and forgets the outcomes of some of the previous
 random moves. Games in which players remember all past information they once knew
 and all past moves they made are called games of perfect recall.
+%===========================================================%
 A kind of degenerate situation exists when an information set contains two vertices
 which are joined by a path, as is the case with I’s information set in Figure 5.
 II – 52
@@ -217,7 +220,8 @@ both of the players do not know some of the payoffs, or some of the probabilitie
 moves, or some of the information sets, or even whole branches of the tree, are called
 games with incomplete information, or pseudogames. We assume in the following
 that we are dealing with games of complete information.
-5.4 The Representation of a Strategic Form Game in Extensive Form. The
+%=================================================================%
+\subsection{5.4 The Representation of a Strategic Form Game in Extensive Form.} The
 notion of a game in strategic form is quite simple. It is described by a triplet (X, Y, A) as in
 Section 1. The extensive form of a game on the other hand is quite complex. It is described
 II – 53
@@ -246,7 +250,7 @@ Player I has 2 pure strategies and Player II has 3. We pretend that Player I mov
 choosing row 1 or row 2. Then Player II moves, not knowing the choice of Player I. This is
 indicated by the information set for Player II. Then Player II moves by choosing column
 1, 2 or 3, and the appropriate payoff is made.
-5.5 Reduction of a Game in Extensive Form to Strategic Form. To go in
+\subsection{5.5 Reduction of a Game in Extensive Form to Strategic Form.} To go in
 the reverse direction, from the extensive form of a game to the strategic form, requires the
 consideration of pure strategies and the usual convention regarding random payoffs.
 Pure strategies. Given a game in extensive form, we first find X and Y , the sets of
@@ -260,30 +264,31 @@ strategies is X. Similarly, if T21,...,T2k2 represent II’s information sets an
 the corresponding sets of labels, a pure strategy for II is a k2-tuple, y = (y1,...,yk2 ) where
 yj \in L2j for each j. Player II has n1n2 ··· nk2 pure strategies if there are nj elements in
 L2j . Y denotes the set of these strategies.
-Random payoffs. A referee, given x \in X and y \in Y , could play the game, playing the
+Random payoffs. A referee, given $x \in X $and $y \in Y $ , could play the game, playing the
 appropriate move from x whenever the game enters one of I’s information sets, playing the
 II – 54
 appropriate move from y whenever the game enters one of II’s information sets, and playing
 the moves at random with the indicated probabilities at each chance move. The actual
-outcome of the game for given x \in X and y \in Y depends on the chance moves selected,
+outcome of the game for given $x \in X $and $y \in Y $ depends on the chance moves selected,
 and is therefore a random quantity. Strictly speaking, random payoffs were not provided
 for in our definition of games in normal form. However, we are quite used to replacing
 random payoffs by their average values (expected values) when the randomness is due to
 the use of mixed strategies by the players. We adopt the same convention in dealing with
 random payoffs when the randomness is due to the chance moves. The justification of this
 comes from utility theory.
-Convention. If for fixed pure strategies of the players, x \in X and y \in Y , the payoff is
+Convention. If for fixed pure strategies of the players, $x \in X $and $y \in Y $ , the payoff is
 a random quantity, we replace the payoff by the average value, and denote this average
-value by A(x, y).
-For example, if for given strategies x \in X and y \in Y , Player I wins 3 with probability
+value by $A(x, y)$.
+%==========================================================================%
+For example, if for given strategies $x \in X $and $y \in Y $ , Player I wins 3 with probability
 1/4, wins 1 with probability 1/4, and loses 1 with probability 1/2, then his average payoff
 is 1
 4 (3) + 1
 4 (1) + 1
-2 (−1) = 1/2 so we let A(x, y)=1/2.
+2 (−1) = 1/2 so we let $A(x, y)$=1/2.
 Therefore, given a game in extensive form, we say (X, Y, A) is the equivalent strategic
 form of the game if X and Y are the pure strategy spaces of players I and II respectively,
-and if A(x, y) is the average payoff for x \in X and y \in Y .
+and if $A(x, y)$ is the average payoff for $x \in X $and $y \in Y $ .
 5.6 Example. Let us find the equivalent strategic form to Basic Endgame in Poker
 described in the Section 5.2, whose tree is given in Figure 2. Player I has two information
 sets. In each set he must make a choice from among two options. He therefore has 2·2=4
@@ -334,12 +339,14 @@ equal probabilities 1/2 each. The strategy (b, b) is Player I’s bluffing strat
 entails betting with a losing hand. The strategy (b, c) is Player I’s “honest” strategy, bet
 with a winning hand and check with a losing hand. I’s optimal strategy requires some
 bluffing and some honesty.
+%===========================================================%
 In Exercise 4, there are six information sets for I each with two choices. The number
 of I’s pure strategies is therefore 26 = 64. II has 2 information sets each with two choices.
 Therefore, II has 22 = 4 pure strategies. The game matrix for the equivalent strategic
 form has dimension 64 by 4. Dominance can help reduce the dimension to a 2 by 3 game!
 (See Exercise 10(d).)
-5.7 Games of Perfect Information. Now that a game in extensive form has been
+%===========================================================%
+\section{5.7 Games of Perfect Information.} Now that a game in extensive form has been
 defined, we may make precise the notion of a game of perfect information.
 Definition. A game of perfect information is a game in extensive form in which each
 information set of every player contains a single vertex.
@@ -363,7 +370,8 @@ there is a row with all +1’s and 0’s and a column with all −1’s and 0’
 drawn with best play. Of course, the real game of chess is so complicated, there is virtually
 no hope of ever finding an optimal strategy. In fact, it is not yet understood how humans
 can play the game so well.
-5.8 Behavioral Strategies. For games in extensive form, it is useful to consider a
+%==============================================================%
+\subsection{5.8 Behavioral Strategies.} For games in extensive form, it is useful to consider a
 different method of randomization for choosing among pure strategies. All a player really
 needs to do is to make one choice of an edge for each of his information sets in the game.
 A behavioral strategy is a strategy that assigns to each information set a probability
@@ -405,8 +413,8 @@ If the rules of the game require players to use behavioral strategies, as is the
 certain models of bridge, then the game may not have a value. This means that if Player I
 is required to announce his behavioral strategy first, then he is at a distinct disadvantage.
 The game of Figure 4 is an example of this. (see Exercise 11.)
-5.9 Exercises.
-1. The Silver Dollar. Player II chooses one of two rooms in which to hide a silver
+\subsection{5.9 Exercises.}
+\subsubsection{1. The Silver Dollar.} Player II chooses one of two rooms in which to hide a silver
 dollar. Then, Player I, not knowing which room contains the dollar, selects one of the
 rooms to search. However, the search is not always successful. In fact, if the dollar is
 in room #1 and I searches there, then (by a chance move) he has only probability 1/2 of
@@ -414,17 +422,17 @@ finding it, and if the dollar is in room #2 and I searches there, then he has on
 1/3 of finding it. Of course, if he searches the wrong room, he certainly won’t find it. If
 he does find the coin, he keeps it; otherwise the dollar is returned to Player II. Draw the
 game tree.
-2. Two Guesses for the Silver Dollar. Draw the game tree for problem 1, if
+\subsubsection{2. Two Guesses for the Silver Dollar.} Draw the game tree for problem 1, if
 when I is unsuccessful in his first attempt to find the dollar, he is given a second chance
 to choose a room and search for it with the same probabilities of success, independent of
 his previous search. (Player II does not get to hide the dollar again.)
-3. A Statistical Game. Player I has two coins. One is fair (probability 1/2 of heads
+\subsubsection{3. A Statistical Game.} Player I has two coins. One is fair (probability 1/2 of heads
 and 1/2 of tails) and the other is biased with probability 1/3 of heads and 2/3 of tails.
 Player I knows which coin is fair and which is biased. He selects one of the coins and tosses
 it. The outcome of the toss is announced to II. Then II must guess whether I chose the
 fair or biased coin. If II is correct there is no payoff. If II is incorrect, she loses 1. Draw
 the game tree.
-4. A Forgetful Player. A fair coin (probability 1/2 of heads and 1/2 of tails) is
+\subsubsection{4. A Forgetful Player.} A fair coin (probability 1/2 of heads and 1/2 of tails) is
 tossed and the outcome is shown to Player I. On the basis of the outcome of this toss, I
 decides whether to bet 1 or 2. Then Player II hearing the amount bet but not knowing
 the outcome of the toss, must guess whether the coin was heads or tails. Finally, Player I
@@ -432,7 +440,7 @@ the outcome of the toss, must guess whether the coin was heads or tails. Finally
 remembering the outcome of the toss, may double or pass. II wins if her guess is correct
 and loses if her guess is incorrect. The absolute value of the amount won is [the amount
 bet (+1 if the coin comes up heads)] (×2 if I doubled). Draw the game tree.
-5. A One-Shot Game of Incomplete Information. Consider the two games
+\subsubsection{5. A One-Shot Game of Incomplete Information.} Consider the two games
 G1 =
  6 0
 0 0
@@ -448,7 +456,7 @@ only the pure strategy choices of Player I and not the payoffs, this is called a
 II – 58
 game of incomplete information. There is a large literature concerning such games; see for
 example, the books of Aumann and Maschler (1995) and Sorin (2002).)
-6. Basic Endgame in Poker. Generalize Basic Endgame in poker by letting the
+\subsubsection{6. Basic Endgame in Poker.} Generalize Basic Endgame in poker by letting the
 probability of receiving a winning card be an arbitrary number p, 0 ≤ p ≤ 1, and by letting
 the bet size be an arbitrary number b > 0. (In Figure 2, 1/4 is replaced by p and 3/4 is
 replaced by 1 − p. Also 3 is replaced by 1 + b and −3 is replaced by −(1 + b).) Find the
@@ -507,4 +515,4 @@ and Player II always doubles if Player I bets 1.)
 (b) Find the equivalent normal form.
 (c) Solve.
 II – 60
-
+\end{document}

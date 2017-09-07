@@ -1,4 +1,4 @@
-5. The Extensive Form of a Game
+\section{5. The Extensive Form of a Game}
 The strategic form of a game is a compact way of describing the mathematical aspects
 of a game. In addition, it allows a straightforward method of analysis, at least in principle.
 However, the flavor of many games is lost in such a simple model. Another mathematical
@@ -7,9 +7,10 @@ move, concepts not apparent in the strategic form of a game. In the extensive fo
 may speak of other characteristic notions of games such as bluffing, signaling, sandbagging,
 and so on. Three new concepts make their appearance in the extensive form of a game:
 the game tree, chance moves, and information sets.
-5.1 The Game Tree. The extensive form of a game is modelled using a directed
+%====================================================================%
+\section{5.1 The Game Tree.} The extensive form of a game is modelled using a directed
 graph. A directed graph is a pair (T,F) where T is a nonempty set of vertices and F is
-a function that gives for each x ∈ T a subset, F(x) of T called the followers of x. When
+a function that gives for each x \in T a subset, F(x) of T called the followers of x. When
 a directed graph is used to represent a game, the vertices represent positions of the game.
 The followers, F(x), of a position, x, are those positions that can be reached from x in one
 move.
@@ -17,7 +18,7 @@ A path from a vertex t0 to a vertex t1 is a sequence, x0, x1,...,xn, of vertices
 such that x0 = t0, xn = t1 and xi is a follower of xi−1 for i = 1,...,n. For the extensive
 form of a game, we deal with a particular type of directed graph called a tree.
 Definition. A tree is a directed graph, (T,F) in which there is a special vertex, t0, called
-the root or the initial vertex, such that for every other vertex t ∈ T, there is a unique path
+the root or the initial vertex, such that for every other vertex t \in T, there is a unique path
 beginning at t0 and ending at t.
 The existence and uniqueness of the path implies that a tree is connected, has a unique
 initial vertex, and has no circuits or loops.
@@ -29,6 +30,8 @@ be the amount Player I wins from Player II. For the nonterminal vertices there a
 possibilities. Some nonterminal vertices are assigned to Player I who is to choose the move
 at that position. Others are assigned to Player II. However, some vertices may be singled
 out as positions from which a chance move is made.
+
+%====================================================================%
 Chance Moves. Many games involve chance moves. Examples include the rolling of
 dice in board games like monopoly or backgammon or gambling games such as craps, the
 dealing of cards as in bridge or poker, the spinning of the wheel of fortune, or the drawing
@@ -44,7 +47,9 @@ the game. In poker for example, the first move is the chance move of shuffling a
 the cards, each player is aware of certain aspects of the outcome of this move (the cards he
 received) but he is not informed of the complete outcome (the cards received by the other
 players). This leads to the possibility of “bluffing.”
-5.2 Basic Endgame in Poker. One of the simplest and most useful mathematical
+
+%====================================================================%
+\section{5.2 Basic Endgame in Poker.} One of the simplest and most useful mathematical
 models of a situation that occurs in poker is called the “classical betting situation” by
 Friedman (1971) and “basic endgame” by Cutler (1976). These papers provide explicit
 situations in the game of stud poker and of lowball stud for which the model gives a very
@@ -55,6 +60,8 @@ Basic Endgame in poker. This will also emphasize what we feel is an important fe
 the game of poker, that like chess, go, backgammon and other games, there is a distinctive
 phase of the game that occurs at the close, where special strategies and tactics that are
 analytically tractable become important.
+
+%====================================================================%
 Basic Endgame is played as follows. Both players put 1 dollar, called the ante, in the
 center of the table. The money in the center of the table, so far two dollars, is called the
 pot. Then Player I is dealt a card from a deck. It is a winning card with probability 1/4
@@ -71,6 +78,8 @@ the chance move that chooses a card for I, (2) I’s move in which he checks or 
 II’s move in which she folds or calls. To each vertex of the game tree, we attach a label
 indicating which player is to move from that position. Chance moves we generally refer to
 as moves by nature and use the label N. See Figure 1.
+
+%====================================================================%
 Each edge is labelled to identify the move. (The arrows are omitted for the sake of
 clarity. Moves are assumed to proceed down the page.) Also, the moves leading from a
 vertex at which nature moves are labelled with the probabilities with which they occur.
@@ -113,7 +122,9 @@ bet check bet check
 call fold call fold
 Figure 2.
 The diagram now contains all the essential rules of the game.
-5.3 The Kuhn Tree. The game tree with all the payoffs, information sets, and labels
+
+%====================================================================%
+\section{ 5.3 The Kuhn Tree.} The game tree with all the payoffs, information sets, and labels
 for the edges and vertices included is known as the Kuhn Tree. We now give the formal
 definition of a Kuhn tree.
 Not every set of vertices can form an information set. In order for a player not to
@@ -122,17 +133,23 @@ that information set must have the same number of edges leaving it. Furthermore,
 important that the edges from each vertex of an information set have the same set of labels.
 The player moving from such an information set really chooses a label. It is presumed that
 a player makes just one choice from each information set.
+
+%====================================================================%
 II – 51
+\begin{framed}
 Definition. A finite two-person zero-sum game in extensive form is given by
-1) a finite tree with vertices T,
-2) a payoff function that assigns a real number to each terminal vertex,
-3) a set T0 of non-terminal vertices (representing positions at which chance moves
-occur) and for each t ∈ T0, a probability distribution on the edges leading from t,
-4) a partition of the rest of the vertices (not terminal and not in T0) into two groups
+\begin{enumerate}
+\item a finite tree with vertices T,
+\item a payoff function that assigns a real number to each terminal vertex,
+\item a set T0 of non-terminal vertices (representing positions at which chance moves
+occur) and for each t \in T0, a probability distribution on the edges leading from t,
+\item a partition of the rest of the vertices (not terminal and not in T0) into two groups
 of information sets T11, T12,...,T1k1 (for Player I) and T21, T22,...,T2k2 (for Player II),
 and
-5) for each information set Tjk for player j, a set of labels Ljk, and for each t ∈ Tjk,
+\item for each information set Tjk for player j, a set of labels Ljk, and for each t \in Tjk,
 a one-to-one mapping of Ljk onto the set of edges leading from t.
+\end{enumerate}
+\end{framed}
 The information structure in a game in extensive form can be quite complex. It may
 involve lack of knowledge of the other player’s moves or of some of the chance moves. It
 may indicate a lack of knowledge of how many moves have already been made in the game
@@ -226,7 +243,7 @@ I
 II
 1 2
 1 23 1 23
-Matrix Form Equivalent Extensive Form
+\noindent \textbf{Matrix Form Equivalent Extensive Form}
 Player I has 2 pure strategies and Player II has 3. We pretend that Player I moves first by
 choosing row 1 or row 2. Then Player II moves, not knowing the choice of Player I. This is
 indicated by the information set for Player II. Then Player II moves by choosing column
@@ -243,24 +260,24 @@ of the elements of L1i. If there are mi elements in L1i, the number of such kl-t
 hence the number of I s pure strategies is the product m1m2 ··· mk. The set of all such
 strategies is X. Similarly, if T21,...,T2k2 represent II’s information sets and L21,...,L2k2
 the corresponding sets of labels, a pure strategy for II is a k2-tuple, y = (y1,...,yk2 ) where
-yj ∈ L2j for each j. Player II has n1n2 ··· nk2 pure strategies if there are nj elements in
+yj \in L2j for each j. Player II has n1n2 ··· nk2 pure strategies if there are nj elements in
 L2j . Y denotes the set of these strategies.
-Random payoffs. A referee, given x ∈ X and y ∈ Y , could play the game, playing the
+Random payoffs. A referee, given x \in X and y \in Y , could play the game, playing the
 appropriate move from x whenever the game enters one of I’s information sets, playing the
 II – 54
 appropriate move from y whenever the game enters one of II’s information sets, and playing
 the moves at random with the indicated probabilities at each chance move. The actual
-outcome of the game for given x ∈ X and y ∈ Y depends on the chance moves selected,
+outcome of the game for given x \in X and y \in Y depends on the chance moves selected,
 and is therefore a random quantity. Strictly speaking, random payoffs were not provided
 for in our definition of games in normal form. However, we are quite used to replacing
 random payoffs by their average values (expected values) when the randomness is due to
 the use of mixed strategies by the players. We adopt the same convention in dealing with
 random payoffs when the randomness is due to the chance moves. The justification of this
 comes from utility theory.
-Convention. If for fixed pure strategies of the players, x ∈ X and y ∈ Y , the payoff is
+Convention. If for fixed pure strategies of the players, x \in X and y \in Y , the payoff is
 a random quantity, we replace the payoff by the average value, and denote this average
 value by A(x, y).
-For example, if for given strategies x ∈ X and y ∈ Y , Player I wins 3 with probability
+For example, if for given strategies x \in X and y \in Y , Player I wins 3 with probability
 1/4, wins 1 with probability 1/4, and loses 1 with probability 1/2, then his average payoff
 is 1
 4 (3) + 1
@@ -268,7 +285,7 @@ is 1
 2 (−1) = 1/2 so we let A(x, y)=1/2.
 Therefore, given a game in extensive form, we say (X, Y, A) is the equivalent strategic
 form of the game if X and Y are the pure strategy spaces of players I and II respectively,
-and if A(x, y) is the average payoff for x ∈ X and y ∈ Y .
+and if A(x, y) is the average payoff for x \in X and y \in Y .
 5.6 Example. Let us find the equivalent strategic form to Basic Endgame in Poker
 described in the Section 5.2, whose tree is given in Figure 2. Player I has two information
 sets. In each set he must make a choice from among two options. He therefore has 2·2=4

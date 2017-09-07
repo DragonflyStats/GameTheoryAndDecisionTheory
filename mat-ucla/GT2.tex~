@@ -38,7 +38,9 @@ the pure strategy for II of choosing the jth column may be represented by ej. In
 following, we shall be attempting to ‘solve’ games. This means finding the value, and at
 least one optimal strategy for each player. Occasionally, we shall be interested in finding
 all optimal strategies for a player.
-2.1 Saddle points. Occasionally it is easy to solve the game. If some entry aij of
+
+%====================================================================%
+\subsection{2.1 Saddle points.} Occasionally it is easy to solve the game. If some entry aij of
 the matrix A has the property that
 (1) aij is the minimum of the ith row, and
 (2) aij is the maximum of the jth column,
@@ -102,6 +104,9 @@ A =
  a b
 d c
 .
+
+
+%====================================================================%
 To solve this game (i.e. to find the value and at least one optimal strategy for each player)
 we proceed as follows.
 1. Test for a saddle point.
@@ -114,6 +119,8 @@ that d<a and a>b. In other words, if a ≥ b, then a>b<c>d<a. By symmetry, if
 a ≤ b, then a<b>c<d>a. This shows that
 If there is no saddle point, then either a>b, b<c, c>d and d<a, or a<b, b>c,
 c<d and d>a.
+
+%====================================================================%
 In equations (1), (2) and (3) below, we develop formulas for the optimal strategies
 and value of the general 2 × 2 game. If I chooses the first row with probability p (i.e. uses
 the mixed strategy (p, 1 − p)), we equate his average return when II uses columns 1 and 2.
@@ -172,7 +179,8 @@ Definition. We say the ith row of a matrix A = (aij ) dominates the kth row if
 aij ≥ akj for all j. We say the ith row of A strictly dominates the kth row if aij > akj
 for all j. Similarly, the jth column of A dominates (strictly dominates) the kth column if
 aij ≤ aik (resp. aij < aik) for all i.
-II – 11
+
+%====================================================================%
 Anything Player I can achieve using a dominated row can be achieved at least as well
 using the row that dominates it. Hence dominated rows may be deleted from the matrix.
 A similar argument shows that dominated columns may be removed. To be more precise,
@@ -181,6 +189,8 @@ may exist an optimal strategy that uses a dominated row or column (see Exercise 
 removal of that row or column will also remove the use of that optimal strategy (although
 there will still be at least one optimal strategy left). However, in the case of removal of a
 strictly dominated row or column, the set of optimal strategies does not change.
+
+%====================================================================%
 We may iterate this procedure and successively remove several rows and columns. As
 an example, consider the matrix, A.
 The last column is dominated by the middle
@@ -246,6 +256,8 @@ and so the last column may be removed.
 Not all games may be reduced by dominance. In fact, even if the matrix has a saddle
 point, there may not be any dominated rows or columns. The 3 × 3 game with a saddle
 point found in Example 1 demonstrates this.
+
+%====================================================================%
 2.4 Solving 2 × n and m × 2 games. Games with matrices of size 2 × n or m × 2
 may be solved with the aid of a graphical interpretation. Take the following example.
 p
@@ -292,6 +304,8 @@ lower envelope would be unchanged if the line for Column 1 were removed from the
 This is a test for domination. Column 1 is, in fact, dominated by Columns 2 and 3 taken
 with probability 1/2 each. The line for Column 4 does appear in the lower envelope, and
 hence Column 4 cannot be dominated.
+
+%====================================================================%
 As an example of a m × 2 game, consider the matrix associated with Figure 2.2. If
 q is the probability that II chooses Column 1, then II’s average loss for I’s three possible
 choices of rows is given in the accompanying graph. Here, Player II looks at the largest
@@ -321,6 +335,8 @@ row 3
 0 1 1/4 1/2
 q
 These techniques work just as well for 2 × ∞ and ∞ × 2 games.
+
+%====================================================================%
 2.5 Latin Square Games. A Latin square is an n × n array of n different letters
 such that each letter occurs once and only once in each row and each column. The 5 × 5
 array at the right is an example. If in a Latin square each letter is assigned a numerical
@@ -452,6 +468,8 @@ with magic square game matrices. Solve the example,
 ⎟⎠ .
 (This is the magic square that appears in Albrecht D¨urer’s engraving, Melencolia. See
 http://freemasonry.bcy.ca/art/melencolia.html)
+
+%====================================================================%
 11. In an article, “Normandy: Game and Reality” by W. Drakert in Moves, No. 6
 (1972), an analysis is given of the invasion of Europe at Normandy in World War II. Six
 possible attacking configurations (1 to 6) by the Allies and six possible defensive strategies

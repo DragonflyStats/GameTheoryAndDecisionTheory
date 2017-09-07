@@ -14,7 +14,7 @@ a11 ··· a1n
 .
 am1 ··· amn
 ⎞
-⎠ where aij = A(xi , yj ),
+⎠ where $ a_{ij}$  = A(xi , yj ),
 In this form, Player I chooses a row, Player II chooses a column, and II pays I the entry
 in the chosen row and column. Note that the entries of the matrix are the winnings of the
 row chooser and losses of the column chooser.
@@ -23,15 +23,15 @@ T
 of probabilities that add to 1. If I uses the mixed strategy p = (p1, p2,...,pm)
 T and II
 chooses column j, then the (average) payoff to I is m
-i=1 piaij . Similarly, a mixed strategy
+i=1 pi$ a_{ij}$  . Similarly, a mixed strategy
 for Player II is an n-tuple q = (q1, q2,...,qn)
 T. If II uses q and I uses row i the payoff
 to I is n
-j=1 aij qj . More generally, if I uses the mixed strategy p and II uses the mixed
+j=1 $ a_{ij}$  qj . More generally, if I uses the mixed strategy p and II uses the mixed
 strategy q, the (average) payoff to I is pTAq = m
 i=1
 n
-j=1 piaij qj .
+j=1 pi$ a_{ij}$  qj .
 Note that the pure strategy for Player I of choosing row i may be represented as the
 mixed strategy ei, the unit vector with a 1 in the ith position and 0’s elsewhere. Similarly,
 the pure strategy for II of choosing the jth column may be represented by ej. In the
@@ -40,13 +40,13 @@ least one optimal strategy for each player. Occasionally, we shall be interested
 all optimal strategies for a player.
 
 %====================================================================%
-\subsection{2.1 Saddle points.} Occasionally it is easy to solve the game. If some entry aij of
+\subsection{2.1 Saddle points.} Occasionally it is easy to solve the game. If some entry $ a_{ij}$  of
 the matrix A has the property that
-(1) aij is the minimum of the ith row, and
-(2) aij is the maximum of the jth column,
-then we say aij is a saddle point. If aij is a saddle point, then Player I can then win at
-least aij by choosing row i, and Player II can keep her loss to at most aij by choosing
-column j. Hence aij is the value of the game.
+(1) $ a_{ij}$  is the minimum of the ith row, and
+(2) $ a_{ij}$  is the maximum of the jth column,
+then we say $ a_{ij}$  is a saddle point. If $ a_{ij}$  is a saddle point, then Player I can then win at
+least $ a_{ij}$  by choosing row i, and Player II can keep her loss to at most $a_{ij}$  by choosing
+column j. Hence $ a_{ij}$  is the value of the game.
 Example 1.
 A =
 ⎛
@@ -61,7 +61,7 @@ of its column. Thus it is optimal for I to choose the second row, and for II to 
 second column. The value of the game is 2, and (0, 1, 0) is an optimal mixed strategy for
 both players.
 II – 9
-For large m × n matrices it is tedious to check each entry of the matrix to see if it
+For large $ m \times n$  matrices it is tedious to check each entry of the matrix to see if it
 has the saddle point property. It is easier to compute the minimum of each row and the
 maximum of each column to see if there is a match. Here is an example of the method.
 row min
@@ -108,14 +108,17 @@ d c
 
 %====================================================================%
 To solve this game (i.e. to find the value and at least one optimal strategy for each player)
-we proceed as follows.
-1. Test for a saddle point.
-2. If there is no saddle point, solve by finding equalizing strategies.
+we proceed as follows:
+\begin{emumerate}
+\item Test for a saddle point.
+\item If there is no saddle point, solve by finding equalizing strategies.
+\end{enumerate}
+
 We now prove the method of finding equalizing strategies of Section 1.2 works whenever
 there is no saddle point by deriving the value and the optimal strategies.
-Assume there is no saddle point. If a ≥ b, then b<c, as otherwise b is a saddle point.
+Assume there is no saddle point. If a \geq b, then b<c, as otherwise b is a saddle point.
 Since b<c, we must have c>d, as otherwise c is a saddle point. Continuing thus, we see
-that d<a and a>b. In other words, if a ≥ b, then a>b<c>d<a. By symmetry, if
+that d<a and a>b. In other words, if a \geq b, then a>b<c>d<a. By symmetry, if
 a ≤ b, then a<b>c<d>a. This shows that
 If there is no saddle point, then either a>b, b<c, c>d and d<a, or a<b, b>c,
 c<d and d>a.
@@ -175,10 +178,10 @@ point. So p = 0 and q = 1 are optimal strategies, and the value is v = 1.
 2.3 Removing Dominated Strategies. Sometimes, large matrix games may be
 reduced in size (hopefully to the 2×2 case) by deleting rows and columns that are obviously
 bad for the player who uses them.
-Definition. We say the ith row of a matrix A = (aij ) dominates the kth row if
-aij ≥ akj for all j. We say the ith row of A strictly dominates the kth row if aij > akj
+Definition. We say the ith row of a matrix A = ($ a_{ij}$  ) dominates the kth row if
+$ a_{ij}  \geq a_{kj}$ for all j. We say the ith row of A strictly dominates the kth row if $ a_{ij}$  > akj
 for all j. Similarly, the jth column of A dominates (strictly dominates) the kth column if
-aij ≤ aik (resp. aij < aik) for all i.
+$ a_{ij}$  ≤ aik (resp. $ a_{ij}$  < aik) for all i.
 
 %====================================================================%
 Anything Player I can achieve using a dominated row can be achieved at least as well
@@ -220,7 +223,8 @@ q = 1/4 and v = 7/4. I’s optimal strategy in the original game is
 4 1
 A row (column) may also be removed if it is dominated by a probability combination
 of other rows (columns).
-If for some 0 <p< 1, pai1j +(1−p)ai2j ≥ akj for all j, then the kth row is dominated
+%-------------------------------------------------------%
+If for some 0 <p< 1, pai1j +(1−p)ai2j \geq akj for all j, then the kth row is dominated
 by the mixed strategy that chooses row i1 with probability p and row i2 with probability
 1 − p. Player I can do at least as well using this mixed strategy instead of choosing row
 k. (In addition, any mixed strategy choosing row k with probability pk may be replaced
@@ -409,7 +413,7 @@ values.
 ⎞
 ⎠.
 6. Players I and II choose integers i and j respectively from the set {1, 2,...,n} for
-some n ≥ 2. Player I wins 1 if |i − j| = 1. Otherwise there is no payoff. If n = 7, for
+some n \geq 2. Player I wins 1 if |i − j| = 1. Otherwise there is no payoff. If n = 7, for
 example, the game matrix is
 ⎛
 ⎜⎜⎜⎜⎜⎜⎜⎝
@@ -426,6 +430,7 @@ II – 15
 (a) Using dominance to reduce the size of the matrix, solve the game for n = 7 (i.e.
 find the value and one optimal strategy for each player).
 (b) See if you can solve the game for arbitrary n.
+%------------------------------------------%
 7. In general, the sure-fire test may be stated thus: For a given game, conjectured
 optimal strategies (p1,...,pm) and (q1,...,qn) are indeed optimal if the minimum of I’s
 average payoffs using (p1,...,pm) is equal to the maximum of II’s average payoffs using
