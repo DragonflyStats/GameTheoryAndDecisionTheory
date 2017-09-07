@@ -139,10 +139,10 @@ the game Gn−1,m but with Player II to move. We denote this game by Gn−1,m. S
 probability that Player I wins is one minus the probability that Player II wins, we have
 Val(Gn,m)=1 − Val(Gn,m) for all m and n. (2)
 Suppose Player I asks for a card that Player II does not have. Player II must immediately
-decide whether or not Player I was bluffing. If she decides Player I was honest, she
+decide whether or not Player I was bluffing. If they decides Player I was honest, she
 will announce the card Player I asked for as her guess at the target card, and win if she
-was right and lose if she was wrong. If she decides Player I was bluffing and she is wrong,
-Player I will win on his turn. If she is correct, the card Player I asked for is removed from
+was right and lose if they was wrong. If they decides Player I was bluffing and they is wrong,
+Player I will win on his turn. If they is correct, the card Player I asked for is removed from
 his hand, and the game played next is Gn,m−1.
 II – 63
 Using such considerations, we may write the game as a multistage game in which
@@ -613,17 +613,19 @@ where v represents the vector of values, v = (v(1),...,v(N)).
 In equations (9), we see the same principle as in the earlier sections: the value of a
 game is the value of the matrix game (8) with the games replaced by their values. A proof
 of this theorem may be found in Appendix 2.
-Example 8. As a very simple example, consider the following stochastic game with
+%==========================================================%
+\subsection{Example 8.} As a very simple example, consider the following stochastic game with
 one state, call it G.
 G =
  1 + (3/5)G 3 + (1/5)G
 1 + (4/5)G 2 + (2/5)G
 
 II – 71
-From Player II’s viewpoint, column 1 is better than column 2 in terms of immediate payoff,
+\begin{itemize}
+\item From Player II’s viewpoint, column 1 is better than column 2 in terms of immediate payoff,
 but column 2 is more likely to end the game sooner than column 1, so that it should entail
-smaller future payoffs. Which column should she choose?
-Assume that all strategies are active, i.e. that the game does not have a saddle point.
+smaller future payoffs. Which column should they choose?
+\item Assume that all strategies are active, i.e. that the game does not have a saddle point.
 We must check when we are finished to see if the assumption was correct. Then
 v = Val  1 + (3/5)v 3 + (1/5)v
 1 + (4/5)v 2 + (2/5)v
@@ -633,22 +635,23 @@ v = Val  1 + (3/5)v 3 + (1/5)v
 =1+ v − (2/25)v2
 This leads to
 (2/25)v2 = 1.
-Solving this quadratic equation gives two possible solutions v = ±
+\item Solving this quadratic equation gives two possible solutions v = ±
 25/2 = ±(5/2)√
 2.
+\item 
 Since the value is obviously positive, we must use the plus sign. This is v = (5/2)√
 2 =
 3.535. If we put this value into the matrix above, it becomes
- 1 + (3/2)√2 3 + (1/2)√2
-1+2√2 2+ √2
-
+ 1 + (3/2)\sqrt{2} 3 + (1/2)\sqrt{2}
+1+2\sqrt{2} 2+ \sqrt{2}
+\end{itemize}
 The optimal strategy for Player I in this matrix is p = (√
 2 − 1, 2 − √
 2) = (.414, .586),
-and the optimal strategy for Player II is q = (1 − √2/2,
-√2/2) = (.293, .707). Since these
+and the optimal strategy for Player II is q = (1 − \sqrt{2}/2,
+\sqrt{2}/2) = (.293, .707). Since these
 are probability vectors, our assumption is correct and these are the optimal strategies, and
-v = (5/2)√2 is the value of the stochastic game.
+v = (5/2)\sqrt{2} is the value of the stochastic game.
 6.6 Approximating the solution. For a general stochastic game with many states,
 equations (9) become a rather complex system of simultaneous nonlinear equations. We
 cannot hope to solve such systems in general. However, there is a simple iterative method

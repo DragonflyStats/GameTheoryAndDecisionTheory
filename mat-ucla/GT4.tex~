@@ -1,4 +1,7 @@
-4. Solving Finite Games.
+
+%====================================================================%
+
+\section{4. Solving Finite Games.}
 Consider an arbitrary finite two-person zero-sum game, (X, Y, A), with m × n matrix,
 A. Let us take the strategy space X to be the first m integers, X = {1, 2,...,m}, and
 similarly, Y = {1, 2,...,n}. A mixed strategy for Player I may be represented by a column
@@ -19,6 +22,8 @@ consider the set of Player I’s pure strategies, X, to be a subset of X∗. Sim
 be considered to be a subset of Y ∗. We could if we like consider the game (X, Y, A) in
 which the players are allowed to use mixed strategies as a new game (X∗, Y ∗, A), where
 A(p, q) = pTAq, though we would no longer call this game a finite game.
+
+%====================================================================%
 In this section, we give an algorithm for solving finite games; that is, we show how to
 find the value and at least one optimal strategy for each player. Occasionally, we shall be
 interested in finding all optimal strategies for a player.
@@ -72,6 +77,8 @@ Any p ∈ X∗ that achieves the maximum of (3) is called a best response or a B
 strategy against q. In particular, any row i that achieves the maximum of (1) is a (pure)
 Bayes strategy against q. There always exist pure Bayes strategies against q for every
 q ∈ Y ∗ in finite games.
+
+%====================================================================%
 Similarly, if it is known that Player I is going to use a particular strategy p ∈ X∗, then
 Player II would choose that column j that minimizes (2), or, equivalently, that q ∈ Y ∗
 that minimizes (3). Her average payoff would be
@@ -91,7 +98,9 @@ strategies, and choose a best response against this. This method is available in
 complex situations. In addition, it allows a player to take advantage of an opponent’s
 perceived weaknesses. Of course this may be a dangerous procedure. Your opponent may
 be better at this type of guessing than you. (See Exercise 1.)
-4.2 Upper and Lower Values of a Game. Suppose now that II is required to
+
+%====================================================================%
+\subsection{4.2 Upper and Lower Values of a Game.} Suppose now that II is required to
 announce her choice of a mixed strategy q ∈ Y ∗ before I makes his choice. This changes
 the game to make it apparently more favorable to I. If II announces q, then certainly I
 would use a Bayes strategy against q and II would lose the quantity (4) on the average.
@@ -138,6 +147,8 @@ II for purposes of analysis) the same word to describe the same idea may be pref
 and it is certainly the customary terminology. As in the analysis for Player II, we see that
 Player I always has a minimax strategy. The existence of minimax strategies in matrix
 games is worth stating as a lemma.
+
+%====================================================================%
 Lemma 1. In a finite game, both players have minimax strategies.
 It is easy to argue that the lower value is less than or equal to the upper value. For if
 V < V and if I can assure himself of winning at least V , Player II cannot assure herself of
@@ -199,7 +210,9 @@ then the game with matrix A has the same minimax strategies for I and II as the 
 with matrix A
 . Also, if V denotes the value of the game with matrix A, then the value
 V  of the game with matrix A satisfies V  = cV + b.
-4.4 Reduction to a Linear Programming Problem. There are several nice proofs
+
+%====================================================================%
+\subsection{4.4 Reduction to a Linear Programming Problem.} There are several nice proofs
 of the Minimax Theorem. The simplest proof from scratch seems to be that of G. Owen
 (1982). However, that proof is by contradiction using induction on the size of the matrix.
 It gives no insight into properties of the solution or on how to find the value and optimal
@@ -211,6 +224,8 @@ known to all students, it has the advantage of leading to a simple algorithm for
 finite games. For a background in linear programming, the book by Chv´atal (1983) can be
 recommended. A short course on Linear Programming more in tune with the material as
 it is presented here may be found on the web at http://www.math.ucla.edu/˜tom/LP.pdf.
+
+%====================================================================%
 A Linear Program is defined as the problem of choosing real variables to maximize or
 minimize a linear function of the variables, called the objective function, subject to linear
 II – 38
@@ -698,6 +713,8 @@ if both players use the mixed strategy, p? We haven’t talked much about infini
 but what restrictions would you place on infinite games to avoid such absurd examples?
 Should the restrictions be placed on the payoff function, A, or on the notion of a mixed
 strategy?
+
+%====================================================================%
 6. Carry out the fictitious play algorithm on the matrix A =
  1 −1
 0 2

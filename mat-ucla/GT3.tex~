@@ -156,6 +156,7 @@ principle of indifference, every optimal strategy q for II satisfies (4), or
 m
 j=1
 aij qj = V for i = 1,...,m. (12)
+
 This is a set of m equations in m unknowns, and since A is nonsingular, we may solve
 for the qi. Let us write this set of equations in vector notation using q to represent the
 column vector of II’s strategy, and 1 = (1, 1,..., 1)T to represent the column vector of all
@@ -176,7 +177,7 @@ q = A−11/1
 TA−11. (16)
 However, if some component, qj , turns out to be negative, then our assumption that I has
 an optimal strategy giving positive weight to each row is false.
-However, if qj \geq 0 for all j, we may seek an optimal strategy for I by the same method.
+However, if $q_j \geq 0$ for all j, we may seek an optimal strategy for I by the same method.
 The result would be
 p
 T = 1

@@ -95,7 +95,7 @@ case when both X and Y consist of two elements. As an example, take the game cal
 Odd-or-Even.
 \subsection{1.2 Example: Odd or Even.} Players I and Player 2 simultaneously call out one of the
 numbers one or two. Player 1’s name is Odd; they wins if the sum of the numbers is odd.
-Player Player 2’s name is Even; she wins if the sum of the numbers is even. The amount paid to
+Player Player 2’s name is Even; they wins if the sum of the numbers is even. The amount paid to
 the winner by the loser is always the sum of the numbers in dollars. To put this game in
 strategic form we must specify X, Y and A. Here we may choose X = {1, 2}, $Y = \{1, 2\}$,
 and A as given in the following table.
@@ -126,10 +126,12 @@ Let p denote the proportion of times that Player 1 calls ‘one’. Let us try t
 so that Player 1 wins the same amount on the average whether Player 2 calls ‘one’ or ‘two’. Then
 since I’s average winnings when Player 2 calls ‘one’ is −2p + 3(1 − p), and their average winnings
 when Player 2 calls ‘two’ is 3p − 4(1 − p) Player 1 should choose p so that
-−2p + 3(1 − p)=3p − 4(1 − p)
-3 − 5p = 7p − 4
-12p = 7
-p = 7/12.
+\begin{eqnarray}
+−2p + 3(1 − p) & =3p − 4(1 − p)
+3 − 5p & = 7p − 4
+12p &= 7
+p & = 7/12.
+\end{eqnarray}
 \begin{itemize}
 \item Hence, Player 1 should call ‘one’ with probability 7/12, and ‘two’ with probability 5/12. On the
 average, Player 1 wins −2(7/12) + 3(5/12) = 1/12, or 8 1
@@ -157,26 +159,30 @@ Player 1 could argue that they should receive at least 8 1
 3 cents since their optimal strategy guarantees
 him that much on the average no matter what Player 2 does. 
 \item On the other hand Player 2 could argue
-that she should not have to pay more than 8 1
-3 cents since she has a strategy that keeps
+that they should not have to pay more than 8 1
+3 cents since they has a strategy that keeps
 her average loss to at most that amount no matter what Player 1 does.
 \end{itemize}
 %======================================================================%
-\subsection{1.3 Pure Strategies and Mixed Strategies.} It is useful to make a distinction
+\subsection{1.3 Pure Strategies and Mixed Strategies.} 
+\begin{itemize}
+\item It is useful to make a distinction
 between a pure strategy and a mixed strategy. We refer to elements of X or Y as pure
 strategies. The more complex entity that chooses among the pure strategies at random in
 various proportions is called a mixed strategy. Thus, I’s optimal strategy in the game of
 Odd-or-Even is a mixed strategy; it mixes the pure strategies one and two with probabilities
-7/12 and 5/12 respectively. Of course every pure strategy, $x \in X$, can be considered as
+7/12 and 5/12 respectively. 
+\item Of course every pure strategy, $x \in X$, can be considered as
 the mixed strategy that chooses the pure strategy x with probability 1.
 In our analysis, we made a rather subtle assumption. We assumed that when a player
 uses a mixed strategy, they are only interested in their average return. He does not care about his
 Player 2 – 6
-maximum possible winnings or losses — only the average. This is actually a rather drastic
+maximum possible winnings or losses — only the average. \item This is actually a rather drastic
 assumption. We are evidently assuming that a Player 1s indifferent between receiving 5
 million dollars outright, and receiving 10 million dollars with probability 1/2 and nothing
 with probability 1/2. I think nearly everyone would prefer the \$5,000,000 outright. This is
 because the utility of having 10 megabucks is not twice the utility of having 5 megabucks.
+\end{itemize}
 %====================================================================%
 \subsubsection{Utility Theory}
 The main justification for this assumption comes from utility theory and is treated
@@ -221,7 +227,7 @@ If V is zero we say the game is fair. If V is positive, we say the game
 favors Player 1, while if V is negative, we say the game favors Player Player 2.
 Player 2 – 7
 %===================================================================%
-1.5 Exercises.
+\subsection{1.5 Exercises.}
 \begin{enumerate}
 \item Consider the game of Odd-or-Even with the sole change that the loser pays the
 winner the product, rather than the sum, of the numbers chosen (who wins still depends
@@ -239,11 +245,11 @@ Holmes may detrain to avoid such a disaster. But of course, Moriarty is aware of
 and may himself stop instead at Canterbury. Von Neumann and Morgenstern (loc. cit.)
 estimate the value to Moriarty of these four possibilities to be given in the following matrix
 (in some unspecified units).
-Holmes
-Moriarty 
-Canterbury Dover
-Canterbury 100 −50
-Dover 0 100
+% Holmes
+% Moriarty 
+% Canterbury Dover
+% Canterbury 100 −50
+% Dover 0 100
 What are the optimal strategies for Holmes and Moriarty, and what is the value? (Historically,
 as related by Dr. Watson in “The Final Problem” in Arthur Conan Doyle’s The
 Memoires of Sherlock Holmes, Holmes detrained at Canterbury and Moriarty went on to

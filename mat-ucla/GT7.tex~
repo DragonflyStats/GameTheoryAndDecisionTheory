@@ -1,5 +1,41 @@
+
+\documentclass[]{report}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
+
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+\begin{document}
+
 II – 75
-7. Infinite Games.
+
+%====================================================================================%
+\section{7. Infinite Games.}
 In this Chapter, we treat infinite two-person, zero-sum games. These are games
 (X, Y, A), in which at least one of the strategy sets, X and Y , is an infinite set. The
 famous example of Exercise 4.7.3, he-who-chooses-the-larger-integer-wins, shows that an
@@ -7,13 +43,17 @@ infinite game may not have a value. Even worse, the example of Exercise 4.7.5 sh
 that the notion of a value may not even make sense in infinite games without further
 restrictions. This latter problem will be avoided when we assume that the function A(x, y)
 is either bounded above or bounded below.
-7.1 The Minimax Theorem for Semi-Finite Games. The minimax theorem for
+
+%====================================================================================%
+\subsection{7.1 The Minimax Theorem for Semi-Finite Games.} The minimax theorem for
 finite games states that every finite game has a value and both players have optimal mixed
 strategies. The first theorem below generalizes this result to the case where only one of
 the players has a finite number of pure strategies. The conclusion is that the value exists
 and the player with a finite number of pure strategies has an optimal mixed strategy. But
 first we must discuss mixed strategies and near optimal strategies for infinite games.
-Mixed Strategies for Infinite Games: First note that for infinite games, the notion
+
+%====================================================================================%
+\noindent \textbf{Mixed Strategies for Infinite Games:}\\ First note that for infinite games, the notion
 of a mixed strategy is somewhat open to choice. Suppose the strategy set, Y , of Player
 II is infinite. The simplest choice of a mixed strategy is a finite distribution over Y .
 This is a distribution that gives all its probability to a finite number of points. Such a
@@ -21,19 +61,21 @@ distribution is described by a finite number of points of Y , say y1, y2,...,yn,
 probabilities, q1, q2,...,qn summing to one with the understanding that point yj is chosen
 with probability qj . We will denote the set of finite distributions on Y by Y ∗
 F .
+
+%====================================================================================%
 When Y is an interval of the real line, we may allow as a mixed strategy any distribution
 over Y given by its distribution function, F(z). Here, F(z) represents the probabiity
 that the randomly chosen pure strategy, y, is less than or equal to z. The advantage of
 enlarging the set of mixed strategies is that it then becomes more likely that an optimal
 mixed strategy will exist. The payoff for using such a strategy is denoted by A(x, F) for
-x ∈ X.
-Near Optimal Strategies for Infinite Games: When a game has a finite value and
+$x \in X$.
+\noindent \textbf{Near Optimal Strategies for Infinite Games:} When a game has a finite value and
 an optimal strategy for a player does not exist, that player must be content to choosing
 a strategy that comes within  of achieving the value of the game for some small  > 0.
 Such a strategy is called an -optimal strategy and was discussed in Chapter 6.
 In infinite games, we allow the value to be +∞ or −∞. For example, the value is +∞
 if for every number B, however large, there exists a mixed strategy p for Player I such
-that A(p, y) ≥ B for all y ∈ Y . A simple example would be: X = [0,∞), Y arbitrary, and
+that A(p, y) ≥ B for all $y \in Y$ . A simple example would be: X = [0,∞), Y arbitrary, and
 A(x, y) = x independent of y. The value is +∞, since for any B, Player I can guarantee
 winning at least B by choosing any x ≥ B. Such a strategy might be called B-optimal.
 We will refer to both -optimal and B-optimal strategies as near optimal strategies.
@@ -52,18 +94,22 @@ piA(xi , yj )qj . (1)
 We denote the set of mixed strategies of Player II by Y ∗, but we shall always assume that
 Y ∗
 F ⊂ Y ∗.
+
+%====================================================================================%
 Consider the semi-finite two-person zero-sum game, (X, Y, A), in which X is a finite
 set, Y is an arbitrary set, and A(x, y) is the payoff function — the winnings of Player I
-if he chooses x ∈ X and Player II chooses y ∈ Y . To avoid the the possibility that the
+if he chooses $x \in X$ and Player II chooses $y \in Y$ . To avoid the the possibility that the
 average payoff does not exist or that the value might be −∞, we assume that the payoff
 function, A(x, y), is bounded below. By bounded below, we mean that there is a number
-M such that A(x, y) > M for all x ∈ X and all y ∈ Y . This assumption is weak from
+M such that A(x, y) > M for all $x \in X$ and all $y \in Y$ . This assumption is weak from
 the point of view of utility theory because, as mentioned in Appendix 1, it is customary
 to assume that utility is bounded.
 It is remarkable that the minimax theorem still holds in this situation. Specifically
 the value exists and Player I has a minimax strategy. In addition, for every  > 0, Player
 II has an -minimax strategy within Y ∗
 F .
+
+%====================================================================================%
 Theorem 7.1. If X is finite and A is bounded below, then the game (X, Y, A) has a finite
 value and Player I has an optimal mixed strategy. In addition, if X has m elements, then
 Player II has near optimal strategies that give weight to at most m points of Y .
@@ -75,8 +121,10 @@ By symmetry, if Y is finite and A is bounded above, then the game (X, Y, A) has 
 value and Player II has an optimal mixed strategy.
 Solving Semi-Finite Games. Here are two methods that may be used to solve semi-
 finite games. We take X to be the finite set, X = {x1,...,xm}.
+
+%====================================================================================%
 METHOD 1. The first method is similar to the method used to solve 2 × n games
-presented in Section 2.2. For each fixed y ∈ Y , the payoff, A(p, y), is a linear function of p
+presented in Section 2.2. For each fixed $y \in Y$ , the payoff, A(p, y), is a linear function of p
 on the set X∗ = {p = (p1,...,pm) : pi ≥ 0,
 pi = 1}. The optimal strategy for Player I is
 that value of p that maximizes the lower envelope, f(p) ≡ infy∈Y A(p, y). Note that f(p),
@@ -101,7 +149,7 @@ y=2/3
 y=1
 Figure 7.1
 Let p denote the probability that Player I chooses x1 and let p = (p, 1−p). For a given
-choice of y ∈ Y by Player II, the expected payoff to Player I is A(p, y) = py+(1−p)(1−y)2.
+choice of $y \in Y$ by Player II, the expected payoff to Player I is A(p, y) = py+(1−p)(1−y)2.
 The minimum of A(p, y) over y occurs at p − (1 − p)2(1 − y) = 0, or y = (2 − 3p)/(2 − 2p);
 except that for p > 2/3, the minimum occurs at y = 0. So, the lower envelope is
 f(p) = min
@@ -121,8 +169,9 @@ and let S be a non-empty convex subset of m-dimensional Euclidean space, Rm, and
 assume that S is bounded below. Player II chooses a point s = (s1,...,sm) in S, and
 simultaneously Player I chooses a coordinate i ∈ X. Then Player II pays si to Player I.
 Such games are called S-games.
+%=======================================================================%
 This game arises from the semi-finite game (X, Y, A) with X = {1, 2,...,m} by letting
-S0 = {s = (A(1, y),...,A(m, y)) : y ∈ Y }. Choosing y ∈ Y is equivalent to choosing
+S0 = {s = (A(1, y),...,A(m, y)) : $y \in Y$ }. Choosing $y \in Y$ is equivalent to choosing
 s ∈ S0. Although S0 is not necessarily convex, Player II can, by using a mixed strategy,
 choose a probability mixture of points in S0. This is equivalent to choosing a point s in
 S, where S is the convex hull of S0.
@@ -166,7 +215,8 @@ p2/p1 = 1/(
 p1 = 1 − (1/
 √
 5). as found in Example 1.
-7.2 Continuous Games. The simplest extension of the minimax theorem to a more
+%===================================================%
+\subsection{7.2 Continuous Games.} The simplest extension of the minimax theorem to a more
 general case is to assume that X and Y are compact subsets of Euclidean spaces, and that
 A(x, y) is a continuous function of x and y. To conclude that optimal strategies for the
 players exist, we must allow arbitrary distribution functions on X and Y . Thus if X is a
@@ -186,6 +236,8 @@ A(x, y) =  g(x − y) if 0 ≤ y ≤ x
 g(1 + x − y) if 0 ≤ x<y ≤ 1,
 where g is a continuous function defined on [0, 1], with g(0) = g(1). Here, both X∗ and
 Y ∗ are the set of probability distributions on the unit interval.
+
+%====================================================================================%
 Since X and Y are compact and A(x, y) is continuous on [0, 1]2, we have by Theorem
 7.2, that the game has a value and the players have optimal strategies. Let us check that
 the optimal strategies for both players is the uniform distribution on [0, 1]. If Player I uses
@@ -218,12 +270,14 @@ strategies are optimal and the value is v =  1
 0 g(u) du. It may be noticed that this example
 is a continuous version of a Latin square game. In fact the same solution holds even if g
 in not continuous. One only needs g to be integrable on [0, 1].
+
+%====================================================================================%
 A One-Sided Minimax Theorem. In the way that Theorem 7.1 generalized the
 finite minimax theorem by allowing Y to be an arbitrary set, Theorem 7.2 may be generalized
 to allow Y to be arbitrary, provided we keep the compactness condition on X.
 The continuity condition may be weakened to assuming only that A(x, y) is a continuous
-function of x for every y ∈ Y . And even this can be weakened to assuming that A(x, y) is
-only upper semi-continuous in x for every y ∈ Y .
+function of x for every $y \in Y$ . And even this can be weakened to assuming that A(x, y) is
+only upper semi-continuous in x for every $y \in Y$ .
 II – 80
 A function f(x) defined on X is upper semi-continuous at a point x0 ∈ X, if for any
 sequence x1, x2,... of points in X such that limn→∞ xn = x0, we have limn→∞ f(xn) ≤
@@ -236,72 +290,82 @@ a if x = 0
 1 if x > 0
 is usc if a ≥ 1 and lsc if a ≤ 0. It is neither usc nor lsc if 0 <a< 1.
 Theorem 7.3. If X is a compact subset of Euclidean space, and if A(x, y) is an upper
-semi-continuous function of x ∈ X for all y ∈ Y and if A is bounded below (or if Y ∗ is the
+semi-continuous function of $x \in X$ for all $y \in Y$ and if A is bounded below (or if Y ∗ is the
 set of finite mixtures), then the game has a value, Player I has an optimal strategy in X∗,
 and for every  > 0 Player II has an -optimal strategy giving weight to a finite number of
 points.
 Similarly from Player II’s viewpoint, if Y is a compact subset of Euclidean space, and
-if A(x, y) is a lower semi-continuous function of y ∈ Y for all x ∈ X and if A is bounded
+if A(x, y) is a lower semi-continuous function of $y \in Y$ for all $x \in X$ and if A is bounded
 above (or if X∗ is the set of finite mixtures), then the game has a value and Player II has
 an optimal strategy in Y ∗.
+
+%====================================================================================%
 Example 2. Player I chooses a number in [0,1] and Player II tries to guess what it
 is. Player I wins 1 if Player II’s guess is off by at least 1/3; otherwise, there is no payoff.
 Thus, X = Y = [0, 1], and A(x, y) =  1 if |x − y| ≥ 1/3
 0 if |x − y| < 1/3. Although the payoff
-function is not continuous, it is upper semi-continuous in x for every y ∈ Y . Thus the
+function is not continuous, it is upper semi-continuous in x for every $y \in Y$ . Thus the
 game has a value and Player I has an optimal mixed strategy.
 If we change the payoff so that Player I wins 1 if Player II’s guess is off by more than
 1/3, then A(x, y) =  1 if |x − y| > 1/3
 0 if |x − y| ≤ 1/3. This is no longer upper semi-continuous in x
-for fixed y; instead it is lower semi-continuous in y for each x ∈ X. This time, the game
+for fixed y; instead it is lower semi-continuous in y for each $x \in X$. This time, the game
 has a value and Player II has an optimal mixed strategy.
-7.3 Concave Games and Convex Games. If in Theorem 7.2, we add the assumption
+
+%====================================================================================%
+\subsection{7.3 Concave Games and Convex Games.} If in Theorem 7.2, we add the assumption
 that the payoff function A(x, y) is concave in x for all y or convex in y for all x, then
 we can conclude that one of the players has an optimal pure strategy, which is usually easy
 to find. Here is a one-sided version that complements Theorem 7.3. A good reference for
 these ideas is the book of Karlin (1959), vol. 2.
+%========================================================================%
 Theorem 7.4. Let (X, Y, A) be a game with Y arbitrary, X a compact, convex subset of
-Rm, and A(x, y) bounded below. If A(x, y) is a concave function of x ∈ X for all y ∈ Y ,
+Rm, and A(x, y) bounded below. If A(x, y) is a concave function of $x \in X$ for all $y \in Y$ ,
 then the game has a value and Player I has an optimal pure strategy. Moreover, Player II
 has an -optimal strategy that is a mixture of at most m + 1 pure strategies.
 II – 81
 The dual statement for convex functions is: If Y is compact and convex in Rn, and
-if A is bounded above and is convex in y ∈ Y for all x ∈ X, then the game has a value,
+if A is bounded above and is convex in $y \in Y$ for all $x \in X$, then the game has a value,
 Player II has an optimal pure strategy and Player I has -optimal strategies giving weight
 to at most n + 1 points..
+
+%====================================================================================%
 These games may be solved by a method similar to Method 1 of Section 7.1. Let’s
 see how to find the optimal strategy of Player II in the convex functio case. Let g(y) =
 supx A(x, y) be the upper envelope. Then g(y) is finite since A is bounded above. It is also
 convex since the supremum of any set of convex functions is convex. Then since convex
-functions defined on a compact set attain their maximum, there exists a point y∗ at which
+functions defined on a compact set attain their maximum, there exists a point y^{\ast} at which
 g(y) takes on its maximum value, so that
-A(x, y∗) ≤ max x A(x, y∗) = g(y∗) for all x ∈ X.
-Any such point is an optimal pure strategy for Player II. By choosing y∗, Player II will
-lose no more than g(y∗) no matter what Player I does. Player I’s optimal strategy is
+\[A(x, y^{\ast}) ≤ max x A(x, y^{\ast}) = g(y^{\ast}) for all $x \in X$.\]
+Any such point is an optimal pure strategy for Player II. By choosing y^{\ast}, Player II will
+lose no more than g(y^{\ast}) no matter what Player I does. Player I’s optimal strategy is
 more complex to describe in general; it gives weight only to points that play a role in the
-upper envelope at the point y∗. These are points x such that A(x, y) is tangent (or nearly
-tangent if only -optimal strategies exist) to the surface g(y) at y∗. It is best to consider
+upper envelope at the point y^{\ast}. These are points x such that A(x, y) is tangent (or nearly
+tangent if only -optimal strategies exist) to the surface g(y) at y^{\ast}. It is best to consider
 examples.
-Example 1. Estimation. Player I chooses a point x ∈ X = [0, 1], and Player II
-tries to choose a point y ∈ Y = [0, 1] close to x. Player II loses the square of the distance
-from x to y: A(x, y)=(x − y)2. This is a convex function of y ∈ [0, 1] for all x ∈ X.
+
+%====================================================================================%
+Example 1. Estimation. Player I chooses a point $x \in X$ = [0, 1], and Player II
+tries to choose a point $y \in Y$ = [0, 1] close to x. Player II loses the square of the distance
+from x to y: A(x, y)=(x − y)2. This is a convex function of y ∈ [0, 1] for all $x \in X$.
 For any x, A(x, y) is bounded above by either A(0, y) or A(1, y) so the upper envelope
-is g(y) = max{A(0, y), A(1, y)} = max{y2,(1 − y)2}. This is minimized at y∗ = 1/2. If
-Player II uses y∗, she is guaranteed to lose no more than g(y∗)=1/4.
+is g(y) = max{A(0, y), A(1, y)} = max{y2,(1 − y)2}. This is minimized at y^{\ast} = 1/2. If
+Player II uses y^{\ast}, she is guaranteed to lose no more than g(y^{\ast})=1/4.
 Since x = 0 and x = 1 are the only two pure strategies influencing the upper envelope,
-and since y2 and (1−y)2 have slopes at y∗ that are equal in absolute value but opposite in
+and since y2 and (1−y)2 have slopes at y^{\ast} that are equal in absolute value but opposite in
 sign, Player I should mix 0 and 1 with equal probability. This mixed strategy has convex
-payoff (1/2)(A(0, y) + A(1, y)) with slope zero at y∗. Player I is guaranteed winning at
-least 1/4, so v = 1/4 is the value of the game. The pure strategy y∗ is optimal for Player
+payoff (1/2)(A(0, y) + A(1, y)) with slope zero at y^{\ast}. Player I is guaranteed winning at
+least 1/4, so v = 1/4 is the value of the game. The pure strategy y^{\ast} is optimal for Player
 II and the mixed strategy, 0 with probability 1/2 and 1 with probability 1/2, is optimal for
 Player I. In this example, n = 1, and Player I’s optimal strategy mixes 2 = n + 1 points.
 Theorem 7.4 may also be stated with the roles of the players reversed. If Y is arbitrary,
-and if X is a compact subset of Rm and if A(x, y) is bounded below and concave in x ∈ X
-for all y ∈ Y , then Player I has an optimal pure strategy, and Player II has an -optimal
+and if X is a compact subset of Rm and if A(x, y) is bounded below and concave in $x \in X$
+for all $y \in Y$ , then Player I has an optimal pure strategy, and Player II has an -optimal
 strategy mixing at most m +1 pure strategies. It may also happen that A(x, y) is concave
 in x for all y, and convex in y for all x. In that case, both players have optimal pure
 strategies as in the following example.
-Example 2. A Convex-Concave Game. Suppose X = Y = [0, 1], and A(x, y) =
+%=======================================================================%
+\subsubsection{Example 2. A Convex-Concave Game.} Suppose X = Y = [0, 1], and A(x, y) =
 −2x2 +4xy+y2 −2x−3y+1. The payoff is convex in y for all x and concave in x for all y.
 Therefore, both players have pure optimal strategies, say x0 and y0. If Player II uses y0,
 II – 82
@@ -326,11 +390,15 @@ then easily found that x0 = 1/3 and y0 = 5/6. The value is A(x0, y0) = −7/12.
 It may be easier here to find the saddle-point of the surface, z = −2x2 + 4xy + y2 −
 2x − 3y + 1, and if the saddle-point is in the unit square, then that is the solution. But
 the method used here shows what must be done in general.
-7.4 Solving Games. There are many interesting games that are more complex and
+
+%====================================================================================%
+\subsection{7.4 Solving Games.} There are many interesting games that are more complex and
 that require a good deal of thought and ingenuity to find solutions. There is one tool
 for solving such games that is basic. This is the infinite game analog of the principle of
 indifference given in Chapter 3: Search for strategies that make the opponent indifferent
 among all his “good” pure strategies.
+
+%====================================================================================%
 To be more specific, consider the game (X, Y, A) with X = Y = [0, 1] and A(x, y)
 continuous. Let v denote the value of the game and let P denote the distribution that
 represents the optimal strategy for Player I. Then, A(P, y) must be equal to v for all
@@ -340,7 +408,8 @@ is positive for all  > 0.) So to attempt to find the optimal P, we guess at the
 “good” points y for Player II and search for a distribution P such that A(P, y) is constant
 on S. Such a strategy, P, is called an equalizer strategy on S. The first example shows
 what is involved in this.
-Example 1. Meeting Someone at the Train Station. A young lady is due to
+%===================================================================================%
+\subsection{Example 1. Meeting Someone at the Train Station.} A young lady is due to
 arrive at a train station at some random time, T, distributed uniformly between noon and
 1 PM. She is to wait there until one of her two suitors arrives to pick her up. Each suitor
 chooses a time in [0,1] to arrive. If he finds the young lady there, he departs immediately
@@ -348,9 +417,11 @@ with her; otherwise, he leaves immediately, disappointed. If either suitor is su
 meeting the young lady, he receives 1 unit from the other. If they choose the same time
 to arrive, there is no payoff. Also, if they both arrive before the young lady arrives, the
 payoff is zero. (She takes a taxi at 1 PM.)
+
+
 Solution: Denote the suitors by I and II, and their strategy spaces by X = [0, 1]
 and Y = [0, 1]. Let us find the function A(x, y) that represents I’s expected winnings if I
-chooses x ∈ X and II chooses y ∈ Y . If x<y, I wins 1 if T <x and loses 1 if x<T <y.
+chooses $x \in X$ and II chooses $y \in Y$ . If x<y, I wins 1 if T <x and loses 1 if x<T <y.
 II – 83
 The probability of the first is x and the probability of the second is y − x, so A(x, y) is
 x − (y − x)=2x − y when x<y. When y<x, a similar analysis shows A(x, y) = x − 2y,
@@ -362,6 +433,8 @@ x − 2y if x>y
 This payoff function is not continuous, nor is it upper semicontinuous or lower semicontinuous.
 It is symmetric in the players so if it has a value, the value is zero and the players
 have the same optimal strategy.
+
+%====================================================================================%
 Let us search for an equalizer strategy for Player I and assume it has a density f(x)
 on [0,1]. We would have
 A(f,y) =  y
@@ -398,6 +471,8 @@ log f(y) = −3
 for some constants c and k. Unfortunately,  1
 0 y−3/2 dy = ∞, so this cannot be used as a
 density on [0,1].
+
+%====================================================================================%
 If we think more about the problem, we can see that it cannot be good to come in very
 early. There is too little chance that the young lady has arrived. So perhaps the “good”
 points are only those from some point a > 0 on. That is, we should look for a density
@@ -441,13 +516,16 @@ A(f,y) =  (1 − 4y)/2 for y < 1/4
 0 for y > 1/4 (8)
 This guarantees I at least 0 no matter what II does. Since II can use the same strategy,
 The value of the game is 0 and (7) is an optimal strategy for both players.
-Example 2. Competing Investors. Two investors compete to see which of them,
+
+%====================================================================================%
+\subsection{Example 2. Competing Investors.} Two investors compete to see which of them,
 starting with the same initial fortune, can end up with the larger fortune. The rules of
 the competition require that they invest only in fair games. That is, they can only invest
 non-negative amounts in games whose expected return per unit invested is 1.
 Suppose the investors start with 1 unit of fortune each (and we assume money is
 infinitely divisible). Thus no matter what they do, their expected fortune at the end is
 equal to their initial fortune, 1.
+%------------------------------------------------------------------%
 Thus the players have the same pure strategy sets. They both choose a distribution
 on [0,∞) with mean 1, say Player I chooses F with mean 1, and Player II chooses G with
 mean 1. Then Z1 is chosen from F and Z2 is chosen from G independently, and I wins
@@ -465,6 +543,8 @@ P(Z1 < Z2) = E[P(Z1 < Z2|Z2)] ≤ E[Z2/2] = (1/2)E[Z2]=1/2.
 II – 85
 So the probability I wins is at least 1/2. Since the game is symmetric, Player II by using
 the same strategy can keep Player I’s probability of winning to at most 1/2.
+
+%====================================================================================%
 7.5 Uniform[0,1] Poker Models. The study of two-person Uniform[0,1] poker
 models goes back to Borel (1938) and von Neumann (1944). We present these two models
 here. In these models, the set of possible “hands” of the players is the interval, [0, 1].
@@ -473,6 +553,8 @@ distribution over the interval [0, 1]. Throughout the play, both players know th
 their own hand, but not that of the opponent. We assume that x and y are independent
 random variables; that is, learning the value of his own hand gives a player no information
 about the hand of his opponent.
+
+%====================================================================================%
 There follows some rounds of betting in which the players take turns acting. After
 the dealing of the hands, all actions that the players take are announced. Except for the
 dealing of the hands at the start of the game, this would be a game of perfect information.
@@ -483,6 +565,8 @@ It is convenient to study the action part of games of almost complete informatio
 what we call the betting tree. This is distinct from the Kuhn tree in that it neglects the
 information sets that may arise from the initial distribution of hands. The examples below
 illustrate this concept.
+
+%====================================================================================%
 The Borel Model: La Relance. Both players contribute an ante of 1 unit into the
 pot and receive independent uniform hands on the interval [0, 1]. Player I acts first either
 by folding and thus conceding the pot to Player II, or by betting a prescribed amount
@@ -552,6 +636,8 @@ As an example, suppose β = 2, where the size of the bet is the size of the pot.
 b = 1/2. An optimal strategy for Player I is to bet if x > 1/4 and fold otherwise; the
 optimal strategy of Player II is to call if y > 1/2. The game favors Player II, whose
 expected return is 1/4 unit each time the game is played.
+
+%====================================================================================%
 If I bets when x<b, he knows he will lose if called, assuming II is using an optimal
 strategy. Such a bet is called a bluff. In la relance, it is necessary for I to bluff with
 probability b2. Which of the hands below b he chooses to bluff with is immaterial as far as
@@ -567,6 +653,8 @@ A strategy is said to be admissible for a player if no other strategy for that p
 does better against one strategy of the opponent without doing worse against some other
 strategy of the opponent. The rule of betting if and only if x>b2 is the unique admissible
 optimal strategy for Player I.
+
+%====================================================================================%
 The von Neumann Model. The model of von Neumann differs from the model of
 Borel in one small but significant respect. If Player I does not bet, he does not necessarily
 lose the pot. Instead the hands are immediately compared and the higher hand wins the
@@ -597,6 +685,8 @@ Player I to do otherwise. Here is a rough explanation of this somewhat counterin
 feature. Hands below c may be used for bluffing or checking. For bluffing it doesn’t matter
 much which hands are used; one expects to lose them if called. For checking though it
 certainly matters; one is better off checking with the better hands.
+
+%====================================================================================%
 Let us apply the principle of indifference to find the optimal values of a, b and c. This
 will lead to three equations in three unknowns, known as the indifference equations (not
 to be confused with difference equations). First, Player II should be indifferent between
@@ -610,6 +700,8 @@ he checks with x = a, he wins 2 if y<a, and wins nothing otherwise, for an expec
 return of 2a. If he bets, he wins 2 if y<c and loses β if y>c, for an expected return of
 2c − β(1 − c). Equating these gives the second indifference equation,
 2c − β(1 − c)=2a. (4)
+
+%====================================================================================%
 Third, Player I should be indifferent between checking and betting with x = b. If he
 checks, he wins 2 if y<b. If he bets, he wins 2 if y<c and wins β + 2 if c<y<b, and
 loses β if y>b, for an expected return of 2c + (β + 2)(b − c) − β(1 − b). This gives the
@@ -644,7 +736,7 @@ F , the set of all finite distributions on Y , then the
 value exists, is equal to zero and both players have optimal strategies.
 (b) Show that if Y ∗ is taken to be the set of all distributions on Y , then we can’t speak
 of the value, because Player II has a strategy, q, for which the expected payoff, A(x, q)
-doesn’t exist for any x ∈ X.
+doesn’t exist for any $x \in X$.
 2. Simultaneously, Player I chooses x ∈ {x1, x2}, and Player II chooses y ∈ [0, 1]; then
 I receives
 A(x, y) =  y if x = x1
@@ -740,6 +832,7 @@ choose an amount to bet between $0 and $70 and Player II must choose an amount b
 $0 and $100. Then the players independently play games with probability .6 of winning
 the bet and .4 of losing it. The player who has the most money at the end wins a big prize.
 If they end up with the same amount of money, they share the prize.
+%====================================================================================%
 We may set this up as a game (X, Y, A), with X = [0, 0.7], Y = [0, 1.0], measured in
 units of $100, and assuming money is infinitely divisible. We assume the payoff, A(x, y),
 is the probability that Player I wins the game plus one-half the probabiity of a tie, when
