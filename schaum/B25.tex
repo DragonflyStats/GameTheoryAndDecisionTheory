@@ -63,7 +63,7 @@ G_2 ; \begin{array}{|c|c|} \hline
 %-----------------------------------%
 \begin{itemize}
 \item In the first game, i.e. $G_1$, if R consistently plays the first row, hoping to win an amount 3 or 4, then C can play the second column
-and so win an amount 1. However if C consistently plays the second column then R can play the second row and so win an amount 1.
+and so win an amount 1. \item However if C consistently plays the second column then R can play the second row and so win an amount 1.
 \item The we see that if either player should consistently play a particular row or column, the other player can take advantage of that fact.
 \item 
 In the second game,i.e. $G_2$ R can guarantee winning 1 or more by consistently playing row 2. Player C can minimize their loss by playing column 1. Thus in this case it is "best" if R plays a given rown and C a given column.
@@ -77,16 +77,15 @@ On the other hand, suppose a competitive situation is as follows:
 \item[(iv)] for each pair $i,j$ of choices, there is a payment $b_{ij}$ from one given player to the other.
 \end{itemize}
 
-The the above competitive situation is equivalent to the matrix game determined by the matrix $B=b_{i}$
+The the above competitive situation is equivalent to the matrix game determined by the matrix $B=b_{ij}$
 \subsection{Example 1.2 : Odds and Evens}
 Each of the two competitors R and C simultaneously show 1 or 2 fingers. If the sum of the fingers is even, then R wins the sum from C, of the sum is odd, the R loses the sum to C. The matrix of this game is as follows:
 
 \[
 A = 
-\begin{array}{|c|c|c|c|} \hline
-3 & 0 & -4 & -3 \\ \hline
-2 & 3 & \boldsymbol{1} & 2 \\ \hline
--4 & 2 & -1 & 3 \\ \hline
+\begin{array}{|c|c|} \hline
+2 & -3 & \\ \hline
+-3 & 4 & \\ \hline
 \end{array}
 \]
 
@@ -111,8 +110,10 @@ There also exists a theory for n-person games and non-zero sum games but that li
 \item The strategy for C is formally denoted by the probability vector $\boldsymbol{q} = \{q_1,_2,\ldots,q_n\}$.
 \end{itemize}
 %-----------------------------------%
+\begin{framed}
 A strategy which contains a 1 as a component and 0 everywhere else, i.e. where R decides to play consistently a given 
 row or C decides to play consistently a given column, is called a \textbf{\textit{pure strategy}}, otherwise it is called a \textbf{\textit{mixed strategy}}.
+\end{framed}
 %-----------------------------------%
 \section{Optimum Strategies and the Value of the game}
 For simplicity, we shall first consider a $2 \times 2$ matrix game, say 
@@ -124,36 +125,40 @@ c & d \\ \hline
 Suppose player R adopts the strategy $p=(p_1,p_2)$ and player C adopts a strategy $q=(q_1,q_2)$. Then R play row 1 with 
 probability $p_1$ and C plays column 1 with probability $q_1$, and so the entry $a$ will occur with probability $p_1 \times q_1$, entry $b$ will occur with probability $p_1 \times q_2$ and so on.
 
-The expected winnings for player R
+The expected winnings for player $R$
 \[ E(p,q) = a(p_1 \times q_1) + b(p_1 \times q_2) + c(p_2 \times q_1) + d(p_2 \times q_2) \]
 \[ E(p,q) = (p_1,p_2) \left(\begin{array}{cc} 
 a & b \\
 c & d \\ \end{array} \right)\left(\begin{array}{c} 
 q_1\\
-q_2\\ \end{array} \right) = (p A q^t) \]
+q_2\\ \end{array} \right) = (p \times A \times q^t) \]
 You can show that E(p,q) can be expressed as $q A^t p^t$.
 \smallskip
-Similarly if $A$ is any $k \times m$ matrix and player R adopts the strategy $p=()$ and C adopts the strategy $q=()$ then the expected winding of R is given b
+Similarly if $A$ is any $k \times m$ matrix and player R adopts the strategy $p=()$ and C adopts the strategy $q=()$ then the expected winding of R is given by
 \[ E(p,q) =  pAq^t = q A^t p^t \]
 Now suppose that $v_1$ is the maximum numer for which there is a strategy $p^0$ for R such that expected winnings of R is at least $v_1$ for any strategy adopted by C:
-\[E  \mbox{ for every strategy q of C}\]
+\[E(p^0,q) \geq v_1  \mbox{ for every strategy q of C}\]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %B25 - Page 323
 Since $v_1$ is the maximum of such numbers of such numbers, the strategy $p^0$ is in a certain sense a best strategy that R can adopt; we called $p^0$ an optimum strategy for R.
-We show in problem 25.9 page 233 that (1) is equivalent to the condition
+We show in that (1) is equivalent to the condition
 \[ A \geq \{ v_1,v1,\ldots,v_1 \}\]
 
 On the other hand, suppose $v_2$ is the minimum number for which there is a strategy $q^0$ for player $C$ such that 
-the expected loss of $C$ is not greater than $v_2$ for any strategy adopted by$R$
-Then the strategy $q^0$ is in a certain sense a best strategy that $C$ can adopt, we call $q^0$ an optimum strategy
-or C.
+the expected loss of $C$ is not greater than $v_2$ for any strategy adopted by$R$.
+\[E(p,q^0) \geq v_1  \mbox{ for every strategy p of R (2)}\]
+
+Then the strategy $q^0$ is in a certain sense a best strategy that $C$ can adopt, we call $q^0$ an optimum strategy for C.
+Similarly (2) can be shown to be equivalent to the condition
+\[ q^0A^T \leq  (v_2,v_2,\ldots v_2). \]
+
 %-------------------------------------------------------------%
 The fundamental theorem on game theory by Von Neumann states that $v_1$ and $v_2$ exist for any matrix game
 and are equal to each other : $v = v_1 = v_2$. This number $v$ is called the value of the game, and the game is said to be fair if $v=0$.ann's th
 We observe that (1) and (2) imply that $v_1 leq E(p^0,q^0) \leq v_2$, hence by von Neumann's Theorem we have the 
 equality relation
 \[ E(p^0,q^0) = p^0 A (q^0)^{t} = q^0 A^t (p^0)^{t} = v\]
-WE summarize and formally define the terms introduced above.
+We summarize and formally define the terms introduced above.
 %-------------------------------------------------------------%
 \subsection{Definition}
 In a matrix game A, a strategy $P^0$ for player R is an optimum strategy, a strategy $q^0$ for player C is an optimum strategy, and
@@ -165,8 +170,8 @@ a number $v$ is the value ofthe game if $p^0$,$q^0$ and $v$ are related as follo
 if $v = 0$ the game is said to be fair.
 %-------------------------------------------------------------%
 
-We point out that  the solution of a matrix means find optimum strategies for the players and the value of the game.
-
+We point out that there may be many more than one pair of strategies for which these conditions hold. That is to say, a player may have more than one optimal stategy.\\
+\smallskip
 We remark that the solution of a matrix game means finding optimum strategies for the players and the value of the game.
 Before we give the solution to an arbitrary matrix game by means of the simplex method
 We shall discuss two special cases which occur frequently and which offer simple solutions: striclty determined games and $2 \times 2$ games.
@@ -177,11 +182,12 @@ We shall discuss two special cases which occur frequently and which offer simple
 A matrix game is called strictly determined if the matrix has an entry which is a minimum in its row and a maximum in its column.
 Such an entry is called a "saddle point".
 
-Theorem Let $v$ be a saddle point of a strictly determined game. Then an optimum strategy for R is always to play the row 
-containing $v$, an optimum strategy for C is always to play the column containing $v$, and $v$ is the value of the game.
+\noindent \textbf{{Theorem}}\\ Let $v$ be a saddle point of a strictly determined game. Then an optimum strategy for R is always to play the row 
+containing $v$, an optimum strategy for C is always to play the column containing $v$, and $v$ is the value of the game.\\ \smallskip
 
 Thus in a strictly determined game a pure strategy for each player is an optimum strategy.
 
+\noindent \textbf{{Examle}}\\ 
 \[
 A = 
 \begin{array}{|c|c|c|c|} \hline

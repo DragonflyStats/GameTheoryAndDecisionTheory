@@ -1,3 +1,38 @@
+
+\documentclass[]{report}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
+
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+\begin{document}
+
+
 \section{5. The Extensive Form of a Game}
 The strategic form of a game is a compact way of describing the mathematical aspects
 of a game. In addition, it allows a straightforward method of analysis, at least in principle.
@@ -10,18 +45,18 @@ the game tree, chance moves, and information sets.
 %====================================================================%
 \section{5.1 The Game Tree.} The extensive form of a game is modelled using a directed
 graph. A directed graph is a pair (T,F) where T is a nonempty set of vertices and F is
-a function that gives for each x \in T a subset, F(x) of T called the followers of x. When
+a function that gives for each $x \in T$ a subset, F(x) of T called the followers of x. When
 a directed graph is used to represent a game, the vertices represent positions of the game.
 The followers, F(x), of a position, x, are those positions that can be reached from x in one
 move.
-A path from a vertex t0 to a vertex t1 is a sequence, x0, x1,...,xn, of vertices
-such that x0 = t0, xn = t1 and xi is a follower of xi−1 for i = 1,...,n. For the extensive
+A path from a vertex t0 to a vertex t1 is a sequence, $x_0, x_1,...,x_n$, of vertices
+such that x0 = t0, xn = t1 and xi is a follower of xi−1 for $i = 1,...,n$. For the extensive
 form of a game, we deal with a particular type of directed graph called a tree.
 \begin{framed}
 Definition. A tree is a directed graph, (T,F) in which there is a special vertex, t0, called
-the root or the initial vertex, such that for every other vertex t \in T, there is a unique path
+the root or the initial vertex, such that for every other vertex $t \in T$, there is a unique path
 beginning at t0 and ending at t.
-\end{framed]
+\end{framed}
 The existence and uniqueness of the path implies that a tree is connected, has a unique
 initial vertex, and has no circuits or loops.
 In the extensive form of a game, play starts at the initial vertex and continues along
@@ -35,7 +70,7 @@ out as positions from which a chance move is made.
 
 
 %====================================================================%
-Chance Moves. Many games involve chance moves. Examples include the rolling of
+\subsection{Chance Moves.} Many games involve chance moves. Examples include the rolling of
 dice in board games like monopoly or backgammon or gambling games such as craps, the
 dealing of cards as in bridge or poker, the spinning of the wheel of fortune, or the drawing
 of balls out of a cage in lotto. In these games, chance moves play an important role. Even
@@ -54,7 +89,7 @@ players). This leads to the possibility of “bluffing.”
 %====================================================================%
 \section{5.2 Basic Endgame in Poker.} 
 \begin{itemize}
-\itme One of the simplest and most useful mathematical
+\item One of the simplest and most useful mathematical
 models of a situation that occurs in poker is called the “classical betting situation” by
 Friedman (1971) and “basic endgame” by Cutler (1976). These papers provide explicit
 situations in the game of stud poker and of lowball stud for which the model gives a very
@@ -148,11 +183,11 @@ Definition. A finite two-person zero-sum game in extensive form is given by
 \item a finite tree with vertices T,
 \item a payoff function that assigns a real number to each terminal vertex,
 \item a set T0 of non-terminal vertices (representing positions at which chance moves
-occur) and for each t \in T0, a probability distribution on the edges leading from t,
+occur) and for each $t \in T0$, a probability distribution on the edges leading from t,
 \item a partition of the rest of the vertices (not terminal and not in T0) into two groups
 of information sets T11, T12,...,T1k1 (for Player I) and T21, T22,...,T2k2 (for Player II),
 and
-\item for each information set Tjk for player j, a set of labels Ljk, and for each t \in Tjk,
+\item for each information set Tjk for player j, a set of labels Ljk, and for each $t \in Tjk$,
 a one-to-one mapping of Ljk onto the set of edges leading from t.
 \end{enumerate}
 \end{framed}
@@ -237,7 +272,7 @@ Section 1. The extensive form of a game on the other hand is quite complex. It i
 by the game tree with each non-terminal vertex labeled as a chance move or as a move
 of one of the players, with all information sets specified, with probability distributions
 given for all chance moves, and with a payoff attached to each terminal vertex. 
-\itme It would
+\item It would
 seem that the theory of games in extensive is much more comprehensive than the theory
 of games in strategic form. 
 \item However, by taking a game in extensive form and considering
@@ -251,45 +286,49 @@ Player I, move first, and then let player II move without knowing the outcome of
 \item This lack of knowledge may be described by the use of an appropriate information set.
 The example below illustrates this.
 \end{itemize}
- 3 01
-−120
-3 0 1 –1 2 0
-I
-II
-1 2
-1 23 1 23
+%% 3 01
+%%−120
+%%3 0 1 –1 2 0
+%%I
+%%II
+%%1 2
+%%1 23 1 23
 \noindent \textbf{Matrix Form Equivalent Extensive Form}
 Player I has 2 pure strategies and Player II has 3. We pretend that Player I moves first by
 choosing row 1 or row 2. Then Player II moves, not knowing the choice of Player I. This is
 indicated by the information set for Player II. Then Player II moves by choosing column
 1, 2 or 3, and the appropriate payoff is made.
 %=============================================================================%
-\subsection{5.5 Reduction of a Game in Extensive Form to Strategic Form.} To go in
+\subsection{5.5 Reduction of a Game in Extensive Form to Strategic Form.}
+\begin{itemize}
+\item To go in
 the reverse direction, from the extensive form of a game to the strategic form, requires the
 consideration of pure strategies and the usual convention regarding random payoffs.
-Pure strategies. Given a game in extensive form, we first find X and Y , the sets of
+Pure strategies. \item Given a game in extensive form, we first find X and Y , the sets of
 pure strategies of the players to be used in the strategic form. A pure strategy for Player
 I is a rule that tells him exactly what move to make in each of their information sets. Let
 T11,...,T1k1 be the information sets for Player I and let L11,...,L1k1 be the corresponding
 sets of labels. A pure strategy for I is a k1-tuple x = (xl, ..., xk1 ) where for each i, xi is one
 of the elements of L1i. If there are mi elements in L1i, the number of such kl-tuples and
-hence the number of I s pure strategies is the product m1m2 ··· mk. The set of all such
-strategies is X. Similarly, if T21,...,T2k2 represent II’s information sets and L21,...,L2k2
+hence the number of I s pure strategies is the product m1m2 ··· mk. \item The set of all such
+strategies is X. \item Similarly, if T21,...,T2k2 represent II’s information sets and L21,...,L2k2
 the corresponding sets of labels, a pure strategy for II is a k2-tuple, y = (y1,...,yk2 ) where
-yj \in L2j for each j. Player II has $n_1,n_2 ··· nk2$ pure strategies if there are nj elements in
+$yj \in L2j$ for each j. Player II has $n_1,n_2 ··· nk2$ pure strategies if there are nj elements in
 L2j . Y denotes the set of these strategies.
 Random payoffs. A referee, given $x \in X $and $y \in Y $ , could play the game, playing the
 appropriate move from x whenever the game enters one of I’s information sets, playing the
 II – 54
 appropriate move from y whenever the game enters one of II’s information sets, and playing
-the moves at random with the indicated probabilities at each chance move. The actual
+the moves at random with the indicated probabilities at each chance move. 
+\item The actual
 outcome of the game for given $x \in X $and $y \in Y $ depends on the chance moves selected,
-and is therefore a random quantity. Strictly speaking, random payoffs were not provided
-for in our definition of games in normal form. However, we are quite used to replacing
+and is therefore a random quantity. \item Strictly speaking, random payoffs were not provided
+for in our definition of games in normal form. \item However, we are quite used to replacing
 random payoffs by their average values (expected values) when the randomness is due to
-the use of mixed strategies by the players. We adopt the same convention in dealing with
+the use of mixed strategies by the players.\item  We adopt the same convention in dealing with
 random payoffs when the randomness is due to the chance moves. The justification of this
 comes from utility theory.
+\end{itemize}
 Convention. If for fixed pure strategies of the players, $x \in X $and $y \in Y $ , the payoff is
 a random quantity, we replace the payoff by the average value, and denote this average
 value by $A(x, y)$.
@@ -345,7 +384,7 @@ Let us solve this 4 by 2 game. The third row is dominated by the first row, and 
 fourth row is dominated by the second row. In terms of the original form of the game, this
 says something you may already have suspected: that if I gets a winning card, it cannot
 be good for him to check. By betting they will win at least as much, and maybe more. With
-the bottom two rows eliminated the matrix becomes  −3/2 1
+the bottom two rows eliminated the matrix becomes % −3/2 1
 0 −1/2
 
 , whose solution is
@@ -366,7 +405,7 @@ form has dimension 64 by 4. Dominance can help reduce the dimension to a 2 by 3 
 \begin{itemize}
 \item Now that a game in extensive form has been
 defined, we may make precise the notion of a game of perfect information.
-Definition. A game of perfect information is a game in extensive form in which each
+\item Definition. A game of perfect information is a game in extensive form in which each
 information set of every player contains a single vertex.
 \item In a game of perfect information, each player when called upon to make a move knows
 the exact position in the tree. In particular, each player knows all the past moves of the
@@ -383,14 +422,15 @@ game matrix for chess must be either +1 (a win for Player I), or −1 (a win for
 % II – 56
 II), or 0 (a draw). \item A saddle point must be one of these numbers. Thus, either Player
 I can guarantee himself a win, or Player II can guarantee himself a win, or both players
-can assure themselves at least a draw. From the game-theoretic viewpoint, chess is a very
+can assure themselves at least a draw.\item From the game-theoretic viewpoint, chess is a very
 simple game. One needs only to write down the matrix of the game. If there is a row of all
-+1’s, Player I can win. If there is a column of all −1’s, then Player II can win. Otherwise,
++1’s, Player I can win. \item If there is a column of all −1’s, then Player II can win. Otherwise,
 there is a row with all +1’s and 0’s and a column with all −1’s and 0’s, and so the game is
 drawn with best play. Of course, the real game of chess is so complicated, there is virtually
 no hope of ever finding an optimal strategy. In fact, it is not yet understood how humans
 can play the game so well.
-\end{itemize
+\end{itemize}
+\end{document}
 %==============================================================%
 \subsection{5.8 Behavioral Strategies.} 
 \begin{itemize}

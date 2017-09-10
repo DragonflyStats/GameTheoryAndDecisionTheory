@@ -83,7 +83,7 @@ Each of the two competitors R and C simultaneously show 1 or 2 fingers. If the s
 
 \[
 A = 
-\begin{array}{cccc}
+\begin{array}{|c|c|c|c|} \hline
 3 & 0 & -4 & -3 \\ \hline
 2 & 3 & \boldsymbol{1} & 2 \\ \hline
 -4 & 2 & -1 & 3 \\ \hline
@@ -223,10 +223,10 @@ we obtain the following.
 
 \[
 A = 
-\begin{array}{cccc}
-3 & 0 & -4 & -3 \\
-2 & 3 & \boldsymbol{1} & 2 \\
--4 & 2 & -1 & 3 \\
+\begin{array}{|c|c|c|c|}
+3 & 0 & -4 & -3 \\ \hline 
+2 & 3 & \boldsymbol{1} & 2 \\ \hline
+-4 & 2 & -1 & 3 \\ \hline
 \end{array}
 \]
 
@@ -317,7 +317,7 @@ row, whereas a recessive column contains numbers than those of another column.
 \subsection{Example 4.1}
 Consider the game A.
 \[
-\begin{array}{|c|c|c|}
+\begin{array}{|c|c|c|} \hline
 2 & -1 & 2 \\ \hline
 -2 & 3 & 4 \\ \hline
 -2 & 3 & 4 \\ \hline
@@ -326,7 +326,7 @@ Consider the game A.
 Note the $(-5,-3,1) \leq (2,-1,2)$, i.e. every entry is the first row is $\leq$ the corresponding entry in
 the second row. Thus the first row is recessive and can be omitted from the game may be reduced to 
 \[
-\begin{array}{ccc}
+\begin{array}{|c|c|c|} \hline
 2 & -1 & 2 \\ \hline
 -2 & 3 & 4 \\ \hline
 \end{array}.
@@ -334,7 +334,7 @@ the second row. Thus the first row is recessive and can be omitted from the game
 Now observe that the third row is recessive since each entry is greater than corresponding entry in the second column.
 Thus the game can be reduced to a $2 \times 2$ game.
 \[
-\begin{array}{cc}
+\begin{array}{|c|c|} \hline
 2 & -1  \\ \hline
 -2 & 3 \\ \hline
 \end{array}.

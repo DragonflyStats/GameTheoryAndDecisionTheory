@@ -76,25 +76,26 @@ all optimal strategies for a player.
 %====================================================================%
 \subsection{2.1 Saddle points.} Occasionally it is easy to solve the game. If some entry $ a_{ij}$  of
 the matrix A has the property that
-(1) $ a_{ij}$  is the minimum of the ith row, and
-(2) $ a_{ij}$  is the maximum of the jth column,
+\begin{enumerate}
+\item $ a_{ij}$  is the minimum of the ith row, and
+\item $ a_{ij}$  is the maximum of the jth column,
+\end{enumerate
 then we say $ a_{ij}$  is a saddle point. If $ a_{ij}$  is a saddle point, then Player I can then win at
 least $ a_{ij}$  by choosing row i, and Player II can keep her loss to at most $a_{ij}$  by choosing
 column j. Hence $ a_{ij}$  is the value of the game.
-Example 1.
+\subsection{Example 1.}
+\[
 A =
-⎛
-⎝
-4 1 −3
-325
-016
-⎞
-⎠
+\begin{array}{ccc}
+4 & 1 &−3 \\ \hline
+3 & 2&5 \\ \hline
+0& 1 6 \\ \hline
+\end{array}\]
 The central entry, 2, is a saddle point, since it is a minimum of its row and maximum
-of its column. Thus it is optimal for I to choose the second row, and for II to choose the
+of its column. Thus it is optimal for Player I to choose the second row, and for player II to choose the
 second column. The value of the game is 2, and (0, 1, 0) is an optimal mixed strategy for
 both players.
-II – 9
+
 For large $ m \times n$  matrices it is tedious to check each entry of the matrix to see if it
 has the saddle point property. It is easier to compute the minimum of each row and the
 maximum of each column to see if there is a match. Here is an example of the method.
@@ -132,7 +133,7 @@ In matrix A, no row minimum is equal to any column maximum, so there is no saddl
 point. However, if the 2 in position a12 were changed to a 1, then we have matrix B. Here,
 the minimum of the fourth row is equal to the maximum of the second column; so b42 is a
 saddle point.
-2.2 Solution of All 2 by 2 Matrix Games. Consider the general 2 × 2 game
+\subsection{2.2 Solution of All 2 by 2 Matrix Games.} Consider the general 2 \times 2 game
 matrix
 A =
  a b
@@ -150,16 +151,16 @@ we proceed as follows:
 
 We now prove the method of finding equalizing strategies of Section 1.2 works whenever
 there is no saddle point by deriving the value and the optimal strategies.
-Assume there is no saddle point. If a \geq b, then b<c, as otherwise b is a saddle point.
+Assume there is no saddle point. If $a \geq b$, then $b<c$, as otherwise b is a saddle point.
 Since b<c, we must have c>d, as otherwise c is a saddle point. Continuing thus, we see
-that d<a and a>b. In other words, if a \geq b, then a>b<c>d<a. By symmetry, if
+that d<a and a>b. In other words, $if a \geq b,$ then $a>b < c > d <a$. By symmetry, if
 a ≤ b, then a<b>c<d>a. This shows that
 If there is no saddle point, then either a>b, b<c, c>d and d<a, or a<b, b>c,
 c<d and d>a.
 
 %====================================================================%
 In equations (1), (2) and (3) below, we develop formulas for the optimal strategies
-and value of the general 2 × 2 game. If I chooses the first row with probability p (i.e. uses
+and value of the general 2 \times 2 game. If I chooses the first row with probability p (i.e. uses
 the mixed strategy (p, 1 − p)), we equate his average return when II uses columns 1 and 2.
 ap + d(1 − p) = bp + c(1 − p).
 Solving for p, we find
@@ -209,7 +210,7 @@ But q must be between zero and one. What happened? The trouble is we “forgot t
 this matrix for a saddle point, so of course it has one”. (J. D. Williams The Compleat
 Strategyst Revised Edition, 1966, McGraw-Hill, page 56.) The lower left corner is a saddle
 point. So p = 0 and q = 1 are optimal strategies, and the value is v = 1.
-2.3 Removing Dominated Strategies. Sometimes, large matrix games may be
+\subsection{2.3 Removing Dominated Strategies.} Sometimes, large matrix games may be
 reduced in size (hopefully to the 2×2 case) by deleting rows and columns that are obviously
 bad for the player who uses them.
 Definition. We say the ith row of a matrix A = ($ a_{ij}$  ) dominates the kth row if
@@ -250,7 +251,7 @@ matrix). Deleting the top row we obtain:
 4 1
 ⎞
 ⎠
-This 2 × 2 matrix does not have a saddle point, so p = 3/4,
+This 2 \times 2 matrix does not have a saddle point, so p = 3/4,
 q = 1/4 and v = 7/4. I’s optimal strategy in the original game is
 (0, 3/4, 1/4); II’s is (1/4, 3/4, 0).
  1 2
@@ -292,11 +293,11 @@ with probabilities 1/3 each in matrix B =
 II – 12
 and so the last column may be removed.
 Not all games may be reduced by dominance. In fact, even if the matrix has a saddle
-point, there may not be any dominated rows or columns. The 3 × 3 game with a saddle
+point, there may not be any dominated rows or columns. The 3 \times 3 game with a saddle
 point found in Example 1 demonstrates this.
 
 %====================================================================%
-2.4 Solving 2 × n and m × 2 games. Games with matrices of size 2 × n or m × 2
+\subsection{2.4 Solving 2 \times n and m \times 2 games.} Games with matrices of size 2 \times n or m \times 2
 may be solved with the aid of a graphical interpretation. Take the following example.
 p
 1 − p
@@ -344,7 +345,7 @@ with probability 1/2 each. The line for Column 4 does appear in the lower envelo
 hence Column 4 cannot be dominated.
 
 %====================================================================%
-As an example of a m × 2 game, consider the matrix associated with Figure 2.2. If
+As an example of a m \times 2 game, consider the matrix associated with Figure 2.2. If
 q is the probability that II chooses Column 1, then II’s average loss for I’s three possible
 choices of rows is given in the accompanying graph. Here, Player II looks at the largest
 of her average losses for a given q. This is the upper envelope of the function. II wants
@@ -372,11 +373,11 @@ row 2
 row 3
 0 1 1/4 1/2
 q
-These techniques work just as well for 2 × ∞ and ∞ × 2 games.
+These techniques work just as well for 2 \times \infty and \infty \times 2 games.
 
 %====================================================================%
-2.5 Latin Square Games. A Latin square is an n × n array of n different letters
-such that each letter occurs once and only once in each row and each column. The 5 × 5
+\section{2.5 Latin Square Games.} A Latin square is an n \times n array of n different letters
+such that each letter occurs once and only once in each row and each column. The 5 \times 5
 array at the right is an example. If in a Latin square each letter is assigned a numerical
 value, the resulting matrix is the matrix of a Latin square game. Such games have simple
 solutions. The value is the average of the numbers in a row, and the strategy that chooses
@@ -415,10 +416,10 @@ t 1
 
 for an arbitrary real number t. (Don’t forget
 to check for a saddle point!) Draw the graph of v(t), the value of the game, as a function
-of t, for −∞ <t< ∞.
+of t, for −∞ <t< \infty.
 3. Show that if a game with m×n matrix has two saddle points, then they have equal
 values.
-4. Reduce by dominance to 2 × 2 games and solve.
+4. Reduce by dominance to 2 \times 2 games and solve.
 (a)
 ⎛
 ⎜⎝
@@ -438,7 +439,7 @@ values.
 5. (a) Solve the game with matrix  3240
 −2 1 −4 5
 .
-(b) Reduce by dominance to a 3 × 2 matrix game and solve:
+(b) Reduce by dominance to a 3 \times 2 matrix game and solve:
 ⎛
 ⎝
 085
@@ -494,7 +495,7 @@ the difference of I’s choice and her guess. Set up the matrix and reduce it by
 to a 2 by 2 game and solve. Note that II has an optimal pure strategy that was eliminated
 by dominance. Moreover, this strategy dominates the optimal mixed strategy in the 2 by
 2 game.
-10. Magic Square Games. A magic square is an n × n array of the first n integers
+10. Magic Square Games. A magic square is an n \times n array of the first n integers
 with the property that all row and column sums are equal. Show how to solve all games
 with magic square game matrices. Solve the example,
 ⎛

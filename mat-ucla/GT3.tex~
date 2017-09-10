@@ -1,4 +1,38 @@
 
+\documentclass[]{report}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
+
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+\begin{document}
+
+
 %=======================================================%
 
 \section{3. The Principle of Indifference.}
@@ -92,7 +126,7 @@ The inequality is strict since it is strict for the kth term of the sum. This co
 proves the first conclusion. The second conclusion follows analogously.
 Another way of stating the first conclusion of this theorem is: If there exists an optimal
 strategy for I giving positive probability to row i, then every optimal strategy of II gives
-I the value of the game if he uses row i.
+I the value of the game if they uses row i.
 
 %=======================================================%
 This theorem is useful in certain classes of games for helping direct us toward the
@@ -100,11 +134,11 @@ solution. The procedure this theorem suggests for Player 1 is to try to find a s
 the set of equations (5) formed by those j for which you think it likely that qj > 0. One
 way of saying this is that Player 1 searches for a strategy that makes Player 2 indifferent
 as to which of the (good) pure strategies to use. Similarly, Player 2 should play in such a
-way to make Player 1 indifferent among his (good) strategies. This is called the Principle
+way to make Player 1 indifferent among their (good) strategies. This is called the Principle
 of Indifference.
 
 %=======================================================%
-Example. As an example of this consider the game of Odd-or-Even in which both
+\subsection{Example.} As an example of this consider the game of Odd-or-Even in which both
 players simultaneously call out one of the numbers zero, one, or two. The matrix is
 Even
 Odd
@@ -119,31 +153,33 @@ Again it is difficult to guess who has the advantage. If we play the game a few 
 might become convinced that Even’s optimal strategy gives positive weight (probability)
 to each of the columns. If this assumption is true, Odd should play to make Player 2
 indifferent; that is, Odd’s optimal strategy p must satisfy
-p2 − 2p3 = V
-p1 − 2p2 + 3p3 = V
-−2p1 + 3p2 − 4p3 = V,
+\begin{eqnarray}
+p2 − 2p3 &= V\\
+p1 − 2p2 + 3p3 &= V\\
+−2p1 + 3p2 − 4p3 &= V,\\
+\end{eqnarray}
 (6)
 for some number, V — three equations in four unknowns. A fourth equation that must be
 satisfied is
-p1 + p2 + p3 = 1. (7)
+\[p1 + p2 + p3 = 1\]. (7)
 
 This gives four equations in four unknowns. This system of equations is solved as follows.
 First we work with (6); add the first equation to the second.
-p1 − p2 + p3 = 2V (8)
+\[p1 − p2 + p3 = 2V\] (8)
 Then add the second equation to the third.
-−p1 + p2 − p3 = 2V (9)
+\[−p1 + p2 − p3 = 2V\] (9)
 Taken together (8) and (9) imply that V = 0. Adding (7) to (9), we find 2p2 = 1, so that
 p2 = 1/2. The first equation of (6) implies p3 = 1/4 and (7) implies p1 = 1/4. Therefore
 p = (1/4, 1/2, 1/4)T (10)
 %%II – 19
-is a strategy for I that keeps his average gain to zero no matter what II does. Hence the
+is a strategy for I that keeps their average gain to zero no matter what II does. Hence the
 value of the game is at least zero, and V = 0 if our assumption that II’s optimal strategy
 gives positive weight to all columns is correct. To complete the solution, we note that if the
 optimal p for I gives positive weight to all rows, then II’s optimal strategy q must satisfy
 the same set of equations (6) and (7) with p replaced by q (because the game matrix here
 is symmetric). Therefore,
-q = (1/4, 1/2, 1/4)T (11)
-is a strategy for II that keeps his average loss to zero no matter what I does. Thus the
+$q = (1/4, 1/2, 1/4)^T$ 
+is a strategy for II that keeps their average loss to zero no matter what I does. Thus the
 value of the game is zero and (10) and (11) are optimal for I and II respectively. The game
 is fair.
 %=======================================================%
@@ -186,13 +222,17 @@ T
 A−11. (17)
 II – 20
 %=========================================================%
-Now, if in addition pi \geq 0 for all i, then both p and q are optimal since both guarantee an
-average payoff of V no matter what the other player does. Note that we do not require the
+\begin{itemize}
+\item Now, if in addition $p_i \geq 0$ for all $i$, then both p and q are optimal since both guarantee an
+average payoff of V no matter what the other player does.
+\item Note that we do not require the
 pi to be strictly positive as was required by our original “all-strategies-active” assumption.
 We summarize this discussion as a theorem.
+\end{itemize}
 Theorem 3.2. Assume the square matrix A is nonsingular and 1TA−11 = 0. Then the
 game with matrix A has value V = 1/1TA−11 and optimal strategies pT = V 1TA−1 and
-q = V A−11, provided both p \geq 0 and q \geq 0.
+q = V A−11, provided both $p \geq 0$ and $q \geq 0$.
+%====================================================================%
 If the value of a game is zero, this method cannot work directly since (13) implies
 that A is singular. However, the addition of a positive constant to all entries of the matrix
 to make the value positive, may change the game matrix into being nonsingular. The
@@ -221,18 +261,22 @@ Then 1TA−11 , the sum of the elements of A−1, is found to be 1, so from (15)
 Therefore, we compute pT = 1TA−1 = (1/4, 1/2, 1/4)T, and q = A−11 = (1/4, 1/2, 1/4)T.
 Since both are nonnegative, both are optimal and 1 is the value of the game with matrix
 A.
-What do we do if either p or q has negative components? A complete answer to
+%===========================================================%
+\begin{itemize}
+\item What do we do if either p or q has negative components? A complete answer to
 questions of this sort is given in the comprehensive theorem of Shapley and Snow (1950).
-This theorem shows that an arbitrary m × n matrix game whose value is not zero may be
+\item This theorem shows that an arbitrary $m \times n$ matrix game whose value is not zero may be
 solved by choosing some suitable square submatrix A, and applying the above methods
 and checking that the resulting optimal strategies are optimal for the whole matrix, A.
-Optimal strategies obtained in this way are called basic, and it is noted that every optimal
+\item Optimal strategies obtained in this way are called basic, and it is noted that every optimal
 strategy is a probability mixture of basic optimal strategies. Such a submatrix, A, is called
 an active submatrix of the game.See Karlin (1959, Vol. I, Section 2.4) for a discussion and
-proof. The problem is to determine which square submatrix to use. The simplex method
+proof.
+\item  The problem is to determine which square submatrix to use. The simplex method
 of linear programming is simply an efficient method not only for solving equations of the
 form (13), but also for finding which square submatrix to use. This is described in Section
 4.4.
+\end{itemize}
 %============================================================%
 \subsection{3.3 Diagonal Games.} We apply these ideas to the class of diagonal games - games
 whose game matrix A is square and diagonal,
@@ -284,7 +328,8 @@ C =
 From (20) and (22) the optimal strategy is proportional to the reciprocals of the diagonal
 elements. The sum of these reciprocals is 1 + 1/2+1/3+1/4 = 25/12. Therefore, the
 value is V = 12/25, and the optimal strategies are p = q = (12/25, 6/25, 4/25, 3/25)T.
-3.4 Triangular Games. Another class of games for which the equations (12) are
+%==================================================================%
+\subsection{3.4 Triangular Games.} Another class of games for which the equations (12) are
 easy to solve are the games with triangular matrices - matrices with zeros above or below
 the main diagonal. Unlike for diagonal games, the method does not always work to solve
 triangular games because the resulting p or q may have negative components. Nevertheless,
@@ -336,6 +381,7 @@ same object to display, there is no payoff. If they choose different objects, th
 over paper (scissors cut paper), rock wins over scissors (rock breaks scissors), and paper
 wins over rock (paper covers rock). If the payoff upon winning or losing is one unit, then
 the matrix of the game is as follows.
+%=======================================================================%
 II
 I
 ⎛
@@ -392,8 +438,8 @@ symmetry, if q is optimal for II, it is optimal for I also.
 simultaneously choose a positive integer. Both players want to choose an integer larger
 but not too much larger than the opponent. Here is a simple example. The players choose
 an integer between 1 and 100. If the numbers are equal there is no payoff. The player that
-chooses a number one larger than that chosen by his opponent wins 1. The player that
-chooses a number two or more larger than his opponent loses 2. Find the game matrix
+chooses a number one larger than that chosen by their opponent wins 1. The player that
+chooses a number two or more larger than their opponent loses 2. Find the game matrix
 and solve the game.
 Solution. The payoff matrix is
 ⎛
@@ -426,25 +472,29 @@ Since p1, p2 and p3 are positive, this gives the solution: p = q = (1/4, 1/2, 1/
 T is
 optimal for both players.
 %================================================================================%
-3.6 Invariance. Consider the game of matching pennies: Two players simultaneously
+\subsection{3.6 Invariance.} 
+\begin{itemize}
+\item Consider the game of matching pennies: Two players simultaneously
 choose heads or tails. Player I wins if the choices match and Player II wins otherwise.
-There doesn’t seem to be much of a reason for either player to choose heads instead of
+\item There doesn’t seem to be much of a reason for either player to choose heads instead of
 tails. In fact, the problem is the same if the names of heads and tails are interchanged. In
 other words, the problem is invariant under interchanging the names of the pure strategies.
-
+\item 
 In this section, we make the notion of invariance precise. We then define the notion of
 an invariant strategy and show that in the search for a minimax strategy, a player may
-restrict attention to invariant strategies. Use of this result greatly simplifies the search for
+restrict attention to invariant strategies. 
+\item Use of this result greatly simplifies the search for
 minimax strategies in many games. In the game of matching pennies for example, there is
 only one invariant strategy for either player, namely, choose heads or tails with probability
 1/2 each. 
-
+\item 
 Therefore this strategy is minimax without any further computation.
 We look at the problem from Player II’s viewpoint. Let Y denote the pure strategy
 space of Player II, assumed finite. A transformation, g of Y into Y is said to be onto Y
 if the range of g is the whole of Y , that is, if for every y1 ∈ Y there is y2 ∈ Y such that
 g(y2) = y1. A transformation, g, of Y into itself is said to be one-to-one if g(y1) = g(y2)
 implies y1 = y2.
+\end{itemize}
 %===============================================================================%
 Definition 3.2. Let G = (X, Y, A) be a finite game, and let g be a one-to-one transformation
 of Y onto itself. The game G is said to be invariant under g if for every x ∈ X
@@ -477,6 +527,7 @@ A(x1, y) = A(g(x1), g(y)) = A(g(x2), g(y)) = A(x2, y) (30)
 for all y ∈ Y , which implies x1 = x2 from assumption (29). Therefore the inverse, g−1, of
 g, defined by g−1(g(x)) = g(g−1(x)) = x, exists. Moreover, any one-to-one transformation
 of a finite set is automatically onto, so g is a one-to-one transformation of X onto itself.
+%==============================================================%
 Lemma 1. If a finite game, G = (X, Y, A), is invariant under a one-to-one transformation,
 g, then G is also invariant under g−1.
 Proof. We are given A(x, y) = A(g(x), g(y)) for all x ∈ X and all y ∈ Y . Since true for
@@ -501,14 +552,15 @@ transformations g on X is also a group, with identity e(x) = x for all x ∈ X. 
 This shows that we could have analyzed the problem from Player I’s viewpoint and
 arrived at the same groups G and G.
 II – 26
-Definition 3.3. A finite game G = (X, Y, A) is said to be invariant under a group, G of
+%==========================================================%
+\subsection{Definition 3.3.} A finite game G = (X, Y, A) is said to be invariant under a group, G of
 transformations, if (26
 ) holds for all $g \in G$.
 We now define what it means for a mixed strategy, q, for Player II to be invariant
 under a group G. Let m denote the number of elements in X and n denote the number of
 elements in Y .
 %==========================================================%
-Definition 3.4. Given that a finite game G = (X, Y, A) is invariant under a group, G,
+\subsection{Definition 3.4.} Given that a finite game G = (X, Y, A) is invariant under a group, G,
 of one-to-one transformations of Y , a mixed strategy, q = (q(1),...,q(n)), for Player II is
 said to be invariant under G if
 q(g(y)) = q(y) for all y ∈ Y and all $g \in G$. (33)
@@ -625,16 +677,17 @@ consider a class of tactical military games called Blotto Games, introduced by T
 (1949). There are many variations of these games; just google “Colonel Blotto Games”
 to get a sampling. Here, we describe the discrete version treated in Williams (1954),
 Karlin(1959) and Dresher (1961).
+%================================================================================%
 Colonel Blotto has 4 regiments with which to occupy two posts. The famous Lieutenant
 Kije has 3 regiments with which to occupy the same posts. The payoff is defined as
 follows. The army sending the most units to either post captures it and all the regiments
 sent by the other side, scoring one point for the captured post and one for each captured
 regiment. If the players send the same number of regiments to a post, both forces withdraw
 and there is no payoff.
-Colonel Blotto must decide how to split his forces between the two posts. There are
-5 pure strategies he may employ, namely, X = {(4, 0),(3, 1),(2, 2),(1, 3),(0, 4)}, where
+Colonel Blotto must decide how to split their forces between the two posts. There are
+5 pure strategies they may employ, namely, X = {(4, 0),(3, 1),(2, 2),(1, 3),(0, 4)}, where
 (n1, n2) represents the strategy of sending n1 units to post number 1, and n2 units to post
-II – 28
+%- II – 28
 number two. Lieutenant Kije has 4 pure strategies, Y = {(3, 0),(2, 1),(1, 2),(0, 3)}. The
 payoff matrix is
 ⎛
@@ -676,49 +729,52 @@ With these strategy spaces, the payoff matrix becomes
 (2, 2) −2 2
 ⎞
 ⎠ (40)
-As an example of the computations used to arrive at these payoffs, consider the upper
+\begin{itemize}
+\itemAs an example of the computations used to arrive at these payoffs, consider the upper
 left entry. If Blotto uses (4,0) and (0,4) with probability 1/2 each, and if Kije uses (3,0)
-II – 29
+%%-- II – 29
 and (0,3) with probability 1/2 each, then the four corners of the matrix (39) occur with
 probability 1/4 each, so the expected payoff is the average of the four numbers, 4, 0, 0, 4,
 namely 2.
-To complete the analysis, we solve the game with matrix (40). We first note that
+\item To complete the analysis, we solve the game with matrix (40). We first note that
 the middle row is dominated by the top row (even though there was no domination in the
 original matrix). Removal of the middle row reduces the game to a 2 by 2 matrix game
-whose solution is easily found. The mixed strategy (8/9,0,1/9) is optimal for Blotto, the
+whose solution is easily found. 
+\item The mixed strategy (8/9,0,1/9) is optimal for Blotto, the
 mixed strategy (1/9,8/9) is optimal for Kije, and the value is V = 14/9.
-Returning now to the original matrix (39), we find that (4/9,0,1/9,0,4/9) is optimal
+\item Returning now to the original matrix (39), we find that (4/9,0,1/9,0,4/9) is optimal
 for Blotto, (1/18,4/9,4/9,1/18) is optimal for Kije, and V = 14/9 is the value.
-3.7 Exercises.
+\end{itemize}
+%=========================================%
+\subsection{3.7 Exercises.}
 1. Consider the game with matrix
-⎛
-⎝
-−2 2 −1
-111
-301
-⎞
-⎠.
-(a) Note that this game has a saddle point.
-(b) Show that the inverse of the matrix exists.
-(c) Show that II has an optimal strategy giving positive weight to each of his columns.
-(d) Why then, don’t equations (16) give an optimal strategy for II?
+\[\begin{array}{ccc}
+−2 & 2 & −1\\
+1& 1 1\\
+3& 0& 1 \\
+\end{array}.\]
+
+\item[(a)] Note that this game has a saddle point.
+\item[(b)] Show that the inverse of the matrix exists.
+\item[(c)] Show that II has an optimal strategy giving positive weight to each of their columns.
+\item[(d)] Why then, don’t equations (16) give an optimal strategy for II?
 2. Consider the diagonal matrix game with matrix (18).
-(a) Suppose one of the diagonal terms is zero. What is the value of the game?
-(b) Suppose one of the diagonal terms is positive and another is negative. What is
+\item[(a)] Suppose one of the diagonal terms is zero. What is the value of the game?
+\item[(b)] Suppose one of the diagonal terms is positive and another is negative. What is
 the value of the game?
-(c) Suppose all diagonal terms are negative. What is the value of the game?
+\item[(c)] Suppose all diagonal terms are negative. What is the value of the game?
 3. Player II chooses a number $j \in {1, 2, 3, 4}$, and Player I tries to guess what number
-II has chosen. If he guesses correctly and the number was j, he wins 2j dollars from II.
+II has chosen. If they guesses correctly and the number was j, they win  2j dollars from II.
 Otherwise there is no payoff. Set up the matrix of this game and solve.
 4. Player II chooses a number $j \in {1, 2, 3, 4}$ and I tries to guess what it is. If
-he guesses correctly, he wins 1 from II. If he overestimates he wins 1/2 from II. If he
+he guesses correctly, they win  1 from II. If they overestimates they win  1/2 from II. If he
 underestimates, there is no payoff. Set up the matrix of this game and solve.
 5. Player II chooses a number $j \in {1, 2,\ldots,n}$ and I tries to guess what it is. If he
-guesses correctly, he wins 1. If he guesses too high, he loses 1. If he guesses too low, there
+guesses correctly, they win  1. If they guesses too high, they loses 1. If they guesses too low, there
 is no payoff. Set up the matrix and solve.
-6. Player II chooses a number $j \in {1, 2,\ldots,n}$, n \geq 2, and Player I tries to guess
-what it is by guessing some i ∈ {1, 2,...,n}. If he guesses correctly, i.e. i = j, he wins 1.
-If i>j, he wins bi−j for some number b < 1. Otherwise, if i<j, he wins nothing. Set up
+6. Player II chooses a number $j \in {1, 2,\ldots,n}$, $n \geq 2$, and Player I tries to guess
+what it is by guessing some i ∈ {1, 2,...,n}. If they guesses correctly, i.e. i = j, they win  1.
+If i>j, they win  bi−j for some number b < 1. Otherwise, if i<j, they win  nothing. Set up
 II – 30
 the matrix and solve. Hint: If An = (aij ) denotes the game matrix, then show the inverse
 matrix is A−1
@@ -740,14 +796,14 @@ and Velleman (1993) show that the inverse of Bn is the the matrix An with entrie
 where aij = (−1)i+j bij . Using this, find the value and optimal strategies for the matrix
 game with matrix An.
 8. Solve the games with the following matrices.
-(a)
+\item[(a)]
 ⎛
 ⎝
 1 −1 −1
 021
 003
 ⎞
-⎠ (b)
+⎠ \item[(b)]
 ⎛
 ⎜⎝
 21 1 1
@@ -756,7 +812,7 @@ game with matrix An.
 11 15/4
 ⎞
 ⎟⎠
-(c)
+\item[(c)]
 ⎛
 ⎜⎝
 2002
@@ -767,11 +823,11 @@ game with matrix An.
 ⎟⎠
 9. Another Mendelsohn game. Two players simultaneously choose an integer
 between 1 and n inclusive, where n \geq 5. If the numbers are equal there is no payoff. The
-player that chooses a number one larger than that chosen by his opponent wins 2. The
-player that chooses a number two or more larger than that chosen by his opponent loses
+player that chooses a number one larger than that chosen by their opponent wins 2. The
+player that chooses a number two or more larger than that chosen by their opponent loses
 1.
-(a) Set up the game matrix.
-(b) It turns out that the optimal strategy satisfies pi > 0 for i = 1,..., 5, and pi = 0 for all
+\item[(a)] Set up the game matrix.
+\item[(b)] It turns out that the optimal strategy satisfies pi > 0 for i = 1,..., 5, and pi = 0 for all
 other i. Solve for the optimal p. (It is not too difficult since you can argue that p1 = p5
 and p2 = p4 by symmetry of the equations.) Check that in fact the strategy you find is
 optimal.
@@ -782,19 +838,19 @@ Silverman games “too much larger” is determined multiplicatively rather than
 Solve the following example: The player whose number is larger but less than three times
 as large as the opponent’s wins 1. But the player whose number is three times as large or
 larger loses 2. If the numbers are the same, there is no payoff.
-(a) Note this is a symmetric game, and show that dominance reduces the game to a 3 by
+\item[(a)] Note this is a symmetric game, and show that dominance reduces the game to a 3 by
 II – 31
 3 matrix.
-(b) Solve.
+\item[(b)] Solve.
 11. Solve the following games.
-(a)
+\item[(a)]
 ⎛
 ⎝
 0 1 −2
 −103
 2 −3 0
 ⎞
-⎠ (b)
+⎠ \item[(b)]
 ⎛
 ⎝
 0 1 −2
@@ -802,7 +858,7 @@ II – 31
 1 −2 0
 ⎞
 ⎠
-(c)
+\item[(c)]
 ⎛
 ⎜⎜⎜⎝
 1 4 −1 5
@@ -817,19 +873,19 @@ web at: http://www.math.ucla.edu/˜tom/gamesolve.html, and note that it gives di
 optimal strategies than those found in the text. What does this mean? Show that (3, 1)∗ is
 strictly dominated in (40). This means that no optimal strategy can give weight to (3, 1)∗.
 Is this true for the solution found?
-13. (a) Suppose Blotto has 2 units and Kije just 1 unit, with 2 posts to capture.
+13. \item[(a)] Suppose Blotto has 2 units and Kije just 1 unit, with 2 posts to capture.
 Solve.
-(b) Suppose Blotto has 3 units and Kije 2 units, with 2 posts to capture. Solve.
-14. (a) Suppose there are 3 posts to capture. Blotto has 4 units and Kije has 3. Solve.
+\item[(b)] Suppose Blotto has 3 units and Kije 2 units, with 2 posts to capture. Solve.
+14. \item[(a)] Suppose there are 3 posts to capture. Blotto has 4 units and Kije has 3. Solve.
 (Reduction by invariance leads to a 4 by 3 matrix, reducible further by domination to 2
 by 2.)
-(b) Suppose there are 4 posts to capture. Blotto has 4 units and Kije has 3. Solve.
+\item[(b)] Suppose there are 4 posts to capture. Blotto has 4 units and Kije has 3. Solve.
 (A 5 by 3 reduced matrix, reducible by domination to 4 by 3. But you may as well use
 the Matrix Game Solver to solve it.)
 %===================================================================%
 \subsection{15. Battleship.}
 The game of Battleship, sometimes called Salvo, is played on two
-square boards, usually 10 by 10. Each player hides a fleet of ships on his own board and
+square boards, usually 10 by 10. Each player hides a fleet of ships on their own board and
 tries to sink the opponent’s ships before the opponent sinks his. (For one set of rules, see
 http://www.kielack.de/games/destroya.htm, and while you are there, have a game.)
 For simplicity, consider a 3 by 3 board and suppose that Player I hides a destroyer
@@ -850,7 +906,7 @@ chooses one of [2,5], [5,6], [5,8], and [4,5], at random with probability 1/4 ea
 that invariance reduces the game to a 2 by n game where n is the number of invariant
 strategies of Player II. Domination may reduce it somewhat further. Solve the game.
 16. Dresher’s Guessing Game. Player I secretly writes down one of the numbers
-1, 2,...,n. Player II must repeatedly guess what I’s number is until she guesses correctly,
+1, 2,...,n. Player II must repeatedly guess what I’s number is until they guesses correctly,
 losing 1 for each guess. After each guess, Player I must say whether the guess is correct,
 too high, or too low. Solve this game for n = 3. (This game was investigated by Dresher
 (1961) and solved for n \leq 11 by Johnson (1964). A related problem is treated in Gal
@@ -877,13 +933,13 @@ um um um ... 0
 ⎞
 ⎟⎟⎟⎟⎠
 Solve!
-Hint: It might be expected that for some k \leq m Player I will give all his probability
+Hint: It might be expected that for some k \leq m Player I will give all their probability
 to stealing one of the k most expensive items. Order the items from most expensive to
 least expensive, $u1 \geq u2 \geq ... \geq um > 0$, and use the principle of indifference on the upper
 left k × k submatrix of A for some k.
 18. Player II chooses a number $j \in {1, 2,\ldots,n}$, n \geq 2, and Player I tries to guess
-what it is by guessing some i ∈ {1, 2,...,n}. If he guesses correctly, i.e. i = j, he wins 2.
-If he misses by exactly 1, i.e. |i − j| = 1, then he loses 1. Otherwise there is no payoff.
+what it is by guessing some i ∈ {1, 2,...,n}. If they guesses correctly, i.e. i = j, they win  2.
+If they misses by exactly 1, i.e. |i − j| = 1, then they loses 1. Otherwise there is no payoff.
 Solve. Hint: Let An denote the n by n payoff matrix, and show that A−1 n = Bn = (bij ),
 where bij = i(n + 1 − j)/(n + 1) for i \leq j, and bij = bji for i>j.
 %================================================================================%
@@ -905,9 +961,9 @@ to be an arbitrary number a, 0 \leq a \leq 1.] Since A−1 n is just Bn of the p
 with bij replaced by (−1)i+j bij , the solution can be derived as in that exercise. Instead,
 just show the following.
 \begin{itemize}
-\item[(a)] For n odd, the value is Vn = 4/(n + 1). There is an optimal equalizing strategy
+\item[\item[(a)]] For n odd, the value is Vn = 4/(n + 1). There is an optimal equalizing strategy
 (the same for both players) that is proportional to (1, 0, 1, 0,..., 0, 1).
-\item[(b)] For n even, the value is 4(n+1)/(n(n+2)). There is an optimal equalizing strategy
+\item[\item[(b)]] For n even, the value is 4(n+1)/(n(n+2)). There is an optimal equalizing strategy
 (the same for both players) that is proportional to $(k, 1, k − 1, 2, k − 2, 3,..., 2, k − 1, 1, k)$,
 where k = n/2.
 \end{itemize}

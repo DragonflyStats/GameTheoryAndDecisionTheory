@@ -1,0 +1,113 @@
+
+\documentclass[]{report}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
+
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+\begin{document}
+
+
+%=======================================================%
+\begin{itemize}
+\item An outcome is a situation which results from a combination of player's strategies. Every combination of strategies (one for each player) is an outcome of the game. A primary purpose of game theory is to determine which outcomes are stable according to a solution concept (e.g. Nash equilibria).
+\item 
+In a game where chance or a random event is involved, the outcome is not known from only the set of strategies, but is only realized when the random event(s) are realized.
+\item 
+A set of payoffs can be considered a set of N-tuples, where N is the number of players in the game, and the cardinality of the set is equal to the total number of possible outcomes when the strategies of the players are varied. The payoff set can thus be partially ordered, where the partial ordering comes from the value of each entry in the N-tuple. How players interact to allocate the payoffs among themselves is a fundamental aspect of economics.
+\end{itemize}
+
+\subsection{Choosing among outcomes}
+\begin{itemize}
+\item Many different concepts exist to express how players might interact. An optimal interaction may be one in which no player's payoff can be made greater, without making any other player's payoff lesser. Such a payoff is described as Pareto efficient, and the set of such payoffs is called the Pareto frontier.
+\item 
+Many economists study the ways in which payoffs are in some sort of economic equilibrium. One example of such an equilibrium is the Nash equilibrium, where each player plays a strategy such that their payoff is maximized given the strategy of the other players.
+\end{itemize}
+%======================================================================%
+
+\section{Dominance}
+In game theory, strategic dominance (commonly called simply dominance) occurs when one strategy is better than another strategy for one player, no matter how that player's opponents may play. Many simple games can be solved using dominance. The opposite, intransitivity, occurs in games where one strategy may be better or worse than another strategy for one player, depending on how the player's opponents may play.
+
+%--------------------------------------------------------%
+\subsection{Terminology}
+When a player tries to choose the "best" strategy among a multitude of options, that player may compare two strategies A and B to see which one is better. The result of the comparison is one of:
+\begin{itemize}
+\item B dominates A: choosing B always gives as good as or a better outcome than choosing A. There are 2 possibilities:
+\item B strictly dominates A: choosing B always gives a better outcome than choosing A, no matter what the other player(s) do.
+\item B weakly dominates A: There is at least one set of opponents' action for which B is superior, and all other sets of opponents' actions give B the same payoff as A.
+\item B and A are intransitive: B neither dominates, nor is dominated by, A. Choosing A is better in some cases, while choosing B is better in other cases, depending on exactly how the opponent chooses to play. For example, B is "throw rock" while A is "throw scissors" in Rock, Paper, Scissors.
+\item B is dominated by A: choosing B never gives a better outcome than choosing A, no matter what the other player(s) do. There are 2 possibilities:
+\item B is weakly dominated by A: There is at least one set of opponents' actions for which B gives a worse outcome than A, while all other sets of opponents' actions give A the same payoff as B. (Strategy A weakly dominates B).
+\item B is strictly dominated by A: choosing B always gives a worse outcome than choosing A, no matter what the other player(s) do. (Strategy A strictly dominates B).
+\end{itemize}
+This notion can be generalized beyond the comparison of two strategies.
+
+\begin{itemize}
+\item Strategy B is strictly dominant if strategy B strictly dominates every other possible strategy.
+\item Strategy B is weakly dominant if strategy B dominates all other strategies, but some (or all) strategies are only weakly dominated by B.
+\item Strategy B is strictly dominated if some other strategy exists that strictly dominates B.
+\item Strategy B is weakly dominated if some other strategy exists that weakly dominates B.
+\end{itemize}
+
+\subsection{Nash Equilibrium}
+A Nash equilibrium, named after John Nash, is a set of strategies, one for each player, such that no player has incentive to unilaterally change her action. Players are in equilibrium if a change in strategies by any one of them would lead that player to earn less than if she remained with her current strategy. For games in which players randomize (mixed strategies), the expected or average payoff must be at least as large as that obtainable by any other strategy.
+
+\section{Dominance and Nash equilibria}
+\begin{tabular}{|c|c|c|} \hline
+      &  C   &	D  \\ \hline
+C     &	1, 1 & 	0, 0 \\ \hline
+D     &	0, 0 &	0, 0 \\ \hline
+\end{tabular}
+If a strictly dominant strategy exists for one player in a game, that player will play that strategy in each of the game's Nash equilibria. If both players have a strictly dominant strategy, the game has only one unique Nash equilibrium. However, that Nash equilibrium is not necessarily Pareto optimal, meaning that there may be non-equilibrium outcomes of the game that would be better for both players. The classic game used to illustrate this is the Prisoner's Dilemma.
+
+Strictly dominated strategies cannot be a part of a Nash equilibrium, and as such, it is irrational for any player to play them. On the other hand, weakly dominated strategies may be part of Nash equilibria. For instance, consider the payoff matrix pictured at the right.
+
+Strategy C weakly dominates strategy D. Consider playing C: If one's opponent plays C, one gets 1; if one's opponent plays D, one gets 0. Compare this to D, where one gets 0 regardless. Since in one case, one does better by playing C instead of D and never does worse, C weakly dominates D. Despite this, ${\displaystyle (D,D)}$ is a Nash equilibrium. Suppose both players choose D. Neither player will do any better by unilaterally deviating—if a player switches to playing C, they will still get 0. 
+
+This satisfies the requirements of a Nash equilibrium. Suppose both players choose C. Neither player will do better by unilaterally deviating—if a player switches to playing D, they will get 0. This also satisfies the requirements of a Nash equilibrium.
+%===========================================================================================%
+\section{Iterated Elimination of Dominated Strategies (IEDS) }
+\begin{itemize}
+\item The iterated elimination (or deletion) of dominated strategies is one common technique for solving games that involves iteratively removing dominated strategies. In the first step, at most one dominated strategy is removed from the strategy space of each of the players since no rational player would ever play these strategies. This results in a new, smaller game. Some strategies—that were not dominated before—may be dominated in the smaller game. 
+\item 
+The first step is repeated, creating a new even smaller game, and so on. The process stops when no dominated strategy is found for any player. This process is valid since it is assumed that rationality among players is common knowledge, that is, each player knows that the rest of the players are rational, and each player knows that the rest of the players know that he knows that the rest of the players are rational, and so on ad infinitum (see Aumann, 1976).
+\item 
+There are two versions of this process. One version involves only eliminating strictly dominated strategies. If, after completing this process, there is only one strategy for each player remaining, that strategy set is the unique Nash equilibrium.
+\item
+Another version involves eliminating both strictly and weakly dominated strategies. If, at the end of the process, there is a single strategy for each player, this strategy set is also a Nash equilibrium. However, unlike the first process, elimination of weakly dominated strategies may eliminate some Nash equilibria. As a result, the Nash equilibrium found by eliminating weakly dominated strategies may not be the only Nash equilibrium. (In some games, if we remove weakly dominated strategies in a different order, we may end up with a different Nash equilibrium.)
+\item 
+In any case, if by iterated elimination of dominated strategies there is only one strategy left for each player, the game is called a dominance-solvable game.
+\end{itemize}
+%==========================================================================================%
+\newpage
+\subsection{Non-Cooperative Game}
+A non-cooperative game is one in which players are unable to make enforceable contracts outside of those specifically modeled in the game. Hence, it is not defined as games in which players do not cooperate, but as games in which any cooperation must be self-enforcing. Games in which players can enforce contracts through outside parties are termed cooperative games.
+\subsection{Iterated Game}
+When players interact by playing a similar stage game (such as the prisoner's dilemma) numerous times, the game is called an iterated (or repeated) game. Unlike a game played once, a repeated game allows for a strategy to be contingent on past moves, thus allowing for reputation effects and retribution. In infinitely repeated games, trigger strategies such as tit for tat can encourage cooperation.
+%==================================================================================================%
+\end{document}
