@@ -47,6 +47,8 @@
 \begin{document}
 
 \section{Nash Equilibrium}
+Nash equilibrium is a solution concept of a non-cooperative game involving two or more players in which each player is assumed to know the equilibrium strategies of the other players, and no player has anything to gain by changing only their own strategy.
+If each player has chosen a strategy and no player can benefit by changing strategies while the other players keep theirs unchanged, then the current set of strategy choices and the corresponding payoffs constitutes a Nash equilibrium. 
 
 \begin{framed}
 \begin{itemize}
@@ -54,50 +56,50 @@
 \item Since the other olayers are assumed to be rational, it is reasonable to expect the opponents to follow the recommendation as well.
 \end{itemize}
 \end{framed}
-Game Theory
-
-
-Nash equilibrium is a solution concept of a non-cooperative game involving two or more players in which each player is assumed to know the equilibrium strategies of the other players, and no player has anything to gain by changing only his or her own strategy.[1] If each player has chosen a strategy and no player can benefit by changing strategies while the other players keep theirs unchanged, then the current set of strategy choices and the corresponding payoffs constitutes a Nash equilibrium. 
-
-Nash equilibrium is one of the foundational concepts in game theory.
-
 
 %===========================================================%
 
 \subsection{Informal definition}
-Informally, a strategy profile is a Nash equilibrium if no player can do better by unilaterally changing his or her strategy. To see what this means, imagine that each player is told the strategies of the others. Suppose then that each player asks themselves: "Knowing the strategies of the other players, and treating the strategies of the other players as set in stone, can I benefit by changing my strategy?"
-
-If any player could answer "Yes", then that set of strategies is not a Nash equilibrium. But if every player prefers not to switch (or is indifferent between switching and not) then the strategy profile is a Nash equilibrium. Thus, each strategy in a Nash equilibrium is a best response to all other strategies in that equilibrium.
-
-The Nash equilibrium may sometimes appear non-rational in a third-person perspective. This is because it may happen that a Nash equilibrium is not Pareto optimal.
-
-The Nash equilibrium may also have non-rational consequences in sequential games because players may "threaten" each other with non-rational moves. For such games the subgame perfect Nash equilibrium may be more meaningful as a tool of analysis.
-
-\newpage
 \begin{itemize}
-\item A Nash equilibrium of a strategic game is an action profile (list of actions, one for each player) with the property that no player can increase her payoff by choosing a different action, given the other players' actions.
-\item Note that nothing in the definition suggests that a strategic game necessarily has a Nash equilibrium, or that if it does, it has a single Nash equilibrium. 
-\item A strategic game may have no Nash equilibrium, may have a single Nash equilibrium, or may have many Nash equilibria.
+\item Informally, a strategy profile is a Nash equilibrium if no player can do better by unilaterally changing their strategy. To see what this means, imagine that each player is told the strategies of the others. Suppose then that each player asks themselves: \textit{"Knowing the strategies of the other players, and treating the strategies of the other players as set in stone, can I benefit by changing my strategy?"}
+\item If any player could answer "Yes", then that set of strategies is not a Nash equilibrium. But if every player prefers not to switch (or is indifferent between switching and not) then the strategy profile is a Nash equilibrium. Thus, each strategy in a Nash equilibrium is a best response to all other strategies in that equilibrium.
+\item The Nash equilibrium may sometimes appear non-rational in a third-person perspective. This is because it may happen that a Nash equilibrium is not Pareto optimal.
+\item The Nash equilibrium may also have non-rational consequences in sequential games because players may "threaten" each other with non-rational moves. For such games the subgame perfect Nash equilibrium may be more meaningful as a tool of analysis.
 \end{itemize}
-Finding Nash equilibria: games with finitely many actions for each player
+\newpage
+%=========================================%
+\subsection{Finding Nash equilibria: games with a finite number of actions for each player}
 
 Consider, for example, the game
-Player 2
-L	R
-Player 1	T	
-2,2	0,3
-3,0	1,1
-B
-There are four action profiles ((T,L), (T,R), (B,L), and (B,R)); we can examine each in turn to check whether it is a Nash equilibrium.
+
+
+	\begin{center}
+		{\color{blue}
+			\begin{tabular}{c|c|c|c|}
+				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
+				\cline{3-4}
+				\multicolumn{2}{c|}{} &   Left       &  Right       \\
+				\cline{2-4}
+				\multirow{2} {*} {{\color{red}Player 1}}& Top & (2,2) & (0,3) \\
+				\cline{2-4}
+				& Bottom &(3,0)& (1,1) \\
+				\cline{2-4}
+				%C & (2,6) & (4,7)& (0,8) \\
+				%\hline
+			\end{tabular}
+		}
+	\end{center}
+%===========================================================================%
+There are four action profiles $((T,L), (T,R), (B,L), and (B,R))$; we can examine each in turn to check whether it is a Nash equilibrium.
 \begin{itemize}
-\item (T,L)
-By choosing B rather than T, player 1 obtains a payoff of 3 rather than 2, given player 2's action. Thus (T,L) is not a Nash equilibrium. [Player 2 also can increase her payoff (from 2 to 3) by choosing R rather than L.]
-\item (T,R)
+\item \textbf{(T,L)}
+By choosing B rather than T, player 1 obtains a payoff of 3 rather than 2, given player 2's action. Player 2 also can increase their payoff (from 2 to 3) by choosing R rather than L. Thus (T,L) is not a Nash equilibrium.
+\item \textbf{(T,R)}
 By choosing B rather than T, player 1 obtains a payoff of 1 rather than 0, given player 2's action. Thus (T,R) is not a Nash equilibrium.
-\item (B,L)
+\item \textbf{(B,L)}
 By choosing R rather than L, player 2 obtains a payoff of 1 rather than 0, given player 1's action. Thus (B,L) is not a Nash equilibrium.
-item (B,R)
-Neither player can increase her payoff by choosing an action different from her current one. Thus this action profile is a Nash equilibrium.
+\item \textbf{(B,R)}
+Neither player can increase their payoff by choosing an action different from their current one. Thus this action profile is a Nash equilibrium.
 \end{itemize}
 We conclude that the game has a unique Nash equilibrium, (B,R).
 Notice that in this equilibrium both players are worse off than they are in the action profile (T,L). Thus they would like to achieve (T,L); but their individual incentives point them to (B,R).
@@ -108,14 +110,86 @@ Nash Equilibrium is an outcome reached that, once achieved, means no player can 
 
 The Nash Equilibrium is reached over time, in most cases. However, once the Nash Equilibrium is reached, it will not be deviated from. After we learn how to find the Nash Equilibrium, take a look at how a unilateral move would affect the situation. Does it make any sense? It shouldn't, and that's why the Nash Equilibrium is described as "no regrets."
 
-%----------------------------------------%
+\section{How to find a Nash Equilibrium in a 2X2 matrix}
+
+
+\subsection{Dominant strategy method}
+Check each column for Row player’s highest payoff, this is their best choice given Column player’s choice.  (if there are two high choices, then the result will be a mixed strategy outcome).
+Now check to see if Row’s choice for 1) would also be their choice given any choice by Column player.
+If Row always sticks with their choice regardless of Column’s choice, this is their dominant strategy.
+Repeat for Column player, and the Nash equilibrium is where the dominant strategies intersect.
+
+
+\subsection{rule of thumb method}
+Choose one opponent’s choice and see if the player has an incentive to change their choice. 
+If no, circle that payoff, if yes; check another cell within the same choice by the opponent.
+Repeat for all choices for both players.
+The Nash equilibrium (could be more than 1) occur where both payoffs are circled.
+%========================================================%
+\subsection{example}
+Constructing the payoff matrix, rules:
+Consider a market dominated by two companies. The total market share is 10
+Cost of advertising is 4 for high, 2 for low.
+If firms both choose the same advertising level they split the market, if one firm chooses high and the other low, than the firm that chose high advertising gets the entire market.
+
+
+\begin{center}
+		{\color{blue}
+			\begin{tabular}{c|c|c|c|}
+				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Company 2}} \\
+				\cline{3-4}
+				\multicolumn{2}{c|}{} &   High       &  Low       \\
+				\cline{2-4}
+				\multirow{2} {*} {{\color{red}Company 1}}& High & (1,1) & (6,-2) \\
+				\cline{2-4}
+				& Low &(-2,6)& (3,3) \\
+				\cline{2-4}
+				%C & (2,6) & (4,7)& (0,8) \\
+				%\hline
+			\end{tabular}
+		}
+	\end{center}
+
+\subsection{Example of finding Nash equilibrium using the dominant strategy method:}
+We can first look at Row player’s payoffs to see that if column chooses high, it is in row’s best interest to choose high because 1>-2, and if column choose low, row will also choose high because 6>3.  So choosing high is row’s dominant strategy.  We can do the same analysis for column player to get the same result.  Since both players have a dominant strategy of choosing high, this will be a Nash equilibrium.
+
+\subsection{Example of finding Nash equilibrium using rule of thumb method:}
+Let’s start with the first cell, and see if row player wants to switch choices.  Since 1>-2, row player doesn’t want to switch, so we can circle that payoff .  The same method for column player shows that they would not want to switch as well so we can circle their payoff .  We can do the same analysis with each choice, to see where all of the circles should go.  The cell with both payoffs circled is a Nash equilibrium.  Remember that it is possible to have a payoff matrix with no Nash equilibrium.
+
+
+%==========================================================%
+\begin{framed}
+\begin{itemize}
+\item A Nash equilibrium of a strategic game is an action profile (list of actions, one for each player) with the property that no player can increase their payoff by choosing a different action, given the other players' actions.
+\item Note that nothing in the definition suggests that a strategic game necessarily has a Nash equilibrium, or that if it does, it has a single Nash equilibrium. 
+\item A strategic game may have no Nash equilibrium, may have a single Nash equilibrium, or may have many Nash equilibria.
+\end{itemize}
+\end{framed}
+
+\newpage
+
+%==========================================================%
 \subsection{Finding a Nash Equilibria}
+%-http://www.investopedia.com/articles/financial-theory/09/game-theory-beyond-basics.asp
+	\begin{center}
+		{\color{blue}
+			\begin{tabular}{c|c|c|c|}
+				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
+				\cline{3-4}
+				\multicolumn{2}{c|}{} &   Left       &  Right       \\
+				\cline{2-4}
+				\multirow{2} {*} {{\color{red}Player 1}}& Left & (1,3) & (4,2) \\
+				\cline{2-4}
+				& Right &(3,2)& (3,1) \\
+				\cline{2-4}
+
+			\end{tabular}
+		}
+	\end{center}
+
 Step One: Determine player one's best response to player two's actions.
 When examining the choices that may maximize a player's payout, we must look at how player one should respond to each of the options player two has. An easy way to do this visually is to cover up the choices of player two. Consider the matrix portrayed at the beginning of this article as we apply this method.
 
-Player one / Player two	Left	Right
-Up	(1, -)	(4, -)
-Down	(3, -)	(3, -)
 
 
 	\begin{center}
@@ -125,12 +199,11 @@ Down	(3, -)	(3, -)
 				\cline{3-4}
 				\multicolumn{2}{c|}{} &   Left       &  Right       \\
 				\cline{2-4}
-				\multirow{2} {*} {{\color{red}Player 1}}& Left & (80,0) & (60,40) \\
+				\multirow{2} {*} {{\color{red}Player 1}}& Left & (1,...) & (4,...) \\
 				\cline{2-4}
-				& Right &(40,60)& (40,0) \\
+				& Right &(3,...)& (3,...1) \\
 				\cline{2-4}
-				%C & (2,6) & (4,7)& (0,8) \\
-				%\hline
+
 			\end{tabular}
 		}
 	\end{center}
@@ -202,11 +275,11 @@ Now, we combine the bold options for both players onto the full matrix.
 			\begin{tabular}{c|c|c|c|}
 				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
 				\cline{3-4}
-				\multicolumn{2}{c|}{} &   Left       &  Right       \\
+				\multicolumn{2}{c|}{} &   Up      &  Down       \\
 				\cline{2-4}
-				\multirow{2} {*} {{\color{red}Player 1}}& Left & (80,0) & (60,40) \\
+				\multirow{2} {*} {{\color{red}Player 1}}& Up & (1,3) & (4,2) \\
 				\cline{2-4}
-				& Right &(40,60)& (40,0) \\
+				& Down &(3,2)& (3,1) \\
 				\cline{2-4}
 				%C & (2,6) & (4,7)& (0,8) \\
 				%\hline
@@ -287,7 +360,7 @@ f > h
 In order for (T,L) to be a Nash Equilibrium, only the following must be true:
 a > or = e
 b > or = d
-Prisoners' Dilemma (Again)
+\subsection{Prisoners' Dilemma (Again)}
 
 If every player in a game plays his dominant pure strategy (assuming every player has a dominant pure strategy), then the outcome will be a Nash equilibrium. The Prisoners' Dilemma is an excellent example of this. It was reviewed in the introduction, but is worth reviewing again. Here's the game (remember that in the Prisoners' Dilemma, the numbers represent years in prison):
 
@@ -295,6 +368,8 @@ Jack
 C	NC
 Tom	C	-10,-10	0,-20
 NC	-20,0	-5,-5
+
+%==========================================%
 In this game, both players know that 10 years is better than 20 and 0 years is better than 5; therefore, C is their dominant strategy and they will both choose C (cheat). Since both players chose C, (10,10) is the outcome and also the Nash Equilibrium. To check whether this is a Nash Equilibrium, check whether either player would like to deviate from this position. Jack wouldn't want to deviate, because if he chose NC and Tom stayed at C, Jack would increase his prison time by 10 years.
 
 \subsection{Iterated Deletion of Dominated Strategies}
@@ -305,23 +380,13 @@ Here's another game that doesn't have dominant pure strategies, but that we can 
 Left	Middle	Right
 1	Up	1,0	1,2	0,1
 Down	0,3	0,1	2,0
+
+%==========================================%
 Let's find the dominant strategies. The first strategy that is dominated, is Right. Player 2 will always be better off by playing Middle, so Right is dominated by Middle. At this point the column under Right can be eliminated since Right is no longer an option. This will be shown by crossing out the column:
 
-2
-Left	Middle	Right
-1	Up	1,0	1,2	0,1
-Down	0,3	0,1	2,0
-Remember that both players understand that player 2 has no reason to play Right--player 1 understands that player 2 is trying to find an optimum, so he also no longer considers the payoffs in the Right column. With the Right column gone, Up now dominates Down for player 1. Whether player 2 plays Left or Middle, player 1 will get a payoff of 1 as long as he chooses Up. So now we no longer consider Down:
-
-2
-Left	Middle	Right
-1	Up	1,0	1,2	0,1
-Down	0,3	0,1	2,0
-Now we know that player 1 will choose Up, and player 2 will choose Left or Middle. Since Middle is better than Left (a payoff of 2 vs. 0), player 2 will choose Middle and we have solved the game for the Nash Equilibrium:
-
-	\begin{center}
+\begin{center}
 		{\color{blue}
-			\begin{tabular}{c|c|c|c|c}
+			\begin{tabular}{c|c|c|c|c|}
 				\multicolumn{2} {c} {} & \multicolumn{3}{c} {{\color{red}Player 2}} \\
 				\cline{3-5}
 				\multicolumn{2}{c|}{} &   Heads      &  Tails & Right      \\
@@ -338,6 +403,53 @@ Now we know that player 1 will choose Up, and player 2 will choose Left or Middl
 Left	Middle	Right
 1	Up	1,0	1,2	0,1
 Down	0,3	0,1	2,0
+%==========================================%
+Remember that both players understand that player 2 has no reason to play Right--player 1 understands that player 2 is trying to find an optimum, so he also no longer considers the payoffs in the Right column. With the Right column gone, Up now dominates Down for player 1. Whether player 2 plays Left or Middle, player 1 will get a payoff of 1 as long as he chooses Up. So now we no longer consider Down:
+
+2
+Left	Middle	Right
+\begin{center}
+		{\color{blue}
+			\begin{tabular}{c|c|c|c|c|}
+				\multicolumn{2} {c} {} & \multicolumn{3}{c} {{\color{red}Player 2}} \\
+				\cline{3-5}
+				\multicolumn{2}{c|}{} &   Heads      &  Tails & Right      \\
+				\cline{2-5}
+				\multirow{2} {*} {{\color{red}Player 1}}& Heads & 1 & -1 & \\
+				\cline{2-5}
+				& Tails &-1& 1&  \\
+				\cline{2-5}
+			
+			\end{tabular}
+		}
+	\end{center}
+1	Up	1,0	1,2	0,1
+Down	0,3	0,1	2,0
+
+%==========================================%
+Now we know that player 1 will choose Up, and player 2 will choose Left or Middle. Since Middle is better than Left (a payoff of 2 vs. 0), player 2 will choose Middle and we have solved the game for the Nash Equilibrium:
+
+	\begin{center}
+		{\color{blue}
+			\begin{tabular}{c|c|c|c|c|}
+				\multicolumn{2} {c} {} & \multicolumn{3}{c} {{\color{red}Player 2}} \\
+				\cline{3-5}
+				\multicolumn{2}{c|}{} &   Heads      &  Tails & Right      \\
+				\cline{2-5}
+				\multirow{2} {*} {{\color{red}Player 1}}& Heads & 1 & -1 & \\
+				\cline{2-5}
+				& Tails &-1& 1&  \\
+				\cline{2-5}
+			
+			\end{tabular}
+		}
+	\end{center}
+2
+Left	Middle	Right
+1	Up	1,0	1,2	0,1
+Down	0,3	0,1	2,0
+
+%==========================================%
 To ensure that this answer (Up, Middle) is a Nash Equilibrium, check to see whether either player would like to deviate. As long as player 1 has chosen Up, player 2 will choose Middle. On the other hand, as long as player 2 has chosen Middle, player 1 will choose up.
 
 \subsection{Multiple Nash Equilibria}

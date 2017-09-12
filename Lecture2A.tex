@@ -32,34 +32,37 @@
 \newcommand \y{\overline{y}}
 \begin{document}
 
-%- https://www.economics.utoronto.ca/osborne/2x3/tutorial/NEFEX.HTM
+% - https://www.economics.utoronto.ca/osborne/2x3/tutorial/NEFEX.HTM
 % - http://www.math.tamu.edu/~kilmer/16608bn92.pdf
 
-Definition: If there is an entry in the payoff matrix that is simultaneously the smallest entry in its row and
-the largest entry in its column, we call it a saddle point.
-Definition: If a payoff matrix has a saddle point, we say that the game is strictly determined.
-Definition: The saddle point is also called the value of the game.
-• If the value of the game is positive, then the game favors the row player.
-• If the value of the game is negative, then the game favors the column player.
-• If the value of the game is zero, then the game is fair
-
-
-%===============================================%
-A strictly determined game is a two-player zero-sum game that has at least one Nash equilibrium with both players using pure strategies. The value of a strictly determined game is equal to the value of the equilibrium outcome.
-
-
-
-Is the game Strictly Determined?
-
-
-%=======================================================%
+\section{Outcomes}
 \begin{itemize}
 \item An outcome is a situation which results from a combination of player's strategies. Every combination of strategies (one for each player) is an outcome of the game. A primary purpose of game theory is to determine which outcomes are stable according to a solution concept (e.g. Nash equilibria).
 \item 
 In a game where chance or a random event is involved, the outcome is not known from only the set of strategies, but is only realized when the random event(s) are realized.
 \item 
-A set of payoffs can be considered a set of N-tuples, where N is the number of players in the game, and the cardinality of the set is equal to the total number of possible outcomes when the strategies of the players are varied. The payoff set can thus be partially ordered, where the partial ordering comes from the value of each entry in the N-tuple. How players interact to allocate the payoffs among themselves is a fundamental aspect of economics.
+A set of payoffs can be considered a set of N-tuples, where N is the number of players in the game, and the cardinality of the set is equal to the total number of possible outcomes when the strategies of the players are varied. The payoff set can thus be partially ordered, where the partial ordering comes from the value of each entry in the N-tuple. 
+% How players interact to allocate the payoffs among themselves is a fundamental aspect of economics.
 \end{itemize}
+%=======================================================%
+\section{Nash Equilibrium}
+A Nash equilibrium is a set of strategies, one for each player, such that no player has incentive to unilaterally change their action. Players are in equilibrium if a change in strategies by any one of them would lead that player to earn less than if they remained with their current strategy. For games in which players randomize (mixed strategies), the expected or average payoff must be at least as large as that obtainable by any other strategy.
+
+%=======================================================%
+A strictly determined game is a two-player zero-sum game that has at least one \textbf{Nash equilibrium} with both players using pure strategies. The value of a strictly determined game is equal to the value of the equilibrium outcome.
+
+\begin{framed}
+If there is an entry in the payoff matrix that is simultaneously the smallest entry in its row and
+the largest entry in its column, we call that point a saddle point. If a payoff matrix has a saddle point, we say that the game is \textbf{\textit{strictly determined}}. The saddle point is also called the value of the game.
+\begin{itemize}
+\item If the value of the game is positive, then the game favors the row player.
+\item If the value of the game is negative, then the game favors the column player.
+\item If the value of the game is zero, then the game is fair.
+\end{itemize}
+\end{framed}
+
+
+
 
 \subsection{Choosing among outcomes}
 \begin{itemize}
@@ -93,8 +96,7 @@ This notion can be generalized beyond the comparison of two strategies.
 \item Strategy B is weakly dominated if some other strategy exists that weakly dominates B.
 \end{itemize}
 
-\subsection{Nash Equilibrium}
-A Nash equilibrium, named after John Nash, is a set of strategies, one for each player, such that no player has incentive to unilaterally change her action. Players are in equilibrium if a change in strategies by any one of them would lead that player to earn less than if she remained with her current strategy. For games in which players randomize (mixed strategies), the expected or average payoff must be at least as large as that obtainable by any other strategy.
+
 
 \section{Dominance and Nash equilibria}
 \begin{tabular}{|c|c|c|} \hline
