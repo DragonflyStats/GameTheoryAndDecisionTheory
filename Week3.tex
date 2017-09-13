@@ -45,7 +45,62 @@
 %\input{tcilatex}
 
 \begin{document}
+\section{Outcomes}
+\begin{itemize}
+	\item An outcome is a situation which results from a combination of player's strategies. Every combination of strategies (one for each player) is an outcome of the game. A primary purpose of game theory is to determine which outcomes are stable according to a solution concept (e.g. Nash equilibria).
+	\item 
+	In a game where chance or a random event is involved, the outcome is not known from only the set of strategies, but is only realized when the random event(s) are realized.
+	\item 
+	A set of payoffs can be considered a set of N-tuples, where N is the number of players in the game, and the cardinality of the set is equal to the total number of possible outcomes when the strategies of the players are varied. The payoff set can thus be partially ordered, where the partial ordering comes from the value of each entry in the tuple. 
+	% How players interact to allocate the payoffs among themselves is a fundamental aspect of economics.
+\end{itemize}
+%\section{Non-Cooperative Game}
+%A non-cooperative game is one in which players are unable to make enforceable contracts outside of those specifically modeled in the game. Hence, it is not defined as games in which players do not cooperate, but as games in which any cooperation must be self-enforcing. Games in which players can enforce contracts through outside parties are termed cooperative games.
 
+%=======================================================%
+\section{Strictly Determined Games}
+A strictly determined game is a two-player zero-sum game that has at least one \textbf{Nash equilibrium} with both players using pure strategies. The value of a strictly determined game is equal to the value of the equilibrium outcome.
+
+\begin{framed}
+	If there is an entry in the payoff matrix that is simultaneously the smallest entry in its row and
+	the largest entry in its column, we call that point a saddle point. If a payoff matrix has a saddle point, we say that the game is \textbf{\textit{strictly determined}}. The saddle point is also called the value of the game.
+	\begin{itemize}
+		\item If the value of the game is positive, then the game favors the row player.
+		\item If the value of the game is negative, then the game favors the column player.
+		\item If the value of the game is zero, then the game is fair.
+	\end{itemize}
+\end{framed}
+
+\section{Dominance}
+In game theory, dominance occurs when one strategy is better than another strategy for one player, no matter how that player's opponents may play. Many simple games can be solved using dominance. The opposite, \textbf{\textit{intransitivity}}, occurs in games where one strategy may be better or worse than another strategy for one player, depending on how the player's opponents may play.
+\newpage
+%--------------------------------------------------------%
+\subsection{Terminology}
+When a player tries to choose the ``best" strategy among a multitude of options, that player may compare two strategies A and B to see which one is better. The result of the comparison is one of:
+\begin{itemize}
+	\item B dominates A: choosing B always gives as good as or a better outcome than choosing A. There are 2 possibilities:
+	\begin{enumerate}
+	\item B strictly dominates A: choosing B always gives a better outcome than choosing A, no matter what the other player(s) do.
+	\item B weakly dominates A: There is at least one set of opponents' action for which B is superior, and all other sets of opponents' actions give B the same payoff as A.
+	\end{enumerate}
+	\item B and A are intransitive: B neither dominates, nor is dominated by, A. Choosing A is better in some cases, while choosing B is better in other cases, depending on exactly how the opponent chooses to play. \\ \textit{For example, B is ``throw rock" while A is "throw scissors" in Rock, Paper, Scissors.}
+	\item B is dominated by A: choosing B never gives a better outcome than choosing A, no matter what the other player(s) do. There are 2 possibilities:
+	\begin{enumerate}
+	\item B is weakly dominated by A: There is at least one set of opponents' actions for which B gives a worse outcome than A, while all other sets of opponents' actions give A the same payoff as B. (Strategy A weakly dominates B).
+	\item B is strictly dominated by A: choosing B always gives a worse outcome than choosing A, no matter what the other player(s) do. (Strategy A strictly dominates B).
+	\end{enumerate}
+\end{itemize}
+\medskip
+This notion can be generalized beyond the comparison of two strategies.
+
+\begin{itemize}
+	\item Strategy B is strictly dominant if strategy B strictly dominates every other possible strategy.
+	\item Strategy B is weakly dominant if strategy B dominates all other strategies, but some (or all) strategies are only weakly dominated by B.
+	\item Strategy B is strictly dominated if some other strategy exists that strictly dominates B.
+	\item Strategy B is weakly dominated if some other strategy exists that weakly dominates B.
+\end{itemize}
+\newpage
+%==========================================================%
 \section{Nash Equilibrium}
 Nash equilibrium is a solution concept of a non-cooperative game involving two or more players in which each player is assumed to know the equilibrium strategies of the other players, and no player has anything to gain by changing only their own strategy.
 If each player has chosen a strategy and no player can benefit by changing strategies while the other players keep theirs unchanged, then the current set of strategy choices and the corresponding payoffs constitutes a Nash equilibrium. 
@@ -53,7 +108,7 @@ If each player has chosen a strategy and no player can benefit by changing strat
 \begin{framed}
 \begin{itemize}
 \item Nash Equilibrium recommends a strategy to each player that the player cannot improve upon unilaterally, as long as the other players follow the recommendation.
-\item Since the other olayers are assumed to be rational, it is reasonable to expect the opponents to follow the recommendation as well.
+\item Since the other players are assumed to be rational, it is reasonable to expect the opponents to follow the recommendation as well.
 \end{itemize}
 \end{framed}
 
@@ -62,282 +117,322 @@ If each player has chosen a strategy and no player can benefit by changing strat
 \subsection{Informal definition}
 \begin{itemize}
 \item Informally, a strategy profile is a Nash equilibrium if no player can do better by unilaterally changing their strategy. To see what this means, imagine that each player is told the strategies of the others. Suppose then that each player asks themselves: \textit{"Knowing the strategies of the other players, and treating the strategies of the other players as set in stone, can I benefit by changing my strategy?"}
-\item If any player could answer "Yes", then that set of strategies is not a Nash equilibrium. But if every player prefers not to switch (or is indifferent between switching and not) then the strategy profile is a Nash equilibrium. Thus, each strategy in a Nash equilibrium is a best response to all other strategies in that equilibrium.
-\item The Nash equilibrium may sometimes appear non-rational in a third-person perspective. This is because it may happen that a Nash equilibrium is not Pareto optimal.
-\item The Nash equilibrium may also have non-rational consequences in sequential games because players may "threaten" each other with non-rational moves. For such games the subgame perfect Nash equilibrium may be more meaningful as a tool of analysis.
+\item If any player could answer ``Yes", then that set of strategies is not a Nash equilibrium. But if every player prefers not to switch (or is indifferent between switching and not) then the strategy profile is a Nash equilibrium. Thus, each strategy in a Nash equilibrium is a best response to all other strategies in that equilibrium.
+%\item The Nash equilibrium may sometimes appear non-rational in a third-person perspective. This is because it may happen that a Nash equilibrium is not Pareto optimal.
+%\item The Nash equilibrium may also have non-rational consequences in sequential games because players may "threaten" each other with non-rational moves. For such games the subgame perfect Nash equilibrium may be more meaningful as a tool of analysis.
+\item Nash Equilibrium can also be thought of as ``no regrets," in the sense that once a decision is made, the player will have no regrets concerning decisions considering the consequences.
+ 
+\item The Nash Equilibrium is reached over time, in most cases. However, once the Nash Equilibrium is reached, it will becoming self-enforcing. %After we learn how to find the Nash Equilibrium, take a look at how a unilateral move would affect the situation. Does it make any sense? It shouldn't, and that's why the Nash Equilibrium is described as ``no regrets."
 \end{itemize}
+%\newpage
+%%----------------------------------------%
+%\section{The Nash Equilibrium}
+%Nash Equilibrium is an outcome reached that, once achieved, means no player can increase payoff by changing decisions unilaterally.
 \newpage
-%=========================================%
-\subsection{Finding Nash equilibria: games with a finite number of actions for each player}
+\section{Finding a Nash Equilibria}
+%-http://www.investopedia.com/articles/financial-theory/09/game-theory-beyond-basics.asp
+Consider the following matrix game.
+\begin{center}
+	{\color{blue}
+		\begin{tabular}{c|c|c|c|}
+			\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} &   Left       &  Right       \\
+			\cline{2-4}
+			\multirow{2} {*} {{\color{red}Player 1}}& Up & (1,3) & (4,2) \\
+			\cline{2-4}
+			& Down &(3,2)& (3,1) \\
+			\cline{2-4}
+			
+		\end{tabular}
+	}
+\end{center}
 
-Consider, for example, the game
+\subsection{Step One: Determine player one's best response to player two's actions.}
+When examining the choices that may maximize a player's payout, we must look at how player one (i.e. you) should respond to each of the options player two has. An easy way to do this visually is to cover up the choices of player two. Consider the matrix portrayed above as we apply this method.
 
-
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} &   Left       &  Right       \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{red}Player 1}}& Top & (2,2) & (0,3) \\
-				\cline{2-4}
-				& Bottom &(3,0)& (1,1) \\
-				\cline{2-4}
-				%C & (2,6) & (4,7)& (0,8) \\
-				%\hline
-			\end{tabular}
-		}
-	\end{center}
-%===========================================================================%
-There are four action profiles $((T,L), (T,R), (B,L), and (B,R))$; we can examine each in turn to check whether it is a Nash equilibrium.
-\begin{itemize}
-\item \textbf{(T,L)}
-By choosing B rather than T, player 1 obtains a payoff of 3 rather than 2, given player 2's action. Player 2 also can increase their payoff (from 2 to 3) by choosing R rather than L. Thus (T,L) is not a Nash equilibrium.
-\item \textbf{(T,R)}
-By choosing B rather than T, player 1 obtains a payoff of 1 rather than 0, given player 2's action. Thus (T,R) is not a Nash equilibrium.
-\item \textbf{(B,L)}
-By choosing R rather than L, player 2 obtains a payoff of 1 rather than 0, given player 1's action. Thus (B,L) is not a Nash equilibrium.
-\item \textbf{(B,R)}
-Neither player can increase their payoff by choosing an action different from their current one. Thus this action profile is a Nash equilibrium.
-\end{itemize}
-We conclude that the game has a unique Nash equilibrium, (B,R).
-Notice that in this equilibrium both players are worse off than they are in the action profile (T,L). Thus they would like to achieve (T,L); but their individual incentives point them to (B,R).
-\newpage
-%----------------------------------------%
-\section{The Nash Equilibrium}
-Nash Equilibrium is an outcome reached that, once achieved, means no player can increase payoff by changing decisions unilaterally. It can also be thought of as "no regrets," in the sense that once a decision is made, the player will have no regrets concerning decisions considering the consequences.
-
-The Nash Equilibrium is reached over time, in most cases. However, once the Nash Equilibrium is reached, it will not be deviated from. After we learn how to find the Nash Equilibrium, take a look at how a unilateral move would affect the situation. Does it make any sense? It shouldn't, and that's why the Nash Equilibrium is described as "no regrets."
-
-\section{How to find a Nash Equilibrium in a 2X2 matrix}
-
-
-\subsection{Dominant strategy method}
-Check each column for Row player’s highest payoff, this is their best choice given Column player’s choice.  (if there are two high choices, then the result will be a mixed strategy outcome).
-Now check to see if Row’s choice for 1) would also be their choice given any choice by Column player.
-If Row always sticks with their choice regardless of Column’s choice, this is their dominant strategy.
-Repeat for Column player, and the Nash equilibrium is where the dominant strategies intersect.
-
-
-\subsection{rule of thumb method}
-Choose one opponent’s choice and see if the player has an incentive to change their choice. 
-If no, circle that payoff, if yes; check another cell within the same choice by the opponent.
-Repeat for all choices for both players.
-The Nash equilibrium (could be more than 1) occur where both payoffs are circled.
-%========================================================%
-\subsection{example}
-Constructing the payoff matrix, rules:
-Consider a market dominated by two companies. The total market share is 10
-Cost of advertising is 4 for high, 2 for low.
-If firms both choose the same advertising level they split the market, if one firm chooses high and the other low, than the firm that chose high advertising gets the entire market.
 
 
 \begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Company 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} &   High       &  Low       \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{red}Company 1}}& High & (1,1) & (6,-2) \\
-				\cline{2-4}
-				& Low &(-2,6)& (3,3) \\
-				\cline{2-4}
-				%C & (2,6) & (4,7)& (0,8) \\
-				%\hline
-			\end{tabular}
-		}
-	\end{center}
-%- http://www.freeeconhelp.com/2012/02/how-to-find-nash-equilibrium-in-2x2.html
-\subsection{Example of finding Nash equilibrium using the dominant strategy method:}
-We can first look at Row player’s payoffs to see that if column chooses high, it is in row’s best interest to choose high because 1>-2, and if column choose low, row will also choose high because 6>3.  So choosing high is row’s dominant strategy.  We can do the same analysis for column player to get the same result.  Since both players have a dominant strategy of choosing high, this will be a Nash equilibrium.
-
-\subsection{Example of finding Nash equilibrium using rule of thumb method:}
-Let’s start with the first cell, and see if row player wants to switch choices.  Since 1>-2, row player doesn’t want to switch, so we can circle that payoff .  The same method for column player shows that they would not want to switch as well so we can circle their payoff .  We can do the same analysis with each choice, to see where all of the circles should go.  The cell with both payoffs circled is a Nash equilibrium.  Remember that it is possible to have a payoff matrix with no Nash equilibrium.
-
-
-%==========================================================%
-\begin{framed}
+	{\color{blue}
+		\begin{tabular}{c|c|c|c|}
+			\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} &   Left       &  Right       \\
+			\cline{2-4}
+			\multirow{2} {*} {{\color{red}Player 1}}& Up & (1,...) & (4,...) \\
+			\cline{2-4}
+			& Down &(3,...)& (3,...) \\
+			\cline{2-4}
+			
+		\end{tabular}
+	}
+\end{center}
 \begin{itemize}
-\item A Nash equilibrium of a strategic game is an action profile (list of actions, one for each player) with the property that no player can increase their payoff by choosing a different action, given the other players' actions.
-\item Note that nothing in the definition suggests that a strategic game necessarily has a Nash equilibrium, or that if it does, it has a single Nash equilibrium. 
-\item A strategic game may have no Nash equilibrium, may have a single Nash equilibrium, or may have many Nash equilibria.
-\end{itemize}
-\end{framed}
-
-\newpage
-
-%==========================================================%
-\subsection{Finding a Nash Equilibria}
-%-http://www.investopedia.com/articles/financial-theory/09/game-theory-beyond-basics.asp
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} &   Left       &  Right       \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{red}Player 1}}& Up & (1,3) & (4,2) \\
-				\cline{2-4}
-				& Down &(3,2)& (3,1) \\
-				\cline{2-4}
-
-			\end{tabular}
-		}
-	\end{center}
-
-Step One: Determine player one's best response to player two's actions.
-When examining the choices that may maximize a player's payout, we must look at how player one should respond to each of the options player two has. An easy way to do this visually is to cover up the choices of player two. Consider the matrix portrayed at the beginning of this article as we apply this method.
-
-
-
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} &   Left       &  Right       \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{red}Player 1}}& Up & (1,...) & (4,...) \\
-				\cline{2-4}
-				& Down &(3,...)& (3,...1) \\
-				\cline{2-4}
-
-			\end{tabular}
-		}
-	\end{center}
-\begin{itemize}
-	\item Player one has two possible choices to play: "up" or "down." Player two also has two choices to play: "left" or "right." In this step of determining Nash Equilibrium, we look at responses to player two's actions.
-	\item  If player two chooses to play "left," we can play "up" with the payoff of one, or play "down" with the payoff of three. Since three is greater than one, we will bold the 3 indicating the option to play "down" here.
+	\item Player one has two possible choices to play: ``up" or ``down." Player two also has two choices to play: ``left" or ``right." In this step of determining Nash Equilibrium, we look at responses to player two's actions.
+	\item  If player two chooses to play ``left," we can play ``up" with the payoff of one, or play ``down" with the payoff of three. Since three is greater than one, we will bold the 3 indicating the option to play ``down" here.
 	
-	\item If player two chooses to play "right," we can either choose to play 'up' for a payoff of four or play "down" for a playoff of three. Since four is greater than three, we bold the four to indicate the option to play "up" here. The bold outcomes are shown below on the full matrix.
+	\item If player two chooses to play ``right," we can either choose to play 'up' for a payoff of four or play ``down" for a playoff of three. Since four is greater than three, we bold the four to indicate the option to play ``up" here. The bold outcomes are shown below on the full matrix.
 	
 \end{itemize}
 
 %========================================================================%	
 
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} &   Left       &  Right       \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{red}Player 1}}& Left & (1, 3)	& (4, 2) \\
-				\cline{2-4}
-				& Right &(3, 2)	& (3, 1)\\
-				\cline{2-4}
-				%C & (2,6) & (4,7)& (0,8) \\
-				%\hline
-			\end{tabular}
-		}
-	\end{center}
-	
+\begin{center}
+	{\color{blue}
+		\begin{tabular}{c|c|c|c|}
+			\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} &   Left       &  Right       \\
+			\cline{2-4}
+			\multirow{2} {*} {{\color{red}Player 1}}& Up & (1, 3)	& (\underline{\textbf{4}}, 2) \\
+			\cline{2-4}
+			& Down &(\underline{\textbf{3}}, 2)	& (3, 1)\\
+			\cline{2-4}
+			%C & (2,6) & (4,7)& (0,8) \\
+			%\hline
+		\end{tabular}
+	}
+\end{center}
+
 
 %========================================================================%
-\subsection{Step Two: Determine player two's best response to player one's actions.}
+\subsection{Step Two: Determine Player Two's best response to Player one's actions.}
 As we did before with the player two payoffs for player one, we will hide the payoffs of player one when determining the best responses for player two. 
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} &   Left       &  Right       \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{red}Player 1}}& Left & (..., 3) &	(..., 2) \\
-				\cline{2-4}
-				& Right &(..., 2) & 	(..., 1) \\
-				\cline{2-4}
-		
-			\end{tabular}
-		}
-	\end{center}
-	
-	
-Just as when looking at player one, each player has two choices to play. If player one chooses to play "up," we can play "left," with a payoff of three, or "right," with a payoff of two. Since three is greater than two, we bold the three to show the option to play "left" here. If player one chooses to play "down," we can play "left," for a payoff of two, or "right," for a payoff of one. Since two is greater than one, we bold the two indicating the option to play "left" here. The bold outcomes are shown below on the full matrix.
+\begin{center}
+	{\color{blue}
+		\begin{tabular}{c|c|c|c|}
+			\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} &   Left       &  Right       \\
+			\cline{2-4}
+			\multirow{2} {*} {{\color{red}Player 1}}& Up & (..., 3) &	(..., 2) \\
+			\cline{2-4}
+			& Down &(..., 2) & 	(..., 1) \\
+			\cline{2-4}
+			
+		\end{tabular}
+	}
+\end{center}
 
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} &   Left       &  Right       \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{red}Player 1}}& Left & (1, 3) &	(4, 2) \\
-				\cline{2-4}
-				& Right &(4, 2) & 	(3, 1) \\
-				\cline{2-4}
-		
-			\end{tabular}
-		}
-	\end{center}
-	
+\begin{itemize}
+\item 
+Just as when looking at player one, each player has two choices to play. If player one chooses to play "up," Player 2 can play ``left," with a payoff of three, or ``right," with a payoff of two.
+\item Since three is greater than two, we bold the three to show the option to play ``left" here. 
+\item If player one chooses to play ``down," player 2 can play ``left," for a payoff of two, or ``right," for a payoff of one. \item Since two is greater than one, we bold the two indicating the option to play ``left" here. 
+\item The bold outcomes are shown below on the full matrix.
+\end{itemize}
+\begin{center}
+	{\color{blue}
+		\begin{tabular}{c|c|c|c|}
+			\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} &   Left       &  Right       \\
+			\cline{2-4}
+			\multirow{2} {*} {{\color{red}Player 1}}& Up & (1, \underline{\textbf{3}}) &	(4, 2) \\
+			\cline{2-4}
+			& Down &(3, \underline{\textbf{2}}) & 	(3, 1) \\
+			\cline{2-4}
+			
+		\end{tabular}
+	}
+\end{center}
+
 
 \subsection{Step Three: Determine which outcomes have both payoffs bold.} 
-That particular outcome is the Nash Equilibrium.
-Now, we combine the bold options for both players onto the full matrix.
+That particular outcome is the Nash Equilibrium.Now, we combine the bold options for both players onto the full matrix.
 
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} &   Up      &  Down       \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{red}Player 1}}& Up & (1,3) & (4,2) \\
-				\cline{2-4}
-				& Down &(3,2)& (3,1) \\
-				\cline{2-4}
-				%C & (2,6) & (4,7)& (0,8) \\
-				%\hline
-			\end{tabular}
-		}
-	\end{center}
-	
+\begin{center}
+	{\color{blue}
+		\begin{tabular}{c|c|c|c|}
+			\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} &   Up      &  Down       \\
+			\cline{2-4}
+			\multirow{2} {*} {{\color{red}Player 1}}& Up & (1,3) & (4,2) \\
+			\cline{2-4}
+			& Down &(\underline{\textbf{3,2}})& (3,1) \\
+			\cline{2-4}
+			%C & (2,6) & (4,7)& (0,8) \\
+			%\hline
+		\end{tabular}
+	}
+\end{center}
+
 
 
 Look for intersections where both payoffs are bold. In this case, we find the intersection of (Down , Left) with the payoff of (3, 2) fits our criteria. This indicates our Nash Equilibrium.
 
 \newpage
-This method of finding Nash Equilibrium is well-suited to finding equilibria in games that are simultaneous since we are looking at how a player would respond independently of how the other acts. This scenario of a simultaneous game is often played out in businesses such as airlines. Below is an example, similar to the game above, of how airline pricing may play out. The payouts are in thousands of dollars. Remember, these are the payouts, not the prices. The method we applied previously is already applied to show where the Nash Equilibrium appears.
+\subsection{Airline Example}
+Below is an example, similar to the game above, of how airline pricing may play out. The payouts are in thousands of dollars. Remember, these are the payouts, not the prices. The method we applied previously is already applied to show where the Nash Equilibrium appears.
 
 %%Airline one / Airline two	Low Price	High Price
 %%Low Price	(3,000, 3,000) &	(4,000, 2,000) \\
 %%High Price	(2,000, 4,000) &	(3,500, 3,500) \\
 
-	\begin{center}
-		{\color{blue}
-			\begin{tabular}{c|c|c|c|}
-				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Airline 2}} \\
-				\cline{3-4}
-				\multicolumn{2}{c|}{} &   Low Price       &  High Price      \\
-				\cline{2-4}
-				\multirow{2} {*} {{\color{red}Player 1}}& Low Price & (3,000, 3,000) &	(4,000, 2,000) \\
-				\cline{2-4}
-				& High Price & (2,000, 4,000) &	(3,500, 3,500) \\
-				\cline{2-4}
-				%C & (2,6) & (4,7)& (0,8) \\
-				%\hline
-			\end{tabular}
-		}
-	\end{center}
+\begin{center}
+	{\color{blue}
+		\begin{tabular}{c|c|c|c|}
+			\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Airline 2}} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} &   Low Price       &  High Price      \\
+			\cline{2-4}
+			\multirow{2} {*} {{\color{red}Airline 1}}& Low Price & (3,000, 3,000) &	(4,000, 2,000) \\
+			\cline{2-4}
+			& High Price & (2,000, 4,000) &	(3,500, 3,500) \\
+			\cline{2-4}
+			%C & (2,6) & (4,7)& (0,8) \\
+			%\hline
+		\end{tabular}
+	}
+\end{center}
 \begin{itemize}	
-\item Looking at just A1's choices we can see that if A2 chooses to play low price, we choose between Low Price for 3,000 or high price for 2,000. We choose "low," since 3,000>2,000. 
-\item We do the same thing for A2 playing High Price and see that we play "low" because 4,000>3,500. Conversely, looking just at A2's choices, we can see that if A1 chooses to play low price, we choose between "low price" for 3,000 and "high price" for 2,000. 
-\item Since 3,000>2,000, we choose the "low price" option here.\item  If A1 plays high price, we can charge a low price for 4,000 or high price for 3,500. Since 4,000>3,500, we choose to play \textit{"low price"} here.
+	\item Looking at just A1's choices we can see that if A2 chooses to play low price, we choose between Low Price for 3,000 or high price for 2,000. We choose ``low," since $3,000>2,000$. 
+	\item We do the same thing for A2 playing High Price and see that we play ``low" because $4,000>3,500$. 
+	\item Conversely, looking just at A2's choices, we can see that if A1 chooses to play low price, A2 can choose between ``low price" for 3,000 and "high price" for 2,000. 
+	\item Since $3,000>2,000$, we choose the ``low price" option here.\item  If A1 plays high price, A2 can charge a low price for 4,000 or high price for 3,500. Since $4,000>3,500$, A2 will choose to play \textit{"low price"} here.
 \end{itemize}
 
+\begin{center}
+	{\color{blue}
+		\begin{tabular}{c|c|c|c|}
+			\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Airline 2}} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} &   Low Price       &  High Price      \\
+			\cline{2-4}
+			\multirow{2} {*} {{\color{red}Airline 1}}& Low Price & \underline{\textbf{(3,000, 3,000)}} &	(4,000, 2,000) \\
+			\cline{2-4}
+			& High Price & (2,000, 4,000) &	(3,500, 3,500) \\
+			\cline{2-4}
+			%C & (2,6) & (4,7)& (0,8) \\
+			%\hline
+		\end{tabular}
+	}
+\end{center}
 %=======================================%
 \begin{itemize}
 	\item The Nash Equilibrium is that both airlines will charge a low price (shown when choices for each party are highlighted). If both airlines charged a high price, they would each be better off than they are at the Nash Equilibrium.
 	
-\item So why don't they agree to do this? First off, it's illegal to collude. Second, if this were to occur, a unilateral action on behalf of one airline to charge a low price would be beneficial, resulting in that airline making more money in turn. This logic also shows how the Nash Equilibrium is reached, and why it is not beneficial to deviate from it once it is reached. 
+	\item So why don't they agree to do this? (\textit{In reality, it's illegal to collude.)} If this were to occur, a unilateral action on behalf of one airline to charge a low price would be beneficial, resulting in that airline making more money in turn. 
+	\item This logic also shows how the Nash Equilibrium is reached, and why it is not beneficial to deviate from it once it is reached. 
+\item Suppose both Airlines are using the ``Low Strategy". Then suppose that Airline 1 unilaterally changes to a ``high" strategy. (4000 for Airline 1, 2000 for Airline 2). However, the same course of action is available to Airline 2. 
+
+
+\end{itemize}
+\newpage
+\section{Finding Nash Equilibria - Another Case}
+
+Consider, for example, the game
+
+
+\begin{center}
+	{\color{blue}
+		\begin{tabular}{c|c|c|c|}
+			\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} &   Left       &  Right       \\
+			\cline{2-4}
+			\multirow{2} {*} {{\color{red}Player 1}}& Top & (2,2) & (0,3) \\
+			\cline{2-4}
+			& Bottom &(3,0)& (1,1) \\
+			\cline{2-4}
+			%C & (2,6) & (4,7)& (0,8) \\
+			%\hline
+		\end{tabular}
+	}
+\end{center}
+%===========================================================================%
+There are four action profiles $((T,L), (T,R), (B,L), and (B,R))$; we can examine each in turn to check whether it is a Nash equilibrium.
+\begin{itemize}
+	\item \textbf{(T,L)}
+	By choosing B rather than T, player 1 obtains a payoff of 3 rather than 2, given player 2's action. Player 2 also can increase their payoff (from 2 to 3) by choosing R rather than L. Thus (T,L) is not a Nash equilibrium.
+	\item \textbf{(T,R)}
+	By choosing B rather than T, player 1 obtains a payoff of 1 rather than 0, given player 2's action. Thus (T,R) is not a Nash equilibrium.
+	\item \textbf{(B,L)}
+	By choosing R rather than L, player 2 obtains a payoff of 1 rather than 0, given player 1's action. Thus (B,L) is not a Nash equilibrium.
+	\item \textbf{(B,R)}
+	Neither player can increase their payoff by choosing an action different from their current one. Thus this action profile is a Nash equilibrium.
+\end{itemize}
+We conclude that the game has a unique Nash equilibrium, (B,R).
+Notice that in this equilibrium both players are worse off than they are in the action profile (T,L). Thus they would like to achieve (T,L); but their individual incentives point them to (B,R).
+
+
+%==========================================================%
+\begin{framed}
+	\begin{itemize}
+		\item A Nash equilibrium of a strategic game is an action profile (list of actions, one for each player) with the property that no player can increase their payoff by choosing a different action, given the other players' actions.
+		\item Note that nothing in the definition suggests that a strategic game necessarily has a Nash equilibrium, or that if it does, it has a single Nash equilibrium. 
+		\item A strategic game may have no Nash equilibrium, may have a single Nash equilibrium, or may have many Nash equilibria.
+	\end{itemize}
+\end{framed}
+
+
+\end{document}
+%----------------------------------------%
+
+\section{How to find a Nash Equilibrium in a $2 \times 2$ matrix}
+
+
+\subsection{Dominant Strategy Method}
+\begin{itemize}
+\item Check each column for Player 1’s highest payoff, this is their best choice given Column player’s choice.  \textit{(if there are two high choices, then the result will be a mixed strategy outcome).}
+\item Now check to see if Row’s choice for (1) would also be their choice given any choice by Column player.
+\item If Player 1 always sticks with their choice regardless of Player 2’s choice, this is their dominant strategy.
+\item Repeat for Player 2, and the Nash equilibrium is where the dominant strategies intersect.
+\end{itemize}
+
+\subsection{Rule of Thumb Method}
+\begin{itemize}
+\item Choose one opponent’s choice and see if the player has an incentive to change their choice. 
+\item If no, circle that payoff, if yes; check another cell within the same choice by the opponent.
+\item Repeat for all choices for both players.
+\item The Nash equilibrium (could be more than 1) occur where both payoffs are circled.
+\end{itemize}
+%========================================================%
+\newpage
+\subsection{Example}
+\textbf{Constructing the payoff matrix, rules:}
+\begin{itemize}
+\item Consider a market dominated by two companies. The total market share is 10
+\item Cost of advertising is 4 for high, 2 for low.
+\item If companies both choose the same advertising level they split the market, but if one firm chooses high and the other low, than the firm that chose high advertising gets the entire market.
+\end{itemize}
+
+\begin{center}
+	{\color{blue}
+		\begin{tabular}{c|c|c|c|}
+			\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Company 2}} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} &   High       &  Low       \\
+			\cline{2-4}
+			\multirow{2} {*} {{\color{red}Company 1}}& High & (1,1) & (6,-2) \\
+			\cline{2-4}
+			& Low &(-2,6)& (3,3) \\
+			\cline{2-4}
+			%C & (2,6) & (4,7)& (0,8) \\
+			%\hline
+		\end{tabular}
+	}
+\end{center}
+%- http://www.freeeconhelp.com/2012/02/how-to-find-nash-equilibrium-in-2x2.html
+\subsection{Example of finding Nash equilibrium using the dominant strategy method:}
+\begin{itemize}
+\item We can first look at Player 1’s payoffs to see that if column chooses high, it is in Player 1’s best interest to choose high because $1>-2$, and if column choose low, row will also choose high because $6>3$.  
+\item So choosing high is Player 1’s dominant strategy.  We can do the same analysis for column player to get the same result.  Since both players have a dominant strategy of choosing high, this will be a Nash equilibrium.
+\end{itemize}
+\subsection{Example of finding Nash equilibrium using rule of thumb method:}
+\textbf{(Demonstrated in Class)}
+\begin{itemize}
+\item Let’s start with the first cell, and see if row player wants to switch choices.  Since $1>-2$, row player doesn’t want to switch, so we can circle that payoff . 
+\item  The same method for column player shows that they would not want to switch as well so we can circle their payoff .  We can do the same analysis with each choice, to see where all of the circles should go.  \item The cell with both payoffs circled is a Nash equilibrium.  \item Remember that it is possible to have a payoff matrix with no Nash equilibrium.
 \end{itemize}
 
 
-%----------------------------------------%
-\subsection{Multiple Nash Equilibria \& How The Nash Equilibrium Plays Out}
+\newpage
+%=========================================%
+
+\section{Multiple Nash Equilibria \& How The Nash Equilibrium Plays Out}
 \begin{itemize}
 \item Generally, there can be more than one equilibrium in a game. However, this usually occurs in games with more complex elements than two choices by two players. In simultaneous games that are repeated over time, one of these multiple equilibria is reached after some trial and error. 
 \item This scenario of differing choices over time before reaching equilibrium is the most often played out in the business world when two firms are determining prices for very interchangeable products, such as airfare or soda pop.
