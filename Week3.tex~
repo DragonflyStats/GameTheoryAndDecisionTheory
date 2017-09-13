@@ -178,9 +178,9 @@ Let’s start with the first cell, and see if row player wants to switch choices
 				\cline{3-4}
 				\multicolumn{2}{c|}{} &   Left       &  Right       \\
 				\cline{2-4}
-				\multirow{2} {*} {{\color{red}Player 1}}& Left & (1,3) & (4,2) \\
+				\multirow{2} {*} {{\color{red}Player 1}}& Up & (1,3) & (4,2) \\
 				\cline{2-4}
-				& Right &(3,2)& (3,1) \\
+				& Down &(3,2)& (3,1) \\
 				\cline{2-4}
 
 			\end{tabular}
@@ -199,9 +199,9 @@ When examining the choices that may maximize a player's payout, we must look at 
 				\cline{3-4}
 				\multicolumn{2}{c|}{} &   Left       &  Right       \\
 				\cline{2-4}
-				\multirow{2} {*} {{\color{red}Player 1}}& Left & (1,...) & (4,...) \\
+				\multirow{2} {*} {{\color{red}Player 1}}& Up & (1,...) & (4,...) \\
 				\cline{2-4}
-				& Right &(3,...)& (3,...1) \\
+				& Down &(3,...)& (3,...1) \\
 				\cline{2-4}
 
 			\end{tabular}
@@ -215,9 +215,7 @@ When examining the choices that may maximize a player's payout, we must look at 
 	
 \end{itemize}
 
-Player one / Player two	Left	Right
-Up	(1, 3)	(4, 2)
-Down	(3, 2)	(3, 1)
+%========================================================================%	
 
 	\begin{center}
 		{\color{blue}
@@ -226,9 +224,9 @@ Down	(3, 2)	(3, 1)
 				\cline{3-4}
 				\multicolumn{2}{c|}{} &   Left       &  Right       \\
 				\cline{2-4}
-				\multirow{2} {*} {{\color{red}Player 1}}& Left & (80,0) & (60,40) \\
+				\multirow{2} {*} {{\color{red}Player 1}}& Left & (1, 3)	& (4, 2) \\
 				\cline{2-4}
-				& Right &(40,60)& (40,0) \\
+				& Right &(3, 2)	& (3, 1)\\
 				\cline{2-4}
 				%C & (2,6) & (4,7)& (0,8) \\
 				%\hline
@@ -236,14 +234,10 @@ Down	(3, 2)	(3, 1)
 		}
 	\end{center}
 	
-%----------------------------------------%
-Step Two: Determine player two's best response to player one's actions.
-As we did before with the player two payoffs for player one, we will hide the payoffs of player one when determining the best responses for player two. (To learn more about behavioral finance, check out Leading Indicators Of Behavioral Finance.)
 
-Player one / Player two	Left	Right
-Up	(-, 3)	(-, 2)
-Down	(-, 2)	(-, 1)
-
+%========================================================================%
+\subsection{Step Two: Determine player two's best response to player one's actions.}
+As we did before with the player two payoffs for player one, we will hide the payoffs of player one when determining the best responses for player two. 
 	\begin{center}
 		{\color{blue}
 			\begin{tabular}{c|c|c|c|}
@@ -251,12 +245,11 @@ Down	(-, 2)	(-, 1)
 				\cline{3-4}
 				\multicolumn{2}{c|}{} &   Left       &  Right       \\
 				\cline{2-4}
-				\multirow{2} {*} {{\color{red}Player 1}}& Left & (80,0) & (60,40) \\
+				\multirow{2} {*} {{\color{red}Player 1}}& Left & (..., 3) &	(..., 2) \\
 				\cline{2-4}
-				& Right &(40,60)& (40,0) \\
+				& Right &(..., 2) & 	(..., 1) \\
 				\cline{2-4}
-				%C & (2,6) & (4,7)& (0,8) \\
-				%\hline
+		
 			\end{tabular}
 		}
 	\end{center}
@@ -264,10 +257,25 @@ Down	(-, 2)	(-, 1)
 	
 Just as when looking at player one, each player has two choices to play. If player one chooses to play "up," we can play "left," with a payoff of three, or "right," with a payoff of two. Since three is greater than two, we bold the three to show the option to play "left" here. If player one chooses to play "down," we can play "left," for a payoff of two, or "right," for a payoff of one. Since two is greater than one, we bold the two indicating the option to play "left" here. The bold outcomes are shown below on the full matrix.
 
-Player one / Player two	Left	Right
-Up	(1, 3)	(4, 2)
-Down	(3, 2)	(3, 1)
-Step Three: Determine which outcomes have both payoffs bold. That particular outcome is the Nash Equilibrium.
+	\begin{center}
+		{\color{blue}
+			\begin{tabular}{c|c|c|c|}
+				\multicolumn{2} {c} {} & \multicolumn{2}{c} {{\color{red}Player 2}} \\
+				\cline{3-4}
+				\multicolumn{2}{c|}{} &   Left       &  Right       \\
+				\cline{2-4}
+				\multirow{2} {*} {{\color{red}Player 1}}& Left & (1, 3) &	(4, 2) \\
+				\cline{2-4}
+				& Right &(4, 2) & 	(3, 1) \\
+				\cline{2-4}
+		
+			\end{tabular}
+		}
+	\end{center}
+	
+
+\subsection{Step Three: Determine which outcomes have both payoffs bold.} 
+That particular outcome is the Nash Equilibrium.
 Now, we combine the bold options for both players onto the full matrix.
 
 	\begin{center}
@@ -291,6 +299,7 @@ Now, we combine the bold options for both players onto the full matrix.
 
 Look for intersections where both payoffs are bold. In this case, we find the intersection of (Down , Left) with the payoff of (3, 2) fits our criteria. This indicates our Nash Equilibrium.
 
+\newpage
 This method of finding Nash Equilibrium is well-suited to finding equilibria in games that are simultaneous since we are looking at how a player would respond independently of how the other acts. This scenario of a simultaneous game is often played out in businesses such as airlines. Below is an example, similar to the game above, of how airline pricing may play out. The payouts are in thousands of dollars. Remember, these are the payouts, not the prices. The method we applied previously is already applied to show where the Nash Equilibrium appears.
 
 %%Airline one / Airline two	Low Price	High Price
@@ -315,7 +324,8 @@ This method of finding Nash Equilibrium is well-suited to finding equilibria in 
 	\end{center}
 \begin{itemize}	
 \item Looking at just A1's choices we can see that if A2 chooses to play low price, we choose between Low Price for 3,000 or high price for 2,000. We choose "low," since 3,000>2,000. 
-\item We do the same thing for A2 playing High Price and see that we play "low" because 4,000>3,500. Conversely, looking just at A2's choices, we can see that if A1 chooses to play low price, we choose between "low price" for 3,000 and "high price" for 2,000. Since 3,000>2,000, we choose the "low price" option here.\item  If A1 plays high price, we can charge a low price for 4,000 or high price for 3,500. Since 4,000>3,500, we choose to play \textit{"low price"} here.
+\item We do the same thing for A2 playing High Price and see that we play "low" because 4,000>3,500. Conversely, looking just at A2's choices, we can see that if A1 chooses to play low price, we choose between "low price" for 3,000 and "high price" for 2,000. 
+\item Since 3,000>2,000, we choose the "low price" option here.\item  If A1 plays high price, we can charge a low price for 4,000 or high price for 3,500. Since 4,000>3,500, we choose to play \textit{"low price"} here.
 \end{itemize}
 
 %=======================================%
