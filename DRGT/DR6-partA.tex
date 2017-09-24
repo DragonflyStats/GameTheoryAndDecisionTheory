@@ -1,5 +1,5 @@
 
-\documentclass[]{report}
+\documentclass[]{article}
 \voffset=-1.5cm
 \oddsidemargin=0.0cm
 \textwidth = 480pt
@@ -36,13 +36,13 @@
 	\section{Concepts of Solutions to 2-Player Matrix Games - Minimax Solutions}
 	\begin{itemize}
 		\item The minimax strategy of a player is the strategy that maximises
-		his/her expected payoff under the assumption that the other player
+		their expected payoff under the assumption that the other player
 		aims to minimise this payoff.
 		\item The minimax payoff of a player is the maximum expected payoff
-		that he/she can guarantee him/hirself.
+		that they can guarantee themselves.
 		\item In zero-sum games such a concept seems very reasonable, since by
 		minimising the expected reward of the opponent, an individual
-		maximises his/her expected reward.
+		maximises their expected reward.
 	\end{itemize}
 	
 	%% 1 / 61
@@ -303,18 +303,21 @@
 	%================================%
 	\subsection{Symmetric Games}
 	A game is symmetric if
+\begin{enumerate}
 	1. Players all choose from the same set of actions.
 	2. R1(A, B) = R2(B, A).
+\end{enumerate}
 	Note that the symmetric Hawk-Dove game satisfies these
 	conditions.
 	%%- 16 / 61
 	%================================%
 	% \subsection{Symmetric Games}
-	If (A, B) is a pure Nash equilibrium in a symmetric game, then
+\begin{itemize}
+\item	If (A, B) is a pure Nash equilibrium in a symmetric game, then
 	(B, A) is also a pure Nash equilibrium.
-	At a mixed Nash equilibrium or minimax solution of a symmetric
+\tiem	At a mixed Nash equilibrium or minimax solution of a symmetric
 	2 × 2 game, the players use the same strategy as each other.
-	%%- 17 / 61
+\end{itemize}	%%- 17 / 61
 	%=================================================%
 	\subsection{Nash Equilibria - Example 3.4.2}
 	Derive all the Nash equilibrium of the following game
@@ -357,7 +360,7 @@
 	%=================================================%
 	% \subsection{Nash Equilibria - Example 3.4.2}
 	Similarly, suppose the strategy of Player 2 at equilibrium is
-	qH + (1 − q)D. Player 1 must be indifferent between his two
+	$qH + (1 − q)D$. Player 1 must be indifferent between his two
 	actions. Hence,
 	\[R1(H, qH + (1 − q)D) = R1(D, qH + (1 − q)D) = v1.\]
 	We thus obtain −2q + 4(1 − q) = 0q + 3(1 − q) = v1. Solving
@@ -411,7 +414,8 @@
 		both players wish to maximise their own reward.
 		\item  When using the concept of Nash equilibrium it is
 		normally assumed that players know the payoff
-		functions of their opponents. However, in order to
+		functions of their opponents.
+\item  However, in order to
 		find a pure Nash equilibrium, it is only necessary to
 		be able to order the preferences of opponents, not
 		their actual payoffs.

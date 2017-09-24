@@ -500,53 +500,53 @@ Definition 3.2. Let G = (X, Y, A) be a finite game, and let g be a one-to-one tr
 of Y onto itself. The game G is said to be invariant under g if for every x ∈ X
 there is a unique x ∈ X such that
 A(x, y) = A(x
-, g(y)) for all y ∈ Y . (26)
+, g(y)) for all $ y \in Y$. (26)
 The requirement that x be unique is not restrictive, for if there were another point
 x ∈ X such that
-A(x, y) = A(x, g(y)) for all y ∈ Y , (27)
+A(x, y) = A(x, g(y)) for all $ y \in Y$, (27)
 then, we would have A(x
-, g(y)) = A(x, g(y)) for all y ∈ Y , and since g is onto,
+, g(y)) = A(x, g(y)) for all $ y \in Y$, and since g is onto,
 A(x
-, y) = A(x, y) for all y ∈ Y . (28)
+, y) = A(x, y) for all $ y \in Y$. (28)
 Thus the strategies x and x have identical payoffs and we could remove one of them from
 X without changing the problem at all.
 II – 25
 To keep things simple, we assume without loss of generality that all duplicate pure
 strategies have been eliminated. That is, we assume
 A(x
-, y) = A(x, y) for all y ∈ Y implies that x = x, and
+, y) = A(x, y) for all $ y \in Y$implies that x = x, and
 A(x, y
-) = A(x, y) for all x ∈ X implies that y = y. (29)
+) = A(x, y) for all $ x \in X$implies that y = y. (29)
 Unicity of x in Definition 3.2 follows from this assumption.
 The given x in Definition 3.2 depends on g and x only. We denote it by x = g(x).
 We may write equation (26) defining invariance as
-A(x, y) = A(g(x), g(y)) for all x ∈ X and y ∈ Y . (26
+A(x, y) = A(g(x), g(y)) for all $ x \in X$and $ y \in Y$. (26
 )
 The mapping g is a one-to-one transformation of X since if g(x1) = g(x2), then
 A(x1, y) = A(g(x1), g(y)) = A(g(x2), g(y)) = A(x2, y) (30)
-for all y ∈ Y , which implies x1 = x2 from assumption (29). Therefore the inverse, g−1, of
+for all $ y \in Y$, which implies x1 = x2 from assumption (29). Therefore the inverse, g−1, of
 g, defined by g−1(g(x)) = g(g−1(x)) = x, exists. Moreover, any one-to-one transformation
 of a finite set is automatically onto, so g is a one-to-one transformation of X onto itself.
 %==============================================================%
 Lemma 1. If a finite game, G = (X, Y, A), is invariant under a one-to-one transformation,
 g, then G is also invariant under g−1.
-Proof. We are given A(x, y) = A(g(x), g(y)) for all x ∈ X and all y ∈ Y . Since true for
+Proof. We are given A(x, y) = A(g(x), g(y)) for all $ x \in X$and all $ y \in Y$. Since true for
 all x and y, it is true if y is replaced by g−1(y) and x is replaced by g−1(x). This gives
-A(g−1(x), g−1(y)) = A(x, y) for all x ∈ X and all y ∈ Y . This shows that G is invariant
+A(g−1(x), g−1(y)) = A(x, y) for all $ x \in X$and all $ y \in Y$. This shows that G is invariant
 under g−1.
 Lemma 2. If a finite game, G = (X, Y, A), is invariant under two one-to-one transformations,
 g1 and g2, then G is also invariant under under the composition transformation,
 g2g1, defined by g2g1(y) = g2(g1(y)).
-Proof. We are given A(x, y) = A(g1(x), g1(y)) for all x ∈ X and all y ∈ Y , and A(x, y) =
-A(g2(x), g2(y)) for all x ∈ X and all y ∈ Y . Therefore,
-A(x, y) = A(g2(g1(x)), g2(g1(y))) = A(g2(g1(x)), g2g1(y)) for all y ∈ Y and x ∈ X.
+Proof. We are given A(x, y) = A(g1(x), g1(y)) for all $ x \in X$and all $ y \in Y$, and A(x, y) =
+A(g2(x), g2(y)) for all $ x \in X$and all $ y \in Y$. Therefore,
+A(x, y) = A(g2(g1(x)), g2(g1(y))) = A(g2(g1(x)), g2g1(y)) for all $ y \in Y$and x ∈ X.
 (31)
 which shows that G is invarant under g2g1.
 Furthermore, these proofs show that
 g2g1 = g2 g1, and g−1 = g−1. (32)
 Thus the class of transformations, g on Y , under which the problem is invariant forms a
 group, G, with composition as the multiplication operator. The identity element, e of the
-group is the identity transformation, e(y) = y for all y ∈ Y . The set, G of corresponding
+group is the identity transformation, e(y) = y for all $ y \in Y$. The set, G of corresponding
 transformations g on X is also a group, with identity e(x) = x for all x ∈ X. Equations
 (32) say that G is isomorphic to G; as groups, they are indistinguishable.
 This shows that we could have analyzed the problem from Player I’s viewpoint and
@@ -563,10 +563,10 @@ elements in Y .
 \subsection{Definition 3.4.} Given that a finite game G = (X, Y, A) is invariant under a group, G,
 of one-to-one transformations of Y , a mixed strategy, q = (q(1), \ldots,q(n)), for Player II is
 said to be invariant under G if
-q(g(y)) = q(y) for all y ∈ Y and all $g \in G$. (33)
+q(g(y)) = q(y) for all $ y \in Y$and all $g \in G$. (33)
 Similarly a mixed strategy p = (p(1), \ldots,p(m)), for Player I is said to be invariant under
 G (or G) if
-p(g(x)) = p(x) for all x ∈ X and all $g \in G$. (34)
+p(g(x)) = p(x) for all $ x \in X$and all $g \in G$. (34)
 Two points y1 and y2 in Y are said to be equivalent if there exists a g in G such that
 g(y2) = y1. It is an easy exercise to show that this is an equivalence relation. The set of
 points, Ey = {y : g(y

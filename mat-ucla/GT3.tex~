@@ -37,7 +37,7 @@
 
 \section{3. The Principle of Indifference.}
 For a matrix game with m × n matrix A, if Player I uses the mixed strategy p =
-(p1,...,pm)
+$(p1, \ldots,pm)$
 T and Player II uses column j, Player I’s average payoff is m
 i=1 piaij . If V is
 the value of the game, an optimal strategy, p, for I is characterized by the property that
@@ -46,7 +46,7 @@ Player I’s average payoff is at least V no matter what column j Player II uses
 m
 i=1
 piaij \geq V for all j = 1, . . . , n. (1)
-Similarly, a strategy q = (q1,...,qn)
+Similarly, a strategy q = (q1, \ldots,qn)
 T is optimal for II if and only if
 
 n
@@ -93,9 +93,9 @@ Since this begins and ends with V we must have equality throughout.
 Theorem – gives conditions for equality to be achieved in (1) for certain values of j, and
 in (2) for certain values of i.
 %=======================================================%
-Theorem 3.1. Consider a game with m×n matrix A and value V . Let p = (p1,...,pm)
+Theorem 3.1. Consider a game with m×n matrix A and value V . Let p = (p1, \ldots,pm)
 T
-be any optimal strategy for I and q = (q1,...,qn)
+be any optimal strategy for I and q = (q1, \ldots,qn)
 T be any optimal strategy for II. Then
 
 n
@@ -134,8 +134,8 @@ solution. The procedure this theorem suggests for Player 1 is to try to find a s
 the set of equations (5) formed by those j for which you think it likely that qj > 0. One
 way of saying this is that Player 1 searches for a strategy that makes Player 2 indifferent
 as to which of the (good) pure strategies to use. Similarly, Player 2 should play in such a
-way to make Player 1 indifferent among their (good) strategies. This is called the Principle
-of Indifference.
+way to make Player 1 indifferent among their (good) strategies. This is called the \textbf{Principle
+of Indifference.}
 
 %=======================================================%
 \subsection{Example.} As an example of this consider the game of Odd-or-Even in which both
@@ -191,11 +191,11 @@ principle of indifference, every optimal strategy q for II satisfies (4), or
 
 m
 j=1
-aij qj = V for i = 1,...,m. (12)
+aij qj = V for i = 1, \ldots,m. (12)
 
 This is a set of m equations in m unknowns, and since A is nonsingular, we may solve
 for the qi. Let us write this set of equations in vector notation using q to represent the
-column vector of II’s strategy, and 1 = (1, 1,..., 1)T to represent the column vector of all
+column vector of II’s strategy, and 1 = (1, 1, \ldots, 1)T to represent the column vector of all
 1’s:
 Aq = V 1 (13)
 We note that V cannot be zero since (13) would imply that A was singular. Since A is
@@ -299,7 +299,7 @@ II – 21
 Suppose all diagonal terms are positive, di > 0 for all i. (The other cases are treated in
 Exercise 2.) One may apply Theorem 3.2 to find the solution, but it is as easy to proceed
 directly. The set of equations (12) becomes
-pidi = V for i = 1,...,m (19)
+pidi = V for i = 1, \ldots,m (19)
 whose solution is simply
 pi = V /di for i = 1, . . . , m. (20)
 To find V , we sum both sides over i to find
@@ -312,7 +312,7 @@ i=1
 1/di)
 −1. (21)
 Similarly, the equations for Player II yield
-qi = V /di for i = 1,...,m. (22)
+qi = V /di for i = 1, \ldots,m. (22)
 Since V is positive from (21), we have pi > 0 and qi > 0 for all i, so that (20) and (22)
 give optimal strategies for I and II respectively, and (21) gives the value of the game.
 As an example, consider the game with matrix C.
@@ -326,8 +326,8 @@ C =
 ⎞
 ⎟⎠
 From (20) and (22) the optimal strategy is proportional to the reciprocals of the diagonal
-elements. The sum of these reciprocals is 1 + 1/2+1/3+1/4 = 25/12. Therefore, the
-value is V = 12/25, and the optimal strategies are p = q = (12/25, 6/25, 4/25, 3/25)T.
+elements. The sum of these reciprocals is $1 + 1/2+1/3+1/4 = 25/12$. Therefore, the
+value is V = 12/25, and the optimal strategies are $p = q = (12/25, 6/25, 4/25, 3/25)^T$.
 %==================================================================%
 \subsection{3.4 Triangular Games.} Another class of games for which the equations (12) are
 easy to solve are the games with triangular matrices - matrices with zeros above or below
@@ -426,7 +426,7 @@ pjajipi = −p
 T
 Ap (23)
 implies that pTAp = 0. This shows that the value V \leq 0. A symmetric argument shows
-that V \geq 0. Hence V = 0. Now suppose p is optimal for I. Then m
+that $V \geq 0$. Hence V = 0. Now suppose p is optimal for I. Then m
 i=1 piaij \geq 0 for all
 j. Hence m
 j=1 aijpj = −m
@@ -561,10 +561,10 @@ under a group G. Let m denote the number of elements in X and n denote the numbe
 elements in Y .
 %==========================================================%
 \subsection{Definition 3.4.} Given that a finite game G = (X, Y, A) is invariant under a group, G,
-of one-to-one transformations of Y , a mixed strategy, q = (q(1),...,q(n)), for Player II is
+of one-to-one transformations of Y , a mixed strategy, q = (q(1), \ldots,q(n)), for Player II is
 said to be invariant under G if
 q(g(y)) = q(y) for all y ∈ Y and all $g \in G$. (33)
-Similarly a mixed strategy p = (p(1),...,p(m)), for Player I is said to be invariant under
+Similarly a mixed strategy p = (p(1), \ldots,p(m)), for Player I is said to be invariant under
 G (or G) if
 p(g(x)) = p(x) for all x ∈ X and all $g \in G$. (34)
 Two points y1 and y2 in Y are said to be equivalent if there exists a g in G such that
@@ -613,7 +613,7 @@ g∈G
 q∗(g(y)) = ˜q(y)
 (37)
 II – 27
-since applying g to Y = {1, 2,...,n} is just a reordering of the points of Y . Moreover, q˜
+since applying g to Y = {1, 2, \ldots,n} is just a reordering of the points of Y . Moreover, q˜
 satisfies (35) since
 
 
@@ -773,7 +773,7 @@ underestimates, there is no payoff. Set up the matrix of this game and solve.
 guesses correctly, they win  1. If they guesses too high, they loses 1. If they guesses too low, there
 is no payoff. Set up the matrix and solve.
 6. Player II chooses a number $j \in {1, 2,\ldots,n}$, $n \geq 2$, and Player I tries to guess
-what it is by guessing some i ∈ {1, 2,...,n}. If they guesses correctly, i.e. i = j, they win  1.
+what it is by guessing some i ∈ {1, 2, \ldots,n}. If they guesses correctly, i.e. i = j, they win  1.
 If i>j, they win  bi−j for some number b < 1. Otherwise, if i<j, they win  nothing. Set up
 II – 30
 the matrix and solve. Hint: If An = (aij ) denotes the game matrix, then show the inverse
@@ -827,7 +827,7 @@ player that chooses a number one larger than that chosen by their opponent wins 
 player that chooses a number two or more larger than that chosen by their opponent loses
 1.
 \item[(a)] Set up the game matrix.
-\item[(b)] It turns out that the optimal strategy satisfies pi > 0 for i = 1,..., 5, and pi = 0 for all
+\item[(b)] It turns out that the optimal strategy satisfies pi > 0 for i = 1, \ldots, 5, and pi = 0 for all
 other i. Solve for the optimal p. (It is not too difficult since you can argue that p1 = p5
 and p2 = p4 by symmetry of the equations.) Check that in fact the strategy you find is
 optimal.
@@ -906,13 +906,13 @@ chooses one of [2,5], [5,6], [5,8], and [4,5], at random with probability 1/4 ea
 that invariance reduces the game to a 2 by n game where n is the number of invariant
 strategies of Player II. Domination may reduce it somewhat further. Solve the game.
 16. Dresher’s Guessing Game. Player I secretly writes down one of the numbers
-1, 2,...,n. Player II must repeatedly guess what I’s number is until they guesses correctly,
+1, 2, \ldots,n. Player II must repeatedly guess what I’s number is until they guesses correctly,
 losing 1 for each guess. After each guess, Player I must say whether the guess is correct,
 too high, or too low. Solve this game for n = 3. (This game was investigated by Dresher
 (1961) and solved for n \leq 11 by Johnson (1964). A related problem is treated in Gal
 (1974).)
 17. Thievery. Player I wants to steal one of m \geq 2 items from Player II. Player II
-can only guard one item at a time. Item i is worth ui > 0, for i = 1,...,m. This leads to
+can only guard one item at a time. Item i is worth ui > 0, for i = 1, \ldots,m. This leads to
 a matrix game with m × m matrix,
 A =
 ⎛
@@ -938,7 +938,7 @@ to stealing one of the k most expensive items. Order the items from most expensi
 least expensive, $u1 \geq u2 \geq ... \geq um > 0$, and use the principle of indifference on the upper
 left k × k submatrix of A for some k.
 18. Player II chooses a number $j \in {1, 2,\ldots,n}$, n \geq 2, and Player I tries to guess
-what it is by guessing some i ∈ {1, 2,...,n}. If they guesses correctly, i.e. i = j, they win  2.
+what it is by guessing some i ∈ {1, 2, \ldots,n}. If they guesses correctly, i.e. i = j, they win  2.
 If they misses by exactly 1, i.e. |i − j| = 1, then they loses 1. Otherwise there is no payoff.
 Solve. Hint: Let An denote the n by n payoff matrix, and show that A−1 n = Bn = (bij ),
 where bij = i(n + 1 − j)/(n + 1) for i \leq j, and bij = bji for i>j.
@@ -946,7 +946,7 @@ where bij = i(n + 1 − j)/(n + 1) for i \leq j, and bij = bji for i>j.
 \subsection{19. The Number Hides Game.} 
 The Number Hides Game, introduced by Ruckle
 (1983) and solved by Baston, Bostock and Ferguson (1989), may be described as follows.
-From the set S = {1, 2,...,k}, Player I chooses an interval of m1 consecutive integers
+From the set S = {1, 2, \ldots,k}, Player I chooses an interval of m1 consecutive integers
 and Player II chooses an interval of m2 consecutive integers. The payoff to Player I is
 the number of integers in the intersection of the two intervals. When k = n + 1 and
 m1 = m2 = 2, this game is equivalent to the game with n × n matrix An = (aij ), where
@@ -962,9 +962,9 @@ with bij replaced by (−1)i+j bij , the solution can be derived as in that exer
 just show the following.
 \begin{itemize}
 \item[\item[(a)]] For n odd, the value is Vn = 4/(n + 1). There is an optimal equalizing strategy
-(the same for both players) that is proportional to (1, 0, 1, 0,..., 0, 1).
+(the same for both players) that is proportional to (1, 0, 1, 0, \ldots, 0, 1).
 \item[\item[(b)]] For n even, the value is 4(n+1)/(n(n+2)). There is an optimal equalizing strategy
-(the same for both players) that is proportional to $(k, 1, k − 1, 2, k − 2, 3,..., 2, k − 1, 1, k)$,
+(the same for both players) that is proportional to $(k, 1, k − 1, 2, k − 2, 3, \ldots, 2, k − 1, 1, k)$,
 where k = n/2.
 \end{itemize}
 

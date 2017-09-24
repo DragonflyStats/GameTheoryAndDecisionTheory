@@ -181,11 +181,13 @@ Player I always has a minimax strategy. The existence of minimax strategies in m
 games is worth stating as a lemma.
 
 %====================================================================%
-Lemma 1. In a finite game, both players have minimax strategies.
+\begin{description}
+\item[Lemma 1.] In a finite game, both players have minimax strategies.
 It is easy to argue that the lower value is less than or equal to the upper value. For if
 V < V and if I can assure himself of winning at least V , Player II cannot assure herself of
 not losing more than V , an obvious contradiction. It is worth stating this fact as a lemma
 too.
+\end{description}
 Lemma 2. The lower value is less than or equal to the upper value,
 V ≤ V.
 This lemma also follows from the general mathematical principle that for any realvalued
@@ -209,13 +211,13 @@ minimax strategies as optimal strategies.
 The Minimax Theorem, stated in Chapter 1, may be expressed simply by saying that
 for finite games, V = V .
 II – 37
-The Minimax Theorem. Every finite game has a value, and both players have minimax
+\section{The Minimax Theorem.} Every finite game has a value, and both players have minimax
 strategies.
 We note one remarkable corollary of this theorem. If the rules of the game are changed
 so that Player II is required to announce her choice of a mixed strategy before Player I
 makes his choice, then the apparent advantage given to Player I by this is illusory. Player
 II can simply announce her minimax strategy.
-4.3 Invariance under Change of Location and Scale. Another simple observation
+\section{4.3 Invariance under Change of Location and Scale.} Another simple observation
 is useful in this regard. This concerns the invariance of the minimax strategies under
 the operations of adding a constant to each entry of the game matrix, and of multiplying
 each entry of the game matrix by a positive constant. The game having matrix A = (aij )
@@ -260,7 +262,7 @@ it is presented here may be found on the web at http://www.math.ucla.edu/˜tom/L
 %====================================================================%
 A Linear Program is defined as the problem of choosing real variables to maximize or
 minimize a linear function of the variables, called the objective function, subject to linear
-II – 38
+%% -II – 38
 constraints on the variables. The constraints may be equalities or inequalities. A standard
 form of this problem is to choose y1,... ,yn, to
 maximize b1y1 + ··· + bnyn, (8)
@@ -764,3 +766,5 @@ do? What are the limiting average frequencies of the choices of the players?
 choices. What should Player I do, and what would his limiting average payoff be?
 II – 48
 
+
+\end{document}

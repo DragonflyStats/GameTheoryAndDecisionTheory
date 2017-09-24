@@ -48,18 +48,17 @@ Cooperate (with other)	2, 2	0, 3
 Defect (betray other)	3, 0	1, 1
 \end{verbatim}
 
-Imagine two prisoners held in separate cells, interrogated simultaneously, and offered deals (lighter jail sentences) for betraying their fellow criminal. They can "cooperate" (with the other prisoner) by not snitching, or "defect" by betraying the other. However, there is a catch; if both players defect, then they both serve a longer sentence than if neither said anything. Lower jail sentences are interpreted as higher payoffs (shown in the table).
-
+\begin{itemize}
+\item Imagine two prisoners held in separate cells, interrogated simultaneously, and offered deals (lighter jail sentences) for betraying their fellow criminal. They can "cooperate" (with the other prisoner) by not snitching, or "defect" by betraying the other. However, there is a catch; if both players defect, then they both serve a longer sentence than if neither said anything. Lower jail sentences are interpreted as higher payoffs (shown in the table).
+\item 
 The prisoner's dilemma has a similar matrix as depicted for the coordination game, but the maximum reward for each player (in this case, 3) is obtained only when the players' decisions are different. Each player improves their own situation by switching from "cooperating" to "defecting", given knowledge that the other player's best decision is to "defect". The prisoner's dilemma thus has a single Nash equilibrium: both players choosing to defect.
-
+\item 
 What has long made this an interesting case to study is the fact that this scenario is globally inferior to "both cooperating". That is, both players would be better off if they both chose to "cooperate" instead of both choosing to defect. However, each player could improve their own situation by breaking the mutual cooperation, no matter how the other player possibly (or certainly) changes their decision.
 
-
-
-
-Prisoner's dilemmaIf none of them confesses (they cooperate with each other), they will both be charged the lesser sentence, a year of prison each. The police will question them on separate interrogation rooms, which means that the two prisoners cannot communicate (hence imperfect information). The police will try to convince each prisoner to confess the crime by offering them a “get out of jail free card”, while the other prisoner will be sentenced to a ten years term. If both prisoners confess (and therefore they defect), each prisoner will be sentenced to eight years. Both prisoners are offered the same deal and know the consequences of each action (complete information) and are completely aware that the other prisoner has been offered the exact same deal (therefore, it’s common knowledge).
-
-Takeaway Points
+\item If none of them confesses (they cooperate with each other), they will both be charged the lesser sentence, a year of prison each. The police will question them on separate interrogation rooms, which means that the two prisoners cannot communicate (hence imperfect information). The police will try to convince each prisoner to confess the crime by offering them a “get out of jail free card”, while the other prisoner will be sentenced to a ten years term. 
+\item If both prisoners confess (and therefore they defect), each prisoner will be sentenced to eight years. Both prisoners are offered the same deal and know the consequences of each action (complete information) and are completely aware that the other prisoner has been offered the exact same deal (therefore, it’s common knowledge).
+\end{itemize}
+\subsection{Takeaway Points}
 To calculate payoffs in mixed strategy Nash equilibria, do the following:
 
 \begin{enumerate}
@@ -91,10 +90,11 @@ As described before, if both prisoners confess the crime they will be charged an
 
 
 \subsection{Generalisation of the game:}
-
-The prisoner’s dilemma is not always presented as we have seen in this case. Payoffs for each set of strategies will vary, depending on each person. However, there are a few rules that can be used to build a “proper” prisoner’s dilemma game.
-
-Prisoner's dilemma - StructureIn the adjacent game matrix, we’ve renamed each player’s payoffs, in order to determine the conditions needed to design a prisoner’s dilemma game. In a traditional prisoner’s dilemma, we have: A > B > C > D (in absolute terms). In our previous example, this condition is met (A=10, B=8, C=1 and D=0). In every case, A>B and C>D imply that confess-confess is a Nash equilibrium.
+\begin{itemize}
+\item The prisoner’s dilemma is not always presented as we have seen in this case. Payoffs for each set of strategies will vary, depending on each person. However, there are a few rules that can be used to build a “proper” prisoner’s dilemma game.
+\end{itemize}
+Prisoner's dilemma - Structure
+In the adjacent game matrix, we’ve renamed each player’s payoffs, in order to determine the conditions needed to design a prisoner’s dilemma game. In a traditional prisoner’s dilemma, we have: A > B > C > D (in absolute terms). In our previous example, this condition is met (A=10, B=8, C=1 and D=0). In every case, A>B and C>D imply that confess-confess is a Nash equilibrium.
 
 It must be noted that the asymmetry of the game is not the important part of the prisoner’s dilemma. The interesting thing about this game is the fact that its Nash equilibrium is not socially optimum.
 
@@ -111,13 +111,18 @@ The situation with an infinite number of repetitions is different, since there w
 \newpage
 
 \subsection{Bishop–Cannings theorem}
-The Bishop–Cannings theorem is a theorem in evolutionary game theory. It states that (i) all members of a mixed evolutionarily stable strategy (ESS) have the same payoff (Theorem 2), and (ii) that none of these can also be a pure ESS[1] (from their Theorem 3). The usefulness of the results comes from the fact that they can be used to directly find ESSes algebraically, rather than simulating the game and solving it by iteration.
+The Bishop–Cannings theorem is a theorem in evolutionary game theory. It states that 
+\begin{enumerate}[(i)]
+\item  all members of a mixed evolutionarily stable strategy (ESS) have the same payoff (Theorem 2), and
+\item that none of these can also be a pure ESS[1] (from their Theorem 3). 
+\end{itemize}
+The usefulness of the results comes from the fact that they can be used to directly find ESSes algebraically, rather than simulating the game and solving it by iteration.
 
 The logic of (i) also applies to Nash equilibria (all strategies in the support of a mixed strategy receive the same payoff).[citation needed]
 
 The theorem was formulated by Tim Bishop and Chris Cannings at Sheffield University, who published it in 1978.
 
-A review is given by John Maynard Smith in Evolution and the Theory of Games, with proof in the appendix.[2]
+% A review is given by John Maynard Smith in Evolution and the Theory of Games, with proof in the appendix.[2]
 
 
 
