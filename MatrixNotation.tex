@@ -1,0 +1,37 @@
+\subsection*{Introduction to Game Theory/Matrix Notation}
+%- https://en.wikibooks.org/wiki/Introduction_to_Game_Theory/Matrix_Notation
+
+If you remember, the game we've looked at—the Prisoner's Dilemma—had to be explained with the use of a story. However this is not only very verbose and imprecise but also impossible to do for many games that are simply too complicated. One simple way of showing a game is by using a game matrix 
+This is really a table of utility. Utility is the amount of happiness an agent (player) gets from a particular outcome, or payoff. 
+In order to create a game matrix, we first need to work out the utility values. We assign the payoffs that are least attractive to a player low values and payoffs that are attractive to the player high payoffs. Initially[1], these are what we call "ordinal" utility values, not "cardinal" utility values. This means that a payoff of 10 isn't necessarily twice as good as one of 5. In fact, there is no difference between the two following utility values lists when talking about ordinal values: 
+Setup 1
+Setup 2 
+Event A = Utility of 1
+Event B = Utility of 2
+Event C = Utility of 3
+Event A = Utility of 1
+Event B = Utility of 1,000,000
+Event C = Utility of 230,000,000,000,000
+
+It's just that the first list is far more concise. Remembering that we go from lowest level of attraction to highest, let's assign payoffs to the Prisoner's Dilemma game. 
+
+10 years in jail = 1
+7 years in jail  = 2
+2 years in jail  = 3
+Get off free   = 4
+
+Now we can arrange a table that shows what happens when each player chooses different options. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Prisoner's Dilemma}
+Player 2 
+Confess
+Stay Silent 
+Player 1 
+Confess 
+(2,2)
+(4,1) 
+Stay Silent 
+(1,4)
+(3,3) 
+It should be clear soon how to read this table. Player 1 has two rows, "Confess" and "Stay Silent", and Player 2 has two columns marked the same. Where a column and a row intersect are the payoffs. Thus when Player 1's "Confess" row and Player 2's "Stay Silent" column intersect (which means in terms of the game, when Player 1 confesses and Player 2 stays silent) the payoff (4,1) is awarded. This means that Player 1 (whose personal payoff comes first in the brackets) gets a payout of 4—his highest payoff—and Player 2 gets a payout of 1—the lowest. 
