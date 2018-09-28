@@ -1,5 +1,0 @@
-Decision theory
-
-Decision theory (or the theory of choice) is the study of the reasoning underlying an agent's choices.[1] Decision theory can be broken into two branches: normative decision theory, which gives advice on how to make the best decisions, given a set of uncertain beliefs and a set of values; and descriptive decision theory, which analyzes how existing, possibly irrational agents actually make decisions.
-
-Closely related to the field of game theory,[2] decision theory is concerned with the choices of individual agents whereas game theory is concerned with interactions of agents whose decisions affect each other. Decision theory is an interdisciplinary topic, studied by economists, statisticians, psychologists, biologists[3], political and social scientists, and philosophers.[4]
