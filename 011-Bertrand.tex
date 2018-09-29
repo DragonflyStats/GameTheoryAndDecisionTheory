@@ -1,0 +1,353 @@
+\documentclass[]{article}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
+
+%\graphicspath{ {images/} }
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+\begin{document}
+
+
+%- III – 15
+\newpage
+\section{The Bertrand Model of Duopoly.} In 1883, J. Bertrand proposed a different
+model of competition between two duopolists, based on allowing the firms to set prices
+rather than to fix production quantities. In this model, demand is a function of price
+rather than price a function of quantity available.
+First consider the case where the two goods are identical and price information to the
+consumer is perfect so that the firm that sets the lower price will corner the market. We
+use the same price/demand function (1) solved for demand Q in terms of price P,
+\[Q(P) = a − P if 0 \leq P \leq a\]
+0 if P>a = (a − P)
++. (8)
+%%- III – 18
+\begin{itemize}
+    \item The actual demand is Q(P) where P is the lowest price. The monopoly behavior under this
+model is the same as for the Cournot model of the previous section. 
+\item The monopolist sets
+the price at (a + c)/2 and produces the quantity (a − c)/2, receiving a profit of (a − c)2/4.
+\item Suppose firms 1 and 2 choose prices p1 and p2 respectively. We assume that if p1 = p2
+the firms share the market equally. We take the cost for a unit production again to be
+$c > 0$ so that the profit is pi − c times the amount sold.
+\end{itemize}
+ Then the payoff functions are
+u1(p1, p2) =
+⎧
+⎨
+⎩
+(p1 − c)(a − p1)+ if p1 < p2
+(p1 − c)(a − p1)+/2 if p1 = p2
+0 if p1 > p2
+(9)
+and
+u2(p1, p2) =
+⎧
+⎨
+⎩
+(p2 − c)(a − p2)+ if p2 < p1
+(p2 − c)(a − p2)+/2 if p2 = p1
+0 if p2 > p1
+(10)
+Here there is a unique PSE but it is rather disappointing. Both firms charge the production
+cost, p^{\ast}
+1 = p^{\ast}
+2 = c, and receive a payoff of zero. This is the safety level for each player. It
+is easy to check that this is an equilibrium. No other pair of prices can be an equilibrium
+because either firm could capture the entire market by slightly undercutting the other’s
+price.
+\begin{itemize}
+    \item This feature of capturing the entire market by undercutting the other’s price is not
+entirely reasonable for a number of reasons. Usually the products of two firms are not
+entirely interchangeable so some consumers may prefer one product to the other even if
+it costs somewhat more.
+\item In addition there is the problem of the consumer getting the
+information on the prices, and there is the feature of brand loyalty by consumers. We may
+modify the model in an attempt to take this into account.
+\end{itemize}
+\end{document}
+\subsubsection{The Bertrand Model with Differentiated Products.}
+\begin{itemize}
+    \item \item 
+\end{itemize}Again we assume that the firms
+choose prices p1 and p2 and that the cost of unit production is c > 0. \item Since the profits per
+unit produced are $p1 − c$ and $p2 − c$, we may assume that the prices will satisfy $p1 \geq c$ and
+$p2 \geq c$. 
+\end{itemize}
+This time we assume that the demand functions of the products of the firms for
+given price selections are given by
+q1(p1, p2)=(a − p1 + bp2)
++
+q2(p1, p2)=(a − p2 + bp1)
++, (11)
+where $b > 0$ is a constant representing how much the product of one firm is a substitute
+for the product of the other. We assume $b \leq 1$ for simplicity. These demand functions
+are unrealistic in that one firm could conceivably charge an arbitrarily high price and still
+have a positive demand provided the other firm also charges a high enough price. However,
+this function is chosen to represent a linear approximation to the “true” demand function,
+appropriate near the usual price settings where the equilibrium is reached.
+Under these assumptions, the strategy sets of the firms are X = [0,∞) and $Y = [0,\infty)$,
+and the payoff functions are
+\[u1(p1, p2) = q1(p1, p2)(p1 − c)=(a − p1 + bp2)
++(p1 − c)\]
+\[u2(p1, p2) = q2(p1, p2)(p2 − c)=(a − p2 + bp1)
++(p2 − c). (12)\]
+%%- III – 19
+To find the equilibrium prices, we must find points (p^{\ast}
+1, p^{\ast}
+2) at which u1 is maximized in p1
+and u2 is maximized in p2 simultaneously. Assuming a−p1 +bp2 > 0 and a−p2 +bp1 > 0,
+we find
+∂
+∂p1
+u1(p1, p2) = a − 2p1 + bp2 + c = 0
+\[ ∂
+∂p2
+u2(p1, p2) = a − 2p2 + bp1 + c = 0.\]
+Again the functions are quadratic in the variable of differentiation with a negative coeffi-
+cient, so the resulting roots represent maxima. Solving simultaneously and denoting the
+result by p^{\ast}
+1 and p^{\ast}
+2, we find
+p^{\ast}
+1 = p^{\ast}
+2 = a + c
+2 − b
+.
+\newpage
+\section{The Stackelberg Model of Duopoly.} In the Cournot and Bertrand models
+of duopoly, the players act simultaneously. H. von Stackelberg (1934) proposed a model
+of duopoly in which one player, called the dominant player or leader, moves first and the
+outcome of that player’s choice is made known to the other player before the other player’s
+choice is made. An example might be General Motors, at times big enough and strong
+enough in U.S. history to play such a dominant role in the automobile industry. Let us
+analyze the Cournot model from this perspective.
+\begin{itemize}
+    \item Firm 1 chooses an amount to produce, $q_1$, at a cost c per unit. This amount is then
+told to Firm 2 which then chooses an amount q2 to produce also at a cost of c per unit.
+\item Then the price P per unit is determined by equation (1), P = (a − q1 − q2)+, and the
+players receive $u1(q1, q2)$ and $u2(q1, q2)$ of equations (2) and (3).
+\item Player I’s pure strategy space is X = $[0,\infty)$. From the mathematical point of view, the
+only difference between this model and the Cournot model is that Firm 2’s pure strategy
+space, Y , is now a set of functions mapping q1 into q2. However, this is now a game of
+perfect information that can be solved by backward induction.
+\item Since Firm 2 moves last,
+we first find the optimal q2 as a function of q1. That is, we solve equation (5) for q2. This
+gives us Firm 2’s strategy as
+q2(q1)=(a − q1 − c)/2. (13)
+Since Firm 1 now knows that Firm 2 will choose this best response, Firm 1 now wishes to
+choose q1 to maximize
+u1(q1, q2(q1)) = q1(a − q1 − (a − q1 − c)/2) − cq1
+= −1
+2
+q2
+1 +
+a − c
+2 q1. (14)
+\end{itemize}
+
+This quadratic function is maximized by q1 = q^{\ast}
+1 = (a−c)/2. Then Firm 2’s best response
+is \[q^{\ast}
+2 = q2(q^{\ast}
+1 )=(a − c)/4.\]
+Let us analyze this SE and compare its payoff to the payoff of the SE in the Cournot
+duopoly. Firm 1 produces the monopoly quantity and Firm 2 produces less than the
+%- III – 20
+Cournot SE. The payoff to Firm 1 is u1(q^{\ast}
+1 , q^{\ast}
+2 )=(a − c)2/8 and the payoff to Firm 2
+is 
+
+\[u2(q^{\ast}
+1 , q^{\ast}
+2 )=(a − c)2/16.\] Therefore Firm 1’s profits are greater than that given by
+the Cournot equilibrium, and Firm 2’s are less. Note that the total amount produced is
+(3/4)(a − c), which is greater than $(2/3)(a − c)$, the total amount produced under the
+Cournot equilibrium. This means the Stackelberg price is lower than the Cournot price,
+and the consumer is better off under the Stackelberg model.
+The information that Firm 2 received about Firm 1’s production has been harmful.
+Firm 1 by announcing its production has increased its profit. This shows that having more
+information may make a player worse off. More precisely, being given more information
+and having that fact be common knowledge may make you worse off.
+%==================================================%
+\newpage
+\subsection{Entry Deterrence.} 
+\begin{itemize}
+    \item Even if a firm acts as a monopolist in a certain market, there
+may be reasons why it is in the best interests of the firm to charge less than the monopoly
+price, or equivalently, produce more than the monopoly production. 
+\item One of these reasons
+is that the high price of the good achieved by monopoly production may attract another
+firm to enter the market.
+\item We can see this in the following example. Suppose the price/demand relationship can
+be expressed as
+\[P(Q) =  17 − Q if 0 \leq Q \leq 17\]
+0 otherwise, (15)
+where Q represents the total amount produced, and P represents the price per unit amount.
+\item Suppose additionally, that the cost to the firm of producing q1 items is q1 + 9. That is,
+there is a fixed cost of 9 and a constant marginal cost of 1 per unit quantity. 
+\item The profit
+to the firm of producing quantity q1 of the good is
+\[u(q1) = (17 − q1)q1 − (q1 + 9) = 16q1 − q2
+1 − 9. \]
+\end{itemize}
+The value of q1 that maximizes the profit is found by setting the derivative of u(q1) to zero
+and solving for q1:
+$u (q1) = 16 − 2q1 = 0.$$
+So the monopoly production is
+q1 = 8,
+the monopoly price is 9, and the monopoly profit is
+\[u(8) = 9 \times 8 − 17 = 55\].
+Suppose now a competing firm observes this market and thinks of producing a small
+amount, q2, to hopefully make a small profit. Suppose also that this firm also has the same
+cost, q2+9, as the monopoly firm. On producing q2 the price will drop to $P(8+q2)=9−q2$,
+and the competing firm’s profit will be
+\[u2 = (9 − q2)q2 − (q2 + 9) = 8q2 − q2
+2 − 9.\]
+%%- III – 21
+\begin{itemize}
+    \item This is maximized at q2 = 4 and the profit there is u2 = 7. Since this is positive, the firm
+has an incentive to enter the market.
+\item Of course, the incumbent monopolist can foresee this possibility and can calculate the
+negative effect it will have on the firm’s profits.
+\item If the challenger enters the market with a
+production of 4, the price will drop to P(8+4) = 5, and the monopolist’s profits will drop
+from 55 to 5 · 8 − 17 = 23.
+\item It seems reasonable that some preventative measures might be
+worthwhile.
+\end{itemize}
+
+If the monopolist produces a little more than the monopoly quantity, it might deter
+the challenger from entering the market. How much more should be produced? If the
+monopolist produces q1, then the challenger’s firm’s profits may be computed as in (17)
+by
+\[u2(q1, q2) = (17 − q1 − q2)q2 − (q2 + 9)\].
+This is maximized at q2 = (16 − q1)/2 for a profit of
+u2(q1,(16 − q1)/2) = (16 − q1)
+2/4 − 9.
+The profit is zero if (16 − q1)2 = 36, or equivalently, if q1 = 10.
+\begin{itemize}
+    \item This says that if the monopolist produces 10 rather than 8, then the challenger can
+see that it is not profitable to enter the market.
+However, the monopolist’s profits are reduced by producing 10 rather than 8. From
+(16) we see that the profits to the firm when q1 = 10 are
+u1(10) = 7 · 10 − 19 = 51
+instead of 55. 
+\item This is a relatively small amount to pay as insurance against the much
+bigger drop in profits from 55 to 23 the monopolist would suffer if the challenger should
+enter the market.
+\item The above analysis assumes that the challenger believes that, even if the challenger
+should enter the market, the monopolist will continue with the monopoly production,
+or the pre-entry production. This would be the case if the incumbent monopolist were
+considered as the dominant player in a Stackelberg model. 
+\item Note that the entry deterrence
+strategy pair, q1 = 10 and q2 = 0, does not form a strategic equilibrium in this Stackelberg
+model, since q1 = 10 is not a best response to q2 = 0. To analyze the situation properly,
+we should enlarge the model to allow the game to be played sequentially several times.
+If this problem were analyzed as a Cournot duopoly, we would find that, at equilibrium,
+each firm would produce 5 1
+3 , the price would drop to 6 1
+3 , and each firm would realize a
+profit of 19 4
+9 . This low profit is another reason that the incumbent firm should make strong
+efforts to deter the entry of a challenger.
+III – 22
+\end{itemize}
+
+\section{3.5 Exercises.}
+\begin{enumerate}
+    \item 1.
+    \begin{itemize}
+        \item[(a)] Suppose in the Cournot model that the firms have different production costs.
+Let c1 and c2 be the costs of production per unit for firms 1 and 2 respectively, where both
+c1 and c2 are assumed less than a/2. Find the Cournot equilibrium.
+\item[(b)] What happens, if in addition, each firm has a set up cost? Suppose Player I’s
+cost of producing x is x + 2, and II’s cost of producing y is 3y + 1. Suppose also that the
+price function is p(x, y) = 17 − x − y, where x and y are the amounts produced by I and
+II respectively. What is the equilibrium production, and what are the players’ equilibrium
+payoffs?
+\end{itemize}
+\item  Extend the Cournot model of Section 3.1 to three firms. Firm i chooses to produce
+qi at cost cqi where c > 0. The selling price is P(Q)=(a − Q)+ where Q = q1 + q2 + q3.
+What is the strategic equilibrium?
+\item  Modify the Bertrand model with differentiated products to allow sequential selection
+of the price as in Stackelberg’s variation of Cournot’s model. The dominant player
+announces a price first and then the subordinate player chooses a price. Solve by backward
+induction and compare to the SE for the simultaneous selection model.
+\item Consider the Cournot duopoly model with the somewhat more realistic price function,
+P(Q) =  1
+4Q2 − 5Q + 26 for 0 ≤ Q ≤ 10,
+1 for $Q \geq 10$.
+This price function starts at 26 for Q = 0 and decreases down to 1 at Q = 10 and then
+stays there. 
+%===============================================%
+Assume that the cost, c, of producing one unit is $c = 1$ for both firms. No
+firm would produce more than 10 because the return for selling a unit would barely pay
+for the cost of producing it. Thus we may restrict the productions q1, q2, to the interval
+[0, 10].
+\begin{enumerate}[(a)]
+\item Find the monopoly production, and the optimal monopoly return.
+\item Show that if q2 = 5/2, then u1(q1, 5/2) is maximized at q1 = 5/2. Show that this
+implies that q1 = q2 = 5/2 is an equilibrium production in the duopoly.
+\item (a) Suppose in the Stackelberg model that the firms have different production costs.
+Let c1 and c2 be the costs of production per unit for firms 1 and 2 respectively. Find the
+Stackelberg equilibrium. For simpicity, you may assume that both c1 and c2 are small, say
+less than a/3.
+(b) Suppose in the Stackelberg model, Player I’s cost of producing x is x +2, and II’s
+cost of producing y is $3y + 1$. 
+
+Suppose also that the price function is $p(x, y) = 17 − x − y$,
+where x and y are the amounts produced by I and II respectively. What is the equilibrium
+production, and what are the players’ equilibrium payoffs?
+\item Extend the Stackelberg model to three firms. For i = 1, 2, 3, Firm i chooses to
+produce qi at cost cqi where $c > 0$. 
+
+Firm 1 acts first in announcing the production q1. Then
+%=======================================%
+
+Firm 2 announces q2, and finally Firm 3 announces q3. The selling price is P(Q)=(a−Q)+
+where $Q = q1 + q2 + q3$. What is the strategic equilibrium?
+\item  An Advertising Campaign. Two firms may compete for a given market of
+total value, V , by investing a certain amount of effort into the project through advertising,
+securing outlets, etc. Each firm may allocate a certain amount for this purpose. If firm 1
+allocates x > 0 and firm 2 allocates y > 0, then the proportion of the market that firm 1
+corners is $x/(x+ y)$. 
+%===========================%
+The firms have differing difficulties in allocating these resources. The
+cost per unit allocation to firm i is ci, i = 1, 2. Thus the profits to the two firms are
+M1(x, y) = V · x
+x + y − c1x
+M2(x, y) = V · y
+x + y − c2y
+If both x and y are zero, the payoffs to both are zero.
+(a) Find the equilibrium allocations, and the equilibrium profits to the two firms, as
+a function of V , c1 and c2.
+(b) Specialize to the case V = 1, c1 = 1, and c2 = 2.
+\end{enumerate}
+
+\end{document}

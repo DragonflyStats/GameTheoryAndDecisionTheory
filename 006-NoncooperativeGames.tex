@@ -1,0 +1,454 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{framed}
+\title{Prisoners Dilemma}
+\author{Kevin O'Brien}
+\date{September 2017}
+
+\begin{document}
+
+
+\section{Noncooperative Games}
+%- III – 6
+%- 2. 
+%==========================================================%
+Two-person general-sum games and n-person games for n > 2 are more difficult to
+analyze and interpret than the zero-sum two-person games of Part II. The notion of “optimal”
+behavior does not extend to these more complex situations. In the noncooperative
+theory, it is assumed that the players cannot overtly cooperate to attain higher payoffs. If
+communication is allowed, no binding agreements may be formed. One possible substitute
+for the notion of a “solution” of a game is found in the notion of a strategic equilibrium.
+
+\subsection{Strategic Equilibria.} A finite n-person game in strategic form is given by n
+nonempty finite sets, X1, X2, ... , Xn, and n real-valued functions u1, u2, ... , un, defined
+on X1 × X2 × ··· × Xn. The set Xi represents the pure strategy set of player i and
+ui(x1, x2,...,xn) represents the payoff to player i when the pure strategy choices of the
+players are $$\{x1, x2, ... , xn\}$, with xj ∈ Xj for j = 1, 2,...,n.
+\begin{framed}
+Definition. A vector of pure strategy choices (x1, x2,...,xn) with xi ∈ Xi for i = 1,...,n
+is said to be a pure strategic equilibrium, or PSE for short, if for all i = 1, 2,...,n, and
+for all x ∈ Xi,
+ui(x1,...,xi−1, xi, xi+1,...,xn) ≥ ui(x1,...,xi−1, x, xi+1,...,xn). (1)
+\end{framed}
+Equation (1) says that if the players other than player i use their indicated strategies,
+then the best player i can do is to use xi. Such a pure strategy choice of player i is called
+a best response to the strategy choices of the other players. The notion of strategic
+equilibrium may be stated: a particular selection of strategy choices of the players forms
+a PSE if each player is using a best response to the strategy choices of the other players.
+Consider the following examples with two players,
+(a)  (3, 3) (0, 0)
+(0, 0) (5, 5) 
+(b)  (3, 3) (4, 3)
+(3, 4) (5, 5) 
+In (a), the first row, first column, denoted 1, 1, is a strategic equilibrium with equilibrium
+payoff (3, 3). If each believes the other is going to choose the first strategy, neither player
+will want to change to the second strategy. The second row, second column, 2, 2, is
+also a strategic equilibrium. Since its equilibrium payoff is (5, 5), both players prefer this
+equilibrium. In (b), the first row, first column, 1, 1, is still an equilibrium according to
+the definition. Neither player can gain by changing strategy. On the other hand, neither
+player can be hurt by changing, and if they both change, they both will be better off. So
+the equilibrium 1, 1 is rather unstable.
+Example (a) is of a game in which the players receive the same payoff, but are not
+allowed to communicate. If they were allowed to communicate, they would choose the
+joint action giving the maximum payoff. Other examples of this nature occur in the class
+of rendezvous games, in which two players randomly placed on a graph, each not knowing
+III – 7
+the position of the other, want to meet in minimum time. See the book of Alpern and Gal
+(2003).
+\begin{itemize}
+    \item If players in a noncooperative game are allowed to communicate and do reach some
+informal agreement, it may expected to be a strategic equilibrium.
+\item Since no binding
+agreements may be made, the only agreements that may be expected to occur are those that
+are self-enforcing, in which no player can gain by unilaterally violating the agreement.
+\item Each player is maximizing his return against the strategy the other player announced he
+will use.
+It is useful to extend this definition to allow the players to use mixed strategies. We
+denote the set of probabilities over k points by Pk:
+Pk = {p = (p1,...,pk) : pi ≥ 0 for i = 1,...,k, and k
+1 pi = 1}. (2)
+\end{itemize}
+
+Let mi denote the number of pure strategy choices of player i, so that the set Xi has mi
+elements. Then the set of mixed strategies of player i is just Pmi . It is denoted by X∗
+i
+where X∗
+i = Pmi .
+We denote the set of elements of Xi by the first mi integers, Xi = {1, 2,...,mi}.
+Suppose that for i = 1, 2,...,n, Player i uses pi = (pi1, pi2,...,pimi ) ∈ X∗
+i . Then the
+average payoff to player j is
+gj(p1,..., pn) = m1
+i1=1
+··· mn
+in=1
+p1i1 ··· pnin uj(i1,...,in). (3)
+Then the analogous definition of equilibrium using mixed strategies is as follows.
+Definition. A vector of mixed strategy choices (p1, p2,..., pn) with pi ∈ X∗
+i for i =
+1,...,n is said to be a strategic equilibrium, or SE for short, if for all i = 1, 2,...,n, and
+for all p ∈ X∗
+i ,
+gi(p1,..., pi−1, pi, pi+1,..., pn) ≥ gi(p1,..., pi−1, p, pi+1,..., pn). (4)
+Any mixed strategy pi that satisfies (4) for all p ∈ X∗
+i is a best response of player i
+to the mixed strategies of the other players. Thus, a particular selection of mixed strategy
+choices of the players forms an SE if and only if each player is using a best response to the
+strategy choices of the other players. No player can gain by unilaterally changing strategy.
+Note that a PSE is a special case of an SE.
+This notion of best response represents a practical way of playing a game: Make
+a guess at the probabilities that you think your opponents will play their various pure
+strategies, and choose a best response to this. This is an example of the famous Bayesian
+approach to decision making. Of course in a game, this may be a dangerous procedure.
+Your opponents may be better at this type of guessing than you.
+The first question that arises is “Do there always exist strategic equilibria?”. This
+question was resolved in 1951 by John Nash in the following theorem which generalizes
+von Neumann’s minimax theorem. In honor of this achievement, strategic equilibria are
+also called Nash equilibria.
+III – 8
+
+
+%=============================================================%
+\begin{framed}
+\noindent \textbf{Theorem.} Every finite n-person game in strategic form has at least one strategic equilibrium.
+\end{framed}
+A proof of this theorem using the Brouwer Fixed Point Theorem is given in Appendix
+3. This proof is an existence proof and gives no indication of how to go about finding
+equilibria. However, in the case of bimatrix games where n = 2, the Lemke-Howson
+algorithm (Journal SIAM, 1964, 12, 413-423) may be used to compute strategic equilibria
+in a finite number of steps using a simplex-like pivoting algorithm (see Parthasarathy and
+Raghavan (1971) for example). An interesting consequence of this method is that, under
+a nondegeneracy condition, the number of SE’s is finite and odd!
+One of the difficulties of the noncooperative theory is that there are usually many
+equilibria giving different payoff vectors as we shall see in the following examples. Another
+difficulty is that even if there is a unique strategic equilibrium, it may not be considered
+as a reasonable solution or a predicted outcome. In the rest of this section we restrict
+attention to n = 2, the two-person case.
+
+
+%=============================================================%
+\subsubsection{2.2 Examples.} Example 1. A Coordination Game. Consider the game with
+bimatrix
+ (3, 3) (0, 2)
+(2, 1) (5, 5) 
+and corresponding payoff matrices
+A =
+ 3 0
+2 5 
+and B =
+ 3 2
+1 5 
+The corresponding maxmin (MM) strategies are (1/2,1/2) for Player I and (3/5,2/5) for
+Player II. The safety levels are (vI , vII ) = (5/2, 13/5).
+Here there are two obvious pure strategic equilibria (PSE’s) corresponding to the
+payoffs (3,3) and (5,5). Both players prefer the second SE because it gives them both
+5 instead of 3. If they could coordinate their actions, this outcome would be expected.
+However, if they cannot communicate and if both players believe the other is going to
+choose the first strategy, then they are both going to choose the first strategy and receive
+the payoff 3. One cannot say the outcome (3,3) is irrational. If that’s the way things
+have always been, then one who tries to change things hurts oneself. This phenomenon
+occurs often, usually with many players. To try to change the structure of a language or
+the typewriter keyboard or the system of measurement requires a lot of people to change
+simultaneously before any advantage is realized.
+
+There is a third less obvious equilibrium point that sometimes occurs in these games.
+If each player has an equalizing strategy for the other player’s matrix, then that pair of
+strategies forms an equilibrium. This is because if an opponent uses a strategy that makes
+it not matter what you do, then anything you do is a best response, in particular the
+equalizing strategy on the opponent’s matrix. (Recall that an equalizing strategy is one
+that gives the same average payoff to the opponent no matter what the opponent does.)
+III – 9
+Let us find this equalizing strategic equilibrium for the above game. Note that
+each player uses the matrix of his opponent. 
+
+Player I has the equalizing strategy p =
+(4/5, 1/5) for B, and Player II has the equalizing strategy q = (5/6, 1/6) for A. If the
+players use these strategies, the average payoff is (5/2, 13/5), the same as the safety levels.
+Is it possible that the average payoff from a strategic equilibrium is less than the
+safety level for one of the players? The answer is no. (See Exercise 1.) Therefore the
+strategic equilibrium (p, q) is as poor a strategic equilibrium as you can get. Moreover,
+it is extremely unstable. It is true that it does neither player any good to deviate from
+his/her equilibrium strategy, but on the other hand it does not harm a player to change
+to another strategy.
+
+In the above example, the payoffs for the three SE’s are all different. The players have
+the same preferences as to which of the three outcomes they would prefer. In the next
+example, the players have different preferences between the two pure strategic equilibria.
+Example 2. The Battle of the Sexes. Suppose the matrices are
+
+a b
+a (2, 1) (0, 0)
+b (0, 0) (1, 2) 
+so that A =
+
+a b
+a 2 0
+b 0 1 
+and B =
+
+a b
+a 1 0
+b 0 2 
+.
+The name of this game arises as a description of the game played between a husband
+and wife in choosing which movie to see, a or b. They prefer different movies, but going
+together is preferable to going alone. Perhaps this should be analyzed as a cooperative
+game, but we analyze it here as a noncooperative game.
+The pure strategy vectors (a, a) and (b, b) are both PSE’s but Player I prefers the first
+and Player II the second.
+First note that the safety levels are vI = vII = 2/3, the same for both players. Player
+I’s MM strategy is (1/3,2/3), while Player II’s MM strategy is (2/3,1/3). There is a third
+strategic equilibrium given by the equalizing strategies p = (2/3, 1/3) and q = (1/3, 2/3).
+The equilibrium payoff for this equilibrium point, (vI , vII ) = (2/3, 2/3), is worse for both
+players than either of the other two equilibrium points.
+
+
+%=============================================================%
+Example 3. The Prisoner’s Dilemma. It may happen that there is a unique SE
+but that there are other outcomes that are better for both players. Consider the game
+with bimatrix
+
+cooperate defect
+cooperate (3, 3) (0, 4)
+defect (4, 0) (1, 1) 
+In this game, Player I can see that no matter which column Player II chooses, he will be
+better off if he chooses row 2. For if Player I chooses row 2 rather than row 1, he wins
+4 rather than 3 if Player II chooses column 1, and he wins 1 rather than 0 if she chooses
+column 2. In other words, Player I’s second strategy of choosing the second row strictly
+dominates the strategy of choosing the first. On the other hand, the game is symmetric.
+%- III – 10
+\begin{itemize}
+    \item Player II’s second column strictly dominates her first. However, if both players use their
+dominant strategies, each player receives 1, whereas if both players use their dominated
+strategies, each player receives 3.
+\item A game that has this feature, that both players are better off if together they use
+strictly dominated strategies, is called the Prisoner’s Dilemma. The story that leads to this
+bimatrix and gives the game its name is as follows. Two well-known crooks are captured
+and separated into different rooms.
+\item The district attorney knows he does not have enough
+evidence to convict on the serious charge of his choice, but offers each prisoner a deal. If
+just one of them will turn state’s evidence (i.e. rat on his confederate), then the one who
+confesses will be set free, and the other sent to jail for the maximum sentence. 
+\item If both
+confess, they are both sent to jail for the minimum sentence. If both exercise their right
+to remain silent, then the district attorney can still convict them both on a very minor
+charge.
+\item In the numerical matrix above, we take the units of measure of utility to be such
+that the most disagreeable outcome (the maximum sentence) has value 0, and the next
+most disagreeable outcome (minimum sentence) has value 1. Then we let being convicted
+on a minor charge to have value 3, and being set free to have value 4.
+This game has abundant economic application. An example is the manufacturing by
+two companies of a single good. Both companies may produce either at a high or a low
+level. If both produce at a low level, the price stays high and they both receive 3.
+\end{itemize}
+ If they
+both produce at the high level the price drops and they both receive 1. If one produces at
+the high level while the other produces at the low level, the high producer receives 4 and
+the low producer receives 0. No matter what the other producer does, each will be better
+off by producing at a high level.
+
+
+%=============================================================%
+
+\section{2.3 Finding All PSE’s.} For larger matrices, it is not difficult to find all pure strategic
+equilibria. This may be done using an extension of the method of finding all saddle points
+of a zero-sum game. With the game written in bimatrix form, put an asterisk after each
+of Player I’s payoffs that is a maximum of its column. Then put an asterisk after each of
+Player II’s payoffs that is a maximum of its row. Then any entry of the matrix at which
+both I’s and II’s payoffs have asterisks is a PSE, and conversely.
+An example should make this clear.
+⎛
+⎜⎜⎝
+a b cd e f
+A (2, 1) (4, 3) (7∗, 2) (7∗, 4) (0, 5∗) (3, 2)
+B (4∗, 0) (5∗, 4) (1, 6∗) (0, 4) (0, 3) (5∗, 1)
+C (1, 3∗) (5∗, 3∗) (3, 2) (4, 1) (1∗, 0) (4, 3∗)
+D (4∗, 3) (2, 5∗) (4, 0) (1, 0) (1∗, 5∗) (2, 1)
+⎞
+⎟⎟⎠
+In the first column, Player I’s maximum payoff is 4, so both 4’s are given asterisks. In the
+first row, Player II’s maximum is 5, so the 5 receives an asterisk. And so on.
+When we are finished, we see two payoff vectors with double asterisks. These are the
+pure strategic equilibria, (C, b) and (D, e), with payoffs (5, 3) and (1, 5) respectively. 
+
+%=============================================================%
+At
+III – 11
+all other pure strategy pairs, at least one of the players can improve his/her payoff by
+switching pure strategies.
+In a two-person zero-sum game, a PSE is just a saddle point. Many games have no
+PSE’s, for example, zero-sum games without a saddle point. However, just as zero-sum
+games of perfect information always have saddle points, non-zero-sum games of perfect
+information always have at least one PSE that may be found by the method of backward
+induction.
+%==========================================================================%
+\subsection{Iterated Elimination of Strictly Dominated Strategies.}
+\begin{itemize}
+    \item Since in generalsum
+games different equilibria may have different payoff vectors, it is more important than
+in zero-sum games to find all strategic equilibria. We may remove any strictly dominated
+row or column without losing any equilibrium points (Exercise 7).
+\item We, being rational, would not play a strictly dominated pure strategy, because there
+is a (possibly mixed) strategy that guarantees us a strictly better average payoff no matter
+what the opponent does. Similarly, if we believe the opponent is as rational as we are, we
+believe that he/she will not use a dominated strategy either.
+\item Therefore we may cancel any
+dominated pure strategy of the opponent before we check if we have any dominated pure
+strategies which may now be eliminated.
+\item This argument may be iterated. If we believe our opponent not only is rational but
+also believes that we are rational, then we may eliminate our dominated pure strategies,
+then eliminate our opponent’s dominated pure strategies, and then again eliminate any
+of our own pure strategies that have now become dominated. 
+\item The ultimate in this line
+of reasoning is that if it is common knowledge that the two players are rational, then we
+may iteratively remove dominated strategies as long as we like. (A statement is “common
+knowledge” between two players if each knows the statement, and each knows the other
+knows the statement, and each knows the other knows the other knows the statement, ad
+infinitum.)
+\item As an example of what this sort of reasoning entails, consider a game of Prisoner’s
+Dilemma that is to be played sequentially 100 times. The last time this is to be played it is
+clear that rational players will choose to defect. 
+\item The other strategy is strictly dominated.
+But now that we know what the players will do on the last game we can apply strict
+domination to the next to last game to conclude the players will defect on that game too.
+\item Similarly all the way back to the first game. The players will each receive 1 at each game.
+If they could somehow break down their belief in the other’s rationality, they might receive
+3 for each game.
+
+\end{itemize}
+Here is another game, called the Centipede Game of Robert Rosenthal (1980), that
+illustrates this anomaly more vividly. This is a game of perfect information with no chance
+moves, so it is easy to apply the iterated removal of strictly dominated strategies. The
+game in extensive form is given in Figure 2.1.
+Since this is a game of perfect information, it may be solved by backward induction.
+At the last move, Player II will certainly go down instead of across since that gives her
+101 instead of 100. Therefore at the next to last move, Player I will go down rather than
+III – 12
+I II I II I II I II
+(1,1) (0,3) (2,2) (1,4) (98,98) (97,100) (99,99) (98,101)
+(100,100)
+Figure 2.1 The Centipede Game.
+across since that gives him 99 instead of the 98. And so forth, back to the initial position,
+where Player I will go down rather than across because he receives 1 instead of 0. This is
+the unique PSE because all eliminated strategies were strictly dominated.
+Empirical evidence acquired by playing similar games shows that this gives a poor
+prediction of how people actually play this game. See the book of David M. Kreps (1990)
+Game Theory and Economic Modeling, Oxford University Press, for a discussion.
+\section{2.5 Exercises.}
+1. Strategic Equilibria Are Individually Rational. A payoff vector is said to
+be individually rational if each player receives at least his safety level. Show that if (p, q)
+is a strategic equilibrium for the game with matrices A and B, then pT
+Aq ≥ vI and
+pT
+Bq ≥ vII . Thus, the payoff vector for a strategic equilibrium is individually rational.
+2. Find the safety levels, the MM-strategies, and find all SE’s and associated vector
+payoffs of the following games in strategic form.
+(a)  (0, 0) (2, 4)
+(2, 4) (3, 3) 
+. (b)  (1, 4) (4, 1)
+(2, 2) (3, 3) 
+. (c)  (0, 0) (0, −1)
+(1, 0) (−1, 3) 
+.
+
+%=============================================================%
+
+3. The Game of Chicken. Two players speed head-on toward each other and a
+collision is bound to occur unless one of them chickens out at the last minute. If both
+chicken out, everything is okay (they both win 1). If one chickens out and the other does
+not, then it is a great success for the player with iron nerves (payoff = 2) and a great
+disgrace for the chicken (payoff = −1). If both players have iron nerves, disaster strikes
+(both lose 2).
+(a) Set up the bimatrix of this game.
+(b) What are the safety levels, what are the MM strategies, and what is the average payoff
+if the players use the MM strategies?
+(c) Find all three SE’s.
+
+
+%=============================================================%
+
+4. An extensive form non-zero-sum game. A coin with probability 2/3 of heads
+and 1/3 of tails is tossed and the outcome is shown to player I but not to player II. Player
+I then makes a claim which may be true or false that the coin turned up heads or that the
+coin turned up tails. Then, player II, hearing the claim, must guess whether the coin came
+up heads or tails. Player II wins $3 if his guess is correct, and nothing otherwise. Player
+I wins $3 if I has told the truth in his claim. In addition, Player I wins an additional $6 if
+player II guesses heads.
+III – 13
+(a) Draw the Kuhn tree.
+(b) Put into strategic (bimatrix) form.
+(c) Find all PSE’s.
+5. Find all PSE’s of the following games in strategic form.
+(a)
+⎛
+⎜⎝
+(−3, −4) ( 2, −1) ( 0, 6) ( 1, 1)
+( 2, 0) ( 2, 2) (−3, 0) ( 1, −2)
+( 2, −3) (−5, 1) (−1, −1) ( 1, −3)
+(−4, 3) ( 2, −5) ( 1, 2) (−3, 1)
+⎞
+⎟⎠.
+(b)
+⎛
+⎜⎜⎜⎝
+( 0, 0) ( 1, −1) ( 1, 1) (−1, 0)
+(−1, 1) ( 0, 1) ( 1, 0) ( 0, 0)
+( 1, 0) (−1, −1) ( 0, 1) (−1, 1)
+( 1, −1) (−1, 0) ( 1, −1) ( 0, 0)
+( 1, 1) ( 0, 0) (−1, −1) ( 0, 0)
+⎞
+⎟⎟⎟⎠.
+6. Consider the bimatrix game:  (0, 0) (1, 2) (2, 0)
+(0, 1) (2, 0) (0, 1) 
+.
+(a) Find the safety levels for the two players.
+(b) Find all PSE’s.
+(c) Find all SE’s given by mixed equalizing strategies.
+7. Strategic Equilibria Survive Elimination of Strictly Dominated Strategies.
+Suppose row 1 is strictly dominated (by a probability mixture of rows 2 through m,
+i.e. a1j < m
+i=2 xiaij for all j where xi ≥ 0 and m
+2 xi = 1), and suppose (p∗, q∗) is a
+strategic equilibrium. Show that p∗
+1 = 0.
+
+%=============================================================%
+8. Consider the non-cooperative bimatrix game:
+⎛
+⎝
+(3, 4) (2, 3) (3, 2)
+(6, 1) (0, 2) (3, 3)
+(4, 6) (3, 4) (4, 5)
+⎞
+⎠.
+(a) Find the safety levels, and the maxmin strategies for both players.
+(b) Find as many strategic equilibria as you can.
+
+%=============================================================%
+9. A PSE vector of strategies in a game in extensive form is said to be a subgame
+perfect equilibrium if at every vertex of the game tree, the strategy vector restricted
+to the subgame beginning at that vertex is a PSE. If a game has perfect information, a
+subgame perfect equilibrium may be found by the method of backward induction. Figure
+2.2 is an example of a game of perfect information that has a subgame perfect PSE and
+another PSE that is not subgame perfect.
+(a) Solve the game for an equilibrium using backward induction.
+(b) Put the game into strategic form.
+(c) Find another PSE of the strategic form game, relate it to the extensive form game and
+show it is not subgame perfect.
+III – 14
+I
+II
+(0,1)
+(1,0) (–10,–1)
+A B
+a b
+Figure 2.2 An Extensive Form Game.
+
+%=============================================================%
+10. Suppose you are playing the centipede game once as Player I against a person
+chosen at random from this class. At what point would you choose the option to go down
+ending the game, assuming the opponent has not already ended the game?
+Now answer the same question assuming you are Player II.
+Your score on this question depends on what the other students in the class do. Do
+not reveal your answer to this question to the other students in the class.
+\end{document}

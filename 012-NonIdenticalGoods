@@ -1,0 +1,115 @@
+
+\documentclass[]{article}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 480pt
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{multicol}
+%\usepackage[paperwidth=21cm, paperheight=29.8cm]{geometry}
+%\usepackage[angle=0,scale=1,color=black,hshift=-0.4cm,vshift=15cm]{background}
+%\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{framed}
+
+%\graphicspath{ {images/} }
+%\input def.tex
+%\input dsdef.tex
+%\input rgb.tex
+
+%\newcommand \la{\lambda}
+%\newcommand \al{a}
+%\newcommand \be{b}
+\newcommand \x{\overline{x}}
+\newcommand \y{\overline{y}}
+\begin{document}
+
+
+%- III – 15
+\newpage
+\subsection*{Bertran Duopoly - Identical Goods}
+
+\begin{itemize}
+\item Firms set their prices $p_1$, $p_2$ simultaneously.
+The quantity sold by each firm depends on both prices.\\
+In particular, if $p1 < p2$, then firm 1 sells the entire
+market demand $D(p_1)$ while firm 2 sells zero.\\
+The reverse happens when $p_1 > p_2$.
+\item If $p_1 = p_2 = p$, then each firm sells $1/2 D(p)$.
+\begin{framed}
+\textbf{Nash equilibrium:} A pair of prices ($\hat{p}_1$, $\hat{p}_2$) such that
+neither firm can do better by unilaterally deviating and
+charging some other price.
+\end{framed}
+\end{itemize}
+There are several possibilities:
+\begin{enumerate}
+\item A pair of prices ($\hat{p}_1$, $\hat{p}_2$) where $\hat{p}_1$ > $\hat{p}_2$ > c.
+In this situation firm 1 earns zero profit. Firm 1 would
+be better off unilaterally deviating and charging a price
+p1 just below $\hat{p}_2$.
+That way, firm 1 would make strictly positive profit.
+So this cannot be a NE.
+\item A pair of prices ($\hat{p}_1$, $\hat{p}_2$) where $\hat{p}_2$ > $\hat{p}_1$ > c : ruled
+out similarly.
+
+\item A pair of prices ($\hat{p}_1$, $\hat{p}_2$) where $\hat{p}_1 = \hat{p}_2$ (= $ \hat{p}$) > c
+In this case firm 1 earns profit = 1
+2D(pb)(pb − c)
+If it unilaterally deviates a charge a price slightly below p, b
+its profit will be approximately (slightly below) D(pb)(pb−
+c), almost double of what it was getting.
+So, this cannot be a NE.
+
+\item A pair of prices ($\hat{p}_1$, $\hat{p}_2$) where $\hat{p}_1$ > $\hat{p}_2$ = c.
+In this situation both firms earn zero profit. Firm 2 would
+be better off unilaterally deviating and charging a price
+p2 just below $\hat{p}_1$ but higher than c.
+That way, it (firm 2) would make strictly positive profit.
+So this cannot be a NE.
+
+\item A pair of prices ($\hat{p}_1$, $\hat{p}_2$) where $\hat{p}_2$ > $\hat{p}_1$ = c: ruled
+out similarly.
+
+\item A pair of prices ($\hat{p}_1$, $\hat{p}_2$) where $\hat{p}_1$ = $\hat{p}_2$ = c.
+In this case, both firms earn zero profit.
+Further, no firm can deviate and do better i.e., strictly
+positive profit.
+This is a NE.
+It is the unique NE.
+\end{enumerate}
+
+\subsection*{Bertrand Paradox}
+\begin{itemize}
+\item If firms are identical, the unique NE is one where firms
+set their prices = MC and the industry output is at the
+socially optimal level.
+\item Both firms earn zero profit.
+\item Even with two firms - market power disappears.
+\item If more than 2 firms - same outcome.
+\end{itemize}
+
+Assumptions of the Bertrand: rule out certain important
+elements of real markets.
+1. Product Differentiation:
+In Betrand model, firms sell identical product
+\begin{itemize}
+\item firms can grab all buyers from rival by charging a slightly
+lower price (undercutting).
+Real world: differentiated products
+\item consumers may not switch to another firm simply because
+it charges a lower price (care about difference in
+product attributes)
+\item  incentive for a firm to undercut rival’s price is much
+less.
+\end{itemize}
+\end{document}

@@ -1,0 +1,132 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%%% END Article customizations
+\begin{document}
+Dominant strategies are considered as better than other 
+strategies, no matter what other players might do. 
+In game theory, there are two kinds of strategic dominance:
+
+-a strictly dominant strategy is that strategy that always provides greater utility to a the player, no matter what the other player’s strategy is;
+
+-a weakly dominant strategy is that strategy that provides at least the same utility for all the other player’s strategies, and strictly greater for some strategy.
+
+ \newpage
+
+The elimination of dominated strategies is commonly used to simplify the analysis of any game. The way to proceed is to eliminate for each player every strategy that seems ‘unreasonable’, which will greatly reduce the number of equilibria. 
+
+This method is quite easy to use when only strictly dominated strategies are in place, but the elimination of weakly dominated strategies can turn problematic, ending up with a game that does not resembles the original one from a strategic point of view.
+
+\subsection*{Example}
+
+Iterated Deletion of Dominated Strategies
+
+Here's another game that doesn't have dominant pure strategies, but that we can solve by iterated deletion of dominated strategies. In other words, we can eliminate strategies that are dominated until we come to a conclusion:
+\begin{verbatim}
+2
+Left	Middle	Right
+1	Up	1,0	1,2	0,1
+Down	0,3	0,1	2,0
+\end{verbatim}
+
+Let's find the dominant strategies. The first strategy that is dominated, is Right. Player 2 will always be better off by playing Middle, so Right is dominated by Middle. At this point the column under Right can be eliminated since Right is no longer an option. This will be shown by crossing out the column:
+\begin{verbatim}
+2
+Left	Middle	Right
+1	Up	1,0	1,2	0,1
+Down	0,3	0,1	2,0
+\end{verbatim}
+
+Remember that both players understand that player 2 has no reason to play Right--player 1 understands that player 2 is trying to find an optimum, so he also no longer considers the payoffs in the Right column. With the Right column gone, Up now dominates Down for player 1. Whether player 2 plays Left or Middle, player 1 will get a payoff of 1 as long as he chooses Up. So now we no longer consider Down:
+\begin{verbatim}
+2
+Left	Middle	Right
+1	Up	1,0	1,2	0,1
+Down	0,3	0,1	2,0
+\end{verbatim}
+
+Now we know that player 1 will choose Up, and player 2 will choose Left or Middle. Since Middle is better than Left (a payoff of 2 vs. 0), player 2 will choose Middle and we have solved the game for the Nash Equilibrium:
+
+\begin{verbatim}
+2
+Left	Middle	Right
+1	Up	1,0	1,2	0,1
+Down	0,3	0,1	2,0
+\end{verbatim}
+
+
+To ensure that this answer (Up, Middle) is a Nash Equilibrium, 
+check to see whether either player would like to deviate. 
+As long as player 1 has chosen Up, player 2 will choose Middle. 
+On the other hand, as long as player 2 has chosen Middle, player 1 will choose up.
+
+
+\newpage
+%=============================================%
+
+Example of an iterated deletion of dominated strategy equilibrium
+
+Consider the following game to better understand the concept of 
+iterated elimination of strictly dominated strategies.
+
+
+Player 1 has two strategies and player 2 has three. S1={up,down} and S2={left,middle,right}. For player 1, neither up nor down is strictly dominated. Up is better than down if 2 plays left (since 1>0), but down is better than up if 2 plays right (since 2>0). For player 2, however, right is strictly dominated by middle (since 2>1 and 1>0), so player 2 being rational will not play right.
+
+Thus if player 1 knows that player 2 is rational then player 1 can eliminate right from player 2's strategy space. So, if player 1 knows that player 2 is rational then player 1 can play the game as if it was the game depicted below.
+
+
+In the figure above, down is strictly dominated by up for player 1 , and so if player 1 is rational (and player 1 knows that player 2 is rational, so that the second game applies) then player 1 will not play down. Consequently, if player 2 knows that player 1 is rational, and player 2 knows that player 1 knows that player 2 is rational ( so that player 2 knows that the second game applies) then player 2 can eliminate down from player 1's strategy space, leaving the game looking like below.
+
+
+And now left is strictly dominated by middle for player 2 , leaving (up,middle) as 
+the outcome of the game. 
+This is process is called the iterated elimination of strictly dominated strategies.
+\end{document}
